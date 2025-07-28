@@ -9,9 +9,9 @@ import line from "../assets/path.png"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import portfolioContent from "./Portfolio.json"
-import ProjectPopup from "../components/AboutProject"
-import krov from "../assets/krob.svg"
-import krovsection from "../assets/krovsection.jpg"
+//import ProjectPopup from "../components/AboutProject"
+//import krov from "../assets/krob.svg"
+//import krovsection from "../assets/krovsection.jpg"
 
 const Portfolio: React.FC = () => {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -20,6 +20,7 @@ const Portfolio: React.FC = () => {
   const handleProjectClick = (title: string, description: string) => {
     setPopupData({ title, description });
     setPopupOpen(true);
+    console.log(popupData,popupOpen);
   };
 
   const currentLanguage = 'RO'
@@ -139,7 +140,7 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </div>
-        <ProjectPopup
+        {/* <ProjectPopup
           open={popupOpen}
           onClose={() => setPopupOpen(false)}
           title={content.Portofoliu.title}
@@ -148,7 +149,7 @@ const Portfolio: React.FC = () => {
           sectionImage={krovsection}
           sectionText={content.Portofoliu.krovimagedescription}
           sectionLists={content.Portofoliu.listkrov}
-        />
+        /> */}
         <Footer />
       </div>
     </div>
