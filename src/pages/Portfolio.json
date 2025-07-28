@@ -1,0 +1,44 @@
+{
+  "RO": {
+    "Portofoliu": {
+      "title": "Portofoliu",
+      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
+      "mainbutton": "Despre noi",
+      "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
+      "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
+      "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
+      "prokectbutton" : "Afla mai multe",
+      "call" : "<span class='highlight'>Urmatorul </span> poți fi chiar tu",
+      "callbutton" : "Contactează-ne acum",
+      "krovdescription" : "Krov Acoperișuri – De la un logo vechi la un sistem digital complet integrat",
+      "krovimagedescription" : "Provocarea: Prezență digitală slabă și lipsa unei imagini coerente.",
+      "listkrov": [
+        { "title": "Soluția DigitalGrow:", "points": ["Rebranding complet (logo + culori)", "Landing page modern, optimizat pentru conversii", "Chatbot integrat cu CRM pentru captarea automată a lead-urilor"] },
+        { "title": "Rezultate", "points": ["O prezență online profesionistă, care generează lead-uri și automatizează procesul de vânzare."] },
+        { "title": "Rezultate", "points": ["Nu oferim doar servicii. Oferim soluții gândite pe termen lung.", "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."] }
+      ]
+    }
+},
+  "EN": {
+    "Portofoliu": {
+      "title": "Portofoliu",
+      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
+      "mainbutton": "Despre noi",
+      "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
+      "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
+      "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
+      "prokectbutton" : "Afla mai multe"
+  }
+ },
+  "RU": {
+    "Portofoliu": {
+      "title": "Portofoliu",
+      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
+      "mainbutton": "Despre noi",
+      "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
+      "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
+      "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
+      "prokectbutton" : "Afla mai multe"
+   }
+  }
+}

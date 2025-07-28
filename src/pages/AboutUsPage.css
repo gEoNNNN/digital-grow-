@@ -1,0 +1,471 @@
+.aboutus-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.aboutus-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.aboutus-main-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw;
+  color: var(--text-color);
+  background-color: transparent;
+  text-align: center;
+}
+
+.aboutus-main-section-title {
+  font-size: 5vw;
+  text-align: center;
+  margin-bottom: 2vw;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  max-width: 80vw;
+}
+
+.aboutus-main-section-description {
+  font-size: 2vw;
+  margin-bottom: 4vw;
+  text-align: center;
+  font-weight: 300;
+  color: var(--text-color);
+  font-family: "DM Sans", sans-serif;
+  max-width: 70vw;
+  line-height: 1.6;
+}
+
+/* About Us Sections */
+.aboutus-section {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 8vw 5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutus-section-title {
+  font-size: 4vw;
+  text-align: center;
+  margin-left: 10vw;
+  color: var(--text-color);
+  margin-bottom: 2vw;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.aboutus-section-title1 {
+  font-size: 4vw;
+  text-align: left;
+  margin-left: 10vw;
+  color: var(--text-color);
+  margin-bottom: 2vw;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutus-section-description {
+  text-align: left;
+  margin-left: 10vw;
+  font-size: 2vw;
+  color: var(--text-secondary);
+  margin-bottom: 4vw;
+  font-weight: 300;
+  font-family: "DM Sans", sans-serif;
+  max-width: 80vw;
+  margin-right: auto;
+  line-height: 1.6;
+  width: 60vw;
+}
+
+/* Story Items */
+.story-item {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  max-width: 90vw;
+  margin: 0 auto 6vw auto;
+  border-radius: 1.5vw;
+  padding: 3vw;
+  transition: all 0.3s ease;
+}
+
+.story-item:hover {
+  transform: translateY(-0.5vw);
+  box-shadow: 0 1.5vw 3vw var(--section-shadow);
+  border-color: var(--card-border-hover);
+}
+
+.story-item-reverse {
+  flex-direction: row-reverse;
+}
+
+.story-image {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1vw;
+  object-fit: cover;
+  max-height: 25vw;
+}
+
+.story-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-text p {
+  color: var(--text-secondary);
+  font-size: 2vw;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+}
+
+/* Icons Section */
+.aboutus-icons {
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.aboutus-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 1.5vw;
+  padding: 3vw 2vw;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 12vw;
+}
+
+.aboutus-icon:hover {
+  transform: translateY(-0.5vw);
+  background-color: var(--section-two-hover-bg);
+  box-shadow: 0 1vw 3vw var(--section-shadow);
+  border-color: var(--card-border-hover);
+}
+
+.aboutus-icon img {
+  width: 4vw;
+  height: 4vw;
+  margin-bottom: 2vw;
+  transition: all 0.3s ease;
+}
+
+.aboutus-icon:hover img {
+  transform: scale(1.1);
+}
+
+.aboutus-icon p {
+  color: var(--text-color);
+  font-size: 2vw;
+  font-weight: 600;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats Section */
+.aboutus-stats {
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+  flex-wrap: wrap;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.aboutus-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 1.5vw;
+  padding: 4vw 3vw;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 15vw;
+}
+
+.aboutus-stat:hover {
+  transform: translateY(-0.5vw);
+  background-color: var(--section-two-hover-bg);
+  box-shadow: 0 1vw 3vw var(--section-shadow);
+  border-color: var(--card-border-hover);
+}
+
+.stat-value {
+  color: var(--text-color);
+  font-size: 3vw;
+  font-weight: 900;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 1vw;
+  text-shadow: 0 0.2vw 0.4vw var(--text-muted);
+}
+
+.stat-label {
+  text-shadow: 0 0.2vw 0.4vw var(--text-muted);
+  color: var(--text-color);
+  font-size: 3vw;
+  font-weight: 600;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .aboutus-main-section {
+    padding: 0 8vw;
+    height: 100vh;
+  }
+  
+  .aboutus-main-section-title {
+    font-size: 8vw;
+    margin-bottom: 4vw;
+    max-width: 90vw;
+  }
+  
+  .aboutus-main-section-description {
+    font-size: 3.5vw;
+    margin-bottom: 6vw;
+    max-width: 85vw;
+  }
+
+  .aboutus-section {
+    padding: 12vw 5vw;
+  }
+
+  .aboutus-section-title {
+    font-size: 6vw;
+    margin-bottom: 3vw;
+  }
+
+  .aboutus-section-description {
+    font-size: 3vw;
+    margin-bottom: 6vw;
+    max-width: 90vw;
+  }
+
+  .story-item,
+  .story-item-reverse {
+    flex-direction: column;
+    gap: 4vw;
+    padding: 5vw;
+    border-radius: 3vw;
+    text-align: center;
+    max-width: 95vw;
+    margin-bottom: 8vw;
+  }
+
+  .story-image {
+    flex: 0 0 auto;
+    width: 80%;
+  }
+
+  .story-image img {
+    max-height: 40vw;
+    border-radius: 2vw;
+  }
+
+  .story-text p {
+    font-size: 2.8vw;
+    text-align: center;
+  }
+
+  .aboutus-icons {
+    flex-direction: column;
+    gap: 4vw;
+    max-width: 90vw;
+  }
+
+  .aboutus-icon {
+    min-width: auto;
+    width: 100%;
+    padding: 4vw;
+    border-radius: 3vw;
+  }
+
+  .aboutus-icon img {
+    width: 8vw;
+    height: 8vw;
+    margin-bottom: 3vw;
+  }
+
+  .aboutus-icon p {
+    font-size: 3vw;
+  }
+
+  .aboutus-stats {
+    flex-direction: column;
+    gap: 4vw;
+    max-width: 90vw;
+  }
+
+  .aboutus-stat {
+    min-width: auto;
+    width: 100%;
+    padding: 5vw 4vw;
+    border-radius: 3vw;
+  }
+
+  .stat-value {
+    font-size: 6vw;
+    margin-bottom: 2vw;
+  }
+
+  .stat-label {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-main-section-title {
+    font-size: 10vw;
+    margin-bottom: 5vw;
+  }
+  
+  .aboutus-main-section-description {
+    font-size: 4vw;
+    margin-bottom: 8vw;
+    max-width: 90vw;
+  }
+
+  .aboutus-section {
+    padding: 15vw 3vw;
+  }
+
+  .aboutus-section-title {
+    font-size: 7vw;
+    margin-bottom: 4vw;
+  }
+
+  .aboutus-section-description {
+    font-size: 3.5vw;
+    margin-bottom: 8vw;
+    max-width: 95vw;
+  }
+
+  .story-item,
+  .story-item-reverse {
+    gap: 5vw;
+    padding: 6vw;
+    border-radius: 4vw;
+    max-width: 95vw;
+    margin-bottom: 10vw;
+  }
+
+  .story-image {
+    width: 90%;
+  }
+
+  .story-image img {
+    max-height: 50vw;
+    border-radius: 3vw;
+  }
+
+  .story-text p {
+    font-size: 3.5vw;
+  }
+
+  .aboutus-icons {
+    gap: 5vw;
+    max-width: 95vw;
+  }
+
+  .aboutus-icon {
+    padding: 5vw;
+    border-radius: 4vw;
+  }
+
+  .aboutus-icon img {
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 4vw;
+  }
+
+  .aboutus-icon p {
+    font-size: 3.5vw;
+  }
+
+  .aboutus-stats {
+    gap: 5vw;
+    max-width: 95vw;
+  }
+
+  .aboutus-stat {
+    padding: 6vw 5vw;
+    border-radius: 4vw;
+  }
+
+  .stat-value {
+    font-size: 7vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .stat-label {
+    font-size: 3.5vw;
+  }
+}

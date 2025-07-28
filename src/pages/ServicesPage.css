@@ -1,0 +1,672 @@
+.services-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.services-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.highlight {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+  font-size: 5.2vw; 
+}
+
+.services-main-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw;
+  color: var(--text-color);
+  background-color: transparent;
+  text-align: center;
+}
+
+.services-main-section-title {
+  font-size: 5vw;
+  text-align: center;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  max-width: 80vw;
+}
+
+.services-main-section-description {
+  font-size: 2vw;
+  margin-bottom: 4vw;
+  text-align: center;
+  font-weight: 300;
+  color: var(--text-color);
+  font-family: "DM Sans", sans-serif;
+  max-width: 60vw;
+  line-height: 1.6;
+  text-align: left;
+  margin-top: -4vw;
+}
+
+.services-buttons {
+  display: flex;
+  gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 2vw;
+  padding: 1vw 2.5vw;
+  font-size: 1.2vw;
+  font-weight: 800;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 1vw var(--button-shadow),
+    0 0 2vw var(--button-shadow-medium),
+    0 0 3vw var(--button-shadow-light);
+  min-width: 8vw;
+}
+
+.services-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-0.2vw) scale(1.05);
+}
+
+/* Services Sections */
+.services-section {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 8vw 5vw;
+  position: relative;
+  z-index: 1;
+}
+
+.services-section-title,.services-section-title,.services-section-title {
+  font-size: 5vw;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 2vw;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+}
+
+.services-section-description {
+  font-size: 1.6vw;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 4vw;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  max-width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Services Cards */
+.services-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  max-width: 60vw;
+  margin: 0 auto;
+}
+
+.services-card {
+  background-color: var(--tertiary-bg);
+  border-radius: 1.5vw;
+  padding: 2.5vw;
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+}
+
+.services-card:hover {
+  transform: translateY(-0.3vw);
+  box-shadow: 0 1vw 2vw var(--section-shadow);
+  border-color: var(--card-border-hover);
+}
+
+.services-card-title {
+  color: var(--text-color);
+  font-size: 1.5vw;
+  font-weight: 700;
+  margin: 0 0 1vw 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.services-card-description {
+  color: var(--text-secondary);
+  font-size: 1vw;
+  font-weight: 400;
+  margin: 0 0 1.5vw 0;
+  line-height: 1.6;
+  font-family: "DM Sans", sans-serif;
+}
+
+.services-card-statement {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  margin-bottom: 2vw;
+  padding: 1vw;
+  border-radius: 0.8vw;
+}
+
+.checkmark {
+  color: #4CAF50;
+  border-radius: 50%;
+  width: 1.5vw;
+  height: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.services-card-statement span:last-child {
+  color: var(--text-color);
+  font-size: 0.95vw;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.4;
+}
+
+.services-card-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 1.5vw;
+  padding: 1vw 2vw;
+  font-size: 1vw;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 25%;
+  margin-left: 35%;
+  box-shadow: 
+    0 0 0.5vw var(--button-shadow),
+    0 0 1vw var(--button-shadow-medium);
+}
+
+.services-card-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-0.1vw) scale(1.02);
+  box-shadow: 
+    0 0 1vw var(--button-shadow),
+    0 0 2vw var(--button-shadow-medium);
+}
+
+/* Package Cards */
+.package-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.package-card {
+  background-color: var(--tertiary-bg);
+  border-radius: 1.5vw;
+  padding: 3vw 2.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+  min-height: 35vw;
+}
+
+.package-card:hover {
+  transform: translateY(-0.5vw);
+  box-shadow: 0 1.5vw 3vw var(--section-shadow);
+  border-color: var(--card-border-hover);
+}
+
+.package-card-title {
+  color: var(--text-color);
+  font-size: 2.5vw;
+  font-weight: 700;
+  margin: 0 0 2.5vw 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.package-services {
+  flex-direction: column;
+  gap: 1.2vw;
+  margin-bottom: 3vw;
+  width: 100%;
+}
+
+.package-service {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  padding: 0.8vw;
+  border-radius: 0.8vw;
+}
+
+.package-service .checkmark {
+  color: #4CAF50;
+  width: 1.5vw;
+  height: 1.5vw;
+  font-size: 1vw;
+}
+
+.package-service span:last-child {
+  color: var(--text-color);
+  font-size: 1vw;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+}
+
+.package-pricing {
+  margin-bottom: 3vw;
+}
+
+
+
+
+.package-price2 {
+  margin-top: 11.5vw;
+}
+
+.package-price3 {
+  margin-top: 2vw;
+}
+
+.package-price1 {
+  margin-top: 15vw;
+}
+.package-price1,
+.package-price2,
+.package-price3 {
+  color: var(--text-color);
+  font-size: 2.5vw;
+  font-weight: 900;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 0.5vw;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+}
+
+.package-price-currency {
+  font-weight: 300;
+  font-size: 2vw;
+}
+
+.package-discount1,
+.package-discount2,
+.package-discount3 {
+  color: var(--text-color);
+  font-size: 0.9vw;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+}
+
+.portfolio-bg-fade {
+  width: 100vw;
+  height: 10vw;
+  background-color: white;
+  position: absolute;
+  margin-top: 55vw;
+  background: var(--fog);
+  box-shadow: 0 0 16vw 8vw var(--primary), 0 0 18vw 10vw var(--primary);
+}
+
+.package-card-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 1.5vw;
+  padding: 1.2vw 3vw;
+  font-size: 1.1vw;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 80%;
+  margin-top: auto;
+  box-shadow: 
+    0 0 0.8vw var(--button-shadow),
+    0 0 1.5vw var(--button-shadow-medium);
+}
+
+.package-card-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-0.2vw) scale(1.05);
+  box-shadow: 
+    0 0 1.2vw var(--button-shadow),
+    0 0 2.5vw var(--button-shadow-medium);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .services-main-section {
+    padding: 0 8vw;
+    height: 100vh;
+  }
+  
+  .services-main-section-title {
+    font-size: 8vw;
+    margin-bottom: 4vw;
+    max-width: 90vw;
+  }
+  
+  .services-main-section-description {
+    font-size: 3.5vw;
+    margin-bottom: 6vw;
+    max-width: 85vw;
+  }
+  
+  .services-buttons {
+    gap: 3vw;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .services-button {
+    padding: 3vw 5vw;
+    font-size: 3vw;
+    border-radius: 3vw;
+    min-width: 40vw;
+    width: 70vw;
+  }
+
+  .services-section {
+    padding: 12vw 5vw;
+  }
+
+  .services-section-title {
+    font-size: 6vw;
+    margin-bottom: 3vw;
+  }
+
+  .services-section-description {
+    font-size: 3vw;
+    margin-bottom: 6vw;
+    max-width: 90vw;
+  }
+
+  .services-cards {
+    max-width: 90vw;
+    gap: 4vw;
+  }
+
+  .services-card {
+    padding: 4vw;
+    border-radius: 3vw;
+  }
+
+  .services-card-title {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+  }
+
+  .services-card-description {
+    font-size: 2.5vw;
+    margin-bottom: 3vw;
+  }
+
+  .services-card-statement {
+    gap: 2vw;
+    margin-bottom: 4vw;
+    padding: 2vw;
+    border-radius: 2vw;
+  }
+
+  .checkmark {
+    width: 4vw;
+    height: 4vw;
+    font-size: 2.5vw;
+  }
+
+  .services-card-statement span:last-child {
+    font-size: 2.5vw;
+  }
+
+  .services-card-button {
+    padding: 3vw 4vw;
+    font-size: 2.5vw;
+    border-radius: 3vw;
+  }
+
+  /* Package Cards Responsive */
+  .package-cards {
+    grid-template-columns: 1fr;
+    gap: 5vw;
+    max-width: 90vw;
+  }
+
+  .package-card {
+    padding: 5vw 4vw;
+    border-radius: 3vw;
+    min-height: auto;
+  }
+
+  .package-card-title {
+    font-size: 5vw;
+    margin-bottom: 4vw;
+  }
+
+  .package-services {
+    gap: 2.5vw;
+    margin-bottom: 5vw;
+  }
+
+  .package-service {
+    gap: 2vw;
+    padding: 2vw;
+    border-radius: 2vw;
+  }
+
+  .package-service .checkmark {
+    width: 4vw;
+    height: 4vw;
+    font-size: 2.5vw;
+  }
+
+  .package-service span:last-child {
+    font-size: 2.5vw;
+  }
+
+  .package-price {
+    font-size: 6vw;
+    margin-bottom: 1vw;
+  }
+
+  .package-discount {
+    font-size: 2.2vw;
+  }
+
+  .package-card-button {
+    padding: 3vw 5vw;
+    font-size: 2.8vw;
+    border-radius: 3vw;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-main-section-title {
+    font-size: 10vw;
+    margin-bottom: 5vw;
+  }
+  
+  .services-main-section-description {
+    font-size: 4vw;
+    margin-bottom: 8vw;
+    max-width: 90vw;
+  }
+  
+  .services-buttons {
+    gap: 4vw;
+  }
+  
+  .services-button {
+    padding: 4vw 6vw;
+    font-size: 4vw;
+    min-width: 50vw;
+    width: 80vw;
+  }
+
+  .services-section {
+    padding: 15vw 3vw;
+  }
+
+  .services-section-title {
+    font-size: 7vw;
+    margin-bottom: 4vw;
+  }
+
+  .services-section-description {
+    font-size: 3.5vw;
+    margin-bottom: 8vw;
+    max-width: 95vw;
+  }
+
+  .services-cards {
+    max-width: 95vw;
+    gap: 5vw;
+  }
+
+  .services-card {
+    padding: 5vw;
+    border-radius: 4vw;
+  }
+
+  .services-card-title {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .services-card-description {
+    font-size: 3vw;
+    margin-bottom: 4vw;
+  }
+
+  .services-card-statement {
+    gap: 3vw;
+    margin-bottom: 5vw;
+    padding: 3vw;
+    border-radius: 3vw;
+  }
+
+  .checkmark {
+    width: 5vw;
+    height: 5vw;
+    font-size: 3vw;
+  }
+
+  .services-card-statement span:last-child {
+    font-size: 3vw;
+  }
+
+  .services-card-button {
+    padding: 4vw 5vw;
+    font-size: 3vw;
+    border-radius: 4vw;
+  }
+
+  /* Package Cards Mobile */
+  .package-cards {
+    gap: 6vw;
+    max-width: 95vw;
+  }
+
+  .package-card {
+    padding: 6vw 5vw;
+    border-radius: 4vw;
+  }
+
+  .package-card-title {
+    font-size: 6vw;
+    margin-bottom: 5vw;
+  }
+
+  .package-services {
+    gap: 3vw;
+    margin-bottom: 6vw;
+  }
+
+  .package-service {
+    gap: 3vw;
+    padding: 3vw;
+    border-radius: 3vw;
+  }
+
+  .package-service .checkmark {
+    width: 5vw;
+    height: 5vw;
+    font-size: 3vw;
+  }
+
+  .package-service span:last-child {
+    font-size: 3vw;
+  }
+
+  .package-price {
+    font-size: 7vw;
+    margin-bottom: 1.5vw;
+  }
+
+  .package-discount {
+    font-size: 2.5vw;
+  }
+
+  .package-card-button {
+    padding: 4vw 6vw;
+    font-size: 3.5vw;
+    border-radius: 4vw;
+    width: 95%;
+  }
+}

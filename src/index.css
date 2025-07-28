@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+  /* Primary Background Colors */
+  --primary: #000000;
+  --secondary-bg: #1a1a1a;
+  --tertiary-bg: #2A2A2A;
+  --fog:linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.85) 100%);
+  --aboutproject: #273A51;
+  
+  /* Text Colors */
+  --text-color: white;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-gradient: linear-gradient(45deg, #5B82AB, #C0DFFF);
+  
+  /* Button Colors */
+  --button-color: #8FBCBB;
+  --button-text-color: #242C41;
+  --button-hover-color: #7AACA9;
+  --button-shadow: rgba(143, 188, 187, 0.6);
+  --button-shadow-medium: rgba(143, 188, 187, 0.4);
+  --button-shadow-light: rgba(143, 188, 187, 0.2);
+  
+  /* Card Colors */
+  --card-bg: #1C2734;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-border-hover: rgba(255, 255, 255, 0.2);
+  --card-shadow: rgba(255, 255, 255, 0.1);
+  --card-shadow-hover: rgba(255, 255, 255, 0.2);
+  --card-overlay: rgba(0, 0, 0, 0.6);
+  --card-overlay-light: rgba(0, 0, 0, 0.3);
+  --card-overlay-hover: rgba(0, 0, 0, 0.4);
+  --card-overlay-hover-light: rgba(0, 0, 0, 0.2);
+  
+  /* Navbar Colors */
+  --navbar-bg: rgba(0, 0, 0, 0.4);
+  --navbar-text: rgba(255, 255, 255, 0.95);
+  --navbar-hover-bg: rgba(100, 108, 255, 0.2);
+  --navbar-accent: #646cff;
+  --navbar-accent-hover: #535bf2;
+  --dropdown-bg: rgba(26, 26, 26, 0.95);
+  --dropdown-border: rgba(255, 255, 255, 0.2);
+  --dropdown-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Section Specific Colors */
+  --section-two-hover-bg: rgba(255, 255, 255, 0.08);
+  --section-shadow: rgba(0, 0, 0, 0.3);
+  
+  /* Footer Colors */
+  --footer-bg: #1a1a1a;
+  --footer-text: white;
+}
+
+[data-theme="light"] {
+  /* Primary Background Colors */
+  --primary: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --tertiary-bg: #e9ecef;
+  
+  /* Text Colors */
+  --text-color: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #868e96;
+  --text-gradient: linear-gradient(45deg, #5B82AB, #C0DFFF);
+  
+  /* Button Colors */
+  --button-color: #8FBCBB;
+  --button-text-color: #242C41;
+  --button-hover-color: #7AACA9;
+  --button-shadow: rgba(143, 188, 187, 0.6);
+  --button-shadow-medium: rgba(143, 188, 187, 0.4);
+  --button-shadow-light: rgba(143, 188, 187, 0.2);
+  
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-border-hover: rgba(0, 0, 0, 0.2);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: rgba(0, 0, 0, 0.2);
+  --card-overlay: rgba(0, 0, 0, 0.6);
+  --card-overlay-light: rgba(0, 0, 0, 0.3);
+  --card-overlay-hover: rgba(0, 0, 0, 0.4);
+  --card-overlay-hover-light: rgba(0, 0, 0, 0.2);
+  
+  /* Navbar Colors */
+  --navbar-bg: rgba(255, 255, 255, 0.95);
+  --navbar-text: #212529;
+  --navbar-hover-bg: rgba(100, 108, 255, 0.1);
+  --navbar-accent: #646cff;
+  --navbar-accent-hover: #535bf2;
+  --dropdown-bg: rgba(255, 255, 255, 0.95);
+  --dropdown-border: rgba(0, 0, 0, 0.2);
+  --dropdown-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Section Specific Colors */
+  --section-two-hover-bg: rgba(0, 0, 0, 0.05);
+  --section-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Footer Colors */
+  --footer-bg: #f8f9fa;
+  --footer-text: #212529;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.App {
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
