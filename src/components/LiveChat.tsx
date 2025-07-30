@@ -12,7 +12,7 @@ type ChatMessage = {
 };
 
 const initialMessages: ChatMessage[] = [
-  { id: 1, text: "👋 Bun venit pe site-ul Lumea Ta! Cu ce te pot ajuta astăzi?", from: "bot" },
+  { id: 1, text: "👋 Bun venit pe site-ul Digital Grow! Cu ce te pot ajuta astăzi?", from: "bot" },
 ];
 
 interface LiveChatProps {
