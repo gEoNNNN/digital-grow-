@@ -4,6 +4,7 @@ import './Havbar.css'
 import logo from "../assets/logo.svg"
 import darkmodeicon from "../assets/darknomeicon.svg"
 import bg from "../assets/navbarfilter.png"
+import hamburgerIcon from "../assets/hamburger.svg" // Add a hamburger icon SVG to your assets
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -23,6 +24,7 @@ interface Translations {
 const NavBar = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false) // NEW
 
   const languages: Record<LanguageCode, Language> = {
     RO: { code: 'RO', name: 'Română' },
@@ -67,7 +69,26 @@ const NavBar = () => {
         <a href="#" className="navbar-logo">
           <img src={logo} alt="Logo"/>
         </a>
-        <ul className="navbar-menu">
+        {/* Hamburger icon for mobile */}
+        <button
+          className="navbar-hamburger"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <img src={hamburgerIcon} alt="Menu" />
+        </button>
+        <ul className={`navbar-menu${mobileMenuOpen ? ' open' : ''}`}>
+          {mobileMenuOpen && (
+            <li className="navbar-close-x">
+              <button
+                className="navbar-close-x-btn"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ×
+              </button>
+            </li>
+          )}
           <li className="navbar-item">
             <Link to="/" className="navbar-link">
               {currentTranslations.home}

@@ -177,6 +177,36 @@
   font-weight: bold;
 }
 
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5vw;
+  z-index: 2001;
+}
+
+.navbar-hamburger img {
+  width: 7vw;
+  height: 7vw;
+}
+
+.navbar-close-x {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.navbar-close-x-btn {
+  background: none;
+  border: none;
+  font-size: 8vw;
+  color: var(--navbar-text, #fff);
+  cursor: pointer;
+  padding: 1vw 3vw 0 0;
+  line-height: 1;
+}
+
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
@@ -200,13 +230,18 @@
   }
   
   .navbar-logo img {
-    height: 5vw;
-    min-height: 4vw;
-    max-height: 6vw;
+    height: 8vw;
+    width: auto;
+    min-height: 2vw;
+    max-height: 12vw;
+    margin-left: -45vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
   }
   
   .navbar-link {
-    font-size: 2.5vw;
+    font-size: 5vw;
+    text-shadow: 0 0.2vw 0.4vw var(--text-muted);
     padding: 1vw 2vw;
   }
   
@@ -216,8 +251,7 @@
   }
   
   .navbar-theme {
-    position: static;
-    margin-left: 0;
+    display: none;
   }
   
   .navbar-theme img {
@@ -233,44 +267,39 @@
     font-size: 2vw;
     padding: 1vw 1.5vw;
   }
+  
+  .navbar-hamburger {
+    display: block;
+    position: absolute;
+    right: 2vw;
+    top: 5vw;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 45vw;
+    width: 50vw;
+    background: var(--ham);
+    z-index: 2000;
+    padding: 2vw 0;
+    box-shadow: 0 0.2vw 0.4vw var(--dropdown-shadow);
+    z-index: 10000000;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+  .navbar-theme {
+    position: static;
+    margin-left: 0;
+  }
 }
 
-@media (max-width: 480px) {
-  .navbar-menu {
-    gap: 2vw;
-  }
-  
-  .navbar-link {
-    padding: 1.5vw 2.5vw;
-    font-size: 3vw;
-  }
-  
-  .navbar-logo {
-    font-size: 4vw;
-  }
-  
-  .navbar-logo img {
-    height: 6vw;
-    min-height: 5vw;
-    max-height: 7vw;
-  }
-  
-  .navbar-link img {
-    height: 4vw;
-    width: 4vw;
-  }
-  
-  .navbar-theme img {
-    height: 4vw;
-    width: 4vw;
-  }
-  
-  .dropdown-menu {
-    min-width: 20vw;
-  }
-  
-  .dropdown-item {
-    font-size: 2.5vw;
-    padding: 1.5vw 2vw;
+@media (min-width: 769px) {
+  .navbar-close-x,
+  .navbar-close-x-btn {
+    display: none;
   }
 }
+
