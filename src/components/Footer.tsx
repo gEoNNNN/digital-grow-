@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         {/* Left section - 60% (Social Media) */}
         <div className="footer-left">
-          <h3 className="c">{currentTranslations.title}</h3>
+          <h3 className="footer-title">{currentTranslations.title}</h3>
           <p className="footer-description">{currentTranslations.description}</p>
           
           <div className="footer-social-icons">
@@ -122,8 +122,8 @@ const Footer: React.FC = () => {
               <li><a href="/">{currentTranslations.nav1}</a></li>
               <li><a href="/services">{currentTranslations.nav2}</a></li>
               <li><a href="/portfolio">{currentTranslations.nav3}</a></li>
-              <li><a href="/about">{currentTranslations.nav4}</a></li>
-              <li><a href="/contact">{currentTranslations.nav5}</a></li>
+              <li><a href="/aboutus">{currentTranslations.nav4}</a></li>
+              <li><a href="/contacts">{currentTranslations.nav5}</a></li>
             </ul>
           </nav>
         </div>

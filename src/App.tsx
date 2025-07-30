@@ -5,11 +5,13 @@ import ServicesPage from './pages/ServicesPage'
 import Portfolio from './pages/Potrfolio'
 import AboutUsPage from './pages/AboutUsPage'
 import ContactsPage from './pages/ContactsPage'
+import ScrollToTop from '../src/components/Scroll'
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />

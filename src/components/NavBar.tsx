@@ -64,9 +64,9 @@ const NavBar = () => {
   return (
     <nav className="navbar" style={{ backgroundImage: `url(${bg})` }}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <a href="#" className="navbar-logo">
           <img src={logo} alt="Logo"/>
-        </Link>
+        </a>
         <ul className="navbar-menu">
           <li className="navbar-item">
             <Link to="/" className="navbar-link">

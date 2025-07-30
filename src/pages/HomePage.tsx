@@ -16,6 +16,7 @@ import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import feedback from "../assets/krovfeedback.mp4"
 import { useState } from 'react'
+import LiveChat from "../components/LiveChat"
 
 const HomePage = () => {
   const currentLanguage = 'RO'
@@ -32,6 +33,7 @@ const HomePage = () => {
       <div className="homepage-content">
         <div className="portfolio-bg-fade"></div>
         <NavBar/>
+        <LiveChat/>
         <div className="homepage-main-section">
           <h1 className="homepage-main-section-title">
             {content.hero.title1}
