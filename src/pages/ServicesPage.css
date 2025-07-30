@@ -215,6 +215,20 @@
   line-height: 1.4;
 }
 
+.services-card-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 1vw;
+}
+
+.services-card-price {
+  font-size: 2vw;
+  margin-left: 3vw;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
 .services-card-button {
   background-color: var(--button-color);
   color: var(--button-text-color);
@@ -227,7 +241,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 25%;
-  margin-left: 35%;
+  margin-left: 5vw;
   box-shadow: 
     0 0 0.5vw var(--button-shadow),
     0 0 1vw var(--button-shadow-medium);

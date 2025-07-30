@@ -22,6 +22,7 @@ const HomePage = () => {
   const currentLanguage = 'RO'
   const content = homepageContent[currentLanguage]
   const [videoOpen, setVideoOpen] = useState(false)
+  const [chatOpen, setChatOpen] = useState(false)
 
   return (
     <div className="homepage">
@@ -33,7 +34,7 @@ const HomePage = () => {
       <div className="homepage-content">
         <div className="portfolio-bg-fade"></div>
         <NavBar/>
-        <LiveChat/>
+        <LiveChat open={chatOpen} setOpen={setChatOpen} />
         <div className="homepage-main-section">
           <h1 className="homepage-main-section-title">
             {content.hero.title1}
@@ -44,7 +45,9 @@ const HomePage = () => {
           <h1 className="homepage-main-section-description">
             {content.hero.description}
           </h1>
-          <button className="homepage-main-section-button">
+          <button 
+            className="homepage-main-section-button"
+            onClick={() => setChatOpen(true)}>
             <img src={iconoferta}/>
             {content.hero.primaryButton}
           </button>
@@ -55,7 +58,9 @@ const HomePage = () => {
               <div className="homepage-section-one-card">
                 <h3>{content.hero.sectiononecard1title}</h3>
                 <p>{content.hero.sectiononecard1description}</p>
-                <button className="homepage-section-one-card-button">
+                <button 
+                    className="homepage-section-one-card-button"
+                    onClick={() => setChatOpen(true)}>
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card1}/>
@@ -63,7 +68,7 @@ const HomePage = () => {
               <div className="homepage-section-one-card">
                 <h3>{content.hero.sectiononecard2title}</h3>
                 <p>{content.hero.sectiononecard2description}</p>
-                <button className="homepage-section-one-card-button">
+                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card2}/>
@@ -71,7 +76,7 @@ const HomePage = () => {
               <div className="homepage-section-one-card">
                 <h3>{content.hero.sectiononecard3title}</h3>
                 <p>{content.hero.sectiononecard3description}</p>
-                <button className="homepage-section-one-card-button">
+                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card3}/>
@@ -79,7 +84,7 @@ const HomePage = () => {
               <div className="homepage-section-one-card">
                 <h3>{content.hero.sectiononecard4title}</h3>
                 <p>{content.hero.sectiononecard4description}</p>
-                <button className="homepage-section-one-card-button">
+                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card4}/>

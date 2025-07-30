@@ -96,7 +96,7 @@
 }
 
 .homepage-feedback-text {
-  font-size: 3vw;
+  font-size: 1.7vw;
   color: var(--text-color);
   margin-bottom: 2vw;
   text-shadow: 0 0.2vw 0.4vw var(--text-muted);
@@ -123,8 +123,8 @@
   text-shadow: 0 0.2vw 0.4vw var(--text-muted);
   margin-left: 5vw;
   position: absolute;
-  margin-top: 3vw;
-  margin-left: 50vw;
+  margin-top: 9vw;
+  margin-left: 54vw;
 }
 
 .homepage-video-popup {
@@ -483,6 +483,11 @@
 
 /* Responsive design for cards */
 @media (max-width: 768px) {
+
+  .portfolio-bg-fade {
+    top: 165vw;
+  }
+
   .homepage-main-section {
     padding: 0 8vw;
     height: 100vh;
