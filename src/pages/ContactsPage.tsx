@@ -16,10 +16,13 @@ import wa from "../assets/wa.svg"
 import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
 import viber from "../assets/viber.svg"
+import LiveChat from '../components/LiveChat'
+import { useState } from 'react'
 
 const ContactsPage: React.FC = () => {
   const currentLanguage = 'RO'
   const content = contactsContent[currentLanguage]
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <div className="contacts-page">
@@ -31,6 +34,7 @@ const ContactsPage: React.FC = () => {
       <div className="contacts-content">
         <div className="portfolio-bg-fade"></div>
         <NavBar/>
+        <LiveChat open={chatOpen} setOpen={setChatOpen} />
         <div className="contacts-main-section">
           <h1 className="contacts-main-section-title">
             {content.contacts.title}
@@ -57,7 +61,7 @@ const ContactsPage: React.FC = () => {
                     <img src={texticon1} alt="Chat emoji" className="text-emoji" />
                     <span className="contact-text">{content.contacts.section1text}</span>
                   </div>
-                  <button className="contact-option-button">
+                  <button className="contact-option-button" onClick={() => setChatOpen(true)}>
                     {content.contacts.section1button}
                   </button>
                 </div>
@@ -82,7 +86,7 @@ const ContactsPage: React.FC = () => {
                       <span className="contact-email">{content.contacts.section2email}</span>
                     </div>
                   </div>
-                  <button className="contact-option-button">
+                  <button className="contact-option-button" onClick={() => setChatOpen(true)}>
                     {content.contacts.section2button}
                   </button>
                 </div>

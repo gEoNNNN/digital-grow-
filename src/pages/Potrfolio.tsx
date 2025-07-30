@@ -9,19 +9,13 @@ import line from "../assets/path.png"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import portfolioContent from "./Portfolio.json"
-//import ProjectPopup from "../components/AboutProject"
-//import krov from "../assets/krob.svg"
-//import krovsection from "../assets/krovsection.jpg"
+import { useNavigate } from "react-router-dom"
+import LiveChat from "../components/LiveChat"
 
 const Portfolio: React.FC = () => {
-  const [popupOpen, setPopupOpen] = useState(false);
-  const [popupData, setPopupData] = useState({ title: "", description: "" });
+  const [chatOpen, setChatOpen] = useState(false);
+  const navigate = useNavigate()
 
-  const handleProjectClick = (title: string, description: string) => {
-    setPopupData({ title, description });
-    setPopupOpen(true);
-    console.log(popupData,popupOpen);
-  };
 
   const currentLanguage = 'RO'
   const content = portfolioContent[currentLanguage]
@@ -44,7 +38,10 @@ const Portfolio: React.FC = () => {
             {content.Portofoliu.description}
           </p>
           
-          <button className="portfolio-main-section-button">
+          <button
+            className="portfolio-main-section-button"
+            onClick={() => navigate("/aboutus")}
+          >
             {content.Portofoliu.mainbutton}
           </button>
         </div>
@@ -64,12 +61,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <button
                   className="project-button"
-                  onClick={() =>
-                    handleProjectClick(
-                      "Piccolino",
-                      content.Portofoliu.project1description
-                    )
-                  }
+                 onClick={() => navigate("/picolino")}
                 >
                   {content.Portofoliu.prokectbutton}
                 </button>
@@ -89,12 +81,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <button
                   className="project-button"
-                  onClick={() =>
-                    handleProjectClick(
-                      "Krov",
-                      content.Portofoliu.prject2description
-                    )
-                  }
+                  onClick={() => navigate("/krov")}
                 >
                   {content.Portofoliu.prokectbutton}
                 </button>
@@ -115,12 +102,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <button
                   className="project-button"
-                  onClick={() =>
-                    handleProjectClick(
-                      "Lumeta",
-                      content.Portofoliu.project3description
-                    )
-                  }
+                  onClick={() => navigate("/lumeata")}
                 >
                   {content.Portofoliu.prokectbutton}
                 </button>
@@ -134,24 +116,18 @@ const Portfolio: React.FC = () => {
                 className="portfolio-call-text"
                 dangerouslySetInnerHTML={{ __html: content.Portofoliu.call }}
               ></p>
-              <button className="portfolio-call-button">
+              <button
+                className="portfolio-call-button"
+                onClick={() => setChatOpen(true)}
+              >
                 {content.Portofoliu.callbutton}
               </button>
             </div>
           </div>
         </div>
-        {/* <ProjectPopup
-          open={popupOpen}
-          onClose={() => setPopupOpen(false)}
-          title={content.Portofoliu.title}
-          description={content.Portofoliu.krovdescription}
-          logo={krov}
-          sectionImage={krovsection}
-          sectionText={content.Portofoliu.krovimagedescription}
-          sectionLists={content.Portofoliu.listkrov}
-        /> */}
         <Footer />
       </div>
+      <LiveChat open={chatOpen} setOpen={setChatOpen} />
     </div>
   )
 }

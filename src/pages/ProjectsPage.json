@@ -1,0 +1,92 @@
+{
+  "RO": {
+    "projects": [
+      {
+        "title": "Krov Acoperișuri – De la un logo vechi la un sistem digital complet integrat",
+        "description": "<strong>Provocarea:<strog/><br> Prezență digitală slabă și lipsa unei imagini coerente.",
+        "sectiononetitle": "Soluția DigitalGrow:",
+        "sectitwonetitle": "Rezultate:",
+        "sectithreenetitle": "Concluzie:",
+        "sectiononepoint1": "Rebranding complet (logo + culori)",
+        "sectiononepoint2": "Landing page modern, optimizat pentru conversii",
+        "sectiononepoint3": "Chatbot integrat cu CRM pentru captarea automată a lead-urilor",
+        "sectitwonepoint1": "O prezență online profesionistă, care generează lead-uri și automatizează procesul de vânzare.",
+        "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
+        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară.",
+        "clientname" : "Marcel Papuc",
+        "feedbacktext" : "„Colaborarea cu echipa DigitalGrow a fost una dintre cele mai bune decizii pentru afacerea noastră. Au înțeles rapid nevoile noastre și au venit cu soluții creative și eficiente. În doar câteva luni, am observat o creștere semnificativă în trafic, dar și în conversii. Comunicarea a fost clară, iar echipa extrem de implicată și profesionistă. Recomand cu încredere DigitalGrow oricui își dorește rezultate reale în mediul digital.”"
+      },
+       {
+        "title": "Piccolino – Un brand de fete de mese, acum cu o imagine pe măsura bucuriei pe care o oferă",
+        "description": "<strong>Provocarea:<strog/><br> Aveau nevoie de o identitate vizuală fresh și o modalitate ușoară de a comunica cu clienții.",
+        "sectiononetitle": "Soluția DigitalGrow:",
+        "sectitwonetitle": "Rezultate:",
+        "sectithreenetitle": "Concluzie:",
+        "sectiononepoint1": "Logo nou, modern",
+        "sectiononepoint2": "Paletă de culori adaptată pentru un public tânăr și prietenos",
+        "sectiononepoint3": "Mini kit vizual pentru postările de social media",
+        "sectiononepoint4": "Landing page dedicat + chatbot inteligent (română + rusă)",
+        "sectitwonepoint1": "Un brand recognoscibil, cu o comunicare fluentă și o prezență online adaptată pieței din Moldova.",
+        "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
+        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."  
+      },
+       {
+        "title": "Lumea Ta – O platformă informativă, acum accesibilă pentru toți",
+        "description": "<strong>Provocarea:<strog/><br> Aveau un site, dar nu funcționa. Publicul era divers și bilingv.",
+        "sectiononetitle": "Soluția DigitalGrow:",
+        "sectitwonetitle": "Rezultate:",
+        "sectithreenetitle": "Concluzie:",
+        "sectiononepoint1": "Redesign complet pe baza structurii existente",
+        "sectiononepoint2": "Traducere și adaptare în 2 limbi (română + rusă)",
+        "sectiononepoint3": "Chatbot smart care răspunde 24/7",
+        "sectitwonepoint1": "Un site ușor de navigat, care reflectă corect misiunea companiei și oferă utilizatorilor o experiență intuitivă.",
+        "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
+        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."  
+      }
+    ]
+  },
+  "EN": {
+    "projects": [
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      }
+    ]
+  },
+  "RU": {
+    "projects": [
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      },
+      {
+        "title": "",
+        "description": "",
+        "image": "",
+        "link": ""
+      }
+    ]
+  }
+}
