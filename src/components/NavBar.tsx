@@ -138,10 +138,14 @@ const NavBar = () => {
               </div>
             )}
           </li>
-          {/* Theme toggle button for mobile menu */}
+          {/* NEW: Theme toggle button for mobile menu */}
           {mobileMenuOpen && (
             <li className="navbar-item">
-              <button className="navbar-theme" onClick={toggleTheme} aria-label="Toggle theme">
+              <button
+                className="navbar-theme-mobile"
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+              >
                 <img src={theme === "light" ? lightmodeicon : darkmodeicon} alt="Toggle theme" />
               </button>
             </li>

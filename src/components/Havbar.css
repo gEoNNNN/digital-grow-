@@ -320,6 +320,30 @@
     transition: opacity 0.3s;
     opacity: 1;
   }
+  
+  .navbar-theme-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: none;
+    border: none;
+    margin-top: 4vw;
+    font-size: 5vw;
+    color: var(--navbar-text);
+    padding: 2vw 0;
+    cursor: pointer;
+  }
+  .navbar-theme-mobile img {
+    display: inline;
+    height: 7vw;
+    width: 7vw;
+    margin-right: 2vw;
+  }
+  /* Optionally hide the desktop theme button in mobile menu */
+  .navbar-theme {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
