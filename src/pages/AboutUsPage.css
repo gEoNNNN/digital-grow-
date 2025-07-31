@@ -308,15 +308,21 @@
 
   .aboutus-section {
     padding: 12vw 5vw;
+    margin-top: -1vw;
   }
 
   .aboutus-section-title {
+    margin-left: -1vw;
     font-size: 6vw;
     margin-bottom: 3vw;
   }
 
+  .aboutus-section-title1 {
+    font-size: 6.5vw;
+  }
+
   .aboutus-section-description {
-    font-size: 3vw;
+    font-size: 4vw;
     margin-bottom: 6vw;
     max-width: 90vw;
   }
@@ -410,14 +416,14 @@
   }
 
   .aboutus-section-title {
-    font-size: 7vw;
+    font-size: 6.5vw;
     margin-bottom: 4vw;
   }
 
   .aboutus-section-description {
-    font-size: 3.5vw;
+    font-size: 4vw;
     margin-bottom: 8vw;
-    max-width: 95vw;
+    width: 80vw;
   }
 
   .story-item,
