@@ -5,6 +5,7 @@ import logo from "../assets/logo.svg"
 import darkmodeicon from "../assets/darknomeicon.svg"
 import bg from "../assets/navbarfilter.png"
 import hamburgerIcon from "../assets/hamburger.svg" // Add a hamburger icon SVG to your assets
+import { useTheme } from "./ThemeContext";
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -25,6 +26,7 @@ const NavBar = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false) // NEW
+  const { theme, toggleTheme } = useTheme();
 
   const languages: Record<LanguageCode, Language> = {
     RO: { code: 'RO', name: 'Română' },
@@ -136,9 +138,9 @@ const NavBar = () => {
             )}
           </li>
         </ul>
-        <Link to="/" className="navbar-theme">
-          <img src={darkmodeicon} alt="Dark mode"/>
-        </Link>
+        <button className="navbar-theme" onClick={toggleTheme} aria-label="Toggle theme">
+          <img src={darkmodeicon} alt="Toggle theme" />
+        </button>
       </div>
     </nav>
   )

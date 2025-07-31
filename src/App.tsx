@@ -9,24 +9,27 @@ import ScrollToTop from '../src/components/Scroll'
 import Picolino from './pages/Picolino'
 import Krov from './pages/Krov'
 import LumeaTa from './pages/LumeaTa'
+import { ThemeProvider } from "./components/ThemeContext";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/aboutus" element={<AboutUsPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/picolino" element={<Picolino />} />
-          <Route path="/krov" element={<Krov />} />
-          <Route path="/lumeata" element={<LumeaTa />} />
-        </Routes>
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/aboutus" element={<AboutUsPage />} />
+            <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/picolino" element={<Picolino />} />
+            <Route path="/krov" element={<Krov />} />
+            <Route path="/lumeata" element={<LumeaTa />} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   )
 }
 
