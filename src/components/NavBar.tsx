@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './Havbar.css'
 import logo from "../assets/logo.svg"
 import darkmodeicon from "../assets/darknomeicon.svg"
+import lightmodeicon from "../assets/darkmodeicon.svg"
 import bg from "../assets/navbarfilter.png"
 import hamburgerIcon from "../assets/hamburger.svg" // Add a hamburger icon SVG to your assets
 import { useTheme } from "./ThemeContext";
@@ -26,7 +27,7 @@ const NavBar = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false) // NEW
-  const { toggleTheme } = useTheme();
+  const { toggleTheme, theme } = useTheme();
 
   const languages: Record<LanguageCode, Language> = {
     RO: { code: 'RO', name: 'Română' },
@@ -111,12 +112,12 @@ const NavBar = () => {
               {currentTranslations.about}
             </Link>
           </li>
-           <li className="navbar-item">
+          <li className="navbar-item">
             <Link to="/contacts" className="navbar-link">
               {currentTranslations.contact}
             </Link>
           </li>
-           <li className="navbar-item language-dropdown">
+          <li className="navbar-item language-dropdown">
             <button 
               className="navbar-link language-button"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -137,9 +138,18 @@ const NavBar = () => {
               </div>
             )}
           </li>
+          {/* Theme toggle button for mobile menu */}
+          {mobileMenuOpen && (
+            <li className="navbar-item">
+              <button className="navbar-theme" onClick={toggleTheme} aria-label="Toggle theme">
+                <img src={theme === "light" ? lightmodeicon : darkmodeicon} alt="Toggle theme" />
+              </button>
+            </li>
+          )}
         </ul>
+        {/* Desktop theme button (remains outside the menu) */}
         <button className="navbar-theme" onClick={toggleTheme} aria-label="Toggle theme">
-          <img src={darkmodeicon} alt="Toggle theme" />
+          <img src={theme === "light" ? lightmodeicon : darkmodeicon} alt="Toggle theme" />
         </button>
       </div>
     </nav>

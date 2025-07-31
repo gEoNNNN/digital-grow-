@@ -107,26 +107,16 @@
 }
 
 .navbar-theme {
+  background: none;
   color: var(--navbar-text);
   text-decoration: none;
   padding: 0.5vw;
   border-radius: 0.4vw;
   transition: all 0.25s ease;
+  border: none;
+  outline: none;
 }
 
-.navbar-theme img {
-  height: 1.5vw;
-  width: 1.5vw;
-  filter: brightness(0) invert(1);
-}
-
-.navbar-theme:hover {
-  background-color: var(--navbar-hover-bg);
-}
-
-.navbar-theme:hover img {
-  filter: brightness(0) saturate(100%) invert(50%) sepia(93%) saturate(1352%) hue-rotate(215deg) brightness(119%) contrast(119%);
-}
 
 /* Language Dropdown Styles */
 .language-dropdown {
@@ -189,6 +179,16 @@
 .navbar-hamburger img {
   width: 7vw;
   height: 7vw;
+  /* Default filter for dark mode (white icon) */
+  filter: brightness(0) invert(1);
+}
+
+/* Light mode: make hamburger icon #212529 */
+[data-theme="light"] .navbar-hamburger img {
+  filter: none;
+  /* If your SVG is black by default, this will show #212529.
+     If not, use the filter below to approximate #212529: */
+  filter: invert(17%) sepia(7%) saturate(1040%) hue-rotate(169deg) brightness(97%) contrast(92%);
 }
 
 .navbar-close-x {
@@ -264,6 +264,7 @@
   .navbar-link {
     font-size: 5vw;
     text-shadow: 0 0.2vw 0.4vw var(--text-muted);
+    color: var(--ham-text);
     padding: 3vw 0;
     margin: 0 0 2vw 0;
     width: 100%;
@@ -328,3 +329,9 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  .navbar-theme img {
+    display: none;
+  }
+}
