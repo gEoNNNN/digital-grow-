@@ -358,11 +358,28 @@
   font-size: 2vw;
 }
 
+.package-price-strike {
+  position: relative;
+  display: inline-block;
+}
+
+.package-price-strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 10px;
+  background: red;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
 .package-discount1,
 .package-discount2,
 .package-discount3 {
   color: var(--text-color);
-  font-size: 0.9vw;
+  font-size: 2vw;
   font-weight: 500;
   font-family: "DM Sans", sans-serif;
 }
@@ -429,7 +446,6 @@
   }
   
   .services-button {
-    padding: 3vw 5vw;
     font-size: 3vw;
     border-radius: 3vw;
     min-width: 40vw;
@@ -550,6 +566,19 @@
   }
 }
 
+@media (max-width: 1620px) {
+  .portfolio-bg-fade {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-bg-fade {
+    display: block;
+  }
+}
+
+
 @media (max-width: 480px) {
   .services-main-section-title {
     font-size: 10vw;
@@ -570,7 +599,7 @@
     padding: 4vw 6vw;
     font-size: 4vw;
     min-width: 50vw;
-    width: 80vw;
+    width: 50vw;
   }
 
   .services-section {
@@ -627,8 +656,9 @@
 
   .services-card-button {
     padding: 4vw 5vw;
-    font-size: 3vw;
+    font-size: 4vw;
     border-radius: 4vw;
+    width: 40vw;
   }
 
   /* Package Cards Mobile */
@@ -679,8 +709,35 @@
 
   .package-card-button {
     padding: 4vw 6vw;
-    font-size: 3.5vw;
+    font-size: 4vw;
     border-radius: 4vw;
-    width: 95%;
+    width: 50vw;
   }
+  .services-card-price {
+    font-size: 5vw;
+  }
+  .package-price-strike {
+    font-size: 7vw;
+  }
+  .package-price-strike::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background: red;
+  transform: rotate(-15deg);
+  pointer-events: none;
+ }
+ 
+ .package-discount1,
+.package-discount2,
+.package-discount3 {
+  color: var(--text-color);
+  font-size: 7vw;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+}
+
 }

@@ -13,15 +13,15 @@ const ServicesPage: React.FC = () => {
   const content = servicesContent[currentLanguage]
   const [chatOpen, setChatOpen] = useState(false)
 
-// Create refs for each section
-const sectionOneRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
-const sectionTwoRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
-const sectionThreeRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
-const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>
+  // Create refs for each first card title
+  const sectionOneCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
+  const sectionTwoCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
+  const sectionThreeCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
+  const sectionFourCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
 
   // Scroll handler
-  const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' })
+  const handleScrollToCardTitle = (ref: React.RefObject<HTMLHeadingElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 
   return (
@@ -44,30 +44,32 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
           </p>
           
           <div className="services-buttons">
-            <button className="services-button" onClick={() => handleScrollToSection(sectionOneRef)}>
+            <button className="services-button" onClick={() => handleScrollToCardTitle(sectionOneCardTitleRef)}>
               {content.services.button1}
             </button>
-            <button className="services-button" onClick={() => handleScrollToSection(sectionTwoRef)}>
+            <button className="services-button" onClick={() => handleScrollToCardTitle(sectionTwoCardTitleRef)}>
               {content.services.button2}
             </button>
-            <button className="services-button" onClick={() => handleScrollToSection(sectionThreeRef)}>
+            <button className="services-button" onClick={() => handleScrollToCardTitle(sectionThreeCardTitleRef)}>
               {content.services.button3}
             </button>
-            <button className="services-button" onClick={() => handleScrollToSection(sectionFourRef)}>
+            <button className="services-button" onClick={() => handleScrollToCardTitle(sectionFourCardTitleRef)}>
               {content.services.button4}
             </button>
           </div>
         </div>
 
         {/* Section One - Web Development */}
-        <div className="services-section" ref={sectionOneRef}>
+        <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiononetitle }}></h2>
           <p className="services-section-description">{content.services.sectiononedescription}</p>
           
           <div className="services-cards">
             {/* Card 1 */}
             <div className="services-card">
-              <h3 className="services-card-title">{content.services.sectiononecard1title}</h3>
+              <h3 className="services-card-title" ref={sectionOneCardTitleRef}>
+                {content.services.sectiononecard1title}
+              </h3>
               <p className="services-card-description">{content.services.sectiononecard1description}</p>
               <div className="services-card-statement">
                 <span className="checkmark">✓</span>
@@ -134,14 +136,16 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
         </div>
 
         {/* Section Two - Chatbot & AI */}
-        <div className="services-section" ref={sectionTwoRef}>
+        <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiontwotitle }}></h2>
           <p className="services-section-description">{content.services.sectiontwodescription}</p>
           
           <div className="services-cards">
             {/* Card 1 */}
             <div className="services-card">
-              <h3 className="services-card-title">{content.services.sectiontwocard1title}</h3>
+              <h3 className="services-card-title" ref={sectionTwoCardTitleRef}>
+                {content.services.sectiontwocard1title}
+              </h3>
               <p className="services-card-description">{content.services.sectiontwocard1description}</p>
               <div className="services-card-statement">
                 <span className="checkmark">✓</span>
@@ -212,13 +216,15 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
         </div>
 
         {/* Section Three - Branding & Design */}
-        <div className="services-section" ref={sectionThreeRef}>
+        <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectionthreetitle }} ></h2>
           <p className="services-section-description">{content.services.sectionthreedescription}</p>
           
           <div className="services-cards">
             <div className="services-card">
-              <h3 className="services-card-title">{content.services.sectionthreecard1title}</h3>
+              <h3 className="services-card-title" ref={sectionThreeCardTitleRef}>
+                {content.services.sectionthreecard1title}
+              </h3>
               <p className="services-card-description">{content.services.sectionthreecard1description}</p>
               <div className="services-card-statement">
                 <span className="checkmark">✓</span>
@@ -258,13 +264,15 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
           </div>
         </div>
 
-      <div className="services-section" ref={sectionFourRef}>
+      <div className="services-section">
           <h2 className="services-section-title">{content.services.sectionfourtitle}</h2>
           
           <div className="package-cards">
             {/* Package Card 1 - Startup Light */}
             <div className="package-card">
-              <h3 className="package-card-title">{content.services.sectionfourcard1title}</h3>
+              <h3 className="package-card-title" ref={sectionFourCardTitleRef}>
+                {content.services.sectionfourcard1title}
+              </h3>
               
               <div className="package-services">
                 <div className="package-service">
@@ -279,7 +287,7 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
 
               <div className="package-pricing">
                 <div className="package-price1">
-                  {content.services.sectionfourcard1price}
+                  <span className="package-price-strike">{content.services.sectionfourcard1price}</span>
                   <span className="package-price-currency"> MDL</span>
                 </div>
                 <div className="package-discount1">{content.services.sectionfourcard1discount}</div>
@@ -309,7 +317,7 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
 
               <div className="package-pricing">
                 <div className="package-price2">
-                  {content.services.sectionfourcard2price}
+                  <span className="package-price-strike">{content.services.sectionfourcard2price}</span>
                   <span className="package-price-currency"> MDL</span>
                 </div>
                 <div className="package-discount2">{content.services.sectionfourcard2discount}</div>
@@ -347,7 +355,7 @@ const sectionFourRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivEl
 
               <div className="package-pricing">
                 <div className="package-price3">
-                  {content.services.sectionfourcard3price}
+                  <span className="package-price-strike">{content.services.sectionfourcard3price}</span>
                   <span className="package-price-currency"> MDL</span>
                 </div>
                 <div className="package-discount3">{content.services.sectionfourcard3discount}</div>

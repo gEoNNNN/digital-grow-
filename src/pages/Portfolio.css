@@ -35,6 +35,18 @@
   overflow: visible;
 }
 
+@media (max-width: 1620px) {
+  .portfolio-bg-fade {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-bg-fade {
+    display: block;
+  }
+}
+
 .portfolio-main-section {
   position: relative; /* Ensure stacking context */
   height: 100vh;

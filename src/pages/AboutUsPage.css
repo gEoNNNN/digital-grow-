@@ -17,6 +17,18 @@
   z-index: -1;
 }
 
+@media (max-width: 1620px) {
+  .portfolio-bg-fade {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-bg-fade {
+    display: block;
+  }
+}
+
 .video-filter {
   position: fixed;
   top: 0;

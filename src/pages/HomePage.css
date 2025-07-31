@@ -524,6 +524,18 @@
   justify-content: center;
 }
 
+@media (max-width: 1620px) {
+  .portfolio-bg-fade {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-bg-fade {
+    display: block;
+  }
+}
+
 /* Responsive design for cards */
 @media (max-width: 768px) {
 
