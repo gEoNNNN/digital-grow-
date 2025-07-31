@@ -7,6 +7,7 @@ import wa from "../assets/wa.svg"
 import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
 import viber from "../assets/viber.svg"
+import { useNavigate } from "react-router-dom"
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -27,6 +28,7 @@ interface FooterTranslations {
 
 const Footer: React.FC = () => {
   const currentLanguage: LanguageCode = 'RO'
+  const navigate = useNavigate()
 
   const footerTranslations: Record<LanguageCode, FooterTranslations> = {
     RO: {
@@ -119,11 +121,31 @@ const Footer: React.FC = () => {
           <h4 className="footer-nav-title">{currentTranslations.navbar}</h4>
           <nav className="footer-navigation">
             <ul className="footer-nav-list">
-              <li><a href="/">{currentTranslations.nav1}</a></li>
-              <li><a href="/services">{currentTranslations.nav2}</a></li>
-              <li><a href="/portfolio">{currentTranslations.nav3}</a></li>
-              <li><a href="/aboutus">{currentTranslations.nav4}</a></li>
-              <li><a href="/contacts">{currentTranslations.nav5}</a></li>
+              <li>
+                <button type="button" onClick={() => navigate("/")}>
+                  {currentTranslations.nav1}
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => navigate("/services")}>
+                  {currentTranslations.nav2}
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => navigate("/portfolio")}>
+                  {currentTranslations.nav3}
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => navigate("/aboutus")}>
+                  {currentTranslations.nav4}
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={() => navigate("/contacts")}>
+                  {currentTranslations.nav5}
+                </button>
+              </li>
             </ul>
           </nav>
         </div>

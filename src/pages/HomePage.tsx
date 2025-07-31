@@ -128,7 +128,7 @@ const HomePage = () => {
                 <p className="homepage-feedback-text-cotation2">,,</p>
 
                 <button
-                  className="homepage-section-one-card-button"
+                  className="homepage-section-one-card-button-video"
                   onClick={() => setVideoOpen(true)}
                 >
                   {content.hero.feedbackbutton}
@@ -139,6 +139,30 @@ const HomePage = () => {
                     className="homepage-video-popup"
                     onClick={() => setVideoOpen(false)}
                   >
+                    <button
+      className="homepage-video-close-btn"
+      onClick={e => {
+        e.stopPropagation();
+        setVideoOpen(false);
+      }}
+      aria-label="Close video"
+      style={{
+        position: "absolute",
+        top: "2vw",
+        right: "2vw",
+        zIndex: 2,
+        background: "rgba(0,0,0,0.5)",
+        color: "#fff",
+        border: "none",
+        borderRadius: "50%",
+        width: "3vw",
+        height: "3vw",
+        fontSize: "2vw",
+        cursor: "pointer"
+      }}
+    >
+      ×
+    </button>
                     <video
                       src={feedback}
                       controls

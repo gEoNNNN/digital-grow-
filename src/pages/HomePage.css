@@ -196,6 +196,11 @@
   transform: translateY(-0.2vw) scale(1.05);
 }
 
+.homepage-main-section-button:active {
+  background-color: var(--button-hover-color);
+  transform: scale(0.97);
+}
+
 .homepage-main-section-button img {
   height: 1.5vw;
   width: 1.5vw;
@@ -242,6 +247,11 @@
 .homepage-section-one-card:hover {
   transform: translateY(-0.5vw) scale(1.02);
   box-shadow: 0 1vw 3vw var(--card-shadow-hover);
+}
+
+.homepage-section-one-card:active {
+  background-color: var(--button-hover-color);
+  transform: scale(0.97);
 }
 
 .homepage-section-one-card::before {
@@ -303,7 +313,7 @@
   margin-top: 2vw;
 }
 
-.homepage-section-one-card-button {
+.homepage-section-one-card-button,.homepage-section-one-card-button-video {
   position: relative;
   z-index: 3;
   background-color: var(--button-color);
@@ -324,12 +334,17 @@
     0 0 1vw var(--button-shadow-medium);
 }
 
-.homepage-section-one-card-button:hover {
+.homepage-section-one-card-button:hover,.homepage-section-one-card-button-video:hover {
   background-color: var(--button-hover-color);
   transform: translateY(-0.1vw) scale(1.02);
   box-shadow: 
     0 0 1vw var(--button-shadow),
     0 0 2vw var(--button-shadow-medium);
+}
+
+.homepage-section-one-card-button:active , .homepage-section-one-card-button-video:active {
+  background-color: var(--button-hover-color);
+  transform: scale(0.97);
 }
 
 /* Cards Section Two */
@@ -375,6 +390,11 @@
   transform: translateY(-0.5vw);
   box-shadow: 0 1vw 3vw var(--section-shadow);
   border-color: var(--card-border-hover);
+}
+
+.homepage-section-two-card:active {
+  background-color: var(--button-hover-color);
+  transform: scale(0.97);
 }
 
 .homepage-section-two-card img {
@@ -481,6 +501,29 @@
     0 0 6vw var(--button-shadow-light);
 }
 
+.homepage-section-four-button:active {
+  background-color: var(--button-hover-color);
+  transform: scale(0.97);
+}
+
+.homepage-video-close-btn {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  font-size: 2vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Responsive design for cards */
 @media (max-width: 768px) {
 
@@ -507,7 +550,7 @@
   .homepage-main-section-button {
     padding: 3vw 5vw;
     font-size: 3vw;
-    border-radius: 3vw;
+    border-radius: 5vw;
     margin-top: 6vw;
   }
   
@@ -538,11 +581,12 @@
   }
   
   .homepage-section-one-card h3 {
-    font-size: 4vw;
+    font-size: 5vw;
     padding: 4vw 4vw 1vw 4vw;
   }
   
   .homepage-section-one-card p {
+    width: 100vw;
     font-size: 2.5vw;
     padding: 0 4vw 4vw 4vw;
   }
@@ -599,9 +643,26 @@
 
 @media (max-width: 480px) {
   .homepage-main-section-title {
-    font-size: 10vw;
+    font-size: 8vw;
+  }
+
+  .homepage-section-one-card-button {
+    padding: 2vw 4vw;
+    font-size: 3vw;
+    border-radius: 5vw;
+    margin-left: 30vw;
+    margin-bottom: 2vw;
   }
   
+  .homepage-section-one-card-button-video {
+    padding: 2vw 4vw;
+    font-size: 4vw;
+    border-radius: 5vw;
+    margin-top: 3vw;
+    margin-left: 0;
+    margin-bottom: 2vw;
+  }
+
   .homepage-main-section-description {
     font-size: 5vw;
     max-width: 90vw;
@@ -610,6 +671,7 @@
   .homepage-main-section-button {
     padding: 4vw 6vw;
     font-size: 4vw;
+    border-radius: 10vw;
   }
   
   .homepage-main-section-button img {
@@ -626,36 +688,44 @@
   }
   
   .homepage-section-one-card h3 {
-    font-size: 5vw;
+    font-size: 6vw;
     padding: 5vw 5vw 2vw 5vw;
   }
   
   .homepage-section-one-card p {
-    font-size: 3vw;
-    padding: 0 5vw 5vw 5vw;
+    font-size: 4vw;
+    margin-left: -5vw ;
   }
   
   .homepage-section-two-title {
     font-size: 6vw;
   }
   
+  .homepage-section-two-cards { 
+    margin-left: 15vw;
+  }
+
+
   .homepage-section-two-card {
     padding: 6vw 5vw;
+    width: 70vw;
+    height: 80vw;
   }
   
   .homepage-section-two-card img {
     width: 10vw;
     height: 10vw;
     margin-bottom: 4vw;
+    margin-left: -50vw;
   }
   
   .homepage-section-two-card h3 {
-    font-size: 5vw;
+    font-size: 6vw;
     margin-bottom: 3vw;
   }
   
   .homepage-section-two-card p {
-    font-size: 3vw;
+    font-size: 4vw;
   }
   
   .homepage-section-four-title {
@@ -664,8 +734,56 @@
   }
   
   .homepage-section-four-button {
-    padding: 5vw 8vw;
-    font-size: 5vw;
+    font-size: 4vw;
     border-radius: 6vw;
+  }
+  .homepage-section-three {
+    margin-top: -5vw;
+    height: 150vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-section-three-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4vw !important;
+    height: auto !important;
+    padding: 6vw 0;
+  }
+
+  .homepage-client-photo {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vw;
+  }
+
+  .homepage-client-photo img {
+    width: 24vw;
+    margin-bottom: 2vw;
+  }
+
+  .homepage-client-name {
+    font-size: 5vw;
+    margin-bottom: 2vw;
+  }
+
+  .homepage-feedback-block {
+    align-items: center !important;
+    max-width: 90vw !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .homepage-feedback-text {
+    margin-left: 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 4vw !important;
+  }
+  .homepage-feedback-text-cotation1,
+  .homepage-feedback-text-cotation2 {
+    display: none;
   }
 }
