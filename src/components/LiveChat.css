@@ -258,10 +258,10 @@
 
 .livechat-messages {
   position: absolute;
-  top: 400px;
+  top: 340px;
   left: 170px;
   right: 40px;
-  height: 330px;
+  height: 370px;
   overflow-y: auto;
   z-index: 2022;
   display: flex;
