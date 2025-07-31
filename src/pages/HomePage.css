@@ -51,7 +51,7 @@
   text-align: left;
   margin-bottom: -3vw;
   margin-left: 10vw;
-  background: var(--text-gradient);
+  background: var(--maintitlegradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -151,7 +151,7 @@
   margin-top: 5vw;
   text-align: left;
   font-weight: 300;
-  color: var(--text-color);
+  color: var(--maindescription);
   font-family: "DM Sans", sans-serif;
   max-width: 42vw;
   margin-left: 10vw;

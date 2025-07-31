@@ -7,6 +7,8 @@ import Footer from "../components/Footer"
 import contactsContent from "./ContactsPage.json"
 import icon1 from "../assets/caontactsicon1.svg"
 import icon2 from "../assets/caontactsicon2.svg"
+import icon1light from "../assets/icon1darkcontacts.svg";
+import icon2light from "../assets/icon2darkcontacts.svg";
 import texticon1 from "../assets/textemoji1.svg"
 import texticon2 from "../assets/textemoji2.svg"
 import facebook from '../assets/facebook.svg'
@@ -18,11 +20,13 @@ import tiktok from "../assets/tt.svg"
 import viber from "../assets/viber.svg"
 import LiveChat from '../components/LiveChat'
 import { useState } from 'react'
+import { useTheme } from "../components/ThemeContext";
 
 const ContactsPage: React.FC = () => {
   const currentLanguage = 'RO'
   const content = contactsContent[currentLanguage]
   const [chatOpen, setChatOpen] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <div className="contacts-page">
@@ -50,7 +54,7 @@ const ContactsPage: React.FC = () => {
             {/* Digital Assistant Section */}
             <div className="contact-option">
               <div className="contact-option-icon1">
-                <img src={icon1} alt="Digital Assistant" />
+                <img src={theme === "light" ? icon1light : icon1} alt="Digital Assistant" />
               </div>
               <div className="contact-option-content">
                 <h3 className="contact-option-title" dangerouslySetInnerHTML={{ __html: content.contacts.section1title }}></h3>
@@ -71,7 +75,7 @@ const ContactsPage: React.FC = () => {
             {/* Real Person Contact Section */}
             <div className="contact-option">
               <div className="contact-option-icon2">
-                <img src={icon2} alt="Real Person" />
+                <img src={theme === "light" ? icon2light : icon2} alt="Real Person" />
               </div>
               <div className="contact-option-content">
                 <h3 className="contact-option-title" dangerouslySetInnerHTML={{ __html: content.contacts.section2title }}></h3>

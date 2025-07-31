@@ -26,7 +26,7 @@ const NavBar = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false) // NEW
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   const languages: Record<LanguageCode, Language> = {
     RO: { code: 'RO', name: 'Română' },

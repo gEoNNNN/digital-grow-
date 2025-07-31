@@ -13,11 +13,18 @@ import icon2 from "../assets/icon2.svg"
 import icon3 from "../assets/icon3.svg"
 import icon4 from "../assets/icon4.svg"
 import icon5 from "../assets/icon5.svg"
+import { useTheme } from "../components/ThemeContext";
+import icon1Light from "../assets/icon1dark.svg"
+import icon2Light from "../assets/icon2dark.svg"
+import icon3Light from "../assets/icon3dark.svg"
+import icon4Light from "../assets/icon4dark.svg"
+import icon5Light from "../assets/icon5dark.svg"
 import LiveChat from '../components/LiveChat'
 
 const AboutUsPage: React.FC = () => {
   const currentLanguage = 'RO'
   const content = aboutUsContent[currentLanguage]
+  const { theme } = useTheme();
 
   return (
     <div className="aboutus-page">
@@ -84,23 +91,23 @@ const AboutUsPage: React.FC = () => {
         <div className="aboutus-section">
           <div className="aboutus-icons">
             <div className="aboutus-icon">
-              <img src={icon1} alt="Digital" />
+              <img src={theme === "light" ? icon1Light : icon1} alt="Digital" />
               <p>{content.aboutus.icon1}</p>
             </div>
             <div className="aboutus-icon">
-              <img src={icon2} alt="Creștere" />
+              <img src={theme === "light" ? icon2Light : icon2} alt="Creștere" />
               <p>{content.aboutus.icon2}</p>
             </div>
             <div className="aboutus-icon">
-              <img src={icon3} alt="Design" />
+              <img src={theme === "light" ? icon3Light : icon3} alt="Design" />
               <p>{content.aboutus.icon3}</p>
             </div>
             <div className="aboutus-icon">
-              <img src={icon4} alt="Parteneriat" />
+              <img src={theme === "light" ? icon4Light : icon4} alt="Parteneriat" />
               <p>{content.aboutus.icon4}</p>
             </div>
             <div className="aboutus-icon">
-              <img src={icon5} alt="Strategie" />
+              <img src={theme === "light" ? icon5Light : icon5} alt="Strategie" />
               <p>{content.aboutus.icon5}</p>
             </div>
           </div>

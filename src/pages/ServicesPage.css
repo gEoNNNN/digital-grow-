@@ -59,7 +59,7 @@
 .services-main-section-title {
   font-size: 5vw;
   text-align: center;
-  background: var(--text-gradient);
+  background: var(--maintitlegradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -74,7 +74,7 @@
   margin-bottom: 4vw;
   text-align: center;
   font-weight: 300;
-  color: var(--text-color);
+  color: var(--maindescription);
   font-family: "DM Sans", sans-serif;
   max-width: 60vw;
   line-height: 1.6;
