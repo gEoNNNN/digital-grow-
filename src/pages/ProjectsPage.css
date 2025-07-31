@@ -184,12 +184,17 @@
 }
 
 @media (max-width: 900px) {
+  .picolino-lists {
+    margin-left: 5vw;
+  }
   .picolino-main {
     flex-direction: column;
     gap: 2vw;
   }
   .picolino-image {
     width: 40vw;
+    min-width: 180px;
+    margin-bottom: 3vw;
   }
   .picolino-description {
     font-size: 2.5vw;
@@ -221,5 +226,64 @@
   }
   .krov-feedback-message {
     font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .picolino-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+  }
+  .picolino-logo {
+    width: 30vw;
+    min-width: 80px;
+    margin-bottom: 2vw;
+  }
+  .picolino-title {
+    font-size: 6vw;
+  }
+  .picolino-main {
+    gap: 4vw;
+  }
+  .picolino-image {
+    width: 70vw;
+    min-width: 100px;
+  }
+  .picolino-description {
+    font-size: 4vw;
+    max-width: 98vw;
+  }
+  .picolino-list h2 {
+    font-size: 4vw;
+  }
+  .picolino-list ul {
+    font-size: 3vw;
+  }
+  .krov-feedback-section {
+    gap: 4vw;
+  }
+  .krov-client-image {
+    width: 50vw;
+    min-width: 60px;
+  }
+  .krov-client-name {
+    font-size: 5vw;
+  }
+  .krov-feedback-message {
+    font-size: 3vw;
+    width: 90vw;
+  }
+  .krov-feedback-video {
+    width: 95vw;
+    max-width: 95vw;
+    margin-left: 0;
+    margin-top: 4vw;
+    border-radius: 3vw;
+  }
+  .back-button {
+    font-size: 4vw;
+    padding: 2vw 4vw;
+    margin-bottom: 3vw;
   }
 }

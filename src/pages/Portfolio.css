@@ -262,12 +262,19 @@
     0 0 2vw var(--button-shadow-medium);
 }
 
+@media (max-width: 768px) {
+  .portfolio-bg-line {
+    display: none;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .portfolio-main-section {
     padding: 0 8vw;
     height: 100vh;
   }
+  
   
   .portfolio-main-section-title {
     font-size: 8vw;
@@ -323,10 +330,12 @@
     text-align: center;
   }
 
-  .project-button {
+  .project-button,.portfolio-call-button {
     padding: 3vw 5vw;
     font-size: 2.5vw;
     border-radius: 3vw;
+    margin-left: 0vw;
+
   }
 }
 
@@ -379,9 +388,10 @@
     font-size: 3.5vw;
   }
 
-  .project-button {
+  .project-button,.portfolio-call-button {
     padding: 4vw 6vw;
     font-size: 3vw;
     border-radius: 4vw;
+    margin-left: 0vw;
   }
 }
