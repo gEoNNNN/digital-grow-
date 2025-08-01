@@ -7,11 +7,15 @@ import Footer from "../components/Footer"
 import servicesContent from "./ServicesPage.json"
 import NextLevelSection from '../components/NextLevel'
 import LiveChat from '../components/LiveChat'
+import { useNavigate } from "react-router-dom";
+
 
 const ServicesPage: React.FC = () => {
   const currentLanguage = 'RO'
   const content = servicesContent[currentLanguage]
   const [chatOpen, setChatOpen] = useState(false)
+  const navigate = useNavigate();
+  
 
   // Create refs for each first card title
   const sectionOneCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
@@ -76,7 +80,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiononecard1pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiononecard1price} MDL</span>
               </div>
             </div>
@@ -89,7 +98,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiononecard2pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiononecard2price} MDL</span>
               </div>
             </div>
@@ -102,7 +116,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiononecard3pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiononecard3price} MDL</span>
               </div>
             </div>
@@ -115,7 +134,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard4statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiononecard4pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiononecard4price} MDL</span>
               </div>
             </div>
@@ -128,7 +152,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard5statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiononecard5pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiononecard5price} MDL</span>
               </div>
             </div>
@@ -152,7 +181,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiontwocard1pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiontwocard1price} MDL</span>
               </div>
             </div>
@@ -166,7 +200,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiontwocard2pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiontwocard2price} MDL</span>
               </div>
             </div>
@@ -180,7 +219,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiontwocard3pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiontwocard3price} MDL</span>
               </div>
             </div>
@@ -194,7 +238,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard4statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiontwocard4pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiontwocard4price} MDL</span>
               </div>
             </div>
@@ -208,7 +257,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard5statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectiontwocard5pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectiontwocard5price} MDL</span>
               </div>
             </div>
@@ -221,6 +275,7 @@ const ServicesPage: React.FC = () => {
           <p className="services-section-description">{content.services.sectionthreedescription}</p>
           
           <div className="services-cards">
+            {/* Card 1 */}
             <div className="services-card">
               <h3 className="services-card-title" ref={sectionThreeCardTitleRef}>
                 {content.services.sectionthreecard1title}
@@ -231,11 +286,17 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectionthreecard1pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectionthreecard1price} MDL</span>
               </div>
             </div>
 
+            {/* Card 2 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectionthreecard2title}</h3>
               <p className="services-card-description">{content.services.sectionthreecard2description}</p>
@@ -244,11 +305,17 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectionthreecard2pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectionthreecard2price} MDL</span>
               </div>
             </div>
 
+            {/* Card 3 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectionthreecard3title}</h3>
               <p className="services-card-description">{content.services.sectionthreecard3description}</p>
@@ -257,7 +324,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => setChatOpen(true)}>{content.services.cardbutton}</button>
+                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <span className="services-card-price-strike-x">
+                  <span className="services-card-price-strike-text">
+                    {content.services.sectionthreecard3pricereal} MDL
+                  </span>
+                </span>
                 <span className="services-card-price">{content.services.sectionthreecard3price} MDL</span>
               </div>
             </div>
@@ -293,7 +365,7 @@ const ServicesPage: React.FC = () => {
                 <div className="package-discount1">{content.services.sectionfourcard1discount}</div>
               </div>
 
-              <button className="package-card-button" onClick={() => setChatOpen(true)}>{content.services.sectionfourcardbutton}</button>
+              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
 
             {/* Package Card 2 - Business Smart */}
@@ -323,7 +395,7 @@ const ServicesPage: React.FC = () => {
                 <div className="package-discount2">{content.services.sectionfourcard2discount}</div>
               </div>
 
-              <button className="package-card-button" onClick={() => setChatOpen(true)}>{content.services.sectionfourcardbutton}</button>
+              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
 
             {/* Package Card 3 - Enterprise Complete */}
@@ -361,7 +433,7 @@ const ServicesPage: React.FC = () => {
                 <div className="package-discount3">{content.services.sectionfourcard3discount}</div>
               </div>
 
-              <button className="package-card-button" onClick={() => setChatOpen(true)}>{content.services.sectionfourcardbutton}</button>
+              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
           </div>
         </div>

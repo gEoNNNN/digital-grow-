@@ -26,7 +26,7 @@ interface Translations {
 const NavBar = () => {
   const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false) // NEW
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
   const { toggleTheme, theme } = useTheme();
 
   const languages: Record<LanguageCode, Language> = {

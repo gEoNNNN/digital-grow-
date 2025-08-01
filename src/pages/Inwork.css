@@ -1,0 +1,111 @@
+.inwork-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--primary, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Sans", sans-serif;
+}
+
+.inwork-content {
+  background: var(--card-bg, #1C2734);
+  border-radius: 2vw;
+  box-shadow: 0 0.5vw 2vw var(--card-shadow, rgba(0,0,0,0.1));
+  padding: 4vw 6vw;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.inwork-title {
+  font-size: 3vw;
+  font-weight: 700;
+  color: var(--navbar-accent, #646cff);
+  margin-bottom: 2vw;
+  background: var(--maintitlegradient, linear-gradient(45deg, #5B82AB, #C0DFFF));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.inwork-desc {
+  color: var(--text-color, #fff);
+  font-size: 1.5vw;
+  font-weight: 400;
+  margin-bottom: 3vw;
+}
+
+.inwork-loader {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  margin-top: 2vw;
+}
+
+.inwork-loader span {
+  display: block;
+  width: 1.2vw;
+  height: 1.2vw;
+  border-radius: 50%;
+  background: var(--navbar-accent, #646cff);
+  animation: inwork-bounce 1s infinite alternate;
+}
+
+.inwork-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.inwork-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes inwork-bounce {
+  to {
+    transform: translateY(-1vw);
+    opacity: 0.7;
+  }
+}
+
+/* Back Button */
+.inwork-back-btn {
+  margin-top: 3vw;
+  background: var(--button-color, #8FBCBB);
+  color: var(--button-text-color, #242C41);
+  border: none;
+  border-radius: 2vw;
+  padding: 1vw 3vw;
+  font-size: 1.2vw;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 0 1vw var(--button-shadow, #8FBCBB33);
+}
+.inwork-back-btn:hover {
+  background: var(--button-hover-color, #7AACA9);
+  transform: translateY(-0.2vw) scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inwork-content {
+    padding: 8vw 4vw;
+    border-radius: 5vw;
+  }
+  .inwork-title {
+    font-size: 7vw;
+    margin-bottom: 5vw;
+  }
+  .inwork-desc {
+    font-size: 4vw;
+    margin-bottom: 6vw;
+  }
+  .inwork-loader span {
+    width: 3vw;
+    height: 3vw;
+  }
+  .inwork-back-btn {
+    font-size: 4vw;
+    border-radius: 5vw;
+    padding: 3vw 5vw;
+  }
+}

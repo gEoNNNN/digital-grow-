@@ -10,6 +10,7 @@ import Picolino from './pages/Picolino'
 import Krov from './pages/Krov'
 import LumeaTa from './pages/LumeaTa'
 import { ThemeProvider } from "./components/ThemeContext";
+import Inwork from './pages/Inwork'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/picolino" element={<Picolino />} />
             <Route path="/krov" element={<Krov />} />
             <Route path="/lumeata" element={<LumeaTa />} />
+            <Route path="/inwork" element={<Inwork />} />
           </Routes>
         </div>
       </Router>
