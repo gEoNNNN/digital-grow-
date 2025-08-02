@@ -8,14 +8,14 @@ import servicesContent from "./ServicesPage.json"
 import NextLevelSection from '../components/NextLevel'
 import LiveChat from '../components/LiveChat'
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../components/LanguageContext";
 
 
 const ServicesPage: React.FC = () => {
-  const currentLanguage = 'RO'
-  const content = servicesContent[currentLanguage]
+  const { language } = useLanguage();
+  const content = servicesContent[language];
   const [chatOpen, setChatOpen] = useState(false)
   const navigate = useNavigate();
-  
 
   // Create refs for each first card title
   const sectionOneCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
@@ -27,6 +27,9 @@ const ServicesPage: React.FC = () => {
   const handleScrollToCardTitle = (ref: React.RefObject<HTMLHeadingElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
+
+  // Helper for currency
+  const currency = language === "EN" ? "EUR" : "MDL";
 
   return (
     <div className="services-page">
@@ -46,7 +49,6 @@ const ServicesPage: React.FC = () => {
           <p className="services-main-section-description">
             {content.services.description}
           </p>
-          
           <div className="services-buttons">
             <button className="services-button" onClick={() => handleScrollToCardTitle(sectionOneCardTitleRef)}>
               {content.services.button1}
@@ -67,7 +69,6 @@ const ServicesPage: React.FC = () => {
         <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiononetitle }}></h2>
           <p className="services-section-description">{content.services.sectiononedescription}</p>
-          
           <div className="services-cards">
             {/* Card 1 */}
             <div className="services-card">
@@ -81,12 +82,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiononecard1pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiononecard1pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiononecard1price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiononecard1price} {currency}</span>
               </div>
             </div>
             {/* Card 2 */}
@@ -99,12 +102,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiononecard2pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiononecard2pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiononecard2price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiononecard2price} {currency}</span>
               </div>
             </div>
             {/* Card 3 */}
@@ -117,12 +122,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiononecard3pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiononecard3pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiononecard3price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiononecard3price} {currency}</span>
               </div>
             </div>
             {/* Card 4 */}
@@ -135,12 +142,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiononecard4pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiononecard4pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiononecard4price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiononecard4price} {currency}</span>
               </div>
             </div>
             {/* Card 5 */}
@@ -153,12 +162,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiononecard5pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiononecard5pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiononecard5price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiononecard5price} {currency}</span>
               </div>
             </div>
           </div>
@@ -168,7 +179,6 @@ const ServicesPage: React.FC = () => {
         <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiontwotitle }}></h2>
           <p className="services-section-description">{content.services.sectiontwodescription}</p>
-          
           <div className="services-cards">
             {/* Card 1 */}
             <div className="services-card">
@@ -182,15 +192,16 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiontwocard1pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiontwocard1pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiontwocard1price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiontwocard1price} {currency}</span>
               </div>
             </div>
-
             {/* Card 2 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectiontwocard2title}</h3>
@@ -201,15 +212,16 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiontwocard2pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiontwocard2pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiontwocard2price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiontwocard2price} {currency}</span>
               </div>
             </div>
-
             {/* Card 3 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectiontwocard3title}</h3>
@@ -220,15 +232,16 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiontwocard3pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiontwocard3pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiontwocard3price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiontwocard3price} {currency}</span>
               </div>
             </div>
-
             {/* Card 4 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectiontwocard4title}</h3>
@@ -239,15 +252,16 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiontwocard4pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiontwocard4pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiontwocard4price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiontwocard4price} {currency}</span>
               </div>
             </div>
-
             {/* Card 5 */}
             <div className="services-card">
               <h3 className="services-card-title">{content.services.sectiontwocard5title}</h3>
@@ -258,12 +272,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectiontwocard5pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectiontwocard5pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectiontwocard5price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectiontwocard5price} {currency}</span>
               </div>
             </div>
           </div>
@@ -273,7 +289,6 @@ const ServicesPage: React.FC = () => {
         <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectionthreetitle }} ></h2>
           <p className="services-section-description">{content.services.sectionthreedescription}</p>
-          
           <div className="services-cards">
             {/* Card 1 */}
             <div className="services-card">
@@ -287,12 +302,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectionthreecard1pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectionthreecard1pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectionthreecard1price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectionthreecard1price} {currency}</span>
               </div>
             </div>
 
@@ -306,12 +323,14 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectionthreecard2pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectionthreecard2pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectionthreecard2price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectionthreecard2price} {currency}</span>
               </div>
             </div>
 
@@ -325,27 +344,28 @@ const ServicesPage: React.FC = () => {
               </div>
               <div className="services-card-action-row">
                 <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
-                <span className="services-card-price-strike-x">
-                  <span className="services-card-price-strike-text">
-                    {content.services.sectionthreecard3pricereal} MDL
+                {language !== "EN" && (
+                  <span className="services-card-price-strike-x">
+                    <span className="services-card-price-strike-text">
+                      {content.services.sectionthreecard3pricereal} {currency}
+                    </span>
                   </span>
-                </span>
-                <span className="services-card-price">{content.services.sectionthreecard3price} MDL</span>
+                )}
+                <span className="services-card-price">{content.services.sectionthreecard3price} {currency}</span>
               </div>
             </div>
           </div>
         </div>
 
-      <div className="services-section">
+        {/* Section Four - Packages */}
+        <div className="services-section">
           <h2 className="services-section-title">{content.services.sectionfourtitle}</h2>
-          
           <div className="package-cards">
             {/* Package Card 1 - Startup Light */}
             <div className="package-card">
               <h3 className="package-card-title" ref={sectionFourCardTitleRef}>
                 {content.services.sectionfourcard1title}
               </h3>
-              
               <div className="package-services">
                 <div className="package-service">
                   <span className="checkmark">✓</span>
@@ -356,22 +376,30 @@ const ServicesPage: React.FC = () => {
                   <span>{content.services.sectionfourcard1service2}</span>
                 </div>
               </div>
-
               <div className="package-pricing">
-                <div className="package-price1">
-                  <span className="package-price-strike">{content.services.sectionfourcard1price}</span>
-                  <span className="package-price-currency"> MDL</span>
+                <div
+                  className={
+                    "package-price1" +
+                    (language === "EN"
+                      ? " package-price1-en"
+                      : language === "RU"
+                      ? " package-price1-ru"
+                      : "")
+                  }
+                >
+                  {content.services.sectionfourcard1price}
+                  <span className="package-price-currency"> {language === "EN" ? "EUR" : "MDL"}</span>
                 </div>
-                <div className="package-discount1">{content.services.sectionfourcard1discount}</div>
+                {language !== "EN" && (
+                  <div className="package-discount1">{content.services.sectionfourcard1discount}</div>
+                )}
               </div>
-
               <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
 
             {/* Package Card 2 - Business Smart */}
             <div className="package-card">
               <h3 className="package-card-title">{content.services.sectionfourcard2title}</h3>
-              
               <div className="package-services">
                 <div className="package-service">
                   <span className="checkmark">✓</span>
@@ -386,22 +414,30 @@ const ServicesPage: React.FC = () => {
                   <span>{content.services.sectionfourcard2service3}</span>
                 </div>
               </div>
-
               <div className="package-pricing">
-                <div className="package-price2">
-                  <span className="package-price-strike">{content.services.sectionfourcard2price}</span>
-                  <span className="package-price-currency"> MDL</span>
+                <div
+                  className={
+                    "package-price2" +
+                    (language === "EN"
+                      ? " package-price2-en"
+                      : language === "RU"
+                      ? " package-price2-ru"
+                      : "")
+                  }
+                >
+                  {content.services.sectionfourcard2price}
+                  <span className="package-price-currency"> {language === "EN" ? "EUR" : "MDL"}</span>
                 </div>
-                <div className="package-discount2">{content.services.sectionfourcard2discount}</div>
+                {language !== "EN" && (
+                  <div className="package-discount2">{content.services.sectionfourcard2discount}</div>
+                )}
               </div>
-
               <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
 
             {/* Package Card 3 - Enterprise Complete */}
             <div className="package-card">
               <h3 className="package-card-title">{content.services.sectionfourcard3title}</h3>
-              
               <div className="package-services">
                 <div className="package-service">
                   <span className="checkmark">✓</span>
@@ -424,23 +460,34 @@ const ServicesPage: React.FC = () => {
                   <span>{content.services.sectionfourcard3service5}</span>
                 </div>
               </div>
-
               <div className="package-pricing">
-                <div className="package-price3">
-                  <span className="package-price-strike">{content.services.sectionfourcard3price}</span>
-                  <span className="package-price-currency"> MDL</span>
+                <div
+                  className={
+                    "package-price3" +
+                    (language === "EN"
+                      ? " package-price3-en"
+                      : language === "RU"
+                      ? " package-price3-ru"
+                      : "")
+                  }
+                >
+                  {content.services.sectionfourcard3price}
+                  <span className="package-price-currency">
+                    {language === "EN" ? " EUR" : " MDL"}
+                  </span>
                 </div>
-                <div className="package-discount3">{content.services.sectionfourcard3discount}</div>
+                {language !== "EN" && (
+                  <div className="package-discount3">{content.services.sectionfourcard3discount}</div>
+                )}
               </div>
-
               <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
             </div>
           </div>
         </div>
-          <NextLevelSection
-            title={content.services.sectionfourtitle1}
-            buttonText={content.services.sectionfourbutton}
-          />
+        <NextLevelSection
+          title={content.services.sectionfourtitle1}
+          buttonText={content.services.sectionfourbutton}
+        />
         <Footer />
       </div>
     </div>
