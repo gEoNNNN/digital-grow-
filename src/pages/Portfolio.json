@@ -2,36 +2,52 @@
   "RO": {
     "Portofoliu": {
       "title": "Portofoliu",
-      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
+      "description": "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
       "mainbutton": "Despre noi",
       "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
       "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
       "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
-      "prokectbutton" : "Afla mai multe",
-      "call" : "<span class='highlight'>Urmatorul </span> poți fi chiar tu",
-      "callbutton" : "Contactează-ne acum",
-      "krovdescription" : "Krov Acoperișuri – De la un logo vechi la un sistem digital complet integrat",
-      "krovimagedescription" : "Provocarea: Prezență digitală slabă și lipsa unei imagini coerente.",
-      "listkrov": [
-        { "title": "Soluția DigitalGrow:", "points": ["Rebranding complet (logo + culori)", "Landing page modern, optimizat pentru conversii", "Chatbot integrat cu CRM pentru captarea automată a lead-urilor"] },
-        { "title": "Rezultate", "points": ["O prezență online profesionistă, care generează lead-uri și automatizează procesul de vânzare."] },
-        { "title": "Rezultate", "points": ["Nu oferim doar servicii. Oferim soluții gândite pe termen lung.", "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."] }
-      ]
+      "prokectbutton": "Afla mai multe",
+      "call": "<span class='highlight'>Urmatorul </span> poți fi chiar tu",
+      "callbutton": "Contactează-ne acum",
+      "krovdescription": "Krov Acoperișuri – De la un logo vechi la un sistem digital complet integrat",
+      "krovimagedescription": "Provocarea: Prezență digitală slabă și lipsa unei imagini coerente."
     }
-},
+  },
   "EN": {
     "Portofoliu": {
       "title": "Portfolio",
       "description": "At DigitalGrow, we put passion into every project. We love challenges, but most of all, we love measurable results. Here’s how we transformed the digital presence of three local businesses — through rebranding, automation, and web development.",
+      "mainbutton": "About Us",
       "project1title": "PICCOLINO HOME",
       "project1description": "Local producer of textile tablecloths, specializing in elegant designs and premium-quality fabrics for both home use and the HoReCa industry. Piccolino brings refinement to any dining setting with modern and functional designs.",
       "project2title": "KROV ACOPERISURI",
-      "project2description": "A company specialized in complete roofing systems, from premium materials to professional installation. They deliver durable solutions for residential buildings, industrial halls, and commercial constructions.",
+      "prject2description": "A company specialized in complete roofing systems, from premium materials to professional installation. They deliver durable solutions for residential buildings, industrial halls, and commercial constructions.",
       "project3title": "LUMEA TA",
       "project3description": "A boutique travel agency that designs experiential journeys, with a focus on mountain and nature destinations. They offer travelers the opportunity to explore authentic places, local cultures, and personalized routes.",
       "prokectbutton": "Learn More",
-      "call": "The next success story could be yours.",
-      "callbutton": "Contact us today"
+      "call": "<span class='highlight'>The next success story</span><br> could be yours.",
+      "callbutton": "Contact us today",
+      "krovdescription": "Krov Roofing – From an Old Logo to a Fully Integrated Digital System",
+      "krovimagedescription": "Challenge: Weak digital presence and lack of a consistent brand identity."
+    }
+  },
+  "RU": {
+    "Portofoliu": {
+      "title": "Портфолио",
+      "description": "В DigitalGrow мы вкладываем душу в каждый проект. Мы любим вызовы, но ещё больше — реальные результаты. Посмотрите, как мы трансформировали цифровое присутствие трёх локальных компаний — через ребрендинг, автоматизацию и веб‑разработку.",
+      "mainbutton": "О нас",
+      "project1title": "PICCOLINO",
+      "project1description": "Локальный производитель текстильных скатертей, специализирующийся на элегантных дизайнах и высококачественных материалах для дома и HoReCa. Piccolino привносит изысканность в любой сервированный стол, сочетая современный стиль и функциональность.",
+      "project2title": "KROV ACOPERISURI",
+      "prject2description": "Компания, специализирующаяся на комплексных кровельных системах — от премиальных материалов до профессионального монтажа. Предлагает долговечные решения для жилых домов, промышленных помещений и коммерческих объектов.",
+      "project3title": "Descopera Lumea",
+      "project3description": "Агентство авторских путешествий, организующее экспедиции с уникальным опытом, особенно в горные и природные зоны. Дарит туристам возможность открыть аутентичные места, познакомиться с локальной культурой и пройти индивидуально подобранные маршруты.",
+      "prokectbutton": "Узнать больше",
+      "call": "<span class='highlight'>Следующим</span><br> можете быть именно вы",
+      "callbutton": "Свяжитесь с нами прямо сейчас",
+      "krovdescription": "Krov Acoperisuri – От устаревшего логотипа к полностью интегрированной цифровой экосистеме",
+      "krovimagedescription": "Задача: Слабое цифровое присутствие и отсутствие единого визуального образа."
     }
   }
 }

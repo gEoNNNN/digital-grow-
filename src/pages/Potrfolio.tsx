@@ -11,16 +11,15 @@ import Footer from "../components/Footer"
 import portfolioContent from "./Portfolio.json"
 import { useNavigate } from "react-router-dom"
 import LiveChat from "../components/LiveChat"
-import Picolino from "./Picolino" // Import the component
+import Picolino from "./Picolino"
+import { useLanguage } from "../components/LanguageContext"
 
 const Portfolio: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
-  const [picolinoOpen, setPicolinoOpen] = useState(false); // State for popup
+  const [picolinoOpen, setPicolinoOpen] = useState(false);
   const navigate = useNavigate()
-
-
-  const currentLanguage = 'RO'
-  const content = portfolioContent[currentLanguage]
+  const { language, setLanguage } = useLanguage();
+  const content = portfolioContent[language]
 
   useEffect(() => {
     if (picolinoOpen) {
@@ -38,6 +37,12 @@ const Portfolio: React.FC = () => {
       <div className="portfolio-content">
         <div className="portfolio-bg-fade"></div>
         <NavBar/>
+        {/* Optional: Language Switcher */}
+        <div style={{ display: "flex", gap: "1vw", justifyContent: "flex-end", margin: "1vw 2vw 0 0" }}>
+          <button onClick={() => setLanguage('RO')}>RO</button>
+          <button onClick={() => setLanguage('EN')}>EN</button>
+          <button onClick={() => setLanguage('RU')}>RU</button>
+        </div>
         <div className="portfolio-main-section">
           <h1 className="portfolio-main-section-title">
             {content.Portofoliu.title}
@@ -45,7 +50,6 @@ const Portfolio: React.FC = () => {
           <p className="portfolio-main-section-description">
             {content.Portofoliu.description}
           </p>
-          
           <button
             className="portfolio-main-section-button"
             onClick={() => navigate("/aboutus")}
@@ -57,7 +61,7 @@ const Portfolio: React.FC = () => {
         {/* Projects Section */}
         <div className="portfolio-projects-section">
           <img src={line} alt="Background line" className="portfolio-bg-line" />
-          {/* Project 1 - Piccolino (Logo left, description right) */}
+          {/* Project 1 */}
           <div className="portfolio-project">
             <div className="project-content">
               <div className="project-logo">
@@ -76,8 +80,7 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Project 2 - Krov (Description left, logo right) */}
+          {/* Project 2 */}
           <div className="portfolio-project">
             <div className="project-content project-content-reverse">
               <div className="project-logo">
@@ -94,11 +97,9 @@ const Portfolio: React.FC = () => {
                   {content.Portofoliu.prokectbutton}
                 </button>
               </div>
-      
             </div>
           </div>
-
-          {/* Project 3 - Lumeta (Logo left, description right) */}
+          {/* Project 3 */}
           <div className="portfolio-project">
             <div className="project-content">
               <div className="project-logo">
@@ -117,7 +118,7 @@ const Portfolio: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* Project 4 - Call to Action */}
+          {/* Call to Action */}
           <div className="portfolio-project">
             <div className="portfolio-call-section">
               <p
