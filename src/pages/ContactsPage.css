@@ -124,12 +124,19 @@
 }
 
 .contact-option-description {
-  color: var(--text-color); /* Make text fully visible */
-  font-size: 1.3vw;        /* Slightly larger for readability */
+  color: var(--text-color);
+  font-size: 2vw;
   font-weight: 400;
   margin: 0;
   line-height: 1.6;
   font-family: "DM Sans", sans-serif;
+  margin-top: 12vw;
+  position: absolute;
+  margin-left: 5vw;
+}
+
+.contact-option-description-ru {
+  margin-top: 20vw !important;
 }
 
 .contact-option {
@@ -197,23 +204,16 @@
   position: absolute;
 }
 
-.contact-option-description {
-  color: var(--text-color);
-  font-size: 2vw;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.6;
-  font-family: "DM Sans", sans-serif;
-  margin-top: 12vw;
-  position: absolute;
-  margin-left: 5vw;
-}
 
 .contact-text-section {
   display: flex;
   flex-direction: column;
   margin-top: 15vw;
   gap: 2vw;
+}
+
+.contact-text-section-ru {
+  margin-top: 22vw !important;
 }
 
 .text-with-emoji {
@@ -230,6 +230,7 @@
   flex-shrink: 0;
   margin-left: 6vw;
 }
+
 
 .contact-text {
   color: var(--text-color);

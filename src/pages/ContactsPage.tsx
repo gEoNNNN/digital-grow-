@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ContactsPage.css'
 import BG from "../assets/contscts.mp4"
 import Filter from "../assets/homepagefilter.png"
@@ -19,12 +19,12 @@ import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
 import viber from "../assets/viber.svg"
 import LiveChat from '../components/LiveChat'
-import { useState } from 'react'
 import { useTheme } from "../components/ThemeContext";
+import { useLanguage } from "../components/LanguageContext";
 
 const ContactsPage: React.FC = () => {
-  const currentLanguage = 'RO'
-  const content = contactsContent[currentLanguage]
+  const { language } = useLanguage();
+  const content = contactsContent[language];
   const [chatOpen, setChatOpen] = useState(false);
   const { theme } = useTheme();
 
@@ -58,11 +58,11 @@ const ContactsPage: React.FC = () => {
               </div>
               <div className="contact-option-content">
                 <h3 className="contact-option-title" dangerouslySetInnerHTML={{ __html: content.contacts.section1title }}></h3>
-                <p className="contact-option-description">{content.contacts.section1description}</p>
+                <p className={"contact-option-description"+ (language === "RU" ? " contact-option-description-ru" : "")} >{content.contacts.section1description}</p>
                 
-                <div className="contact-text-section">
+                <div className={"contact-text-section" + (language === "RU" ? " contact-text-section-ru" : "")}>
                   <div className="text-with-emoji">
-                    <img src={texticon1} alt="Chat emoji" className="text-emoji" />
+                    <img src={texticon1} alt="Chat emoji" className={"text-emoji"+ (language === "RU" ? " text-emoji-ru" : "")} />
                     <span className="contact-text">{content.contacts.section1text}</span>
                   </div>
                   <button className="contact-option-button" onClick={() => setChatOpen(true)}>
@@ -79,11 +79,11 @@ const ContactsPage: React.FC = () => {
               </div>
               <div className="contact-option-content">
                 <h3 className="contact-option-title" dangerouslySetInnerHTML={{ __html: content.contacts.section2title }}></h3>
-                <p className="contact-option-description">{content.contacts.section2description}</p>
+                <p className={"contact-option-description"+ (language === "RU" ? " contact-option-description-ru" : "")}>{content.contacts.section2description}</p>
                 
-                <div className="contact-text-section">
+                <div className={"contact-text-section" + (language === "RU" ? " contact-text-section-ru" : "")}>
                   <div className="text-with-emoji">
-                    <img src={texticon2} alt="Person emoji" className="text-emoji" />
+                    <img src={texticon2} alt="Person emoji" className={"text-emoji"+ (language === "RU" ? " text-emoji-ru" : "")} />
                     <div className="contact-details">
                       <span className="contact-text">{content.contacts.section2text}</span>
                       <span className="contact-phone">{content.contacts.section2phone}</span>
