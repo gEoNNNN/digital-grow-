@@ -11,6 +11,7 @@ import Krov from './pages/Krov'
 import LumeaTa from './pages/LumeaTa'
 import { ThemeProvider } from "./components/ThemeContext";
 import Inwork from './pages/Inwork'
+import { LanguageProvider } from "./components/LanguageContext"
 
 function App() {
   return (
@@ -18,17 +19,19 @@ function App() {
       <Router>
         <div className="App">
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/aboutus" element={<AboutUsPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
-            <Route path="/picolino" element={<Picolino />} />
-            <Route path="/krov" element={<Krov />} />
-            <Route path="/lumeata" element={<LumeaTa />} />
-            <Route path="/inwork" element={<Inwork />} />
-          </Routes>
+          <LanguageProvider>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/aboutus" element={<AboutUsPage />} />
+              <Route path="/contacts" element={<ContactsPage />} />
+              <Route path="/picolino" element={<Picolino />} />
+              <Route path="/krov" element={<Krov />} />
+              <Route path="/lumeata" element={<LumeaTa />} />
+              <Route path="/inwork" element={<Inwork />} />
+            </Routes>
+          </LanguageProvider>
         </div>
       </Router>
     </ThemeProvider>

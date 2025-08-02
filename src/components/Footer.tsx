@@ -47,16 +47,16 @@ const Footer: React.FC = () => {
     },
     EN: {
       title: 'Follow us on social media!',
-      description: 'Stay connected with DigitalGrow for ideas, projects and digital news.',
+      description: 'Stay connected with DigitalGrow for fresh ideas, projects, and digital updates.',
       contacte: 'Contact',
       srl: "DigitalGrow S.R.L.",
       email: "digitalgrow.moldova@gmail.com",
       copyright: '© 2025 DigitalGrow. All rights reserved.',
-      navbar: "Quick navigation",
+      navbar: "Quick Navigation",
       nav1: "Home",
       nav2: "Services",
       nav3: "Portfolio",
-      nav4: "About us",
+      nav4: "About Us",
       nav5: "Contact"
     },
     RU: {

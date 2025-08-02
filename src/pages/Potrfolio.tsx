@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Portfolio.css'
 import BG from "../assets/0725.mp4"
 import project1 from "../assets/picolinologo.svg"
@@ -11,14 +11,22 @@ import Footer from "../components/Footer"
 import portfolioContent from "./Portfolio.json"
 import { useNavigate } from "react-router-dom"
 import LiveChat from "../components/LiveChat"
+import Picolino from "./Picolino" // Import the component
 
 const Portfolio: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  const [picolinoOpen, setPicolinoOpen] = useState(false); // State for popup
   const navigate = useNavigate()
 
 
   const currentLanguage = 'RO'
   const content = portfolioContent[currentLanguage]
+
+  useEffect(() => {
+    if (picolinoOpen) {
+      window.scrollTo(0, 0);
+    }
+  }, [picolinoOpen]);
 
   return (
     <div className="portfolio-page">
@@ -61,7 +69,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <button
                   className="project-button"
-                 onClick={() => navigate("/picolino")}
+                  onClick={() => setPicolinoOpen(true)}
                 >
                   {content.Portofoliu.prokectbutton}
                 </button>
@@ -128,6 +136,16 @@ const Portfolio: React.FC = () => {
         <Footer />
       </div>
       <LiveChat open={chatOpen} setOpen={setChatOpen} />
+
+      {/* Piccolino Popup Modal */}
+      {picolinoOpen && (
+        <div className="portfolio-modal-overlay" onClick={() => setPicolinoOpen(false)}>
+          <div className="portfolio-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="portfolio-modal-close" onClick={() => setPicolinoOpen(false)}>×</button>
+            <Picolino />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

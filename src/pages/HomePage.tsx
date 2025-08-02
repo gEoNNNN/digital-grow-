@@ -15,14 +15,23 @@ import Footer from "../components/Footer"
 import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import feedback from "../assets/krovfeedback.mp4"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
+import { useLanguage } from "../components/LanguageContext";
 
 const HomePage = () => {
-  const currentLanguage = 'RO'
-  const content = homepageContent[currentLanguage]
+  const { language } = useLanguage();
+  const content = homepageContent[language]
   const [videoOpen, setVideoOpen] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div className="homepage">
@@ -46,7 +55,7 @@ const HomePage = () => {
             {content.hero.description}
           </h1>
           <button 
-            className="homepage-main-section-button"
+            className={`homepage-main-section-button${language === "RU" ? " homepage-main-section-button-ru" : ""}`}
             onClick={() => setChatOpen(true)}>
             <img src={iconoferta}/>
             {content.hero.primaryButton}
@@ -55,36 +64,46 @@ const HomePage = () => {
           <div className="homepage-section-one">
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
             <div className="homepage-section-one-cards">
-              <div className="homepage-section-one-card">
+              <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
                 <h3>{content.hero.sectiononecard1title}</h3>
                 <p>{content.hero.sectiononecard1description}</p>
-                <button 
-                    className="homepage-section-one-card-button"
-                    onClick={() => setChatOpen(true)}>
+                <button
+                  className={`homepage-section-one-card-button${language === "RU" ? " homepage-section-one-card-button-ru" : ""}`}
+                  onClick={() => setChatOpen(true)}
+                >
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card1}/>
               </div>
-              <div className="homepage-section-one-card">
+              <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
                 <h3>{content.hero.sectiononecard2title}</h3>
                 <p>{content.hero.sectiononecard2description}</p>
-                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
+                <button
+                  className={`homepage-section-one-card-button${language === "RU" ? " homepage-section-one-card-button-ru" : ""}`}
+                  onClick={() => setChatOpen(true)}
+                >
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card2}/>
               </div>
-              <div className="homepage-section-one-card">
+              <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
                 <h3>{content.hero.sectiononecard3title}</h3>
                 <p>{content.hero.sectiononecard3description}</p>
-                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
+                <button
+                  className={`homepage-section-one-card-button${language === "RU" ? " homepage-section-one-card-button-ru" : ""}`}
+                  onClick={() => setChatOpen(true)}
+                >
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card3}/>
               </div>
-              <div className="homepage-section-one-card">
+              <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
                 <h3>{content.hero.sectiononecard4title}</h3>
                 <p>{content.hero.sectiononecard4description}</p>
-                <button className="homepage-section-one-card-button" onClick={() => setChatOpen(true)}>
+                <button
+                  className={`homepage-section-one-card-button${language === "RU" ? " homepage-section-one-card-button-ru" : ""}`}
+                  onClick={() => setChatOpen(true)}
+                >
                   {content.hero.sectiononebutton}
                 </button>
                 <img src={section1card4}/>
@@ -96,18 +115,30 @@ const HomePage = () => {
             <div className="homepage-section-two-cards">
               <div className="homepage-section-two-card">
                 <img src={section2card1} alt="Soluții integrate"/>
-                <h3>{content.hero.sectiontwocard1title}</h3>
-                <p>{content.hero.sectiontwocard1description}</p>
+                <h3 className={["EN", "RU"].includes(language) ? "homepage-section-two-card-title-enru" : ""}>
+                  {content.hero.sectiontwocard1title}
+                </h3>
+                <p className={["EN", "RU"].includes(language) ? "homepage-section-two-card-desc-enru" : ""}>
+                  {content.hero.sectiontwocard1description}
+                </p>
               </div>
               <div className="homepage-section-two-card">
                 <img src={section2card2} alt="Suport rapid"/>
-                <h3>{content.hero.sectiontwocard2title}</h3>
-                <p>{content.hero.sectiontwocard2description}</p>
+                <h3 className={["EN", "RU"].includes(language) ? "homepage-section-two-card-title-enru" : ""}>
+                  {content.hero.sectiontwocard2title}
+                </h3>
+                <p className={["EN", "RU"].includes(language) ? "homepage-section-two-card-desc-enru" : ""}>
+                  {content.hero.sectiontwocard2description}
+                </p>
               </div>
               <div className="homepage-section-two-card">
                 <img src={section2card3} alt="Calitate garantată"/>
-                <h3>{content.hero.sectiontwocard3title}</h3>
-                <p>{content.hero.sectiontwocard3description}</p>
+                <h3 className={["EN", "RU"].includes(language) ? "homepage-section-two-card-title-enru" : ""}>
+                  {content.hero.sectiontwocard3title}
+                </h3>
+                <p className={["EN", "RU"].includes(language) ? "homepage-section-two-card-desc-enru" : ""}>
+                  {content.hero.sectiontwocard3description}
+                </p>
               </div>
             </div>
           </div>
@@ -140,29 +171,29 @@ const HomePage = () => {
                     onClick={() => setVideoOpen(false)}
                   >
                     <button
-      className="homepage-video-close-btn"
-      onClick={e => {
-        e.stopPropagation();
-        setVideoOpen(false);
-      }}
-      aria-label="Close video"
-      style={{
-        position: "absolute",
-        top: "2vw",
-        right: "2vw",
-        zIndex: 2,
-        background: "rgba(0,0,0,0.5)",
-        color: "#fff",
-        border: "none",
-        borderRadius: "50%",
-        width: "3vw",
-        height: "3vw",
-        fontSize: "2vw",
-        cursor: "pointer"
-      }}
-    >
-      ×
-    </button>
+                      className="homepage-video-close-btn"
+                      onClick={e => {
+                        e.stopPropagation();
+                        setVideoOpen(false);
+                      }}
+                      aria-label="Close video"
+                      style={{
+                        position: "absolute",
+                        top: "2vw",
+                        right: "2vw",
+                        zIndex: 2,
+                        background: "rgba(0,0,0,0.5)",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "50%",
+                        width: "3vw",
+                        height: "3vw",
+                        fontSize: "2vw",
+                        cursor: "pointer"
+                      }}
+                    >
+                      ×
+                    </button>
                     <video
                       src={feedback}
                       controls
@@ -176,7 +207,11 @@ const HomePage = () => {
             </div>
           </div>
           <NextLevelSection
-            title={content.hero.sectionfourtitle}
+            title={
+              language === "EN" && isMobile
+                ? content.hero.sectionfourtitlemobile
+                : content.hero.sectionfourtitle
+            }
             buttonText={content.hero.sectionfourbutton}
           />
           <Footer />

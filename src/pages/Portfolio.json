@@ -21,24 +21,17 @@
 },
   "EN": {
     "Portofoliu": {
-      "title": "Portofoliu",
-      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
-      "mainbutton": "Despre noi",
-      "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
-      "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
-      "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
-      "prokectbutton" : "Afla mai multe"
-  }
- },
-  "RU": {
-    "Portofoliu": {
-      "title": "Portofoliu",
-      "description" : "La DigitalGrow, punem suflet în fiecare proiect. Ne plac provocările, dar mai ales ne plac rezultatele vizibile. Iată cum am transformat prezența digitală a trei afaceri locale — prin rebranding, automatizare și dezvoltare web.",
-      "mainbutton": "Despre noi",
-      "project1description": "Producător local de fețe de masă textile, specializat în modele elegante și materiale de calitate superioară, pentru uz casnic și HoReCa. Piccolino aduce rafinament în orice decor de masă, cu designuri moderne și funcționale.",
-      "prject2description": "Companie specializată în sisteme de acoperișuri complete, de la materiale premium la execuție profesionistă. Oferă soluții durabile pentru locuințe, hale industriale și construcții comerciale.",
-      "project3description": "Agenție de turism de autor care organizează călătorii experiențiale, în special în zone montane și naturale. Oferă turiștilor ocazia să descopere locuri autentice, culturi locale și trasee personalizate.",
-      "prokectbutton" : "Afla mai multe"
-   }
+      "title": "Portfolio",
+      "description": "At DigitalGrow, we put passion into every project. We love challenges, but most of all, we love measurable results. Here’s how we transformed the digital presence of three local businesses — through rebranding, automation, and web development.",
+      "project1title": "PICCOLINO HOME",
+      "project1description": "Local producer of textile tablecloths, specializing in elegant designs and premium-quality fabrics for both home use and the HoReCa industry. Piccolino brings refinement to any dining setting with modern and functional designs.",
+      "project2title": "KROV ACOPERISURI",
+      "project2description": "A company specialized in complete roofing systems, from premium materials to professional installation. They deliver durable solutions for residential buildings, industrial halls, and commercial constructions.",
+      "project3title": "LUMEA TA",
+      "project3description": "A boutique travel agency that designs experiential journeys, with a focus on mountain and nature destinations. They offer travelers the opportunity to explore authentic places, local cultures, and personalized routes.",
+      "prokectbutton": "Learn More",
+      "call": "The next success story could be yours.",
+      "callbutton": "Contact us today"
+    }
   }
 }

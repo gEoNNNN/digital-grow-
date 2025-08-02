@@ -104,7 +104,7 @@
 }
 
 .portfolio-main-section-button {
-  z-index: 10000; /* Higher than .portfolio-bg-fade */
+  z-index: 100; /* Higher than .portfolio-bg-fade */
   position: relative;
   background-color: var(--button-color);
   color: var(--button-text-color);
@@ -260,6 +260,39 @@
   box-shadow: 
     0 0 1vw var(--button-shadow),
     0 0 2vw var(--button-shadow-medium);
+}
+
+.portfolio-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-modal-content {
+  background: var(--card-bg, #1C2734);
+  border-radius: 2vw;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2vw;
+  box-shadow: 0 0 4vw 0 rgba(0,0,0,0.25);
+}
+
+.portfolio-modal-close {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background: none;
+  border: none;
+  font-size: 2.5vw;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {

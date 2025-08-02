@@ -7,6 +7,7 @@ import lightmodeicon from "../assets/darkmodeicon.svg"
 import bg from "../assets/navbarfilter.png"
 import hamburgerIcon from "../assets/hamburger.svg" // Add a hamburger icon SVG to your assets
 import { useTheme } from "./ThemeContext";
+import { useLanguage } from "./LanguageContext";
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -24,10 +25,11 @@ interface Translations {
 }
 
 const NavBar = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
+  //const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('RO')
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
   const { toggleTheme, theme } = useTheme();
+  const { language, setLanguage } = useLanguage();
 
   const languages: Record<LanguageCode, Language> = {
     RO: { code: 'RO', name: 'Română' },
@@ -59,10 +61,12 @@ const NavBar = () => {
     }
   }
 
+  const currentLanguage = language;
+
   const handleLanguageChange = (langCode: LanguageCode): void => {
-    setCurrentLanguage(langCode)
-    setIsDropdownOpen(false)
-  }
+    setLanguage(langCode);
+    setIsDropdownOpen(false);
+  };
 
   const currentTranslations = translations[currentLanguage]
 

@@ -25,7 +25,24 @@
     "EN": {
         "aboutus" : {
             "title": "About Us",
-            "description": "DigitalGrow is your trusted partner for digital growth. We provide comprehensive solutions in web development, branding, and automation, all in one place."
+            "description": "DigitalGrow is a digital agency with a clear mission: to help companies increase their visibility, efficiency, and impact through smart solutions in marketing, automation, and web development. We work with businesses that understand the importance of digital transformation and are looking for a strategic partner — not just another service provider.",
+            "missiontitle": "Our Mission",
+            "missiondescription": "The agency was born from a simple but essential observation: modern consumers expect quick answers, personalized experiences, and frictionless interactions. That’s why we build high-performance chatbots, conversion-optimized websites, and communication strategies that deliver real impact.",
+            "section1title": "Our Approach",
+            "section1description1": "We collaborate with startups, SMEs, and scaling brands, providing a balanced mix of innovation, business analysis, and creative execution. Every project is treated as a long-term investment — because our clients think ahead, and so do we.",
+            "icon1": "Digital",
+            "icon2": "Growth",
+            "icon3": "Design",
+            "icon4": "Partnership",
+            "icon5": "Strategy",
+            "item1value": "9+ Projects",
+            "item1list": "Projects",
+            "item2value": "5.0",
+            "item2list": "Rating",
+            "item3value": "1 Year",
+            "item3list": "of Experience",
+            "sectionfourtitle1": "Ready to take your business to the next level?",
+            "sectionfourbutton": "Contact us today"
         }
     },
     "RU": {
