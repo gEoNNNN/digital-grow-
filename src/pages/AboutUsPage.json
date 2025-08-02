@@ -1,54 +1,71 @@
 {
-    "RO": {
-        "aboutus" : {
-            "title": "Despre noi",
-            "description": "Suntem o echipă de creativi strategici, pasionați de design, tehnologie și creșterea afacerilor în mediul digital.",
-            "missiontitle" : "Misiunea noastră e simplă",
-            "missiondescription" : "să ajutăm afacerile să prospere în mediul digital, oferindu-le soluții creative și strategice care generează rezultate reale. Credem că un brand de succes nu se construiește doar cu un site frumos, ci cu o identitate clară, o prezență online coerentă și o strategie bine gândită. De aceea, combinăm designul modern, tehnologia și gândirea orientată spre conversie pentru a livra mai mult decât un simplu produs – livrăm progres, claritate și încredere.",
-            "section1title" : "Cum a început totul",
-            "section1description1": "DigitalGrow este o agenție digitală cu o misiune clară: să ajute companiile să-și crească vizibilitatea, eficiența și impactul prin soluții inteligente de marketing, automatizare și dezvoltare web. Ne adresăm afacerilor care înțeleg importanța transformării digitale și caută un partener strategic, nu doar un furnizor de servicii.",
-            "section1description2": "Agenția s-a născut dintr-o observație simplă, dar esențială: consumatorii moderni caută răspunsuri rapide, experiențe personalizate și interacțiuni fără fricțiuni. De aceea, dezvoltăm chatboturi performante, website-uri optimizate pentru conversii și strategii de comunicare cu impact real.",
-            "section1description3": "Lucrăm cu startup-uri, IMM-uri și branduri în expansiune, oferindu-le un mix echilibrat între inovație, analiză de business și execuție creativă. Fiecare proiect este tratat ca o investiție pe termen lung — pentru că și clienții noștri gândesc în perspectivă.",
-            "icon1" : "Digital",
-            "icon2" : "Creștere",
-            "icon3" : "Design",
-            "icon4" : "Parteneriat",
-            "icon5" : "Strategie",
-            "item1list" : "Proiecte",
-            "item1value" : "9+",
-            "item2list" : "Rating",
-            "item2value" : "5.0",
-            "item3list" : "Experiență",
-            "item3value" : "1 an"
+  "RO": {
+    "aboutus": {
+      "title": "Despre noi",
+      "description": "Suntem o echipă de creativi strategici, pasionați de design, tehnologie și creșterea afacerilor în mediul digital.",
+      "missiontitle": "Misiunea noastră e simplă",
+      "missiondescription": "să ajutăm afacerile să prospere în mediul digital, oferindu-le soluții creative și strategice care generează rezultate reale. Credem că un brand de succes nu se construiește doar cu un site frumos, ci cu o identitate clară, o prezență online coerentă și o strategie bine gândită. De aceea, combinăm designul modern, tehnologia și gândirea orientată spre conversie pentru a livra mai mult decât un simplu produs – livrăm progres, claritate și încredere.",
+      "section1title": "Cum a început totul",
+      "section1description1": "DigitalGrow este o agenție digitală cu o misiune clară: să ajute companiile să-și crească vizibilitatea, eficiența și impactul prin soluții inteligente de marketing, automatizare și dezvoltare web. Ne adresăm afacerilor care înțeleg importanța transformării digitale și caută un partener strategic, nu doar un furnizor de servicii.",
+      "section1description2": "Agenția s-a născut dintr-o observație simplă, dar esențială: consumatorii moderni caută răspunsuri rapide, experiențe personalizate și interacțiuni fără fricțiuni. De aceea, dezvoltăm chatboturi performante, website-uri optimizate pentru conversii și strategii de comunicare cu impact real.",
+      "section1description3": "Lucrăm cu startup-uri, IMM-uri și branduri în expansiune, oferindu-le un mix echilibrat între inovație, analiză de business și execuție creativă. Fiecare proiect este tratat ca o investiție pe termen lung — pentru că și clienții noștri gândesc în perspectivă.",
+      "icon1": "Digital",
+      "icon2": "Creștere",
+      "icon3": "Design",
+      "icon4": "Parteneriat",
+      "icon5": "Strategie",
+      "item1list": "Proiecte",
+      "item1value": "9+",
+      "item2list": "Rating",
+      "item2value": "5.0",
+      "item3list": "Experiență",
+      "item3value": "1 an"
     }
   },
-    "EN": {
-        "aboutus" : {
-            "title": "About Us",
-            "description": "DigitalGrow is a digital agency with a clear mission: to help companies increase their visibility, efficiency, and impact through smart solutions in marketing, automation, and web development. We work with businesses that understand the importance of digital transformation and are looking for a strategic partner — not just another service provider.",
-            "missiontitle": "Our Mission",
-            "missiondescription": "The agency was born from a simple but essential observation: modern consumers expect quick answers, personalized experiences, and frictionless interactions. That’s why we build high-performance chatbots, conversion-optimized websites, and communication strategies that deliver real impact.",
-            "section1title": "Our Approach",
-            "section1description1": "We collaborate with startups, SMEs, and scaling brands, providing a balanced mix of innovation, business analysis, and creative execution. Every project is treated as a long-term investment — because our clients think ahead, and so do we.",
-            "icon1": "Digital",
-            "icon2": "Growth",
-            "icon3": "Design",
-            "icon4": "Partnership",
-            "icon5": "Strategy",
-            "item1value": "9+ Projects",
-            "item1list": "Projects",
-            "item2value": "5.0",
-            "item2list": "Rating",
-            "item3value": "1 Year",
-            "item3list": "of Experience",
-            "sectionfourtitle1": "Ready to take your business to the next level?",
-            "sectionfourbutton": "Contact us today"
-        }
-    },
-    "RU": {
-        "aboutus" : {
-            "title": "О Нас",
-            "description": "DigitalGrow - ваш надежный партнер в цифровом росте. Мы предлагаем комплексные решения в области веб-разработки, брендинга и автоматизации, все в одном месте."
-        }
+  "EN": {
+    "aboutus": {
+      "title": "About Us",
+      "description": "We are a team of strategic creatives, passionate about design, technology, and growing businesses in the digital world.",
+      "missiontitle": "Our mission is simple",
+      "missiondescription": "to help businesses thrive in the digital environment by providing creative and strategic solutions that generate real results. We believe a successful brand is built not just with a beautiful website, but with a clear identity, a coherent online presence, and a well-thought-out strategy. That’s why we combine modern design, technology, and conversion-oriented thinking to deliver more than just a product – we deliver progress, clarity, and trust.",
+      "section1title": "How it all started",
+      "section1description1": "DigitalGrow is a digital agency with a clear mission: to help companies increase their visibility, efficiency, and impact through smart solutions in marketing, automation, and web development. We work with businesses that understand the importance of digital transformation and are looking for a strategic partner — not just another service provider.",
+      "section1description2": "The agency was born from a simple but essential observation: modern consumers expect quick answers, personalized experiences, and frictionless interactions. That’s why we build high-performance chatbots, conversion-optimized websites, and communication strategies that deliver real impact.",
+      "section1description3": "We collaborate with startups, SMEs, and scaling brands, providing a balanced mix of innovation, business analysis, and creative execution. Every project is treated as a long-term investment — because our clients think ahead, and so do we.",
+      "icon1": "Digital",
+      "icon2": "Growth",
+      "icon3": "Design",
+      "icon4": "Partnership",
+      "icon5": "Strategy",
+      "item1list": "Projects",
+      "item1value": "9+",
+      "item2list": "Rating",
+      "item2value": "5.0",
+      "item3list": "Experience",
+      "item3value": "1 year"
     }
+  },
+  "RU": {
+    "aboutus": {
+      "title": "О нас",
+      "description": "Мы — команда стратегических креативщиков, увлечённых дизайном, технологиями и развитием бизнеса в цифровой среде.",
+      "missiontitle": "Наша миссия проста",
+      "missiondescription": "помогать компаниям процветать в цифровом мире, предоставляя креативные и стратегические решения, которые приносят реальные результаты. Мы уверены, что успешный бренд строится не только на красивом сайте, но и на чёткой идентичности, последовательном онлайн-присутствии и продуманной стратегии. Поэтому мы объединяем современный дизайн, технологии и мышление, ориентированное на конверсию, чтобы давать больше, чем просто продукт — мы даём прогресс, ясность и доверие.",
+      "section1title": "Как всё начиналось",
+      "section1description1": "DigitalGrow — это диджитал‑агентство с чёткой миссией: помогать компаниям повышать свою видимость, эффективность и влияние с помощью умных решений в области маркетинга, автоматизации и веб‑разработки. Мы работаем с бизнесами, которые понимают важность цифровой трансформации и ищут стратегического партнёра, а не просто поставщика услуг.",
+      "section1description2": "Агентство появилось из простой, но ключевой идеи: современные потребители ожидают быстрых ответов, персонализированные впечатления и беспрепятственные взаимодействия. Именно поэтому мы создаём высокоэффективные чат‑боты, сайты, оптимизированные под конверсии, и коммуникационные стратегии с реальным воздействием.",
+      "section1description3": "Мы сотрудничаем со стартапами, малым и средним бизнесом, а также с брендами, находящимися в стадии активного роста, предлагая сбалансированное сочетание инноваций, бизнес‑аналитики и креативной реализации. Каждый проект для нас — это долгосрочная инвестиция. Ведь и наши клиенты мыслят стратегически.",
+      "icon1": "Digital",
+      "icon2": "Рост",
+      "icon3": "Дизайн",
+      "icon4": "Партнёрство",
+      "icon5": "Стратегия",
+      "item1list": "Проекты",
+      "item1value": "9+",
+      "item2list": "Рейтинг",
+      "item2value": "5.0",
+      "item3list": "Опыт",
+      "item3value": "1 год"
+    }
+  }
 }

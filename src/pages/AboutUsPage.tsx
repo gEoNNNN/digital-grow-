@@ -20,10 +20,11 @@ import icon3Light from "../assets/icon3dark.svg"
 import icon4Light from "../assets/icon4dark.svg"
 import icon5Light from "../assets/icon5dark.svg"
 import LiveChat from '../components/LiveChat'
+import { useLanguage } from "../components/LanguageContext";
 
 const AboutUsPage: React.FC = () => {
-  const currentLanguage = 'RO'
-  const content = aboutUsContent[currentLanguage]
+  const { language } = useLanguage();
+  const content = aboutUsContent[language];
   const { theme } = useTheme();
 
   return (
@@ -130,6 +131,14 @@ const AboutUsPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Language Switcher - Uncomment to use
+        <div style={{ display: "flex", gap: "1vw", justifyContent: "flex-end", margin: "1vw 2vw 0 0" }}>
+          <button onClick={() => setLanguage('RO')}>RO</button>
+          <button onClick={() => setLanguage('EN')}>EN</button>
+          <button onClick={() => setLanguage('RU')}>RU</button>
+        </div>
+        */}
 
         <Footer />
       </div>
