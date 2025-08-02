@@ -8,6 +8,7 @@ import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
 import viber from "../assets/viber.svg"
 import { useNavigate } from "react-router-dom"
+import { useLanguage } from "./LanguageContext"
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -27,7 +28,7 @@ interface FooterTranslations {
 }
 
 const Footer: React.FC = () => {
-  const currentLanguage: LanguageCode = 'RO'
+  const { language } = useLanguage();
   const navigate = useNavigate()
 
   const footerTranslations: Record<LanguageCode, FooterTranslations> = {
@@ -75,7 +76,7 @@ const Footer: React.FC = () => {
     }
   }
 
-  const currentTranslations = footerTranslations[currentLanguage]
+  const currentTranslations = footerTranslations[language]; // <-- use context language
 
   return (
     <footer className="footer">

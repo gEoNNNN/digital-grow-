@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './Havbar.css'
+import './Navbar.css'
 import logo from "../assets/logo.svg"
 import darkmodeicon from "../assets/darknomeicon.svg"
 import lightmodeicon from "../assets/darkmodeicon.svg"
