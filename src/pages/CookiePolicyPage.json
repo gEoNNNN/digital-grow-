@@ -1,0 +1,236 @@
+{
+  "RO": {
+    "title": "Politica privind cookie-urile",
+    "lastUpdated": "Data ultimei actualizări: 4 august 2025",
+    "intro": "Această Politică privind cookie-urile explică ce sunt cookie-urile, cum le folosim pe site-ul nostru și cum le puteți controla.",
+    "whatAreCookies": {
+      "title": "Ce sunt cookie-urile?",
+      "description": "Cookie-urile sunt fișiere mici de text care sunt plasate pe dispozitivul dumneavoastră când vizitați un site web. Acestea sunt utilizate pe scară largă pentru a face site-urile web să funcționeze mai eficient, precum și pentru a furniza informații proprietarilor de site-uri.",
+      "types": [
+        "Cookie-uri de sesiune: Expiră când închideți browserul",
+        "Cookie-uri persistente: Rămân pe dispozitiv pentru o perioadă specificată",
+        "Cookie-uri first-party: Setate de site-ul pe care îl vizitați",
+        "Cookie-uri third-party: Setate de servicii externe"
+      ]
+    },
+    "cookieTypes": {
+      "title": "Ce tipuri de cookie-uri folosim",
+      "necessary": {
+        "title": "Cookie-uri strict necesare",
+        "description": "Aceste cookie-uri sunt esențiale pentru funcționarea corectă a site-ului și nu pot fi dezactivate:",
+        "examples": [
+          "Cookie-uri de autentificare și securitate",
+          "Cookie-uri pentru preferințele de limbă",
+          "Cookie-uri pentru coșul de cumpărături",
+          "Cookie-uri pentru sesiunea de chat live",
+          "Cookie-uri pentru acceptarea politicii de cookie-uri"
+        ]
+      },
+      "analytical": {
+        "title": "Cookie-uri analitice",
+        "description": "Aceste cookie-uri ne ajută să înțelegem cum interactionați cu site-ul nostru:",
+        "examples": [
+          "Google Analytics: Pentru analiza traficului și comportamentului utilizatorilor",
+          "Hotjar: Pentru înregistrări de sesiuni și hărți de căldură",
+          "Cookie-uri pentru măsurarea performanței paginilor",
+          "Cookie-uri pentru optimizarea experienței utilizatorului"
+        ]
+      },
+      "functional": {
+        "title": "Cookie-uri funcționale",
+        "description": "Aceste cookie-uri îmbunătățesc funcționalitatea site-ului:",
+        "examples": [
+          "Preferințele de temă (modul întunecat/luminos)",
+          "Setările de personalizare a interfeței",
+          "Cookie-uri pentru chat-ul cu suport",
+          "Cookie-uri pentru formularele de contact",
+          "Preferințele de regiune și limbă"
+        ]
+      }
+    },
+    "control": {
+      "title": "Cum se pot controla cookie-urile",
+      "description": "Aveți mai multe opțiuni pentru a controla și gestiona cookie-urile:",
+      "methods": [
+        "Setări browser: Majoritatea browserelor vă permit să refuzați sau să ștergeți cookie-urile",
+        "Setări site: Puteți modifica preferințele pentru cookie-uri în partea de jos a acestei pagini",
+        "Opt-out servicii terțe: Google Analytics - ga-disable-[ID]",
+        "Extensii browser: Folosiți extensii specializate pentru gestionarea cookie-urilor"
+      ],
+      "browserInstructions": "Pentru instrucțiuni specifice browserului dumneavoastră, consultați secțiunea de ajutor a browserului sau vizitați: aboutcookies.org"
+    },
+    "consent": {
+      "title": "Consimțământ",
+      "description": "Prin continuarea utilizării site-ului nostru, vă exprimați acordul cu utilizarea cookie-urilor conform acestei politici.",
+      "rights": [
+        "Aveți dreptul să vă retrageți consimțământul în orice moment",
+        "Puteți modifica preferințele pentru cookie-uri oricând",
+        "Refuzul anumitor cookie-uri poate afecta funcționalitatea site-ului",
+        "Cookie-urile strict necesare nu necesită consimțământ explicit"
+      ]
+    },
+    "contact": {
+      "title": "Date de contact",
+      "description": "Pentru întrebări despre această politică privind cookie-urile:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Telefon: +373 060 920 895",
+      "company": "DigitalGrow S.R.L."
+    }
+  },
+  "EN": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated: August 4, 2025",
+    "intro": "This Cookie Policy explains what cookies are, how we use them on our website, and how you can control them.",
+    "whatAreCookies": {
+      "title": "What are cookies?",
+      "description": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners.",
+      "types": [
+        "Session cookies: Expire when you close your browser",
+        "Persistent cookies: Remain on your device for a specified period",
+        "First-party cookies: Set by the website you visit",
+        "Third-party cookies: Set by external services"
+      ]
+    },
+    "cookieTypes": {
+      "title": "What types of cookies we use",
+      "necessary": {
+        "title": "Strictly necessary cookies",
+        "description": "These cookies are essential for the proper functioning of the website and cannot be disabled:",
+        "examples": [
+          "Authentication and security cookies",
+          "Language preference cookies",
+          "Shopping cart cookies",
+          "Live chat session cookies",
+          "Cookie policy acceptance cookies"
+        ]
+      },
+      "analytical": {
+        "title": "Analytical cookies",
+        "description": "These cookies help us understand how you interact with our website:",
+        "examples": [
+          "Google Analytics: For traffic analysis and user behavior",
+          "Hotjar: For session recordings and heat maps",
+          "Page performance measurement cookies",
+          "User experience optimization cookies"
+        ]
+      },
+      "functional": {
+        "title": "Functional cookies",
+        "description": "These cookies enhance the functionality of the website:",
+        "examples": [
+          "Theme preferences (dark/light mode)",
+          "Interface customization settings",
+          "Support chat cookies",
+          "Contact form cookies",
+          "Region and language preferences"
+        ]
+      }
+    },
+    "control": {
+      "title": "How to control cookies",
+      "description": "You have several options to control and manage cookies:",
+      "methods": [
+        "Browser settings: Most browsers allow you to refuse or delete cookies",
+        "Site settings: You can modify cookie preferences at the bottom of this page",
+        "Third-party opt-out: Google Analytics - ga-disable-[ID]",
+        "Browser extensions: Use specialized extensions for cookie management"
+      ],
+      "browserInstructions": "For specific instructions for your browser, consult your browser's help section or visit: aboutcookies.org"
+    },
+    "consent": {
+      "title": "Consent",
+      "description": "By continuing to use our website, you agree to the use of cookies in accordance with this policy.",
+      "rights": [
+        "You have the right to withdraw your consent at any time",
+        "You can modify cookie preferences at any time",
+        "Refusing certain cookies may affect website functionality",
+        "Strictly necessary cookies do not require explicit consent"
+      ]
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "For questions about this cookie policy:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Phone: +373 060 920 895",
+      "company": "DigitalGrow S.R.L."
+    }
+  },
+  "RU": {
+    "title": "Политика использования файлов cookie",
+    "lastUpdated": "Последнее обновление: 4 августа 2025",
+    "intro": "Данная Политика использования файлов cookie объясняет, что такое файлы cookie, как мы их используем на нашем сайте и как вы можете их контролировать.",
+    "whatAreCookies": {
+      "title": "Что такое файлы cookie?",
+      "description": "Файлы cookie — это небольшие текстовые файлы, которые размещаются на вашем устройстве при посещении веб-сайта. Они широко используются для обеспечения более эффективной работы веб-сайтов и предоставления информации владельцам сайтов.",
+      "types": [
+        "Сессионные cookie: Истекают при закрытии браузера",
+        "Постоянные cookie: Остаются на устройстве в течение указанного периода",
+        "Собственные cookie: Устанавливаются посещаемым сайтом",
+        "Сторонние cookie: Устанавливаются внешними сервисами"
+      ]
+    },
+    "cookieTypes": {
+      "title": "Какие типы файлов cookie мы используем",
+      "necessary": {
+        "title": "Строго необходимые файлы cookie",
+        "description": "Эти файлы cookie необходимы для правильного функционирования сайта и не могут быть отключены:",
+        "examples": [
+          "Файлы cookie аутентификации и безопасности",
+          "Файлы cookie языковых предпочтений",
+          "Файлы cookie корзины покупок",
+          "Файлы cookie сессии живого чата",
+          "Файлы cookie принятия политики использования cookie"
+        ]
+      },
+      "analytical": {
+        "title": "Аналитические файлы cookie",
+        "description": "Эти файлы cookie помогают нам понять, как вы взаимодействуете с нашим сайтом:",
+        "examples": [
+          "Google Analytics: Для анализа трафика и поведения пользователей",
+          "Hotjar: Для записи сессий и тепловых карт",
+          "Файлы cookie измерения производительности страниц",
+          "Файлы cookie оптимизации пользовательского опыта"
+        ]
+      },
+      "functional": {
+        "title": "Функциональные файлы cookie",
+        "description": "Эти файлы cookie улучшают функциональность сайта:",
+        "examples": [
+          "Предпочтения темы (темный/светлый режим)",
+          "Настройки персонализации интерфейса",
+          "Файлы cookie чата поддержки",
+          "Файлы cookie контактных форм",
+          "Предпочтения региона и языка"
+        ]
+      }
+    },
+    "control": {
+      "title": "Как контролировать файлы cookie",
+      "description": "У вас есть несколько вариантов контроля и управления файлами cookie:",
+      "methods": [
+        "Настройки браузера: Большинство браузеров позволяют отклонять или удалять файлы cookie",
+        "Настройки сайта: Вы можете изменить предпочтения cookie внизу этой страницы",
+        "Отказ от сторонних сервисов: Google Analytics - ga-disable-[ID]",
+        "Расширения браузера: Используйте специализированные расширения для управления cookie"
+      ],
+      "browserInstructions": "Для получения конкретных инструкций для вашего браузера обратитесь к разделу справки браузера или посетите: aboutcookies.org"
+    },
+    "consent": {
+      "title": "Согласие",
+      "description": "Продолжая использовать наш веб-сайт, вы соглашаетесь на использование файлов cookie в соответствии с данной политикой.",
+      "rights": [
+        "Вы имеете право отозвать свое согласие в любое время",
+        "Вы можете изменить предпочтения cookie в любое время",
+        "Отказ от определенных cookie может повлиять на функциональность сайта",
+        "Строго необходимые cookie не требуют явного согласия"
+      ]
+    },
+    "contact": {
+      "title": "Контактная информация",
+      "description": "По вопросам данной политики использования файлов cookie:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Телефон: +373 060 920 895",
+      "company": "DigitalGrow S.R.L."
+    }
+  }
+}
