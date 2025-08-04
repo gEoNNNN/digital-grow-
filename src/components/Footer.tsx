@@ -152,6 +152,40 @@ const Footer: React.FC = () => {
         </div>
       </div>
       
+      <div className="footer-legal">
+        <div className="footer-legal-links">
+          <button 
+            type="button" 
+            onClick={() => navigate("/privacy-policy")}
+            className="footer-legal-link"
+          >
+            {language === 'RO' ? 'Politica de confidențialitate' : 
+             language === 'EN' ? 'Privacy Policy' : 
+             'Политика конфиденциальности'}
+          </button>
+          <span className="footer-legal-separator">|</span>
+          <button 
+            type="button" 
+            onClick={() => navigate("/cookie-policy")}
+            className="footer-legal-link"
+          >
+            {language === 'RO' ? 'Politica cookie-urilor' : 
+             language === 'EN' ? 'Cookie Policy' : 
+             'Политика cookie'}
+          </button>
+          <span className="footer-legal-separator">|</span>
+          <button 
+            type="button" 
+            onClick={() => navigate("/terms-and-conditions")}
+            className="footer-legal-link"
+          >
+            {language === 'RO' ? 'Termeni și condiții' : 
+             language === 'EN' ? 'Terms & Conditions' : 
+             'Условия и положения'}
+          </button>
+        </div>
+      </div>
+
       <div className="footer-bottom">
         <p className="footer-copyright">{currentTranslations.copyright}</p>
       </div>

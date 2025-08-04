@@ -15,6 +15,7 @@ import { LanguageProvider } from "./components/LanguageContext"
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import CookiePolicyPage from './pages/CookiePolicyPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+import CookieBanner from './components/CookieBanner';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
             </Routes>
+            <CookieBanner />
           </LanguageProvider>
         </div>
       </Router>
