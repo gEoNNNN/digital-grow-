@@ -12,6 +12,7 @@ import LumeaTa from './pages/LumeaTa'
 import { ThemeProvider } from "./components/ThemeContext";
 import Inwork from './pages/Inwork'
 import { LanguageProvider } from "./components/LanguageContext"
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/krov" element={<Krov />} />
               <Route path="/lumeata" element={<LumeaTa />} />
               <Route path="/inwork" element={<Inwork />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             </Routes>
           </LanguageProvider>
         </div>

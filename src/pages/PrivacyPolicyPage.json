@@ -1,0 +1,269 @@
+{
+  "RO": {
+    "title": "Politica de confidențialitate",
+    "lastUpdated": "Data ultimei actualizări: 15 ianuarie 2025",
+    "intro": "Această Politică de confidențialitate descrie modul în care DigitalGrow S.R.L. (noi, al nostru sau compania) colectează, utilizează și protejează informațiile dumneavoastră personale.",
+    "dataCollected": {
+      "title": "Date colectate",
+      "description": "Colectăm următoarele tipuri de informații personale:",
+      "types": [
+        "Date de contact: nume, prenume, adresă de email, număr de telefon",
+        "Informații despre afacere: numele companiei, domeniul de activitate, nevoile de business",
+        "Date de tranzacție: informații despre plăți procesate prin PayPal sau alte sisteme de plată",
+        "Date tehnice: adresa IP, tipul browserului, timpul petrecut pe site",
+        "Comunicări: mesajele trimise prin formularele de contact sau chat"
+      ]
+    },
+    "purpose": {
+      "title": "Scopul prelucrării",
+      "description": "Utilizăm datele dumneavoastră personale pentru:",
+      "purposes": [
+        "Furnizarea serviciilor noastre de dezvoltare web, branding și automatizare",
+        "Comunicarea cu dumneavoastră despre proiecte și servicii",
+        "Procesarea plăților și gestionarea contractelor",
+        "Îmbunătățirea serviciilor noastre și a experienței utilizatorului",
+        "Respectarea obligațiilor legale și fiscale"
+      ]
+    },
+    "legalBasis": {
+      "title": "Baza legală",
+      "description": "Prelucrăm datele dumneavoastră pe baza:",
+      "bases": [
+        "Consimțământului dumneavoastră explicit",
+        "Executării unui contract sau măsurilor precontractuale",
+        "Interesului legitim de a furniza servicii de calitate",
+        "Obligațiilor legale aplicabile"
+      ]
+    },
+    "disclosure": {
+      "title": "Divulgarea datelor",
+      "description": "Datele dumneavoastră pot fi partajate cu:",
+      "parties": [
+        "Furnizorii de servicii de plată (PayPal, bănci)",
+        "Partenerii tehnici pentru furnizarea serviciilor",
+        "Autoritățile competente, în cazul obligațiilor legale",
+        "Nu vindem și nu închiriem datele personale către terțe părți pentru marketing"
+      ]
+    },
+    "protection": {
+      "title": "Protecția datelor",
+      "description": "Implementăm măsuri tehnice și organizatorice pentru protejarea datelor:",
+      "measures": [
+        "Criptarea datelor în tranzit și în repaus",
+        "Accesul restricționat la datele personale",
+        "Actualizări regulate de securitate",
+        "Monitorizarea activității și detectarea amenințărilor",
+        "Formarea personalului în privința protecției datelor"
+      ]
+    },
+    "retention": {
+      "title": "Durata stocării",
+      "description": "Păstrăm datele dumneavoastră:",
+      "periods": [
+        "Date de contact: până la retragerea consimțământului",
+        "Date contractuale: 5 ani după finalizarea contractului",
+        "Date fiscale: conform legislației în vigoare (10 ani)",
+        "Date de marketing: până la dezabonare sau retragerea consimțământului"
+      ]
+    },
+    "rights": {
+      "title": "Drepturile utilizatorului",
+      "description": "Aveți următoarele drepturi:",
+      "userRights": [
+        "Dreptul de acces la datele personale",
+        "Dreptul de rectificare a datelor inexacte",
+        "Dreptul de ștergere (dreptul de a fi uitat)",
+        "Dreptul de restricționare a prelucrării",
+        "Dreptul la portabilitatea datelor",
+        "Dreptul de opoziție la prelucrare",
+        "Dreptul de a depune o plângere la autoritatea de supraveghere"
+      ]
+    },
+    "contact": {
+      "title": "Date de contact",
+      "description": "Pentru orice întrebări legate de această politică de confidențialitate, ne puteți contacta:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Telefon: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "dpo": "Responsabil cu protecția datelor: digitalgrow.moldova@gmail.com"
+    }
+  },
+  "EN": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 15, 2025",
+    "intro": "This Privacy Policy describes how DigitalGrow S.R.L. (\"we\", \"our\" or \"the company\") collects, uses and protects your personal information.",
+    "dataCollected": {
+      "title": "Data Collected",
+      "description": "We collect the following types of personal information:",
+      "types": [
+        "Contact data: first name, last name, email address, phone number",
+        "Business information: company name, industry, business needs",
+        "Transaction data: payment information processed through PayPal or other payment systems",
+        "Technical data: IP address, browser type, time spent on site",
+        "Communications: messages sent through contact forms or chat"
+      ]
+    },
+    "purpose": {
+      "title": "Purpose of Processing",
+      "description": "We use your personal data to:",
+      "purposes": [
+        "Provide our web development, branding and automation services",
+        "Communicate with you about projects and services",
+        "Process payments and manage contracts",
+        "Improve our services and user experience",
+        "Comply with legal and tax obligations"
+      ]
+    },
+    "legalBasis": {
+      "title": "Legal Basis",
+      "description": "We process your data based on:",
+      "bases": [
+        "Your explicit consent",
+        "Performance of a contract or pre-contractual measures",
+        "Legitimate interest in providing quality services",
+        "Applicable legal obligations"
+      ]
+    },
+    "disclosure": {
+      "title": "Data Disclosure",
+      "description": "Your data may be shared with:",
+      "parties": [
+        "Payment service providers (PayPal, banks)",
+        "Technical partners for service delivery",
+        "Competent authorities, in case of legal obligations",
+        "We do not sell or rent personal data to third parties for marketing"
+      ]
+    },
+    "protection": {
+      "title": "Data Protection",
+      "description": "We implement technical and organizational measures to protect data:",
+      "measures": [
+        "Data encryption in transit and at rest",
+        "Restricted access to personal data",
+        "Regular security updates",
+        "Activity monitoring and threat detection",
+        "Staff training on data protection"
+      ]
+    },
+    "retention": {
+      "title": "Storage Duration",
+      "description": "We keep your data:",
+      "periods": [
+        "Contact data: until consent withdrawal",
+        "Contractual data: 5 years after contract completion",
+        "Tax data: according to current legislation (10 years)",
+        "Marketing data: until unsubscribe or consent withdrawal"
+      ]
+    },
+    "rights": {
+      "title": "User Rights",
+      "description": "You have the following rights:",
+      "userRights": [
+        "Right of access to personal data",
+        "Right to rectification of inaccurate data",
+        "Right to erasure (\"right to be forgotten\")",
+        "Right to restriction of processing",
+        "Right to data portability",
+        "Right to object to processing",
+        "Right to lodge a complaint with the supervisory authority"
+      ]
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "For any questions related to this privacy policy, you can contact us:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Phone: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "dpo": "Data Protection Officer: digitalgrow.moldova@gmail.com"
+    }
+  },
+  "RU": {
+    "title": "Политика конфиденциальности",
+    "lastUpdated": "Последнее обновление: 15 января 2025",
+    "intro": "Данная Политика конфиденциальности описывает, как DigitalGrow S.R.L. (\"мы\", \"наша\" или \"компания\") собирает, использует и защищает вашу персональную информацию.",
+    "dataCollected": {
+      "title": "Собираемые данные",
+      "description": "Мы собираем следующие типы персональной информации:",
+      "types": [
+        "Контактные данные: имя, фамилия, адрес электронной почты, номер телефона",
+        "Информация о бизнесе: название компании, сфера деятельности, бизнес-потребности",
+        "Данные транзакций: информация о платежах, обрабатываемых через PayPal или другие платежные системы",
+        "Технические данные: IP-адрес, тип браузера, время, проведенное на сайте",
+        "Коммуникации: сообщения, отправленные через контактные формы или чат"
+      ]
+    },
+    "purpose": {
+      "title": "Цель обработки",
+      "description": "Мы используем ваши персональные данные для:",
+      "purposes": [
+        "Предоставления наших услуг веб-разработки, брендинга и автоматизации",
+        "Общения с вами о проектах и услугах",
+        "Обработки платежей и управления контрактами",
+        "Улучшения наших услуг и пользовательского опыта",
+        "Соблюдения юридических и налоговых обязательств"
+      ]
+    },
+    "legalBasis": {
+      "title": "Правовая основа",
+      "description": "Мы обрабатываем ваши данные на основе:",
+      "bases": [
+        "Вашего явного согласия",
+        "Исполнения договора или предварительных договорных мер",
+        "Законного интереса в предоставлении качественных услуг",
+        "Применимых юридических обязательств"
+      ]
+    },
+    "disclosure": {
+      "title": "Раскрытие данных",
+      "description": "Ваши данные могут быть переданы:",
+      "parties": [
+        "Поставщикам платежных услуг (PayPal, банки)",
+        "Техническим партнерам для предоставления услуг",
+        "Компетентным органам в случае юридических обязательств",
+        "Мы не продаем и не сдаем в аренду персональные данные третьим лицам для маркетинга"
+      ]
+    },
+    "protection": {
+      "title": "Защита данных",
+      "description": "Мы внедряем технические и организационные меры для защиты данных:",
+      "measures": [
+        "Шифрование данных при передаче и хранении",
+        "Ограниченный доступ к персональным данным",
+        "Регулярные обновления безопасности",
+        "Мониторинг активности и обнаружение угроз",
+        "Обучение персонала вопросам защиты данных"
+      ]
+    },
+    "retention": {
+      "title": "Срок хранения",
+      "description": "Мы храним ваши данные:",
+      "periods": [
+        "Контактные данные: до отзыва согласия",
+        "Договорные данные: 5 лет после завершения договора",
+        "Налоговые данные: согласно действующему законодательству (10 лет)",
+        "Маркетинговые данные: до отписки или отзыва согласия"
+      ]
+    },
+    "rights": {
+      "title": "Права пользователя",
+      "description": "У вас есть следующие права:",
+      "userRights": [
+        "Право доступа к персональным данным",
+        "Право на исправление неточных данных",
+        "Право на удаление (\"право быть забытым\")",
+        "Право на ограничение обработки",
+        "Право на переносимость данных",
+        "Право возражать против обработки",
+        "Право подать жалобу в надзорный орган"
+      ]
+    },
+    "contact": {
+      "title": "Контактная информация",
+      "description": "По любым вопросам, связанным с данной политикой конфиденциальности, вы можете связаться с нами:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Телефон: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "dpo": "Ответственный за защиту данных: digitalgrow.moldova@gmail.com"
+    }
+  }
+}
