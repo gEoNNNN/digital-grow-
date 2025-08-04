@@ -42,17 +42,6 @@
   max-height: 4vw;
 }
 
-.navbar-logo {
-  font-size: 1.5vw;
-  font-weight: bold;
-  color: var(--navbar-accent);
-  text-decoration: none;
-  transition: color 0.25s;
-}
-
-.navbar-logo:hover {
-  color: var(--navbar-accent-hover);
-}
 
 .navbar-menu {
   display: flex;
@@ -272,13 +261,8 @@
     opacity: 1;
   }
   
-  .navbar-logo {
-    font-size: 3vw;
-  }
-  
   .navbar-logo img {
     height: 8vw;
-    width: auto;
     min-height: 2vw;
     max-height: 12vw;
     margin-left: -45vw;

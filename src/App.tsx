@@ -14,6 +14,7 @@ import Inwork from './pages/Inwork'
 import { LanguageProvider } from "./components/LanguageContext"
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import CookiePolicyPage from './pages/CookiePolicyPage';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/inwork" element={<Inwork />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
             </Routes>
           </LanguageProvider>
         </div>

@@ -1,0 +1,287 @@
+{
+  "RO": {
+    "title": "Termeni și condiții",
+    "lastUpdated": "Data ultimei actualizări: 15 ianuarie 2025",
+    "intro": "Acești Termeni și Condiții (Termeni) guvernează utilizarea serviciilor oferite de DigitalGrow S.R.L. (noi, al nostru sau compania).",
+    "acceptance": {
+      "title": "Acceptarea termenilor",
+      "description": "Prin utilizarea serviciilor noastre, acceptați să fiți legați de acești Termeni și Condiții:",
+      "terms": [
+        "Acceptarea se face prin semnarea contractului de servicii sau prin utilizarea serviciilor noastre",
+        "Dacă nu sunteți de acord cu acești termeni, vă rugăm să nu utilizați serviciile noastre",
+        "Acești termeni se aplică tuturor clienților și utilizatorilor serviciilor DigitalGrow",
+        "Prin plata serviciilor, confirmați acceptarea acestor termeni și condiții"
+      ]
+    },
+    "payments": {
+      "title": "Plăți și facturare",
+      "description": "Informații despre procesul de plată și facturare:",
+      "methods": [
+        "Acceptăm plăți prin PayPal, transfer bancar și alte metode agreate",
+        "Nu stocăm informații despre carduri de credit pe serverele noastre",
+        "Toate tranzacțiile sunt procesate prin sisteme de plată securizate (PayPal, bănci)",
+        "Facturile sunt emise electronic și trimise pe email",
+        "Plățile se fac conform graficului stabilit în contract (avans + rate)",
+        "Pentru proiecte mari, se poate negocia un plan de plată în rate"
+      ],
+      "terms": {
+        "title": "Termeni de plată",
+        "conditions": [
+          "Avans: 50% din valoarea totală a proiectului",
+          "Restul sumei: la finalizarea și livrarea proiectului",
+          "Facturile trebuie plătite în termen de 14 zile de la emitere",
+          "Întârzierile la plată pot duce la suspendarea lucrărilor"
+        ]
+      }
+    },
+    "refunds": {
+      "title": "Returnări și rambursări",
+      "description": "Politica noastră privind rambursările:",
+      "policy": [
+        "Rambursări sunt posibile doar în situații excepționale și justificate",
+        "Avansul nu se restituie dacă proiectul a fost început și s-au alocat resurse",
+        "Dacă clientul renunță la proiect după începerea lucrărilor, se facturează munca deja efectuată",
+        "Pentru servicii deja livrate și acceptate, nu se acordă rambursări",
+        "Modificările majore ale specificațiilor pot duce la costuri suplimentare"
+      ],
+      "exceptions": {
+        "title": "Excepții pentru rambursare",
+        "cases": [
+          "Imposibilitatea tehnică dovedită de a livra serviciul promis",
+          "Nerespectarea termenelor de livrare din vina exclusivă a DigitalGrow",
+          "Defecte majore care nu pot fi remediate în timp util"
+        ]
+      }
+    },
+    "liability": {
+      "title": "Limitarea răspunderii",
+      "description": "Limitele răspunderii DigitalGrow:",
+      "limitations": [
+        "Răspunderea noastră se limitează la valoarea contractului semnat",
+        "Nu suntem responsabili pentru daune indirecte sau pierderi de profit",
+        "Clientul este responsabil pentru furnizarea informațiilor corecte și complete",
+        "Nu garantăm rezultate de marketing sau vânzări specifice",
+        "Răspunderea pentru conținutul furnizat de client revine exclusiv clientului",
+        "Nu suntem responsabili pentru problemele cauzate de furnizori terți (hosting, domenii, etc.)"
+      ],
+      "warranties": {
+        "title": "Garanții oferite",
+        "items": [
+          "Garanție pentru defecte tehnice: 3 luni de la livrare",
+          "Suport tehnic gratuit: prima lună după lansare",
+          "Serviciile sunt livrate conform specificațiilor agreate",
+          "Respectăm standardele industriei pentru calitatea codului și design"
+        ]
+      }
+    },
+    "modifications": {
+      "title": "Modificări ale termenilor",
+      "description": "Cum și când se pot modifica acești termeni:",
+      "process": [
+        "Ne rezervăm dreptul de a modifica acești termeni în orice moment",
+        "Modificările vor fi comunicate prin email și publicate pe site",
+        "Modificările intră în vigoare la 30 de zile de la notificare",
+        "Continuarea utilizării serviciilor implică acceptarea noilor termeni",
+        "Pentru contractele în desfășurare, se aplică termenii din momentul semnării"
+      ]
+    },
+    "contact": {
+      "title": "Date de contact",
+      "description": "Pentru întrebări despre acești termeni și condiții:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Telefon: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "legal": "Departament juridic: digitalgrow.moldova@gmail.com"
+    }
+  },
+  "EN": {
+    "title": "Terms and Conditions",
+    "lastUpdated": "Last updated: January 15, 2025",
+    "intro": "These Terms and Conditions (\"Terms\") govern the use of services provided by DigitalGrow S.R.L. (\"we\", \"our\" or \"the company\").",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "description": "By using our services, you agree to be bound by these Terms and Conditions:",
+      "terms": [
+        "Acceptance is made by signing the service contract or by using our services",
+        "If you do not agree with these terms, please do not use our services",
+        "These terms apply to all clients and users of DigitalGrow services",
+        "By paying for services, you confirm acceptance of these terms and conditions"
+      ]
+    },
+    "payments": {
+      "title": "Payments and Billing",
+      "description": "Information about payment and billing process:",
+      "methods": [
+        "We accept payments via PayPal, bank transfer and other agreed methods",
+        "We do not store credit card information on our servers",
+        "All transactions are processed through secure payment systems (PayPal, banks)",
+        "Invoices are issued electronically and sent via email",
+        "Payments are made according to the schedule established in the contract (advance + installments)",
+        "For large projects, an installment payment plan can be negotiated"
+      ],
+      "terms": {
+        "title": "Payment Terms",
+        "conditions": [
+          "Advance: 50% of the total project value",
+          "Remaining amount: upon completion and delivery of the project",
+          "Invoices must be paid within 14 days of issuance",
+          "Payment delays may lead to work suspension"
+        ]
+      }
+    },
+    "refunds": {
+      "title": "Returns and Refunds",
+      "description": "Our refund policy:",
+      "policy": [
+        "Refunds are only possible in exceptional and justified situations",
+        "Advance payment is not refunded if the project has started and resources have been allocated",
+        "If the client abandons the project after work has begun, the work already performed will be billed",
+        "For services already delivered and accepted, no refunds are granted",
+        "Major changes to specifications may lead to additional costs"
+      ],
+      "exceptions": {
+        "title": "Refund Exceptions",
+        "cases": [
+          "Proven technical impossibility to deliver the promised service",
+          "Failure to meet delivery deadlines due to DigitalGrow's exclusive fault",
+          "Major defects that cannot be remedied in a timely manner"
+        ]
+      }
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "description": "DigitalGrow liability limits:",
+      "limitations": [
+        "Our liability is limited to the value of the signed contract",
+        "We are not responsible for indirect damages or lost profits",
+        "The client is responsible for providing correct and complete information",
+        "We do not guarantee specific marketing or sales results",
+        "Responsibility for content provided by the client rests exclusively with the client",
+        "We are not responsible for problems caused by third-party providers (hosting, domains, etc.)"
+      ],
+      "warranties": {
+        "title": "Warranties Offered",
+        "items": [
+          "Warranty for technical defects: 3 months from delivery",
+          "Free technical support: first month after launch",
+          "Services are delivered according to agreed specifications",
+          "We comply with industry standards for code and design quality"
+        ]
+      }
+    },
+    "modifications": {
+      "title": "Terms Modifications",
+      "description": "How and when these terms can be modified:",
+      "process": [
+        "We reserve the right to modify these terms at any time",
+        "Changes will be communicated via email and published on the website",
+        "Changes take effect 30 days after notification",
+        "Continued use of services implies acceptance of new terms",
+        "For ongoing contracts, the terms from the time of signing apply"
+      ]
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "For questions about these terms and conditions:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Phone: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "legal": "Legal Department: digitalgrow.moldova@gmail.com"
+    }
+  },
+  "RU": {
+    "title": "Условия и положения",
+    "lastUpdated": "Последнее обновление: 15 января 2025",
+    "intro": "Данные Условия и положения («Условия») регулируют использование услуг, предоставляемых DigitalGrow S.R.L. («мы», «наши» или «компания»).",
+    "acceptance": {
+      "title": "Принятие условий",
+      "description": "Используя наши услуги, вы соглашаетесь соблюдать данные Условия и положения:",
+      "terms": [
+        "Принятие происходит путем подписания договора на услуги или использования наших услуг",
+        "Если вы не согласны с данными условиями, пожалуйста, не используйте наши услуги",
+        "Данные условия распространяются на всех клиентов и пользователей услуг DigitalGrow",
+        "Оплачивая услуги, вы подтверждаете принятие данных условий и положений"
+      ]
+    },
+    "payments": {
+      "title": "Платежи и выставление счетов",
+      "description": "Информация о процессе оплаты и выставления счетов:",
+      "methods": [
+        "Мы принимаем платежи через PayPal, банковский перевод и другие согласованные методы",
+        "Мы не храним информацию о кредитных картах на наших серверах",
+        "Все транзакции обрабатываются через безопасные платежные системы (PayPal, банки)",
+        "Счета выставляются в электронном виде и отправляются по электронной почте",
+        "Платежи производятся согласно графику, установленному в договоре (аванс + рассрочка)",
+        "Для крупных проектов может быть согласован план оплаты в рассрочку"
+      ],
+      "terms": {
+        "title": "Условия оплаты",
+        "conditions": [
+          "Аванс: 50% от общей стоимости проекта",
+          "Остальная сумма: при завершении и сдаче проекта",
+          "Счета должны быть оплачены в течение 14 дней с момента выставления",
+          "Задержки в оплате могут привести к приостановке работ"
+        ]
+      }
+    },
+    "refunds": {
+      "title": "Возвраты и возмещения",
+      "description": "Наша политика возврата средств:",
+      "policy": [
+        "Возвраты возможны только в исключительных и обоснованных ситуациях",
+        "Авансовый платеж не возвращается, если проект начат и ресурсы выделены",
+        "Если клиент отказывается от проекта после начала работ, выставляется счет за уже выполненную работу",
+        "За уже предоставленные и принятые услуги возврат средств не производится",
+        "Значительные изменения в спецификациях могут привести к дополнительным расходам"
+      ],
+      "exceptions": {
+        "title": "Исключения для возврата",
+        "cases": [
+          "Доказанная техническая невозможность предоставить обещанную услугу",
+          "Несоблюдение сроков поставки по исключительной вине DigitalGrow",
+          "Серьезные дефекты, которые не могут быть устранены своевременно"
+        ]
+      }
+    },
+    "liability": {
+      "title": "Ограничение ответственности",
+      "description": "Пределы ответственности DigitalGrow:",
+      "limitations": [
+        "Наша ответственность ограничивается стоимостью подписанного договора",
+        "Мы не несем ответственности за косвенные убытки или упущенную выгоду",
+        "Клиент несет ответственность за предоставление правильной и полной информации",
+        "Мы не гарантируем конкретных результатов маркетинга или продаж",
+        "Ответственность за контент, предоставленный клиентом, лежит исключительно на клиенте",
+        "Мы не несем ответственности за проблемы, вызванные сторонними поставщиками (хостинг, домены и т.д.)"
+      ],
+      "warranties": {
+        "title": "Предоставляемые гарантии",
+        "items": [
+          "Гарантия на технические дефекты: 3 месяца с момента поставки",
+          "Бесплатная техническая поддержка: первый месяц после запуска",
+          "Услуги предоставляются в соответствии с согласованными спецификациями",
+          "Мы соблюдаем отраслевые стандарты качества кода и дизайна"
+        ]
+      }
+    },
+    "modifications": {
+      "title": "Изменения условий",
+      "description": "Как и когда могут быть изменены данные условия:",
+      "process": [
+        "Мы оставляем за собой право изменять данные условия в любое время",
+        "Изменения будут сообщены по электронной почте и опубликованы на веб-сайте",
+        "Изменения вступают в силу через 30 дней после уведомления",
+        "Продолжение использования услуг означает принятие новых условий",
+        "Для текущих договоров применяются условия, действовавшие на момент подписания"
+      ]
+    },
+    "contact": {
+      "title": "Контактная информация",
+      "description": "По вопросам данных условий и положений:",
+      "email": "Email: digitalgrow.moldova@gmail.com",
+      "phone": "Телефон: +373 060 920 895",
+      "company": "DigitalGrow S.R.L.",
+      "legal": "Юридический отдел: digitalgrow.moldova@gmail.com"
+    }
+  }
+}
