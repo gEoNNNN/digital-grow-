@@ -14,7 +14,7 @@ import section2card3 from "../assets/sectiontwocard3.svg"
 import Footer from "../components/Footer"
 import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
-import feedback from "../assets/krovfeedback.mp4"
+import otherClient from "../assets/lumetalogo.svg" 
 import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
@@ -22,7 +22,6 @@ import { useLanguage } from "../components/LanguageContext";
 const HomePage = () => {
   const { language } = useLanguage();
   const content = homepageContent[language]
-  const [videoOpen, setVideoOpen] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,6 +31,51 @@ const HomePage = () => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // YouTube video URLs with language-specific subtitles
+  const getYouTubeVideoUrl = (lang: string) => {
+    const baseUrl = "https://www.youtube.com/embed/s5IJHkIP4Q4?cc_load_policy=1";
+    switch (lang) {
+      case "RO":
+        return `${baseUrl}&cc_lang_pref=ro`;
+      case "RU":
+        return `${baseUrl}&cc_lang_pref=ru`;
+      case "EN":
+        return `${baseUrl}&cc_lang_pref=en`;
+      default:
+        return `${baseUrl}&cc_lang_pref=ro`;
+    }
+  };
+
+  const feedbacks = [
+    {
+      name: content.hero.marcel,
+      photo: marcel,
+      feedback: content.hero.feedback,
+      video: getYouTubeVideoUrl(language),
+      button: content.hero.feedbackbutton,
+    },
+    {
+      name: content.hero.lumeata,
+      photo: otherClient,
+      feedback: content.hero.lumetafeedback,
+      video: getYouTubeVideoUrl(language),
+      button: content.hero.feedbackbutton,
+    }
+  ];
+
+  const [currentFeedback, setCurrentFeedback] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  // Auto-switch feedback every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeedback(prev =>
+        prev === feedbacks.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [feedbacks.length]);
 
   return (
     <div className="homepage">
@@ -149,20 +193,17 @@ const HomePage = () => {
             <div className="homepage-section-three-content">
               {/* Left: Client photo and name */}
               <div className="homepage-client-photo">
-                <img src={marcel} alt="Marcel Papuc" />
-                <span className="homepage-client-name">{content.hero.marcel}</span>
+                <img src={feedbacks[currentFeedback].photo} alt={feedbacks[currentFeedback].name} />
+                <span className="homepage-client-name">{feedbacks[currentFeedback].name}</span>
               </div>
               {/* Right: Feedback and button */}
               <div className="homepage-feedback-block">
-                <p className="homepage-feedback-text-cotation1">,,</p>
-                <p className="homepage-feedback-text">{content.hero.feedback}</p>
-                <p className="homepage-feedback-text-cotation2">,,</p>
-
+                <p className="homepage-feedback-text">{feedbacks[currentFeedback].feedback}</p>
                 <button
                   className="homepage-section-one-card-button-video"
                   onClick={() => setVideoOpen(true)}
                 >
-                  {content.hero.feedbackbutton}
+                  {feedbacks[currentFeedback].button}
                 </button>
                 {/* Video Popup */}
                 {videoOpen && (
@@ -177,35 +218,34 @@ const HomePage = () => {
                         setVideoOpen(false);
                       }}
                       aria-label="Close video"
-                      style={{
-                        position: "absolute",
-                        top: "2vw",
-                        right: "2vw",
-                        zIndex: 2,
-                        background: "rgba(0,0,0,0.5)",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: "50%",
-                        width: "3vw",
-                        height: "3vw",
-                        fontSize: "2vw",
-                        cursor: "pointer"
-                      }}
                     >
                       ×
                     </button>
-                    <video
-                      src={feedback}
-                      controls
-                      autoPlay
+                    <iframe
+                      src={feedbacks[currentFeedback].video}
                       className="homepage-video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
                       onClick={e => e.stopPropagation()}
                     />
                   </div>
                 )}
+                {/* White rectangles for switching */}
+                <div className="homepage-feedback-switcher">
+                  <div
+                    className={`feedback-switch-rect${currentFeedback === 0 ? " active" : ""}`}
+                    onClick={() => setCurrentFeedback(0)}
+                  />
+                  <div
+                    className={`feedback-switch-rect${currentFeedback === 1 ? " active" : ""}`}
+                    onClick={() => setCurrentFeedback(1)}
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <div className="homepage-section-five">
           <NextLevelSection
             title={
               language === "EN" && isMobile
@@ -215,6 +255,7 @@ const HomePage = () => {
             buttonText={content.hero.sectionfourbutton}
           />
           <Footer />
+          </div>
         </div>
       </div>
   )

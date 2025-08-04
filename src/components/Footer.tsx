@@ -87,22 +87,22 @@ const Footer: React.FC = () => {
           <p className="footer-description">{currentTranslations.description}</p>
           
           <div className="footer-social-icons">
-            <a href="#" className="social-link">
+            <a href="https://www.facebook.com/profile.php?id=61577024783785" className="social-link">
               <img src={facebook} alt="Facebook" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.instagram.com/digitalgrowmoldova/" className="social-link">
               <img src={instagram} alt="Instagram" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.linkedin.com/in/digital-grow-989768378/" className="social-link">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://telegram.org/" className="social-link">
               <img src={telegram} alt="Telegram" />
             </a>
             <a href="#" className="social-link">
               <img src={tiktok} alt="TikTok" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://api.whatsapp.com/qr/GLN7BY6EENJQH1?autoload=1&app_absent=0" className="social-link">
               <img src={wa} alt="WhatsApp" />
             </a>
             <a href="#" className="social-link">

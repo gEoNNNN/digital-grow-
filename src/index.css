@@ -28,6 +28,7 @@
   
   /* Card Colors */
   --card-bg: #1C2734;
+  --card-text:#FFFFFF;
   --card-border: rgba(255, 255, 255, 0.1);
   --card-border-hover: rgba(255, 255, 255, 0.2);
   --card-shadow: rgba(255, 255, 255, 0.1);
@@ -81,7 +82,8 @@
   --button-shadow-light: rgba(143, 188, 187, 0.2);
   
   /* Card Colors */
-  --card-bg: #ffffff;
+  --card-bg: #1C2734;
+  --card-text:#FFFFFF;
   --card-border: rgba(0, 0, 0, 0.1);
   --card-border-hover: rgba(0, 0, 0, 0.2);
   --card-shadow: rgba(0, 0, 0, 0.1);

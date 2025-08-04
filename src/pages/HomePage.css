@@ -66,8 +66,12 @@
   justify-content: center;
   gap: 6vw;
   width: 100%;
-  height: 30vw;
+  height: 40vw;
   background-color: var(--tertiary-bg);
+  z-index: 1000;
+}
+.homepage-section-five {
+  margin-top:10vw;
 }
 
 .homepage-client-photo {
@@ -86,13 +90,52 @@
   font-weight: 700;
   font-size: 2vw;
   color: var(--text-color);
+  text-align: center; /* Center the text */
+  width: 100%; /* Take full width of container */
+  max-width: 12vw; /* Limit width to match image */
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Handle overflow */
+  hyphens: auto; /* Add hyphens for long words */
+  line-height: 1.2; /* Tighter line height for multi-line text */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .homepage-client-name {
+    font-size: 5vw;
+    margin-bottom: 2vw;
+    max-width: 24vw; /* Match mobile image width */
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-client-name {
+    font-size: 6vw;
+    margin-bottom: 3vw;
+    max-width: 90vw; /* More space on very small screens */
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+  }
 }
 
 .homepage-feedback-block {
+  position: relative;
+  min-height: 18vw; /* Desktop */
+  height: 18vw;     /* Add this for fixed height */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: 40vw;
+  padding-bottom: 4vw; /* Space for the switcher */
+  overflow: visible; /* Allow text to overflow upward */
 }
 
 .homepage-feedback-text {
@@ -102,30 +145,16 @@
   text-shadow: 0 0.2vw 0.4vw var(--text-muted);
   margin-left: 5vw;
   width: 50vw;
+  flex-grow: 1; /* Allow text to take available space */
+  overflow: visible; /* Allow text to overflow */
+  display: flex;
+  align-items: flex-end; /* Align text to bottom, so overflow goes up */
+  min-height: 0; /* Allow shrinking */
+  margin-top:15vw;
 }
 
 
-.homepage-feedback-text-cotation1 {
-  font-size: 9vw;
-  color: var(--text-color);
-  margin-bottom: 2vw;
-  text-shadow: 0 0.2vw 0.4vw var(--text-muted);
-  margin-left: 5vw;
-  position: absolute;
-  margin-top: -8vw;
-  margin-left: 1vw;
-}
 
-.homepage-feedback-text-cotation2 {
-  font-size: 9vw;
-  color: var(--text-color);
-  margin-bottom: 2vw;
-  text-shadow: 0 0.2vw 0.4vw var(--text-muted);
-  margin-left: 5vw;
-  position: absolute;
-  margin-top: 9vw;
-  margin-left: 54vw;
-}
 
 .homepage-video-popup {
   position: fixed;
@@ -140,14 +169,46 @@
   z-index: 9999;
 }
 
-.homepage-video-popup video {
+.homepage-video-popup iframe {
   width: 70vw;
+  height: 40vw;
   border-radius: 1vw;
   background: #000;
 }
 
+.homepage-video-close-btn {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  font-size: 3vw;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
 
-
+/* Mobile styles */
+@media (max-width: 768px) {
+  .homepage-video-popup iframe {
+    width: 90vw;
+    height: 50vw;
+  }
+  
+  .homepage-video-close-btn {
+    top: 4vw;
+    right: 4vw;
+    font-size: 6vw;
+    width: 8vw;
+    height: 8vw;
+  }
+}
 .homepage-main-section-description {
   font-size: 2vw;
   margin-top: 5vw;
@@ -315,7 +376,7 @@
   width: 33vw;
   position: relative;
   z-index: 2;
-  color: var(--text-secondary);
+  color: var(--card-text);
   font-size: 2vw;
   font-weight: 400;
   margin: 0;
@@ -346,6 +407,10 @@
   box-shadow: 
     0 0 0.5vw var(--button-shadow),
     0 0 1vw var(--button-shadow-medium);
+}
+
+.homepage-section-one-card-button-video {
+  margin-top: 2vw;
 }
 
 .homepage-section-one-card-button:hover,.homepage-section-one-card-button-video:hover {
@@ -478,11 +543,6 @@
   margin-top: -3.5vw;
 }
 
-.homepage-section-three-content {
-  width: 100%;
-  height: 30vw;
-  background-color: var(--tertiary-bg);
-}
 
 /* Section Four Styling */
 .homepage-section-four {
@@ -496,6 +556,7 @@
   align-items: center;
   text-align: center;
 }
+
 
 .homepage-section-four-title {
   font-size: 3vw;
@@ -542,18 +603,48 @@
   position: absolute;
   top: 2vw;
   right: 2vw;
-  z-index: 2;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
+  background: rgba(0,0,0,0.7);
+  color: white;
   border: none;
-  border-radius: 50%;
-  width: 3vw;
-  height: 3vw;
-  font-size: 2vw;
+  font-size: 3vw;
   cursor: pointer;
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10000;
+}
+
+/* Add this BEFORE any @media queries - Desktop styles for feedback switcher */
+.homepage-feedback-switcher {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+  width: auto;
+  top: 25vw;
+  z-index: 10;
+}
+
+.feedback-switch-rect {
+  width: 5vw;
+  height: 1vw;
+  background: #fff;
+  border-radius: 0.35vw;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+}
+
+.feedback-switch-rect.active {
+  opacity: 1;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
 }
 
 @media (max-width: 1620px) {
@@ -564,7 +655,7 @@
 
 @media (max-width: 480px) {
   .portfolio-bg-fade {
-    display: block;
+    display: none;
   }
 }
 
@@ -572,7 +663,7 @@
 @media (max-width: 768px) {
 
   .portfolio-bg-fade {
-    top: 165vw;
+    top: 400vw;
   }
 
   .homepage-main-section {
@@ -702,7 +793,7 @@
     padding: 2vw 4vw;
     font-size: 4vw;
     border-radius: 5vw;
-    margin-top: 3vw;
+    top: 45vw;
     margin-left: 0;
     margin-bottom: 2vw;
   }
@@ -816,15 +907,22 @@
   .homepage-section-three-content {
     flex-direction: column !important;
     align-items: center !important;
-    gap: 4vw !important;
-    height: auto !important;
-    padding: 6vw 0;
+    gap: 8vw !important; /* Increased gap to prevent overlap */
+    height: auto !important; /* Let height adjust automatically */
+    padding: 8vw 4vw !important; /* Add padding for better spacing */
+    min-height: 180vw; /* Set a minimum height instead of fixed */
+  }
+
+  .homepage-section-five {
+    margin-top: 70vw;
   }
 
   .homepage-client-photo {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2vw;
+    margin-bottom: 4vw; /* Add bottom margin */
+    margin-top: -70vw;
+    width: 100%;
   }
 
   .homepage-client-photo img {
@@ -834,7 +932,9 @@
 
   .homepage-client-name {
     font-size: 5vw;
-    margin-bottom: 2vw;
+    margin-bottom: 4vw; /* Add more bottom margin */
+    text-align: center;
+    width: 100%;
   }
 
   .homepage-feedback-block {
@@ -842,7 +942,9 @@
     max-width: 90vw !important;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 6vw 4vw 12vw 4vw !important; /* More padding, especially bottom for switcher */
+    position: relative;
+    min-height: 40vw; /* Ensure enough space for content */
   }
 
   .homepage-feedback-text {
@@ -850,9 +952,33 @@
     text-align: center !important;
     width: 100% !important;
     font-size: 4vw !important;
+    margin-bottom: 6vw !important; /* Add space between text and button */
+    display: block; /* Remove flex to prevent issues */
+    line-height: 1.4;
+    margin-top: -10vw;
   }
-  .homepage-feedback-text-cotation1,
-  .homepage-feedback-text-cotation2 {
-    display: none;
+  .homepage-feedback-switcher {
+    margin-top: 85vw !important;
+  }
+  .homepage-section-one-card-button-video {
+    margin-top: 65vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-section-three-content {
+    gap: 10vw !important;
+    padding: 10vw 2vw !important;
+    min-height: 210vw;
+  }
+
+  .homepage-feedback-block {
+    padding: 8vw 2vw 16vw 2vw !important;
+    min-height: 50vw;
+  }
+
+  .homepage-feedback-text {
+    font-size: 4.5vw !important;
+    margin-bottom: 8vw !important;
   }
 }

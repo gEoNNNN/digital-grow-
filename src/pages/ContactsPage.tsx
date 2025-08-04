@@ -104,19 +104,19 @@ const ContactsPage: React.FC = () => {
           <h2 className="contacts-section-title" dangerouslySetInnerHTML={{ __html: content.contacts.socilastitle }}></h2>
           
           <div className="social-media-row">
-            <a href="#" className="social-media-link">
+            <a href="https://www.facebook.com/profile.php?id=61577024783785" className="social-media-link">
               <img src={facebook} alt="Facebook" />
               <span>Facebook</span>
             </a>
-            <a href="#" className="social-media-link">
+            <a href="https://www.instagram.com/digitalgrowmoldova/" className="social-media-link">
               <img src={instagram} alt="Instagram" />
               <span>Instagram</span>
             </a>
-            <a href="#" className="social-media-link">
+            <a href="https://www.linkedin.com/in/digital-grow-989768378/" className="social-media-link">
               <img src={linkedin} alt="LinkedIn" />
               <span>LinkedIn</span>
             </a>
-            <a href="#" className="social-media-link">
+            <a href="https://telegram.org/" className="social-media-link">
               <img src={telegram} alt="Telegram" />
               <span>Telegram</span>
             </a>
@@ -124,7 +124,7 @@ const ContactsPage: React.FC = () => {
               <img src={tiktok} alt="TikTok" />
               <span>TikTok</span>
             </a>
-            <a href="#" className="social-media-link">
+            <a href="https://api.whatsapp.com/qr/GLN7BY6EENJQH1?autoload=1&app_absent=0" className="social-media-link">
               <img src={wa} alt="WhatsApp" />
               <span>WhatsApp</span>
             </a>
