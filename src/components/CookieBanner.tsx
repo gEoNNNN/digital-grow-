@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { useNavigate } from 'react-router-dom';
 import './CookieBanner.css';
