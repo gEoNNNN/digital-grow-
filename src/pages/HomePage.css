@@ -89,7 +89,7 @@
 .homepage-client-name {
   font-weight: 700;
   font-size: 2vw;
-  color: var(--text-color);
+  color: var(--card-text);
   text-align: center; /* Center the text */
   width: 100%; /* Take full width of container */
   max-width: 12vw; /* Limit width to match image */
@@ -140,7 +140,7 @@
 
 .homepage-feedback-text {
   font-size: 1.7vw;
-  color: var(--text-color);
+  color: var(--card-text);
   margin-bottom: 2vw;
   text-shadow: 0 0.2vw 0.4vw var(--text-muted);
   margin-left: 5vw;
@@ -221,10 +221,10 @@
 }
 
 .highlight {
-  background: var(--text-gradient);
+ background: var(--maintitlegradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; 
+  background-clip: text;
   color: transparent;
   font-size: 5.2vw; 
 }
@@ -981,4 +981,20 @@
     font-size: 4.5vw !important;
     margin-bottom: 8vw !important;
   }
+}
+
+/* Add this to your HomePage.css file */
+.homepage .homepage-section-one-card p,
+.homepage .homepage-section-two-card p {
+  color: var(--card-text) !important;
+}
+
+.homepage .homepage-section-one-card h3,
+.homepage .homepage-section-two-card h3 {
+  background: var(--card-text-gradient) !important;
+  background-size: 100% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
 }

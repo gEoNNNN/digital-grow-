@@ -29,6 +29,7 @@
   /* Card Colors */
   --card-bg: #1C2734;
   --card-text:#FFFFFF;
+  --card-text-gradient:linear-gradient(45deg, #5B82AB, #C0DFFF);
   --card-border: rgba(255, 255, 255, 0.1);
   --card-border-hover: rgba(255, 255, 255, 0.2);
   --card-shadow: rgba(255, 255, 255, 0.1);
@@ -53,7 +54,7 @@
   --section-shadow: rgba(0, 0, 0, 0.3);
   
   /* Footer Colors */
-  --footer-bg: #1a1a1a;
+  --footer-bg: #000000;
   --footer-text: white;
 }
 
@@ -61,7 +62,7 @@
   /* Primary Background Colors */
   --primary: #ffffff;
   --secondary-bg: #f8f9fa;
-  --tertiary-bg: #e9ecef;
+  --tertiary-bg: #2A2A2A;
   --maindescription:white;
   --maintitlegradient:  linear-gradient(45deg, #5B82AB, #C0DFFF);
   --aboutproject: #e9ecef;
@@ -71,7 +72,7 @@
   --text-color: #212529;
   --text-secondary: #6c757d;
   --text-muted: #868e96;
-  --text-gradient: linear-gradient(45deg, #252525, #003A80);
+  --text-gradient: linear-gradient(45deg,#003A80,#A0CAFF );
   
   /* Button Colors */
   --button-color: #8FBCBB;
@@ -84,6 +85,7 @@
   /* Card Colors */
   --card-bg: #1C2734;
   --card-text:#FFFFFF;
+  --card-text-gradient:linear-gradient(45deg, #5B82AB, #C0DFFF);
   --card-border: rgba(0, 0, 0, 0.1);
   --card-border-hover: rgba(0, 0, 0, 0.2);
   --card-shadow: rgba(0, 0, 0, 0.1);
@@ -108,8 +110,21 @@
   --section-shadow: rgba(0, 0, 0, 0.1);
   
   /* Footer Colors */
-  --footer-bg: #f8f9fa;
-  --footer-text: #212529;
+  --footer-bg: #000000;
+  --footer-text: white;
+}
+
+/* Test styles to verify theme switching */
+[data-theme="light"] .highlight {
+  background: linear-gradient(45deg,#003A80,#A0CAFF )!important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+[data-theme="dark"] .highlight {
+  background: linear-gradient(45deg, green, yellow) !important;
 }
 
 * {
