@@ -120,7 +120,7 @@ const ContactsPage: React.FC = () => {
               <img src={telegram} alt="Telegram" />
               <span>Telegram</span>
             </a>
-            <a href="#" className="social-media-link">
+            <a href="https://www.tiktok.com/@digital.grow1" className="social-media-link">
               <img src={tiktok} alt="TikTok" />
               <span>TikTok</span>
             </a>

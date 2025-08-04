@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
             <a href="https://telegram.org/" className="social-link">
               <img src={telegram} alt="Telegram" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.tiktok.com/@digital.grow1" className="social-link">
               <img src={tiktok} alt="TikTok" />
             </a>
             <a href="https://api.whatsapp.com/qr/GLN7BY6EENJQH1?autoload=1&app_absent=0" className="social-link">

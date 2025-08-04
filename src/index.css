@@ -123,9 +123,6 @@
   color: transparent !important;
 }
 
-[data-theme="dark"] .highlight {
-  background: linear-gradient(45deg, green, yellow) !important;
-}
 
 * {
   box-sizing: border-box;
