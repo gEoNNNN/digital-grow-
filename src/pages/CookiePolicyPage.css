@@ -3,7 +3,7 @@
   background: var(--primary);
   color: var(--text-color);
   font-family: "DM Sans", sans-serif;
-  margin-top:-8vw;
+  margin-top: -8vw;
 }
 
 .cookie-policy-container {
@@ -113,6 +113,11 @@
   background: var(--secondary-bg);
   border-radius: 1vw;
   border: 1px solid var(--card-border);
+}
+
+.cookie-type-subsection h3 {
+  margin-top: 0;
+  color: var(--button-color);
 }
 
 .cookie-browser-instructions {
