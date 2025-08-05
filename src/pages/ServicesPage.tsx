@@ -7,7 +7,7 @@ import Footer from "../components/Footer"
 import servicesContent from "./ServicesPage.json"
 import NextLevelSection from '../components/NextLevel'
 import LiveChat from '../components/LiveChat'
-import { useNavigate } from "react-router-dom";
+import PayPalPayment from '../components/PayPal'
 import { useLanguage } from "../components/LanguageContext";
 
 
@@ -15,7 +15,10 @@ const ServicesPage: React.FC = () => {
   const { language } = useLanguage();
   const content = servicesContent[language];
   const [chatOpen, setChatOpen] = useState(false)
-  const navigate = useNavigate();
+  const [paypalOpen, setPaypalOpen] = useState(false)
+  const [selectedService, setSelectedService] = useState('')
+  const [selectedPrice, setSelectedPrice] = useState('')
+
 
   // Create refs for each first card title
   const sectionOneCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
@@ -31,6 +34,13 @@ const ServicesPage: React.FC = () => {
   // Helper for currency
   const currency = language === "EN" ? "EUR" : "MDL";
 
+  // Handle buy button click
+  const handleBuyClick = (serviceName: string, price: string) => {
+    setSelectedService(serviceName)
+    setSelectedPrice(price.replace(/[^\d]/g, '')) // Remove non-numeric characters
+    setPaypalOpen(true)
+  }
+
   return (
     <div className="services-page">
       <video className="background-video" autoPlay muted loop>
@@ -40,6 +50,13 @@ const ServicesPage: React.FC = () => {
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="services-content">
         <LiveChat open={chatOpen} setOpen={setChatOpen} />
+        <PayPalPayment 
+          isOpen={paypalOpen} 
+          onClose={() => setPaypalOpen(false)}
+          serviceName={selectedService}
+          servicePrice={selectedPrice}
+          currency={currency}
+        />
         <NavBar/>
         <div className="services-main-section">
           <h1 className="services-main-section-title">
@@ -80,7 +97,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiononecard1title, content.services.sectiononecard1price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -100,7 +122,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiononecard2title, content.services.sectiononecard2price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -120,7 +147,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiononecard3title, content.services.sectiononecard3price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -140,7 +172,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard4statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiononecard4title, content.services.sectiononecard4price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -160,7 +197,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiononecard5statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiononecard5title, content.services.sectiononecard5price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -190,7 +232,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiontwocard1title, content.services.sectiontwocard1price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -210,7 +257,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiontwocard2title, content.services.sectiontwocard2price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -230,7 +282,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiontwocard3title, content.services.sectiontwocard3price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -250,7 +307,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard4statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiontwocard4title, content.services.sectiontwocard4price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -270,7 +332,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectiontwocard5statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectiontwocard5title, content.services.sectiontwocard5price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -300,7 +367,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard1statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectionthreecard1title, content.services.sectionthreecard1price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -321,7 +393,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard2statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectionthreecard2title, content.services.sectionthreecard2price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -342,7 +419,12 @@ const ServicesPage: React.FC = () => {
                 <span>{content.services.sectionthreecard3statement}</span>
               </div>
               <div className="services-card-action-row">
-                <button className="services-card-button" onClick={() => navigate("/inwork")}>{content.services.cardbutton}</button>
+                <button 
+                  className="services-card-button" 
+                  onClick={() => handleBuyClick(content.services.sectionthreecard3title, content.services.sectionthreecard3price)}
+                >
+                  {content.services.cardbutton}
+                </button>
                 {language !== "EN" && (
                   <span className="services-card-price-strike-x">
                     <span className="services-card-price-strike-text">
@@ -393,7 +475,12 @@ const ServicesPage: React.FC = () => {
                   <div className="package-discount1">{content.services.sectionfourcard1discount}</div>
                 )}
               </div>
-              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
+              <button 
+                className="package-card-button" 
+                onClick={() => handleBuyClick(content.services.sectionfourcard1title, content.services.sectionfourcard1price)}
+              >
+                {content.services.sectionfourcardbutton}
+              </button>
             </div>
 
             {/* Package Card 2 - Business Smart */}
@@ -431,7 +518,12 @@ const ServicesPage: React.FC = () => {
                   <div className="package-discount2">{content.services.sectionfourcard2discount}</div>
                 )}
               </div>
-              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
+              <button 
+                className="package-card-button" 
+                onClick={() => handleBuyClick(content.services.sectionfourcard2title, content.services.sectionfourcard2price)}
+              >
+                {content.services.sectionfourcardbutton}
+              </button>
             </div>
 
             {/* Package Card 3 - Enterprise Complete */}
@@ -479,7 +571,12 @@ const ServicesPage: React.FC = () => {
                   <div className="package-discount3">{content.services.sectionfourcard3discount}</div>
                 )}
               </div>
-              <button className="package-card-button" onClick={() => navigate("/inwork")}>{content.services.sectionfourcardbutton}</button>
+              <button 
+                className="package-card-button" 
+                onClick={() => handleBuyClick(content.services.sectionfourcard3title, content.services.sectionfourcard3price)}
+              >
+                {content.services.sectionfourcardbutton}
+              </button>
             </div>
           </div>
         </div>

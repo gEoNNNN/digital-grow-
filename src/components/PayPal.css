@@ -1,0 +1,125 @@
+.paypal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.paypal-modal {
+  position: relative;
+  max-width: 420px;
+  width: 90%;
+  margin: auto;
+  font-family: "DM Sans", sans-serif;
+}
+
+.paypal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paypal-close:hover {
+  background: #cc0000;
+}
+
+.paypal-form {
+  background: #f9f9f9;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.paypal-title {
+  margin-bottom: 18px;
+  text-align: center;
+  color: #0070ba;
+  font-size: 24px;
+}
+
+.paypal-label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.paypal-select,
+.paypal-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.paypal-select:focus,
+.paypal-input:focus {
+  outline: none;
+  border-color: #0070ba;
+}
+
+.paypal-error {
+  color: #d32f2f;
+  font-size: 13px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.paypal-button {
+  width: 100%;
+  background: #0070ba;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "DM Sans", sans-serif;
+  margin-top: 10px;
+}
+
+.paypal-button:hover {
+  background: #005a9b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .paypal-modal {
+    width: 95%;
+    max-width: 350px;
+  }
+  
+  .paypal-form {
+    padding: 20px;
+  }
+  
+  .paypal-title {
+    font-size: 20px;
+  }
+}
