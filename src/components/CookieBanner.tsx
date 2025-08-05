@@ -76,7 +76,7 @@ const CookieBanner = () => {
   };
 
   const handleLearnMore = () => {
-    navigate('/cookie-policy');
+    navigate('/terms-and-conditions');
   };
 
   console.log('CookieBanner render - isVisible:', isVisible); // Debug log

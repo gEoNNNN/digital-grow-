@@ -13,6 +13,64 @@
         "Prin plata serviciilor, confirmați acceptarea acestor termeni și condiții"
       ]
     },
+    "cookies": {
+      "title": "Politica privind cookie-urile",
+      "description": "Informații despre utilizarea cookie-urilor pe site-ul nostru:",
+      "whatAre": {
+        "title": "Ce sunt cookie-urile",
+        "description": "Cookie-urile sunt fișiere mici de text stocate pe dispozitivul dumneavoastră când vizitați site-ul nostru."
+      },
+      "types": {
+        "title": "Tipuri de cookie-uri utilizate",
+        "necessary": {
+          "title": "Cookie-uri necesare",
+          "description": "Esențiale pentru funcționarea site-ului",
+          "examples": [
+            "Cookie-uri de sesiune pentru navigare",
+            "Cookie-uri pentru preferințele de limbă",
+            "Cookie-uri pentru securitatea site-ului"
+          ]
+        },
+        "analytical": {
+          "title": "Cookie-uri analitice",
+          "description": "Ne ajută să înțelegem cum utilizați site-ul nostru",
+          "examples": [
+            "Google Analytics pentru statistici de vizitare",
+            "Cookie-uri pentru măsurarea performanței paginilor",
+            "Cookie-uri pentru analiza comportamentului utilizatorilor"
+          ]
+        },
+        "functional": {
+          "title": "Cookie-uri funcționale",
+          "description": "Îmbunătățesc experiența utilizatorului",
+          "examples": [
+            "Cookie-uri pentru tema site-ului (mod întunecat/luminos)",
+            "Cookie-uri pentru preferințele utilizatorului",
+            "Cookie-uri pentru funcționalitățile interactive"
+          ]
+        }
+      },
+      "consent": {
+        "title": "Consimțământul pentru cookie-uri",
+        "description": "Prin utilizarea site-ului nostru, consimțiți la utilizarea cookie-urilor conform acestei politici.",
+        "rights": [
+          "Puteți retrage consimțământul oricând",
+          "Puteți șterge cookie-urile din browserul dumneavoastră",
+          "Puteți dezactiva cookie-urile din setările browserului",
+          "Unele funcționalități pot fi afectate dacă dezactivați cookie-urile"
+        ]
+      },
+      "control": {
+        "title": "Controlul cookie-urilor",
+        "description": "Cum puteți gestiona cookie-urile:",
+        "methods": [
+          "Prin setările browserului dumneavoastră",
+          "Prin banner-ul de cookie-uri de pe site",
+          "Prin ștergerea periodică a cookie-urilor",
+          "Prin utilizarea modului privat/incognito"
+        ]
+      }
+    },
     "payments": {
       "title": "Plăți și facturare",
       "description": "Informații despre procesul de plată și facturare:",
@@ -108,6 +166,64 @@
         "By paying for services, you confirm acceptance of these terms and conditions"
       ]
     },
+    "cookies": {
+      "title": "Cookie Policy",
+      "description": "Information about the use of cookies on our website:",
+      "whatAre": {
+        "title": "What are cookies",
+        "description": "Cookies are small text files stored on your device when you visit our website."
+      },
+      "types": {
+        "title": "Types of cookies used",
+        "necessary": {
+          "title": "Necessary cookies",
+          "description": "Essential for website functionality",
+          "examples": [
+            "Session cookies for navigation",
+            "Language preference cookies",
+            "Website security cookies"
+          ]
+        },
+        "analytical": {
+          "title": "Analytical cookies",
+          "description": "Help us understand how you use our website",
+          "examples": [
+            "Google Analytics for visit statistics",
+            "Page performance measurement cookies",
+            "User behavior analysis cookies"
+          ]
+        },
+        "functional": {
+          "title": "Functional cookies",
+          "description": "Enhance user experience",
+          "examples": [
+            "Website theme cookies (dark/light mode)",
+            "User preference cookies",
+            "Interactive functionality cookies"
+          ]
+        }
+      },
+      "consent": {
+        "title": "Cookie consent",
+        "description": "By using our website, you consent to the use of cookies in accordance with this policy.",
+        "rights": [
+          "You can withdraw consent at any time",
+          "You can delete cookies from your browser",
+          "You can disable cookies in browser settings",
+          "Some functionality may be affected if you disable cookies"
+        ]
+      },
+      "control": {
+        "title": "Cookie control",
+        "description": "How you can manage cookies:",
+        "methods": [
+          "Through your browser settings",
+          "Through the cookie banner on our site",
+          "By periodically deleting cookies",
+          "By using private/incognito mode"
+        ]
+      }
+    },
     "payments": {
       "title": "Payments and Billing",
       "description": "Information about payment and billing process:",
@@ -202,6 +318,64 @@
         "Данные условия распространяются на всех клиентов и пользователей услуг DigitalGrow",
         "Оплачивая услуги, вы подтверждаете принятие данных условий и положений"
       ]
+    },
+    "cookies": {
+      "title": "Политика использования cookies",
+      "description": "Информация об использовании файлов cookie на нашем сайте:",
+      "whatAre": {
+        "title": "Что такое cookies",
+        "description": "Cookies - это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении нашего сайта."
+      },
+      "types": {
+        "title": "Типы используемых cookies",
+        "necessary": {
+          "title": "Необходимые cookies",
+          "description": "Необходимы для функционирования сайта",
+          "examples": [
+            "Сессионные cookies для навигации",
+            "Cookies для языковых предпочтений",
+            "Cookies для безопасности сайта"
+          ]
+        },
+        "analytical": {
+          "title": "Аналитические cookies",
+          "description": "Помогают нам понять, как вы используете наш сайт",
+          "examples": [
+            "Google Analytics для статистики посещений",
+            "Cookies для измерения производительности страниц",
+            "Cookies для анализа поведения пользователей"
+          ]
+        },
+        "functional": {
+          "title": "Функциональные cookies",
+          "description": "Улучшают пользовательский опыт",
+          "examples": [
+            "Cookies для темы сайта (темный/светлый режим)",
+            "Cookies для пользовательских предпочтений",
+            "Cookies для интерактивных функций"
+          ]
+        }
+      },
+      "consent": {
+        "title": "Согласие на использование cookies",
+        "description": "Используя наш сайт, вы соглашаетесь на использование cookies в соответствии с данной политикой.",
+        "rights": [
+          "Вы можете отозвать согласие в любое время",
+          "Вы можете удалить cookies из вашего браузера",
+          "Вы можете отключить cookies в настройках браузера",
+          "Некоторые функции могут быть затронуты, если вы отключите cookies"
+        ]
+      },
+      "control": {
+        "title": "Управление cookies",
+        "description": "Как вы можете управлять cookies:",
+        "methods": [
+          "Через настройки вашего браузера",
+          "Через баннер cookies на нашем сайте",
+          "Путем периодического удаления cookies",
+          "Используя приватный/инкогнито режим"
+        ]
+      }
     },
     "payments": {
       "title": "Платежи и выставление счетов",

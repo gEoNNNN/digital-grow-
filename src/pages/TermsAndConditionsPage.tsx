@@ -32,6 +32,71 @@ const TermsAndConditionsPage = () => {
             </ul>
           </section>
 
+          {/* Cookie Policy Section */}
+          <section className="terms-section">
+            <h2>{content.cookies.title}</h2>
+            <p>{content.cookies.description}</p>
+            
+            <div className="terms-subsection">
+              <h3>{content.cookies.whatAre.title}</h3>
+              <p>{content.cookies.whatAre.description}</p>
+            </div>
+
+            <div className="terms-subsection">
+              <h3>{content.cookies.types.title}</h3>
+              
+              <div className="cookie-type-subsection">
+                <h4>{content.cookies.types.necessary.title}</h4>
+                <p>{content.cookies.types.necessary.description}</p>
+                <ul>
+                  {content.cookies.types.necessary.examples.map((example, index) => (
+                    <li key={index}>{example}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="cookie-type-subsection">
+                <h4>{content.cookies.types.analytical.title}</h4>
+                <p>{content.cookies.types.analytical.description}</p>
+                <ul>
+                  {content.cookies.types.analytical.examples.map((example, index) => (
+                    <li key={index}>{example}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="cookie-type-subsection">
+                <h4>{content.cookies.types.functional.title}</h4>
+                <p>{content.cookies.types.functional.description}</p>
+                <ul>
+                  {content.cookies.types.functional.examples.map((example, index) => (
+                    <li key={index}>{example}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="terms-subsection">
+              <h3>{content.cookies.consent.title}</h3>
+              <p>{content.cookies.consent.description}</p>
+              <ul>
+                {content.cookies.consent.rights.map((right, index) => (
+                  <li key={index}>{right}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="terms-subsection">
+              <h3>{content.cookies.control.title}</h3>
+              <p>{content.cookies.control.description}</p>
+              <ul>
+                {content.cookies.control.methods.map((method, index) => (
+                  <li key={index}>{method}</li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
           {/* Payments Section */}
           <section className="terms-section">
             <h2>{content.payments.title}</h2>

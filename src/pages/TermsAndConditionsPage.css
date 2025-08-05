@@ -133,6 +133,53 @@
   margin-bottom: 0;
 }
 
+.cookie-type-subsection {
+  margin-bottom: 2vw;
+  padding: 1.5vw;
+  background: var(--secondary-bg);
+  border-radius: 1vw;
+  border: 1px solid var(--card-border);
+  margin-top: 1.5vw;
+}
+
+.cookie-type-subsection h4 {
+  font-size: 1.6vw;
+  font-weight: 600;
+  margin-bottom: 1vw;
+  margin-top: 0;
+  color: var(--button-color);
+}
+
+.cookie-type-subsection p {
+  font-size: 1.2vw;
+  line-height: 1.6;
+  margin-bottom: 1vw;
+  color: var(--text-color);
+}
+
+.cookie-type-subsection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cookie-type-subsection li {
+  font-size: 1.1vw;
+  line-height: 1.6;
+  margin-bottom: 0.5vw;
+  padding-left: 1.5vw;
+  position: relative;
+  color: var(--text-color);
+}
+
+.cookie-type-subsection li::before {
+  content: "•";
+  color: var(--button-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
 /* Light mode specific improvements */
 [data-theme="light"] .terms-content {
   background: #ffffff;
@@ -159,6 +206,18 @@
 }
 
 [data-theme="light"] .terms-section h3 {
+  color: #212529;
+}
+
+/* Light mode specific improvements for cookie sections */
+[data-theme="light"] .cookie-type-subsection {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+}
+
+[data-theme="light"] .cookie-type-subsection h4,
+[data-theme="light"] .cookie-type-subsection p,
+[data-theme="light"] .cookie-type-subsection li {
   color: #212529;
 }
 
@@ -234,6 +293,29 @@
     font-size: 3vw;
     margin-bottom: 1vw;
   }
+
+  .cookie-type-subsection {
+    padding: 3vw;
+    margin-bottom: 4vw;
+    border-radius: 2vw;
+    margin-top: 3vw;
+  }
+
+  .cookie-type-subsection h4 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+  }
+
+  .cookie-type-subsection p {
+    font-size: 3.2vw;
+    margin-bottom: 2vw;
+  }
+
+  .cookie-type-subsection li {
+    font-size: 3vw;
+    margin-bottom: 1.5vw;
+    padding-left: 4vw;
+  }
 }
 
 @media (max-width: 480px) {
@@ -276,5 +358,28 @@
 
   .terms-contact p {
     font-size: 3.5vw;
+  }
+
+  .cookie-type-subsection {
+    padding: 6vw;
+    margin-bottom: 6vw;
+    border-radius: 3vw;
+    margin-top: 4vw;
+  }
+
+  .cookie-type-subsection h4 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+  }
+
+  .cookie-type-subsection p {
+    font-size: 4vw;
+    margin-bottom: 3vw;
+  }
+
+  .cookie-type-subsection li {
+    font-size: 3.5vw;
+    margin-bottom: 2vw;
+    padding-left: 5vw;
   }
 }
