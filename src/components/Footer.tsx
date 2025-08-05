@@ -6,6 +6,7 @@ import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
 import { useNavigate } from "react-router-dom"
 import { useLanguage } from "./LanguageContext"
+import { Link } from 'react-router-dom';
 
 type LanguageCode = 'RO' | 'EN' | 'RU'
 
@@ -152,15 +153,11 @@ const Footer: React.FC = () => {
              'Политика конфиденциальности'}
           </button>
           <span className="footer-legal-separator">|</span>
-          <button 
-            type="button" 
-            onClick={() => navigate("/cookie-policy")}
-            className="footer-legal-link"
-          >
+          <Link to="/cookie-policy" className="footer-legal-link">
             {language === 'RO' ? 'Politica cookie-urilor' : 
              language === 'EN' ? 'Cookie Policy' : 
              'Политика cookie'}
-          </button>
+          </Link>
           <span className="footer-legal-separator">|</span>
           <button 
             type="button" 
