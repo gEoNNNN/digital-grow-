@@ -1024,3 +1024,91 @@
   background-clip: text !important;
   color: transparent !important;
 }
+
+/* Background shapes */
+.background-shapes {
+  position: absolute; /* Add this line */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 1000vh;
+  z-index:11; /* Lower z-index to be behind content but above sections */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-shape {
+  position: absolute;
+  opacity: 1; /* Ensure full visibility */
+  pointer-events: none;
+}
+
+.homepage-content {
+  position: relative;
+  z-index: 10; /* Higher than shapes */
+  width: 100%;
+}
+
+.homepage-section-one,
+.homepage-section-two,
+.homepage-section-three,
+.homepage-section-four {
+  position: relative;
+  z-index: 10; /* Same as content container */
+}
+
+.bg-shape-1,
+.bg-shape-2,
+.bg-shape-3,
+.bg-shape-4 {
+  width: 50vw;
+  height: 50vw;
+  top: 20vw;
+}
+
+
+.bg-shape-1 {
+  left: 5vw
+}
+
+.bg-shape-2 {
+  right: 10vw;
+}
+
+.bg-shape-3 {
+  left: 15vw;
+}
+
+.bg-shape-4 {
+  right: 8vw;
+}
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .bg-shape-1 {
+    width: 25vw;
+    height: 25vw;
+    top: 15vh;
+    left: 3vw;
+  }
+  
+  .bg-shape-2 {
+    width: 20vw;
+    height: 20vw;
+    top: 25vh;
+    right: 5vw;
+  }
+  
+  .bg-shape-3 {
+    width: 18vw;
+    height: 18vw;
+    bottom: 35vh;
+    left: 10vw;
+  }
+  
+  .bg-shape-4 {
+    width: 30vw;
+    height: 30vw;
+    bottom: 10vh;
+    right: 3vw;
+  }
+}

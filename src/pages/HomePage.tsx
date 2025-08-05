@@ -18,10 +18,6 @@ import otherClient from "../assets/lumetalogo.svg"
 import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
-import bgshpae1 from "../assets/Ellipse 1.png"
-import bgshpae2 from "../assets/Ellipse 2.png"
-import bgshpae3 from "../assets/Ellipse 3.png"
-import bgshpae4 from "../assets/Ellipse 4.png"
 
 const HomePage = () => {
   const { language } = useLanguage();
@@ -80,6 +76,7 @@ const HomePage = () => {
         Your browser does not support the video tag.
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
+      {/* Background shapes */}
       <div className="homepage-content">
         <NavBar/>
         <LiveChat open={chatOpen} setOpen={setChatOpen} />
