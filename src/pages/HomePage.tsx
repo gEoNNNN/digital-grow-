@@ -68,14 +68,6 @@ const HomePage = () => {
   const [videoOpen, setVideoOpen] = useState(false);
 
   // Auto-switch feedback every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentFeedback(prev =>
-        prev === feedbacks.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [feedbacks.length]);
 
   return (
     <div className="homepage">
@@ -187,7 +179,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="homepage-section-three">
-            <h1 className="homepage-section-one-title">
+            <h1 className="homepage-section-three-title">
               {content.hero.sectionthreetitle}
             </h1>
             <div className="homepage-section-three-content">

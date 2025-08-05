@@ -3,6 +3,7 @@
   background: var(--primary);
   color: var(--text-color);
   font-family: "DM Sans", sans-serif;
+  margin-top:-8vw;
 }
 
 .privacy-policy-container {

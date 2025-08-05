@@ -2,11 +2,8 @@ import React from 'react'
 import './Footer.css'
 import facebook from '../assets/facebook.svg'
 import linkedin from '../assets/li.svg'
-import telegram from '../assets/telegram.svg'
-import wa from "../assets/wa.svg"
 import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
-import viber from "../assets/viber.svg"
 import { useNavigate } from "react-router-dom"
 import { useLanguage } from "./LanguageContext"
 
@@ -96,17 +93,8 @@ const Footer: React.FC = () => {
             <a href="https://www.linkedin.com/in/digital-grow-989768378/" className="social-link">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://telegram.org/" className="social-link">
-              <img src={telegram} alt="Telegram" />
-            </a>
             <a href="https://www.tiktok.com/@digital.grow1" className="social-link">
               <img src={tiktok} alt="TikTok" />
-            </a>
-            <a href="https://api.whatsapp.com/qr/GLN7BY6EENJQH1?autoload=1&app_absent=0" className="social-link">
-              <img src={wa} alt="WhatsApp" />
-            </a>
-            <a href="#" className="social-link">
-              <img src={viber} alt="Viber" />
             </a>
           </div>
 

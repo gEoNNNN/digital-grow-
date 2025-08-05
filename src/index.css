@@ -15,6 +15,7 @@
   /* Text Colors */
   --text-color: white;
   --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-secondary-card: rgba(255, 255, 255, 0.8);
   --text-muted: rgba(255, 255, 255, 0.6);
   --text-gradient: linear-gradient(45deg, #5B82AB, #C0DFFF);
   
@@ -85,6 +86,7 @@
   /* Card Colors */
   --card-bg: #1C2734;
   --card-text:#FFFFFF;
+  --text-secondary-card:#cec8c8 ;
   --card-text-gradient:linear-gradient(45deg, #5B82AB, #C0DFFF);
   --card-border: rgba(0, 0, 0, 0.1);
   --card-border-hover: rgba(0, 0, 0, 0.2);

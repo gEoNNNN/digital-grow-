@@ -8,6 +8,22 @@ const CookiePolicyPage = () => {
   const { language } = useLanguage();
   const content = cookieContent[language as keyof typeof cookieContent];
 
+  // Add error handling in case content is undefined
+  if (!content) {
+    return (
+      <div className="cookie-policy-page">
+        <NavBar />
+        <div className="cookie-policy-container">
+          <div className="cookie-policy-content">
+            <h1>Cookie Policy</h1>
+            <p>Content not available for this language.</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="cookie-policy-page">
       <NavBar />

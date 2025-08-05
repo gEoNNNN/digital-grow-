@@ -13,11 +13,8 @@ import texticon1 from "../assets/textemoji1.svg"
 import texticon2 from "../assets/textemoji2.svg"
 import facebook from '../assets/facebook.svg'
 import linkedin from '../assets/li.svg'
-import telegram from '../assets/telegram.svg'
-import wa from "../assets/wa.svg"
 import instagram from '../assets/insta.svg'
 import tiktok from "../assets/tt.svg"
-import viber from "../assets/viber.svg"
 import LiveChat from '../components/LiveChat'
 import { useTheme } from "../components/ThemeContext";
 import { useLanguage } from "../components/LanguageContext";
@@ -116,21 +113,9 @@ const ContactsPage: React.FC = () => {
               <img src={linkedin} alt="LinkedIn" />
               <span>LinkedIn</span>
             </a>
-            <a href="https://telegram.org/" className="social-media-link">
-              <img src={telegram} alt="Telegram" />
-              <span>Telegram</span>
-            </a>
             <a href="https://www.tiktok.com/@digital.grow1" className="social-media-link">
               <img src={tiktok} alt="TikTok" />
               <span>TikTok</span>
-            </a>
-            <a href="https://api.whatsapp.com/qr/GLN7BY6EENJQH1?autoload=1&app_absent=0" className="social-media-link">
-              <img src={wa} alt="WhatsApp" />
-              <span>WhatsApp</span>
-            </a>
-            <a href="#" className="social-media-link">
-              <img src={viber} alt="Viber" />
-              <span>Viber</span>
             </a>
           </div>
         </div>

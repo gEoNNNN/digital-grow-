@@ -276,6 +276,7 @@
   padding: 8vw 5vw;
   position: relative;
   z-index: 1;
+  margin-top: 3vw;
 }
 
 .homepage-section-one-title {
@@ -286,6 +287,18 @@
   font-weight: 500;
   font-family: "DM Sans", sans-serif;
   text-shadow: 0 0.2vw 0.4vw var(--text-muted);
+  margin-top: -3vw;
+}
+
+.homepage-section-three-title {
+  font-size: 5vw;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 4vw;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  text-shadow: 0 0.2vw 0.4vw var(--text-muted);
+  margin-top: 2vw;
 }
 
 .homepage-section-one-cards {
