@@ -12,8 +12,8 @@ import LumeaTa from './pages/LumeaTa'
 import { ThemeProvider } from "./components/ThemeContext";
 import Inwork from './pages/Inwork'
 import { LanguageProvider } from "./components/LanguageContext"
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
-import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+//import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+//import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import CookieBanner from './components/CookieBanner';
 import CookiePolicyPage from './pages/CookiePolicyPage';
 
@@ -34,8 +34,8 @@ function App() {
               <Route path="/krov" element={<Krov />} />
               <Route path="/lumeata" element={<LumeaTa />} />
               <Route path="/inwork" element={<Inwork />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+              <Route path="/privacy-policy" element={<CookiePolicyPage />} />
+              <Route path="/terms-and-conditions" element={<CookiePolicyPage />} />
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
             </Routes>
             <CookieBanner />
