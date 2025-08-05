@@ -35,7 +35,6 @@ const AboutUsPage: React.FC = () => {
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="aboutus-content">
-        <div className="portfolio-bg-fade"></div>
         <LiveChat/>
         <NavBar/>
         <div className="aboutus-main-section">

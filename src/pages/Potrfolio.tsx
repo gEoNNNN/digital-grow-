@@ -18,7 +18,7 @@ const Portfolio: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
   const [picolinoOpen, setPicolinoOpen] = useState(false);
   const navigate = useNavigate()
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const content = portfolioContent[language]
 
   useEffect(() => {
@@ -35,14 +35,7 @@ const Portfolio: React.FC = () => {
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="portfolio-content">
-        <div className="portfolio-bg-fade"></div>
         <NavBar/>
-        {/* Optional: Language Switcher */}
-        <div style={{ display: "flex", gap: "1vw", justifyContent: "flex-end", margin: "1vw 2vw 0 0" }}>
-          <button onClick={() => setLanguage('RO')}>RO</button>
-          <button onClick={() => setLanguage('EN')}>EN</button>
-          <button onClick={() => setLanguage('RU')}>RU</button>
-        </div>
         <div className="portfolio-main-section">
           <h1 className="portfolio-main-section-title">
             {content.Portofoliu.title}

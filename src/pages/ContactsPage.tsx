@@ -33,7 +33,6 @@ const ContactsPage: React.FC = () => {
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="contacts-content">
-        <div className="portfolio-bg-fade"></div>
         <NavBar/>
         <LiveChat open={chatOpen} setOpen={setChatOpen} />
         <div className="contacts-main-section">

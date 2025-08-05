@@ -39,7 +39,6 @@ const ServicesPage: React.FC = () => {
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="services-content">
-        <div className="portfolio-bg-fade"></div>
         <LiveChat open={chatOpen} setOpen={setChatOpen} />
         <NavBar/>
         <div className="services-main-section">

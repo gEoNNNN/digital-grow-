@@ -59,6 +59,19 @@
   text-align: center;
 }
 
+.aboutus-section::before {
+  content: '';
+  position: absolute;
+  top: 5vw;
+  left: 0;
+  width: 100vw;
+  height: 10vw;
+  background: var(--fog);
+  box-shadow: 0 0 16vw 8vw var(--primary), 0 0 32vw 16vw var(--primary);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .aboutus-main-section-title {
   font-size: 5vw;
   text-align: center;

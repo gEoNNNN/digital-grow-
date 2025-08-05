@@ -502,9 +502,22 @@
   height: 10vw;
   background-color: (var(--primary));
   position: absolute;
-  margin-top: 10vw;
+  top: 30vw;
   background: var(--fog);
   box-shadow: 0 0 16vw 8vw var(--primary), 0 0 32vw 16vw var(--primary);
+}
+
+.homepage-section-one::before {
+  content: '';
+  position: absolute;
+  top: 5vw;
+  left: 0;
+  width: 100vw;
+  height: 10vw;
+  background: var(--fog);
+  box-shadow: 0 0 16vw 8vw var(--primary), 0 0 32vw 16vw var(--primary);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .homepage-section-two-card h3 {

@@ -18,6 +18,10 @@ import otherClient from "../assets/lumetalogo.svg"
 import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
+import bgshpae1 from "../assets/Ellipse 1.png"
+import bgshpae2 from "../assets/Ellipse 2.png"
+import bgshpae3 from "../assets/Ellipse 3.png"
+import bgshpae4 from "../assets/Ellipse 4.png"
 
 const HomePage = () => {
   const { language } = useLanguage();
@@ -77,7 +81,6 @@ const HomePage = () => {
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       <div className="homepage-content">
-        <div className="portfolio-bg-fade"></div>
         <NavBar/>
         <LiveChat open={chatOpen} setOpen={setChatOpen} />
         <div className="homepage-main-section">
@@ -98,6 +101,7 @@ const HomePage = () => {
           </button>
           </div>
           <div className="homepage-section-one">
+            
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
             <div className="homepage-section-one-cards">
               <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
