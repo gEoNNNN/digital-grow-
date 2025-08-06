@@ -68,6 +68,7 @@
   --maintitlegradient:  linear-gradient(45deg, #5B82AB, #C0DFFF);
   --aboutproject: #e9ecef;
   --ham-text:#ffffff;
+  --fog:linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.85) 100%);
   
   /* Text Colors */
   --text-color: #212529;

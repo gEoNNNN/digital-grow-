@@ -9,6 +9,10 @@ import NextLevelSection from '../components/NextLevel'
 import LiveChat from '../components/LiveChat'
 import PayPalPayment from '../components/PayPal'
 import { useLanguage } from "../components/LanguageContext";
+import shape1 from "../assets/Ellipse 1.png"
+import shape2 from "../assets/Ellipse 2.png"
+import shape3 from "../assets/Ellipse 3.png"
+
 
 
 const ServicesPage: React.FC = () => {
@@ -84,6 +88,9 @@ const ServicesPage: React.FC = () => {
         {/* Section One - Web Development */}
         <div className='services-content'>
         <div className="services-section">
+          <img src={shape1} className='services-shape1' />
+          <img src={shape2} className='services-shape2' />
+          <img src={shape3} className='services-shape3' />
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiononetitle }}></h2>
           <p className="services-section-description">{content.services.sectiononedescription}</p>
           <div className="services-cards">
@@ -216,9 +223,13 @@ const ServicesPage: React.FC = () => {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Section Two - Chatbot & AI */}
         <div className="services-section">
+          <img src={shape1} className='services-shape1' />
+          <img src={shape2} className='services-shape2' />
+          <img src={shape3} className='services-shape3' />
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiontwotitle }}></h2>
           <p className="services-section-description">{content.services.sectiontwodescription}</p>
           <div className="services-cards">
@@ -354,6 +365,9 @@ const ServicesPage: React.FC = () => {
 
         {/* Section Three - Branding & Design */}
         <div className="services-section">
+          <img src={shape1} className='services-shape1' />
+          <img src={shape2} className='services-shape2' />
+          <img src={shape3} className='services-shape3' />
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectionthreetitle }} ></h2>
           <p className="services-section-description">{content.services.sectionthreedescription}</p>
           <div className="services-cards">
@@ -586,7 +600,6 @@ const ServicesPage: React.FC = () => {
           buttonText={content.services.sectionfourbutton}
         />
         <Footer />
-      </div>
     </div>
     </div>
   )

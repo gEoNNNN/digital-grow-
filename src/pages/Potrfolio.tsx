@@ -13,6 +13,10 @@ import { useNavigate } from "react-router-dom"
 import LiveChat from "../components/LiveChat"
 import Picolino from "./Picolino"
 import { useLanguage } from "../components/LanguageContext"
+import shape1 from "../assets/Ellipse 1.png"
+import shape2 from "../assets/Ellipse 2.png"
+import shape3 from "../assets/Ellipse 3.png"
+
 
 const Portfolio: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -54,7 +58,11 @@ const Portfolio: React.FC = () => {
         {/* Projects Section */}
         <div className="portfolio-projects-section">
           <img src={line} alt="Background line" className="portfolio-bg-line" />
+          <img src={shape1} className='services-shape1' />
+          <img src={shape2} className='services-shape2' />
+          <img src={shape3} className='services-shape3p' />
           {/* Project 1 */}
+          <div className='portfolio-projects-section-content'>
           <div className="portfolio-project">
             <div className="project-content">
               <div className="project-logo">
@@ -126,6 +134,7 @@ const Portfolio: React.FC = () => {
               </button>
             </div>
           </div>
+        </div>
         </div>
         <Footer />
       </div>

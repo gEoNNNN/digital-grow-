@@ -16,6 +16,19 @@
   z-index: -1;
 }
 
+.portfolio-projects-section-content {
+  position: relative;
+  z-index: 1000;
+}
+
+.services-shape3p {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  margin-top: 80vw;
+  margin-left: -10vw;
+}
+
 .video-filter {
   position: fixed;
   top: 0;

@@ -18,7 +18,9 @@ import otherClient from "../assets/lumetalogo.svg"
 import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
-
+import shape1 from "../assets/Ellipse 1.png"
+import shape2 from "../assets/Ellipse 2.png"
+import shape3 from "../assets/Ellipse 3.png"
 const HomePage = () => {
   const { language } = useLanguage();
   const content = homepageContent[language]
@@ -100,6 +102,7 @@ const HomePage = () => {
           </button>
           </div>
           <div className="homepage-section-one">
+            <img src={shape1} className="homepage-section-one-shape" />
             <div className="homepage-section-one-content">
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
             <div className="homepage-section-one-cards">
@@ -152,6 +155,9 @@ const HomePage = () => {
           </div>
           
           <div className="homepage-section-two">
+            <img src={shape2} className="homepage-section-two-shape" />
+            <img src={shape3} className="homepage-section-two-shape2" />
+            <div className="homepage-section-two-content">
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiontwotitle }} />
             <div className="homepage-section-two-cards">
               <div className="homepage-section-two-card">
@@ -182,6 +188,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
+             </div>
           </div> 
           <div className="homepage-section-three">
             <h1 className="homepage-section-three-title">
@@ -245,14 +252,14 @@ const HomePage = () => {
             </div>
           </div>
           <div className="homepage-section-five">
-          <NextLevelSection
-            title={
-              language === "EN" && isMobile
-                ? content.hero.sectionfourtitlemobile
-                : content.hero.sectionfourtitle
-            }
-            buttonText={content.hero.sectionfourbutton}
-          />
+            <NextLevelSection
+              title={
+                language === "EN" && isMobile
+                  ? content.hero.sectionfourtitlemobile
+                  : content.hero.sectionfourtitle
+              }
+              buttonText={content.hero.sectionfourbutton}
+            />
           <Footer />
           </div>
         </div>

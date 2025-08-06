@@ -45,7 +45,7 @@ const AboutUsPage: React.FC = () => {
             {content.aboutus.description}
           </p>
         </div>
-
+        <div className='aboutus-page-content'>
         {/* Mission Section */}
         <div className="aboutus-section">
           <h2 className="aboutus-section-title1">{content.aboutus.missiontitle}</h2>
@@ -138,6 +138,7 @@ const AboutUsPage: React.FC = () => {
           <button onClick={() => setLanguage('RU')}>RU</button>
         </div>
         */}
+        </div>
 
         <Footer />
       </div>

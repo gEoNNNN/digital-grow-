@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/HomePage.css"
+import shape4 from "../assets/Ellipse 4.png"
+
 
 interface NextLevelSectionProps {
   title: string;
@@ -12,13 +14,16 @@ const NextLevelSection: React.FC<NextLevelSectionProps> = ({ title, buttonText }
 
   return (
     <div className="homepage-section-four">
-      <h3 className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: title }} />
-      <button
-        className="homepage-section-four-button"
-        onClick={() => navigate("/contacts")}
-      >
-        {buttonText}
-      </button>
+      <img src={shape4} className="homepage-section-four-shape" />
+      <div className="homepage-section-four-content">
+        <h3 className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: title }} />
+        <button
+          className="homepage-section-four-button"
+          onClick={() => navigate("/contacts")}
+        >
+          {buttonText}
+        </button>
+      </div>
     </div>
   );
 };
