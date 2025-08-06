@@ -912,7 +912,7 @@
   }
   .homepage-section-three {
     margin-top: -5vw;
-    height: 150vw;
+    height: 160vw;
   }
 
   .homepage-section-one-card-ru {
@@ -995,7 +995,7 @@
   .homepage-section-three-content {
     gap: 10vw !important;
     padding: 10vw 2vw !important;
-    min-height: 210vw;
+    min-height: 220vw;
   }
 
   .homepage-feedback-block {
@@ -1057,22 +1057,23 @@
   z-index: 10; /* Same as content container */
 }
 
-.bg-shape-1,
+/* .bg-shape-1,
 .bg-shape-2,
 .bg-shape-3,
 .bg-shape-4 {
   width: 50vw;
   height: 50vw;
-  top: 20vw;
 }
 
 
 .bg-shape-1 {
-  left: 5vw
+  left: 5vw;
+  top: 20vw;
 }
 
 .bg-shape-2 {
   right: 10vw;
+  top: 50vw;
 }
 
 .bg-shape-3 {
@@ -1082,7 +1083,12 @@
 .bg-shape-4 {
   right: 8vw;
 }
-/* Mobile responsive adjustments */
+
+.homepage-section-one-content{
+  position: relative;
+  z-index: 11;
+}
+/* Mobile responsive adjustments
 @media (max-width: 768px) {
   .bg-shape-1 {
     width: 25vw;
@@ -1111,4 +1117,4 @@
     bottom: 10vh;
     right: 3vw;
   }
-}
+} */

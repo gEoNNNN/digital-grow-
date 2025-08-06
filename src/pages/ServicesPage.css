@@ -17,7 +17,7 @@
   z-index: -1;
 }
 
-.services-section::before {
+.services-content::before {
   content: '';
   position: absolute;
   top: 5vw;

@@ -82,6 +82,7 @@ const ServicesPage: React.FC = () => {
         </div>
 
         {/* Section One - Web Development */}
+        <div className='services-content'>
         <div className="services-section">
           <h2 className="services-section-title" dangerouslySetInnerHTML={{ __html: content.services.sectiononetitle }}></h2>
           <p className="services-section-description">{content.services.sectiononedescription}</p>
@@ -586,6 +587,7 @@ const ServicesPage: React.FC = () => {
         />
         <Footer />
       </div>
+    </div>
     </div>
   )
 }

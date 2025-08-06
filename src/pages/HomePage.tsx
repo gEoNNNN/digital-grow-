@@ -54,6 +54,7 @@ const HomePage = () => {
       feedback: content.hero.feedback,
       video: getYouTubeVideoUrl(language),
       button: content.hero.feedbackbutton,
+      showVideoButton: true // Marcel has video button
     },
     {
       name: content.hero.lumeata,
@@ -61,6 +62,7 @@ const HomePage = () => {
       feedback: content.hero.lumetafeedback,
       video: getYouTubeVideoUrl(language),
       button: content.hero.feedbackbutton,
+      showVideoButton: false // Lumea Ta doesn't have video button
     }
   ];
 
@@ -98,7 +100,7 @@ const HomePage = () => {
           </button>
           </div>
           <div className="homepage-section-one">
-            
+            <div className="homepage-section-one-content">
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
             <div className="homepage-section-one-cards">
               <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
@@ -147,6 +149,8 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+          </div>
+          
           <div className="homepage-section-two">
             <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiontwotitle }} />
             <div className="homepage-section-two-cards">
@@ -178,7 +182,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> 
           <div className="homepage-section-three">
             <h1 className="homepage-section-three-title">
               {content.hero.sectionthreetitle}
@@ -192,14 +196,16 @@ const HomePage = () => {
               {/* Right: Feedback and button */}
               <div className="homepage-feedback-block">
                 <p className="homepage-feedback-text">{feedbacks[currentFeedback].feedback}</p>
-                <button
-                  className="homepage-section-one-card-button-video"
-                  onClick={() => setVideoOpen(true)}
-                >
-                  {feedbacks[currentFeedback].button}
-                </button>
+                {feedbacks[currentFeedback].showVideoButton && (
+                  <button
+                    className="homepage-section-one-card-button-video"
+                    onClick={() => setVideoOpen(true)}
+                  >
+                    {feedbacks[currentFeedback].button}
+                  </button>
+                )}
                 {/* Video Popup */}
-                {videoOpen && (
+                {videoOpen && feedbacks[currentFeedback].showVideoButton && (
                   <div
                     className="homepage-video-popup"
                     onClick={() => setVideoOpen(false)}
