@@ -109,6 +109,24 @@
   transform: translateY(-2px);
 }
 
+.paypal-select.error,
+.paypal-input.error {
+  border-color: #d32f2f !important;
+  background-color: #ffebee !important;
+}
+
+.paypal-input-readonly {
+  background-color: #f5f5f5 !important;
+  cursor: not-allowed !important;
+  color: #666 !important;
+}
+
+.paypal-input-readonly:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ccc !important;
+}
+
 @media (max-width: 768px) {
   .paypal-modal {
     width: 95%;

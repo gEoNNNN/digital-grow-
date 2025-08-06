@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import './PayPal.css';
 
@@ -9,6 +9,9 @@ interface PayPalPaymentProps {
   servicePrice?: string;
   currency?: string;
 }
+
+// Define the language type
+type Language = 'RO' | 'EN' | 'RU';
 
 const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   isOpen,
@@ -22,14 +25,115 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   const [amount, setAmount] = useState(servicePrice);
   const [serviceError, setServiceError] = useState(false);
   const [amountError, setAmountError] = useState(false);
+  const [exchangeRate, setExchangeRate] = useState(18); // Default fallback rate
+  const [isLoadingRate, setIsLoadingRate] = useState(false);
 
-  const services = {
+  // Fetch exchange rate from Moldova National Bank API
+  const fetchExchangeRate = async () => {
+    setIsLoadingRate(true);
+    try {
+      // Moldova National Bank API for USD to MDL rate
+      const response = await fetch('https://bnm.md/ro/official_exchange_rates?get_xml=1');
+      const xmlText = await response.text();
+      
+      // Parse XML to get USD rate
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+      const usdRate = xmlDoc.querySelector('Valute[CharCode="USD"] Value');
+      
+      if (usdRate && usdRate.textContent) {
+        const rate = parseFloat(usdRate.textContent.replace(',', '.'));
+        setExchangeRate(rate);
+        console.log(`Updated exchange rate: 1 USD = ${rate} MDL`);
+      } else {
+        throw new Error('USD rate not found');
+      }
+    } catch (error) {
+      console.warn('Failed to fetch exchange rate from BNM, using fallback APIs');
+      
+      // Fallback to other free APIs
+      try {
+        // Try exchangerate-api.com (free tier)
+        const fallbackResponse = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await fallbackResponse.json();
+        
+        if (data.rates && data.rates.MDL) {
+          setExchangeRate(data.rates.MDL);
+          console.log(`Updated exchange rate (fallback): 1 USD = ${data.rates.MDL} MDL`);
+        } else {
+          throw new Error('MDL rate not found in fallback API');
+        }
+      } catch (fallbackError) {
+        console.error('All exchange rate APIs failed, using default rate:', exchangeRate);
+      }
+    } finally {
+      setIsLoadingRate(false);
+    }
+  };
+
+  // Fetch exchange rate when component mounts
+  useEffect(() => {
+    if (currency === 'MDL') {
+      fetchExchangeRate();
+    }
+  }, [currency]);
+
+  // Price mapping for each service in different languages
+  const servicePrices: Record<Language, Record<string, string>> = {
+    RO: {
+      "Landing Page One-Page": "5500",
+      "Site Corporate (3-5 pagini)": "10000",
+      "Site Multilingv Complex": "20000",
+      "Magazin Online (E-commerce)": "30000",
+      "Întreținere Lunară": "2000",
+      "ChatBot Simplu": "7000",
+      "ChatBot Instagram": "7000",
+      "ChatBot Messenger": "7000",
+      "ChatBot Inteligent (GPT-4) + CRM": "18000",
+      "Implementare CRM": "10000",
+      "Logo Profesional": "3500",
+      "Actualizare Logo (Refresh)": "2000",
+      "Materiale Promoționale": "350"
+    },
+    EN: {
+      "One-Page Landing Page": "550",
+      "Business Website (3-5 pages)": "1000",
+      "Multilingual Complex Website": "2000",
+      "E-commerce Store": "3000",
+      "Monthly Maintenance": "200",
+      "Basic Chatbot": "700",
+      "Instagram Chatbot": "700",
+      "Messenger Chatbot": "700",
+      "AI Chatbot (GPT-4) + CRM": "1800",
+      "CRM Implementation": "1000",
+      "Professional Logo": "350",
+      "Logo Refresh": "200",
+      "Promotional Materials": "35"
+    },
+    RU: {
+      "Одностраничный Landing": "5500",
+      "Корпоративный сайт (3-5 страниц)": "10000",
+      "Многоязычный сайт": "20000",
+      "Интернет-магазин": "30000",
+      "Ежемесячная поддержка": "2000",
+      "Простой ChatBot": "7000",
+      "ChatBot Instagram": "7000",
+      "ChatBot Messenger": "7000",
+      "Умный ChatBot (GPT-4) + CRM": "18000",
+      "Внедрение CRM": "10000",
+      "Профессиональный логотип": "3500",
+      "Обновление логотипа": "2000",
+      "Промо-материалы": "350"
+    }
+  };
+
+  const services: Record<Language, any> = {
     RO: {
       title: "💼 Plată Servicii",
       selectService: "Alege serviciul:",
       selectPlaceholder: "-- Selectează un serviciu --",
-      enterAmount: "Introduceți suma",
-      amountPlaceholder: "Ex: 500",
+      enterAmount: "Suma",
+      amountPlaceholder: "Preț automat",
       payButton: "💳 Plătește cu PayPal",
       serviceError: "Te rugăm să selectezi un serviciu.",
       amountError: "Te rugăm să introduci o sumă validă (mai mare decât 0).",
@@ -53,8 +157,8 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       title: "💼 Service Payment",
       selectService: "Choose service:",
       selectPlaceholder: "-- Select a service --",
-      enterAmount: "Enter amount",
-      amountPlaceholder: "Ex: 500",
+      enterAmount: "Amount",
+      amountPlaceholder: "Auto price",
       payButton: "💳 Pay with PayPal",
       serviceError: "Please select a service.",
       amountError: "Please enter a valid amount (greater than 0).",
@@ -78,8 +182,8 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       title: "💼 Оплата Услуг",
       selectService: "Выберите услугу:",
       selectPlaceholder: "-- Выберите услугу --",
-      enterAmount: "Введите сумму",
-      amountPlaceholder: "Например: 500",
+      enterAmount: "Сумма",
+      amountPlaceholder: "Автоцена",
       payButton: "💳 Оплатить через PayPal",
       serviceError: "Пожалуйста, выберите услугу.",
       amountError: "Пожалуйста, введите действительную сумму (больше 0).",
@@ -101,31 +205,98 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     }
   };
 
-  const content = services[language];
+  const currentLanguage = language as Language;
+  const content = services[currentLanguage];
 
-  const handleSubmit = (event: React.FormEvent) => {
-    let valid = true;
+  // Update amount when service is selected
+  useEffect(() => {
+    if (selectedService && servicePrices[currentLanguage]?.[selectedService]) {
+      setAmount(servicePrices[currentLanguage][selectedService]);
+    }
+  }, [selectedService, language, currentLanguage]);
 
-    // Validate service
+  const handleServiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const service = e.target.value;
+    setSelectedService(service);
+    
+    // Auto-populate price based on selected service
+    if (service && servicePrices[currentLanguage]?.[service]) {
+      setAmount(servicePrices[currentLanguage][service]);
+      setAmountError(false); // Clear any previous errors
+    } else {
+      setAmount('');
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    // Basic validation
     if (!selectedService) {
       setServiceError(true);
-      valid = false;
+      e.preventDefault();
+      return;
     } else {
       setServiceError(false);
     }
 
-    // Validate amount
-    const amountNum = parseFloat(amount);
-    if (isNaN(amountNum) || amountNum <= 0) {
+    // Validate amount exists and is valid
+    if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) {
       setAmountError(true);
-      valid = false;
+      e.preventDefault();
+      return;
     } else {
       setAmountError(false);
     }
 
-    if (!valid) {
-      event.preventDefault();
+    // Convert currency and amount for PayPal compatibility
+    let paypalCurrency = currency;
+    let paypalAmount = amount;
+
+    // PayPal doesn't support MDL, so convert to USD using real exchange rate
+    if (currency === 'MDL') {
+      paypalCurrency = 'USD';
+      // Convert MDL to USD using current exchange rate
+      paypalAmount = (Number(amount) / exchangeRate).toFixed(2);
     }
+
+    // Create and submit PayPal form programmatically
+    const form = document.createElement('form');
+    form.action = 'https://www.paypal.com/cgi-bin/webscr';
+    form.method = 'post';
+    form.target = '_blank';
+
+    // PayPal form fields
+    const fields = {
+      'cmd': '_xclick',
+      'business': 'digitalgrow.moldova@gmail.com',
+      'item_name': selectedService + (currency === 'MDL' ? ` (${amount} MDL)` : ''),
+      'amount': paypalAmount,
+      'currency_code': paypalCurrency,
+      'return': `${window.location.origin}/payment-success`,
+      'cancel_return': `${window.location.origin}/payment-cancel`,
+      'notify_url': `${window.location.origin}/payment-notify`
+    };
+
+    // Add hidden inputs to form
+    Object.entries(fields).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    // Submit form to PayPal
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    // Prevent default form submission
+    e.preventDefault();
+
+    // Close modal
+    setTimeout(() => {
+      onClose();
+    }, 100);
   };
 
   if (!isOpen) return null;
@@ -134,64 +305,51 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     <div className="paypal-overlay">
       <div className="paypal-modal">
         <button className="paypal-close" onClick={onClose}>×</button>
-        
         <form 
-          action="https://www.paypal.com/cgi-bin/webscr" 
-          method="post" 
-          target="_blank"
+          className="paypal-form" 
           onSubmit={handleSubmit}
-          className="paypal-form"
         >
-          <input type="hidden" name="cmd" value="_xclick" />
-          <input type="hidden" name="business" value="digitalgrow.moldova@gmail.com" />
-          <input type="hidden" name="currency_code" value={currency} />
-
           <h2 className="paypal-title">{content.title}</h2>
-
-          {/* Service Selection */}
-          <label htmlFor="service" className="paypal-label">
-            {content.selectService}
-          </label>
-          <select 
-            name="item_name" 
-            id="service" 
-            required
+          
+          <label className="paypal-label">{content.selectService}</label>
+          <select
             value={selectedService}
-            onChange={(e) => setSelectedService(e.target.value)}
-            className="paypal-select"
+            onChange={handleServiceChange}
+            className={`paypal-select ${serviceError ? 'error' : ''}`}
+            required
           >
             <option value="">{content.selectPlaceholder}</option>
-            {content.services.map((service, index) => (
-              <option key={index} value={service}>{service}</option>
+            {content.services.map((service: string) => (
+              <option key={service} value={service}>
+                {service}
+              </option>
             ))}
           </select>
-          {serviceError && (
-            <div className="paypal-error">{content.serviceError}</div>
-          )}
-
-          {/* Amount Input */}
-          <label htmlFor="amount" className="paypal-label">
-            {content.enterAmount} ({currency}):
+          {serviceError && <div className="paypal-error">{content.serviceError}</div>}
+          
+          <label className="paypal-label">
+            {content.enterAmount} ({currency})
+            {currency === 'MDL' && (
+              <span style={{fontSize: '0.8em', color: '#666', display: 'block'}}>
+                {isLoadingRate ? (
+                  'Loading exchange rate...'
+                ) : (
+                  `PayPal will charge ~$${(Number(amount) / exchangeRate).toFixed(2)} USD (Rate: 1 USD = ${exchangeRate} MDL)`
+                )}
+              </span>
+            )}
           </label>
-          <input 
-            type="number" 
-            name="amount" 
-            id="amount" 
-            min="1" 
-            step="0.01" 
-            required
-            placeholder={content.amountPlaceholder}
+          <input
+            type="text"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="paypal-input"
+            readOnly
+            placeholder={content.amountPlaceholder}
+            className={`paypal-input paypal-input-readonly ${amountError ? 'error' : ''}`}
           />
-          {amountError && (
-            <div className="paypal-error">{content.amountError}</div>
-          )}
-
-          {/* PayPal Button */}
-          <button type="submit" className="paypal-button">
-            {content.payButton}
+          {amountError && <div className="paypal-error">{content.amountError}</div>}
+          
+          <button type="submit" className="paypal-button" disabled={isLoadingRate}>
+            {isLoadingRate ? 'Loading...' : content.payButton}
           </button>
         </form>
       </div>
