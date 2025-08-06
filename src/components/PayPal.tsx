@@ -96,19 +96,19 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       "Materiale Promoționale": "350"
     },
     EN: {
-      "One-Page Landing Page": "550",
-      "Business Website (3-5 pages)": "1000",
-      "Multilingual Complex Website": "2000",
-      "E-commerce Store": "3000",
-      "Monthly Maintenance": "200",
-      "Basic Chatbot": "700",
-      "Instagram Chatbot": "700",
-      "Messenger Chatbot": "700",
-      "AI Chatbot (GPT-4) + CRM": "1800",
-      "CRM Implementation": "1000",
-      "Professional Logo": "350",
-      "Logo Refresh": "200",
-      "Promotional Materials": "35"
+      "One-Page Landing Page": "430",
+      "Business Website (3-5 pages)": "760",
+      "Multilingual Complex Website": "1520",
+      "E-commerce Store": "2280",
+      "Monthly Maintenance": "101",
+      "Basic Chatbot": "506",
+      "Instagram Chatbot": "506",
+      "Messenger Chatbot": "506",
+      "AI Chatbot (GPT-4) + CRM": "1266",
+      "CRM Implementation": "760",
+      "Professional Logo": "253",
+      "Logo Refresh": "151",
+      "Promotional Materials": "25"
     },
     RU: {
       "Одностраничный Landing": "5500",
