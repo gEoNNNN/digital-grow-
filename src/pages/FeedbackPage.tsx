@@ -24,8 +24,8 @@ import shape3 from "../assets/Ellipse 3.png"
 
 const FeedbackPage = () => {
   const { language } = useLanguage();
-  const content = homepageContent[language]  // Using homepage content
-  const [chatOpen, setChatOpen] = useState(false)
+  const content = homepageContent[language] 
+  const [chatOpen, setChatOpen] = useState(true) 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

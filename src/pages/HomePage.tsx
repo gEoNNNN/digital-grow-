@@ -77,7 +77,7 @@ const getYouTubeVideoUrl = (lang: string) => {
 
   return (
     <div className="homepage">
-      <video className="background-video" autoPlay muted loop>
+      <video className="background-video" autoPlay muted loop preload="auto" poster="/path/to/poster-image.jpg">
         <source src={BG} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
