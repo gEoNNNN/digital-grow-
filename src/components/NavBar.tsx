@@ -66,6 +66,24 @@ const NavBar = () => {
   const handleLanguageChange = (langCode: LanguageCode): void => {
     setLanguage(langCode);
     setIsDropdownOpen(false);
+    
+    // Close mobile menu after 0.5 seconds if it's open
+    if (mobileMenuOpen) {
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+      }, 500);
+    }
+  };
+
+  const handleThemeToggle = (): void => {
+    toggleTheme();
+    
+    // Close mobile menu after 0.5 seconds if it's open
+    if (mobileMenuOpen) {
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+      }, 500);
+    }
   };
 
   const currentTranslations = translations[currentLanguage]
@@ -147,7 +165,7 @@ const NavBar = () => {
             <li className="navbar-item">
               <button
                 className="navbar-theme-mobile"
-                onClick={toggleTheme}
+                onClick={handleThemeToggle}
                 aria-label="Toggle theme"
               >
                 <img src={theme === "light" ? lightmodeicon : darkmodeicon} alt="Toggle theme" />

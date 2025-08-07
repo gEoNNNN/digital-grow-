@@ -15,6 +15,7 @@ import { LanguageProvider } from "./components/LanguageContext"
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import CookieBanner from './components/CookieBanner';
+import FeedbackPage from './pages/FeedbackPage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/inwork" element={<Inwork />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+              <Route path="/feedback" element={<FeedbackPage />} />
             </Routes>
             <CookieBanner />
           </LanguageProvider>

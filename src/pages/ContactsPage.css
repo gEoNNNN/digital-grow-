@@ -527,10 +527,13 @@
 
   .contact-option-title {
     font-size: 5vw;
+    margin-top: -9vw;
   }
 
   .contact-option-description {
     font-size: 3.5vw;
+    margin-left:0vw;
+    width:80vw;
   }
 
   .text-with-emoji {

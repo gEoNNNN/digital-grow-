@@ -17,7 +17,7 @@
   z-index: -1;
 }
 
-.services-section,.services-cards,.services-card {
+.services-section,.services-cards,.services-card,.services-section1 {
   position: relative;
   z-index: 11;
 }
@@ -39,7 +39,7 @@
 }
 .services-shape3 {
   position: absolute;
-  top: 100vw;
+  top: 90vw;
   width: 30vw;
   height: auto;
   left: -10vw;
@@ -55,7 +55,7 @@
 }
 
 
-.services-section::before {
+.services-section1::before {
   content: '';
   position: absolute;
   top: 5vw;
@@ -164,10 +164,10 @@
 }
 
 /* Services Sections */
-.services-section {
+.services-section,.services-section1 {
   background-color: var(--primary);
   width: 100%;
-  padding: 8vw 5vw;
+  padding: 2vw 5vw;
   position: relative;
 }
 
@@ -781,8 +781,8 @@
     width: 70vw;
   }
 
-  .services-section {
-    padding: 12vw 5vw;
+  .services-section,.services-section1 {
+    padding: 5vw 5vw;
   }
 
   .services-section-title {
@@ -931,8 +931,8 @@
     width: 50vw;
   }
 
-  .services-section {
-    padding: 15vw 3vw;
+  .services-section,.services-section1 {
+    padding: 5vw 3vw;
   }
 
   .services-section-title {
@@ -1283,4 +1283,24 @@
 .package-price3-en::after {
   transform: rotate(-18deg);
 }
+}
+
+@media (max-width: 480px) {
+  /* Hide red X lines for English version on mobile - Package 1 */
+  .package-price1-en::before,
+  .package-price1-en::after {
+    display: none !important;
+  }
+  
+  /* Hide red X lines for English version on mobile - Package 2 */
+  .package-price2-en::before,
+  .package-price2-en::after {
+    display: none !important;
+  }
+  
+  /* Hide red X lines for English version on mobile - Package 3 */
+  .package-price3-en::before,
+  .package-price3-en::after {
+    display: none !important;
+  }
 }

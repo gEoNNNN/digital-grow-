@@ -677,12 +677,14 @@
   .homepage-main-section-title {
     font-size: 8vw;
     margin-bottom: 2vw;
+    text-align: center;
   }
   
   .homepage-main-section-description {
     font-size: 4vw;
     max-width: 80vw;
     margin-top: 4vw;
+    margin-left: 7vw;
   }
   
   .homepage-main-section-button {
@@ -690,6 +692,7 @@
     font-size: 3vw;
     border-radius: 5vw;
     margin-top: 6vw;
+    margin-left: 5vw;
   }
   
   .homepage-main-section-button img {
@@ -782,6 +785,8 @@
 @media (max-width: 480px) {
   .homepage-main-section-title {
     font-size: 8vw;
+    text-align: center;
+    margin-left: -1vw
   }
 
   .homepage-section-one-card-button {
@@ -804,6 +809,8 @@
   .homepage-main-section-description {
     font-size: 5vw;
     max-width: 90vw;
+    margin-left: 7vw;
+
   }
   
   .homepage-main-section-button {

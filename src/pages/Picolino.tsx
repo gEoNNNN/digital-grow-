@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ProjectsPage.css";
 import projectsContent from "./ProjectsPage.json";
-import { useNavigate } from "react-router-dom";
 import client from "../assets/Marcel.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -10,7 +9,6 @@ import { useLanguage } from "../components/LanguageContext";
 const Picolino: React.FC = () => {
   const { language } = useLanguage();
   const project = projectsContent[language].projects[1]; // Make sure this is the correct index for Picolino
-  const navigate = useNavigate();
   const videoRef = useRef<HTMLDivElement>(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
 

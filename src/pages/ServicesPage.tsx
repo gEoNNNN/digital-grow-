@@ -87,7 +87,7 @@ const ServicesPage: React.FC = () => {
 
         {/* Section One - Web Development */}
         <div className='services-content'>
-        <div className="services-section">
+        <div className="services-section1">
           <img src={shape1} className='services-shape1' />
           <img src={shape2} className='services-shape2' />
           <img src={shape3} className='services-shape3' />
