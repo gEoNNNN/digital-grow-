@@ -6,13 +6,13 @@ import client from "../assets/Marcel.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useLanguage } from "../components/LanguageContext";
+import lumeata from "../assets/lumea ta.png"
 
 const LumeaTa: React.FC = () => {
   const { language } = useLanguage();
   const project = projectsContent[language].projects[2];
   const navigate = useNavigate();
-  const videoRef = useRef<HTMLDivElement>(null);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [showImagePopup, setShowImagePopup] = useState(false);
 
   // Type guard to check if project has the required properties
   const hasProjectDetails = (proj: any): proj is {
@@ -35,48 +35,25 @@ const LumeaTa: React.FC = () => {
            typeof proj.description === 'string';
   };
 
-  // YouTube video URLs with language-specific subtitles
-  const getYouTubeVideoUrl = (lang: string) => {
-    const videoId = "EuKHNcY53sA";
-    const baseUrl = `https://www.youtube.com/embed/${videoId}`;
-    
-    switch (lang) {
-      case "RO":
-        return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-      case "RU":
-        return `${baseUrl}?cc_lang_pref=ru&cc_load_policy=1`;
-      case "EN":
-        return `${baseUrl}?cc_lang_pref=en&cc_load_policy=1`;
-      default:
-        return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-    }
-  };
-
-  // Intersection Observer for video animation
+  // Scroll listener to show image popup when near bottom
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVideoVisible(true);
-          }
-        });
-      },
-      {
-        threshold: 0.3, // Trigger when 30% of the video section is visible
-        rootMargin: '0px 0px -100px 0px' // Start animation 100px before it comes into view
-      }
-    );
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Calculate how close to bottom (80% of the way down)
+      const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+      
+      if (scrollPercentage > 0.8) {
+        setShowImagePopup(true);
+      } else {
+        setShowImagePopup(false);
       }
     };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   if (!hasProjectDetails(project)) {
@@ -158,25 +135,21 @@ const LumeaTa: React.FC = () => {
               <p className="project-feedback-text">{project.feedbacktext}</p>
             </div>
           )}
-          
-          {/* YouTube Video with Animation */}
-          <div 
-            ref={videoRef}
-            className={`project-video-section ${isVideoVisible ? 'video-visible' : ''}`}
-          >
-            <iframe
-              src={getYouTubeVideoUrl(language)}
-              className="project-video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Project Video"
-            />
-          </div>
         </div>
       </div>
       
-      <Footer />
+      {/* Image Popup */}
+      <div className={`project-image-popup ${showImagePopup ? 'visible' : ''}`}>
+        <div className="project-image-popup-content">
+          <img
+            src={lumeata}
+            alt="Lumea Ta Project Screenshot"
+            className="project-image-popup-img"
+          />
+        </div>
+      </div>
+      
+      
     </div>
   );
 };

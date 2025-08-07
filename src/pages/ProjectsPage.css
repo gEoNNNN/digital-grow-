@@ -8,7 +8,7 @@
 
 .project-container {
   max-width: 50vw;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   padding: 12vw 2vw 4vw 2vw;
   min-height: calc(100vh - 200px);
 }
@@ -38,6 +38,7 @@
   align-items: flex-start;
   text-align: left;
   gap: 3vw;
+  margin: 0 auto 40vw auto;
 }
 
 /* Project Name */
@@ -179,11 +180,104 @@
   border: none;
 }
 
+/* Video Popup Styles - Centered and borderless */
+.project-video-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(150%); /* Changed from 100% to 150% to hide it completely */
+  width: 50vw;
+  height: 30vw;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: none;
+  border: none;
+  overflow: hidden;
+}
+
+.project-video-popup.visible {
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.project-video-popup-content {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-video-popup-iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vw;
+  background: #000;
+  border: none;
+  box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.3);
+}
+
+/* Remove close button styles */
+.project-video-close-btn {
+  display: none;
+}
+
+/* Remove glow effect */
+.project-video-popup::before {
+  display: none;
+}
+
+/* Responsive adjustments for centered popup */
+@media (max-width: 768px) {
+  .project-video-popup {
+    width: 70vw;
+    height: 40vw;
+    transform: translate(-50%, -50%) translateY(200%); /* Even further down for mobile */
+  }
+  
+  .project-video-popup.visible {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-video-popup {
+    width: 85vw;
+    height: 50vw;
+    transform: translate(-50%, -50%) translateY(250%); /* Even further down for mobile */
+  }
+  
+  .project-video-popup.visible {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  
+  .project-video-popup-iframe {
+    border-radius: 2vw;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .project-video {
     height: 40vw;
     border-radius: 2vw;
+  }
+  
+  .project-video-popup {
+    width: 60vw;
+    height: 35vw;
+    right: 1vw;
+  }
+  
+  .project-video-close-btn {
+    width: 4vw;
+    height: 4vw;
+    font-size: 2.5vw;
+    top: 1vw;
+    right: 1vw;
   }
 }
 
@@ -192,107 +286,109 @@
     height: 50vw;
     min-height: 250px;
   }
+
+  
+  .project-video-popup {
+    width: 80vw;
+    height: 45vw;
+    right: 2vw;
+  }
+  
+  .project-video-close-btn {
+    width: 6vw;
+    height: 6vw;
+    font-size: 4vw;
+    top: 1.5vw;
+    right: 1.5vw;
+  }
+  
+  .project-video-popup-content {
+    padding: 2vw;
+  }
 }
 
-/* Responsive Design */
+/* Ensure the popup doesn't interfere with scrolling */
+.project-video-popup {
+  pointer-events: auto;
+}
+
+.project-video-popup:not(.visible) {
+  pointer-events: none;
+}
+
+/* Image Popup Styles - Centered and borderless */
+.project-image-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(150%); /* Start hidden below */
+  width: 60vw;
+  height: 40vw;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 100; /* Lower z-index so footer stays visible */
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: none;
+  border: none;
+  overflow: hidden;
+}
+
+.project-image-popup.visible {
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.project-image-popup-content {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image-popup-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1vw;
+  background: transparent; /* Remove black background */
+  border: none;
+  box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for centered popup */
 @media (max-width: 768px) {
-  .project-container {
-    padding: 15vw 4vw 6vw 4vw;
+  .project-image-popup {
+    width: 80vw;
+    height: 50vw;
+    top: 60%; /* Keep consistent positioning */
+    transform: translate(-50%, -60%) translateY(200%);
+    z-index: 100;
   }
   
-  .project-back-button {
-    font-size: 3vw;
-    padding: 2vw 4vw;
-    border-radius: 2vw;
-  }
-  
-  .project-name {
-    font-size: 7vw;
-  }
-  
-  .project-logo-image {
-    width: 25vw;
-  }
-  
-  .project-description-text {
-    font-size: 3.5vw;
-  }
-  
-  .project-info-section h3 {
-    font-size: 4vw;
-  }
-  
-  .project-info-section li {
-    font-size: 3vw;
-  }
-  
-  .project-feedback-section h3 {
-    font-size: 4vw;
-  }
-  
-  .project-client-image {
-    width: 8vw;
-    height: 8vw;
-  }
-  
-  .project-client-name {
-    font-size: 3vw;
-  }
-  
-  .project-feedback-text {
-    font-size: 3.2vw;
-  }
-  
-  .project-video {
-    border-radius: 2vw;
+  .project-image-popup.visible {
+    transform: translate(-50%, -60%) translateY(0);
   }
 }
 
 @media (max-width: 480px) {
-  .project-container {
-    padding: 20vw 5vw 8vw 5vw;
+  .project-image-popup {
+    width: 90vw;
+    height: 60vw;
+    top: 60%; /* Keep consistent positioning */
+    transform: translate(-50%, -60%) translateY(250%);
+    z-index: 100;
   }
   
-  .project-back-button {
-    font-size: 4vw;
-    padding: 3vw 6vw;
+  .project-image-popup.visible {
+    transform: translate(-50%, -60%) translateY(0);
   }
   
-  .project-name {
-    font-size: 8vw;
-  }
-  
-  .project-logo-image {
-    width: 30vw;
-  }
-  
-  .project-description-text {
-    font-size: 4vw;
-  }
-  
-  .project-info-section h3 {
-    font-size: 5vw;
-  }
-  
-  .project-info-section li {
-    font-size: 3.5vw;
-  }
-  
-  .project-feedback-section h3 {
-    font-size: 5vw;
-  }
-  
-  .project-client-image {
-    width: 10vw;
-    height: 10vw;
-  }
-  
-  .project-client-name {
-    font-size: 4vw;
-  }
-  
-  .project-feedback-text {
-    font-size: 3.8vw;
+  .project-image-popup-img {
+    border-radius: 2vw;
   }
 }
 
@@ -309,3 +405,233 @@ html {
 .krov-feedback-section,
 .lumeata-bg {
   /* Keep these for other components that might use them */
+
+
+/* Responsive design for project pages */
+@media (max-width: 768px) {
+  .project-container {
+    max-width: 90vw;
+    padding: 16vw 4vw 8vw 4vw;
+  }
+
+  .project-back-button {
+    font-size: 3vw;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+    margin-bottom: 5vw;
+  }
+
+  .project-content-wrapper {
+    gap: 5vw;
+    margin: 0 auto 30vw auto;
+  }
+
+  .project-name {
+    font-size: 7vw;
+    text-align: center;
+  }
+
+  .project-description-text {
+    font-size: 3.5vw;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .project-info-sections {
+    gap: 4vw;
+  }
+
+  .project-info-section h3 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+    text-align: center;
+  }
+
+  .project-info-section li {
+    font-size: 3vw;
+    line-height: 1.6;
+    margin-bottom: 1.5vw;
+  }
+
+  .project-feedback-section {
+    margin: 5vw 0;
+    text-align: center;
+  }
+
+  .project-feedback-section h3 {
+    font-size: 4vw;
+    margin-bottom: 3vw;
+  }
+
+  .project-client-info {
+    justify-content: center;
+    gap: 2vw;
+    margin-bottom: 3vw;
+  }
+
+  .project-client-image {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .project-client-name {
+    font-size: 3vw;
+  }
+
+  .project-feedback-text {
+    font-size: 3vw;
+    line-height: 1.6;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Video popup responsive */
+  .project-video-popup {
+    width: 85vw;
+    height: 50vw;
+    transform: translate(-50%, -50%) translateY(200%);
+  }
+
+  .project-video-popup.visible {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  .project-video-popup-iframe {
+    border-radius: 2vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    max-width: 95vw;
+    padding: 20vw 3vw 10vw 3vw;
+  }
+
+  .project-back-button {
+    font-size: 4vw;
+    padding: 3vw 5vw;
+    border-radius: 3vw;
+    margin-bottom: 6vw;
+  }
+
+  .project-content-wrapper {
+    gap: 6vw;
+    margin: 0 auto 60vw auto;
+  }
+
+  .project-name {
+    font-size: 8vw;
+    text-align: center;
+  }
+
+  .project-description-text {
+    font-size: 4vw;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .project-info-sections {
+    gap: 5vw;
+  }
+
+  .project-info-section h3 {
+    font-size: 5vw;
+    margin-bottom: 3vw;
+    text-align: center;
+  }
+
+  .project-info-section ul {
+    padding-left: 4vw;
+  }
+
+  .project-info-section li {
+    font-size: 3.5vw;
+    line-height: 1.6;
+    margin-bottom: 2vw;
+  }
+
+  .project-feedback-section {
+    margin: 6vw 0;
+    text-align: center;
+  }
+
+  .project-feedback-section h3 {
+    font-size: 5vw;
+    margin-bottom: 4vw;
+  }
+
+  .project-client-info {
+    justify-content: center;
+    gap: 3vw;
+    margin-bottom: 4vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-client-image {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .project-client-name {
+    font-size: 4vw;
+    text-align: center;
+  }
+
+  .project-feedback-text {
+    font-size: 3.5vw;
+    line-height: 1.6;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Video popup responsive */
+  .project-video-popup {
+    width: 90vw;
+    height: 55vw;
+    transform: translate(-50%, -50%) translateY(250%);
+  }
+
+  .project-video-popup.visible {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+
+  .project-video-popup-iframe {
+    border-radius: 3vw;
+  }
+}
+
+/* Ensure proper spacing on very large screens */
+@media (min-width: 1920px) {
+  .project-container {
+    max-width: 960px; /* Fixed max width for very large screens */
+  }
+
+  .project-name {
+    font-size: 4rem;
+  }
+
+  .project-description-text {
+    font-size: 1.5rem;
+  }
+
+  .project-info-section h3 {
+    font-size: 2rem;
+  }
+
+  .project-info-section li {
+    font-size: 1.2rem;
+  }
+
+  .project-feedback-section h3 {
+    font-size: 2rem;
+  }
+
+  .project-client-name {
+    font-size: 1.2rem;
+  }
+
+  .project-feedback-text {
+    font-size: 1.3rem;
+  }
+}

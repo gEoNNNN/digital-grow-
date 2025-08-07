@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProjectsPage.css";
 import projectsContent from "./ProjectsPage.json";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,7 @@ const Krov: React.FC = () => {
   const { language } = useLanguage();
   const project = projectsContent[language].projects[0];
   const navigate = useNavigate();
+  const [showVideoPopup, setShowVideoPopup] = useState(false);
 
   // Type guard to check if project has the required properties
   const hasProjectDetails = (proj: any): proj is {
@@ -50,6 +51,27 @@ const Krov: React.FC = () => {
         return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
     }
   };
+
+  // Scroll listener to show video popup when near bottom
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Calculate how close to bottom (80% of the way down)
+      const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+      
+      if (scrollPercentage > 0.8) {
+        setShowVideoPopup(true);
+      } else {
+        setShowVideoPopup(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   if (!hasProjectDetails(project)) {
     return (
@@ -120,22 +142,23 @@ const Krov: React.FC = () => {
             </div>
             <p className="project-feedback-text">{project.feedbacktext}</p>
           </div>
-          
-          {/* YouTube Video */}
-          <div className="project-video-section">
-            <iframe
-              src={getYouTubeVideoUrl(language)}
-              className="project-video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Project Video"
-            />
-          </div>
         </div>
       </div>
       
-      <Footer />
+      {/* Video Popup */}
+      <div className={`project-video-popup ${showVideoPopup ? 'visible' : ''}`}>
+        <div className="project-video-popup-content">
+          <iframe
+            src={getYouTubeVideoUrl(language)}
+            className="project-video-popup-iframe"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Project Video"
+          />
+        </div>
+      </div>
+    
     </div>
   );
 };
