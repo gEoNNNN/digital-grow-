@@ -74,7 +74,7 @@ const Portfolio: React.FC = () => {
                 </p>
                 <button
                   className="project-button"
-                  onClick={() => setPicolinoOpen(true)}
+                 onClick={() => navigate("/picolino")}
                 >
                   {content.Portofoliu.prokectbutton}
                 </button>

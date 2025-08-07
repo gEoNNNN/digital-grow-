@@ -35,19 +35,21 @@ const HomePage = () => {
   }, []);
 
   // YouTube video URLs with language-specific subtitles
-  const getYouTubeVideoUrl = (lang: string) => {
-    const baseUrl = "https://www.youtube.com/embed/s5IJHkIP4Q4?cc_load_policy=1";
-    switch (lang) {
-      case "RO":
-        return `${baseUrl}&cc_lang_pref=ro`;
-      case "RU":
-        return `${baseUrl}&cc_lang_pref=ru`;
-      case "EN":
-        return `${baseUrl}&cc_lang_pref=en`;
-      default:
-        return `${baseUrl}&cc_lang_pref=ro`;
-    }
-  };
+const getYouTubeVideoUrl = (lang: string) => {
+  const videoId = "EuKHNcY53sA";
+  const baseUrl = `https://www.youtube.com/embed/${videoId}`;
+  
+  switch (lang) {
+    case "RO":
+      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
+    case "RU":
+      return `${baseUrl}?cc_lang_pref=ru&cc_load_policy=1`;
+    case "EN":
+      return `${baseUrl}?cc_lang_pref=en&cc_load_policy=1`;
+    default:
+      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
+  }
+};
 
   const feedbacks = [
     {
