@@ -3,7 +3,7 @@
     "projects": [
       {
         "title": "Krov Acoperișuri – De la un logo vechi la un sistem digital complet integrat",
-        "description": "<strong>Provocarea:<strog/><br> Prezență digitală slabă și lipsa unei imagini coerente.",
+        "description": "<strong>Provocarea:</strong><br> Prezență digitală slabă și lipsa unei imagini coerente.",
         "sectiononetitle": "Soluția DigitalGrow:",
         "sectitwonetitle": "Rezultate:",
         "sectithreenetitle": "Concluzie:",
@@ -13,12 +13,13 @@
         "sectitwonepoint1": "O prezență online profesionistă, care generează lead-uri și automatizează procesul de vânzare.",
         "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
         "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară.",
-        "clientname" : "Marcel Papuc",
-        "feedbacktext" : "„Colaborarea cu echipa DigitalGrow a fost una dintre cele mai bune decizii pentru afacerea noastră. Au înțeles rapid nevoile noastre și au venit cu soluții creative și eficiente. În doar câteva luni, am observat o creștere semnificativă în trafic, dar și în conversii. Comunicarea a fost clară, iar echipa extrem de implicată și profesionistă. Recomand cu încredere DigitalGrow oricui își dorește rezultate reale în mediul digital.”"
+        "clientname": "Marcel Papuc",
+        "feedbacktext": "„Colaborarea cu echipa DigitalGrow a fost una dintre cele mai bune decizii pentru afacerea noastră. Au înțeles rapid nevoile noastre și au venit cu soluții creative și eficiente. În doar câteva luni, am observat o creștere semnificativă în trafic, dar și în conversii. Comunicarea a fost clară, iar echipa extrem de implicată și profesionistă. Recomand cu încredere DigitalGrow oricui își dorește rezultate reale în mediul digital.”",
+        "link": "https://krovacoperis.md/"
       },
-       {
+      {
         "title": "Piccolino – Un brand de fete de mese, acum cu o imagine pe măsura bucuriei pe care o oferă",
-        "description": "<strong>Provocarea:<strog/><br> Aveau nevoie de o identitate vizuală fresh și o modalitate ușoară de a comunica cu clienții.",
+        "description": "<strong>Provocarea:</strong><br> Aveau nevoie de o identitate vizuală fresh și o modalitate ușoară de a comunica cu clienții.",
         "sectiononetitle": "Soluția DigitalGrow:",
         "sectitwonetitle": "Rezultate:",
         "sectithreenetitle": "Concluzie:",
@@ -28,11 +29,11 @@
         "sectiononepoint4": "Landing page dedicat + chatbot inteligent (română + rusă)",
         "sectitwonepoint1": "Un brand recognoscibil, cu o comunicare fluentă și o prezență online adaptată pieței din Moldova.",
         "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
-        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."  
+        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."
       },
-       {
+      {
         "title": "Lumea Ta – O platformă informativă, acum accesibilă pentru toți",
-        "description": "<strong>Provocarea:<strog/><br> Aveau un site, dar nu funcționa. Publicul era divers și bilingv.",
+        "description": "<strong>Provocarea:</strong><br> Aveau un site, dar nu funcționa. Publicul era divers și bilingv.",
         "sectiononetitle": "Soluția DigitalGrow:",
         "sectitwonetitle": "Rezultate:",
         "sectithreenetitle": "Concluzie:",
@@ -41,51 +42,110 @@
         "sectiononepoint3": "Chatbot smart care răspunde 24/7",
         "sectitwonepoint1": "Un site ușor de navigat, care reflectă corect misiunea companiei și oferă utilizatorilor o experiență intuitivă.",
         "sectithreenepoint1": "Nu oferim doar servicii. Oferim soluții gândite pe termen lung.",
-        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară."  
+        "sectithreenepoint2": "Fiecare brand are o poveste. Noi o ajutăm să se spună mai bine – prin design, tehnologie și comunicare clară.",
+        "clientname": "Lumea Ta",
+        "feedbacktext": "„Colaborarea cu echipa DigitalGrow a fost una extrem de valoroasă pentru startup-ul nostru din domeniul călătoriilor. Ne-au ajutat să construim un website modern, adaptat nevoilor clienților noștri, și au pus bazele unui chatbot inteligent care va simplifica interacțiunea cu utilizatorii. Chiar dacă proiectul este încă în desfășurare(informatia nu a fost oferita in totalmente), ne simțim încrezători că rezultatul final va reflecta viziunea noastră și va aduce o experiență de călătorie mai prietenoasă pentru clienți. Ne bucurăm să avem un partener de încredere alături în această etapă importantă de creștere.”",
+        "link": "https://lumeata.netlify.app/"
       }
     ]
   },
   "EN": {
     "projects": [
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Krov Roofing – From an Old Logo to a Fully Integrated Digital System",
+        "description": "<strong>The Challenge:</strong><br> Weak digital presence and lack of a coherent brand image.",
+        "sectiononetitle": "DigitalGrow Solution:",
+        "sectitwonetitle": "Results:",
+        "sectithreenetitle": "Conclusion:",
+        "sectiononepoint1": "Complete rebranding (logo + colors)",
+        "sectiononepoint2": "Modern landing page optimized for conversions",
+        "sectiononepoint3": "Chatbot integrated with CRM for automatic lead capture",
+        "sectitwonepoint1": "A professional online presence that generates leads and automates the sales process.",
+        "sectithreenepoint1": "We don't just provide services. We deliver long-term solutions.",
+        "sectithreenepoint2": "Every brand has a story. We help tell it better – through design, technology, and clear communication.",
+        "clientname": "Marcel Papuc",
+        "feedbacktext": "\"Working with the DigitalGrow team was one of the best decisions for our business. They quickly understood our needs and came up with creative and efficient solutions. In just a few months, we noticed a significant increase in traffic and conversions. Communication was clear, and the team was extremely engaged and professional. I confidently recommend DigitalGrow to anyone who wants real results in the digital environment.\"",
+        "link": "https://krovacoperis.md/"
       },
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Piccolino – A Tablecloth Brand, Now with an Image that Matches the Joy It Brings",
+        "description": "<strong>The Challenge:</strong><br> They needed a fresh visual identity and an easy way to communicate with customers.",
+        "sectiononetitle": "DigitalGrow Solution:",
+        "sectitwonetitle": "Results:",
+        "sectithreenettitle": "Conclusion:",
+        "sectiononepoint1": "New, modern logo",
+        "sectiononepoint2": "Color palette adapted for a young and friendly audience",
+        "sectiononepoint3": "Mini visual kit for social media posts",
+        "sectiononepoint4": "Dedicated landing page + smart chatbot (Romanian + Russian)",
+        "sectitwonepoint1": "A recognizable brand with fluent communication and an online presence adapted to the Moldovan market.",
+        "sectithreenepoint1": "We don't just provide services. We deliver long-term solutions.",
+        "sectithreenepoint2": "Every brand has a story. We help tell it better – through design, technology, and clear communication."
       },
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Lumea Ta – An Informative Platform, Now Accessible to Everyone",
+        "description": "<strong>The Challenge:</strong><br> They had a website, but it wasn't working. The audience was diverse and bilingual.",
+        "sectiononetitle": "DigitalGrow Solution:",
+        "sectitwonetitle": "Results:",
+        "sectithreenettitle": "Conclusion:",
+        "sectiononepoint1": "Complete redesign based on existing structure",
+        "sectiononepoint2": "Translation and adaptation into 2 languages (Romanian + Russian)",
+        "sectiononepoint3": "Smart chatbot that responds 24/7",
+        "sectitwonepoint1": "An easy-to-navigate website that accurately reflects the company's mission and provides users with an intuitive experience.",
+        "sectithreenepoint1": "We don't just provide services. We deliver long-term solutions.",
+        "sectithreenepoint2": "Every brand has a story. We help tell it better – through design, technology, and clear communication.",
+        "clientname": "Lumea Ta",
+        "feedbacktext": "\"The collaboration with the DigitalGrow team was extremely valuable for our travel startup. They helped us build a modern website adapted to our customers' needs and laid the foundation for an intelligent chatbot that will simplify user interaction. Even though the project is still in progress (the information was not provided completely), we feel confident that the final result will reflect our vision and bring a more friendly travel experience for customers. We're happy to have a trusted partner alongside us in this important growth stage.\"",
+        "link": "https://lumeata.netlify.app/"
       }
     ]
   },
   "RU": {
     "projects": [
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Krov Acoperișuri – От старого логотипа к полностью интегрированной цифровой системе",
+        "description": "<strong>Вызов:</strong><br> Слабое цифровое присутствие и отсутствие единого визуального образа.",
+        "sectiononetitle": "Решение DigitalGrow:",
+        "sectitwonetitle": "Результаты:",
+        "sectithreenettitle": "Заключение:",
+        "sectiononepoint1": "Полный ребрендинг (логотип + цвета)",
+        "sectiononepoint2": "Современный лендинг, оптимизированный под конверсии",
+        "sectiononepoint3": "Чат-бот, интегрированный с CRM для автоматического сбора лидов",
+        "sectitwonepoint1": "Профессиональное онлайн-присутствие, которое генерирует лиды и автоматизирует процесс продаж.",
+        "sectithreenepoint1": "Мы предлагаем не просто услуги. Мы создаем долгосрочные решения.",
+        "sectithreenepoint2": "У каждого бренда есть своя история. Мы помогаем рассказать её лучше – через дизайн, технологии и четкую коммуникацию.",
+        "clientname": "Marcel Papuc",
+        "feedbacktext": "\"Сотрудничество с командой DigitalGrow стало одним из лучших решений для нашего бизнеса. Они быстро поняли наши потребности и предложили креативные и эффективные решения. Всего за несколько месяцев мы заметили значительный рост трафика и конверсий. Общение было четким, а команда крайне вовлеченной и профессиональной. Я с уверенностью рекомендую DigitalGrow всем, кто хочет реальных результатов в цифровой среде.\"",
+        "link": "https://krovacoperis.md/"
       },
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Piccolino – Бренд скатертей с новым образом, соответствующим радости, которую он приносит",
+        "description": "<strong>Вызов:</strong><br> Им нужна была свежая визуальная идентичность и простой способ общения с клиентами.",
+        "sectiononetitle": "Решение DigitalGrow:",
+        "sectitwonetitle": "Результаты:",
+        "sectithreenettitle": "Заключение:",
+        "sectiononepoint1": "Новый, современный логотип",
+        "sectiononepoint2": "Цветовая палитра, адаптированная для молодой и дружелюбной аудитории",
+        "sectiononepoint3": "Мини-визуальный набор для постов в социальных сетях",
+        "sectiononepoint4": "Специальная посадочная страница + умный чат-бот (румынский + русский)",
+        "sectitwonepoint1": "Узнаваемый бренд с беглой коммуникацией и онлайн-присутствием, адаптированным к молдавскому рынку.",
+        "sectithreenepoint1": "Мы предлагаем не просто услуги. Мы создаем долгосрочные решения.",
+        "sectithreenepoint2": "У каждого бренда есть своя история. Мы помогаем рассказать её лучше – через дизайн, технологии и четкую коммуникацию."
       },
       {
-        "title": "",
-        "description": "",
-        "image": "",
-        "link": ""
+        "title": "Lumea Ta – Информационная платформа, теперь доступная для всех",
+        "description": "<strong>Вызов:</strong><br> У них был сайт, но он не работал. Аудитория была разнообразной и двуязычной.",
+        "sectiononetitle": "Решение DigitalGrow:",
+        "sectitwonetitle": "Результаты:",
+        "sectithreenettitle": "Заключение:",
+        "sectiononepoint1": "Полный редизайн на основе существующей структуры",
+        "sectiononepoint2": "Перевод и адаптация на 2 языка (румынский + русский)",
+        "sectiononepoint3": "Умный чат-бот, отвечающий 24/7",
+        "sectitwonepoint1": "Удобный для навигации сайт, который точно отражает миссию компании и предоставляет пользователям интуитивный опыт.",
+        "sectithreenepoint1": "Мы предлагаем не просто услуги. Мы создаем долгосрочные решения.",
+        "sectithreenepoint2": "У каждого бренда есть своя история. Мы помогаем рассказать её лучше – через дизайн, технологии и четкую коммуникацию.",
+        "clientname": "Lumea Ta",
+        "feedbacktext": "\"Сотрудничество с командой DigitalGrow было чрезвычайно ценным для нашего туристического стартапа. Они помогли нам создать современный веб-сайт, адаптированный к потребностям наших клиентов, и заложили основу для умного чат-бота, который упростит взаимодействие с пользователями. Хотя проект все еще в разработке (информация была предоставлена не полностью), мы уверены, что конечный результат отразит наше видение и принесет более дружелюбный туристический опыт для клиентов. Мы рады иметь надежного партнера рядом с нами на этом важном этапе роста.\"",
+        "link": "https://lumeata.netlify.app/"
       }
     ]
   }

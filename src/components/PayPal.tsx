@@ -93,7 +93,11 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       "Implementare CRM": "10000",
       "Logo Profesional": "3500",
       "Actualizare Logo (Refresh)": "2000",
-      "Materiale Promoționale": "350"
+      "Materiale Promoționale": "350",
+      "Startup Light":"5000",
+      "Business Smart":"10000",
+      "Enterprise Complete":"20000",
+      
     },
     EN: {
       "One-Page Landing Page": "430",
@@ -108,7 +112,10 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       "CRM Implementation": "760",
       "Professional Logo": "253",
       "Logo Refresh": "151",
-      "Promotional Materials": "25"
+      "Promotional Materials": "25",
+      "Startup Light":"455",
+      "Business Smart":"962",
+      "Enterprise Complete":"2532",
     },
     RU: {
       "Одностраничный Landing": "5500",
@@ -123,7 +130,10 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       "Внедрение CRM": "10000",
       "Профессиональный логотип": "3500",
       "Обновление логотипа": "2000",
-      "Промо-материалы": "350"
+      "Промо-материалы": "350",
+      "Startup Light":"5000",
+      "Business Smart":"10000",
+      "Enterprise Complete":"20000",
     }
   };
 
@@ -150,7 +160,10 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
         "Implementare CRM",
         "Logo Profesional",
         "Actualizare Logo (Refresh)",
-        "Materiale Promoționale"
+        "Materiale Promoționale",
+        "Startup Light",
+        "Business Smart",
+        "Enterprise Complete"
       ]
     },
     EN: {
@@ -175,7 +188,10 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
         "CRM Implementation",
         "Professional Logo",
         "Logo Refresh",
-        "Promotional Materials"
+        "Promotional Materials",
+        "Startup Light",
+        "Business Smart",
+        "Enterprise Complete"
       ]
     },
     RU: {
@@ -200,7 +216,10 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
         "Внедрение CRM",
         "Профессиональный логотип",
         "Обновление логотипа",
-        "Промо-материалы"
+        "Промо-материалы",
+        "Startup Light",
+        "Business Smart",
+        "Enterprise Complete"
       ]
     }
   };

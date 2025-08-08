@@ -454,7 +454,7 @@
   content: "";
   position: absolute;
   left: 10vw;
-  top: 71%;
+  top: 74%;
   width:12vw;
   height: 0.5vw;
   background: #d32f2f;
@@ -481,7 +481,7 @@
   content: "";
   position: absolute;
   left:40vw;
-  top: 70%;
+  top: 74%;
   width:12vw;
   height: 0.5vw;
   background: #d32f2f;
@@ -503,7 +503,7 @@
   content: "";
   position: absolute;
   left: 10vw;
-  top: 73%;
+  top: 77%;
   width:12vw;
   height: 0.5vw;
   background: #d32f2f;
@@ -525,7 +525,7 @@
   content: "";
   position: absolute;
   left:40vw;
-  top: 72.5%;
+  top: 76%;
   width:12vw;
   height: 0.5vw;
   background: #d32f2f;
@@ -1148,7 +1148,7 @@
   content: "";
   position: absolute;
   left: 35vw;
-  top: 55.5%;
+  top: 55.8%;
   width:25vw;
   height: 1vw;
   background: #d32f2f;
@@ -1175,7 +1175,7 @@
   content: "";
   position: absolute;
   left:35vw;
-  top: 27%;
+  top: 25.7%;
   width:25vw;
   height: 1vw;
   background: #d32f2f;
@@ -1196,8 +1196,8 @@
 .package-price2-ru::after {
   content: "";
   position: absolute;
-  left: 35vw;
-  top: 55%;
+  left: 36vw;
+  top: 55.5%;
   width:25vw;
   height: 1vw;
   background: #d32f2f;
@@ -1219,7 +1219,7 @@
   content: "";
   position: absolute;
   left:35vw;
-  top: 26.8%;
+  top: 25.7%;
   width:25vw;
   height: 1vw;
   background: #d32f2f;

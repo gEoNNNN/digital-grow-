@@ -7,31 +7,40 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useLanguage } from "../components/LanguageContext";
 
+// Define the project type interface
+interface Project {
+  title: string;
+  description: string;
+  sectiononetitle: string;
+  sectiononepoint1: string;
+  sectiononepoint2: string;
+  sectiononepoint3: string;
+  sectiononepoint4?: string;
+  sectitwonetitle: string;
+  sectitwonepoint1: string;
+  sectithreenetitle: string;
+  sectithreenepoint1: string;
+  sectithreenepoint2: string;
+  feedbacktext: string;
+  clientname?: string;
+  link?: string;
+}
+
 const Krov: React.FC = () => {
   const { language } = useLanguage();
-  const project = projectsContent[language].projects[0];
   const navigate = useNavigate();
   const [showVideoPopup, setShowVideoPopup] = useState(false);
 
+  // Safely get project data with proper typing
+  const projectData = projectsContent[language as keyof typeof projectsContent];
+  const project = projectData?.projects?.[0] as Project | undefined;
+
   // Type guard to check if project has the required properties
-  const hasProjectDetails = (proj: any): proj is {
-    title: string;
-    description: string;
-    sectiononetitle: string;
-    sectiononepoint1: string;
-    sectiononepoint2: string;
-    sectiononepoint3: string;
-    sectiononepoint4: string;
-    sectitwonetitle: string;
-    sectitwonepoint1: string;
-    sectithreenetitle: string;
-    sectithreenepoint1: string;
-    sectithreenepoint2: string;
-    feedbacktext: string;
-  } => {
-    return proj && 
+  const hasProjectDetails = (proj: Project | undefined): proj is Project => {
+    return proj !== undefined && 
+           typeof proj.title === 'string' &&
+           typeof proj.description === 'string' &&
            typeof proj.sectiononetitle === 'string' &&
-           typeof proj.sectiononepoint1 === 'string' &&
            typeof proj.feedbacktext === 'string';
   };
 
@@ -113,7 +122,7 @@ const Krov: React.FC = () => {
                 <li>{project.sectiononepoint1}</li>
                 <li>{project.sectiononepoint2}</li>
                 <li>{project.sectiononepoint3}</li>
-                <li>{project.sectiononepoint4}</li>
+                {project.sectiononepoint4 && <li>{project.sectiononepoint4}</li>}
               </ul>
             </div>
             
@@ -138,16 +147,49 @@ const Krov: React.FC = () => {
             <h3>Client Feedback</h3>
             <div className="project-client-info">
               <img src={client} alt="Client" className="project-client-image" />
-              <span className="project-client-name">Marcel Papuc</span>
+              <span className="project-client-name">{project.clientname || "Marcel Papuc"}</span>
             </div>
             <p className="project-feedback-text">{project.feedbacktext}</p>
           </div>
+          
+          {/* Website Link Section */}
+          {project.link && (
+            <div className="project-link-section">
+              <h3>Visit Website</h3>
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-website-link"
+              >
+                {project.link}
+              </a>
+            </div>
+          )}
         </div>
       </div>
       
       {/* Video Popup */}
       <div className={`project-video-popup ${showVideoPopup ? 'visible' : ''}`}>
         <div className="project-video-popup-content">
+          <button
+            className="project-video-close-btn"
+            onClick={() => {
+              setShowVideoPopup(false);
+              // Force video to stop by reloading the iframe
+              setTimeout(() => {
+                const iframe = document.querySelector('.project-video-popup-iframe') as HTMLIFrameElement;
+                if (iframe) {
+                  const src = iframe.src;
+                  iframe.src = '';
+                  iframe.src = src;
+                }
+              }, 100);
+            }}
+            aria-label="Close video"
+          >
+            ×
+          </button>
           <iframe
             src={getYouTubeVideoUrl(language)}
             className="project-video-popup-iframe"
@@ -158,7 +200,8 @@ const Krov: React.FC = () => {
           />
         </div>
       </div>
-    
+      
+      <Footer />
     </div>
   );
 };

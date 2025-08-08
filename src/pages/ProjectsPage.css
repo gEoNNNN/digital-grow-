@@ -38,7 +38,7 @@
   align-items: flex-start;
   text-align: left;
   gap: 3vw;
-  margin: 0 auto 40vw auto;
+  margin: 0 auto 10vw auto;
 }
 
 /* Project Name */
@@ -145,8 +145,7 @@
 
 .project-client-image {
   width: 4vw;
-  height: 4vw;
-  border-radius: 50%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -220,9 +219,29 @@
   box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.3);
 }
 
-/* Remove close button styles */
+/* Close button styles */
 .project-video-close-btn {
-  display: none;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  font-size: 2vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: background 0.3s ease;
+}
+
+.project-video-close-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
 }
 
 /* Remove glow effect */
@@ -471,7 +490,7 @@ html {
 
   .project-client-image {
     width: 8vw;
-    height: 8vw;
+    height: auto;
   }
 
   .project-client-name {
@@ -570,7 +589,7 @@ html {
 
   .project-client-image {
     width: 12vw;
-    height: 12vw;
+    height: auto;
   }
 
   .project-client-name {
@@ -633,5 +652,57 @@ html {
 
   .project-feedback-text {
     font-size: 1.3rem;
+  }
+}
+
+/* New styles for project links section */
+.project-link-section {
+  margin-top: 3vw;
+  padding: 2vw;
+  margin-left: 5vw;
+  background-color: var(--section-bg);
+  border-radius: 1vw;
+  text-align: center;
+  border: 1px solid var(--card-border);
+}
+
+.project-link-section h3 {
+  color: var(--text-color);
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+  font-family: "DM Sans", sans-serif;
+}
+
+.project-website-link {
+  display: inline-block;
+  color: var(--button-color);
+  text-decoration: none;
+  font-size: 1.2vw;
+  font-weight: 500;
+  padding: 1vw 2vw;
+  border: 2px solid var(--button-color);
+  border-radius: 0.5vw;
+  transition: all 0.3s ease;
+  font-family: "DM Sans", sans-serif;
+}
+
+.project-website-link:hover {
+  background-color: var(--button-color);
+  color: white;
+  transform: translateY(-0.2vw);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .project-link-section h3 {
+    font-size: 4vw;
+  }
+  .project-link-section {
+    margin-left: 20vw;
+  }
+  
+  .project-website-link {
+    font-size: 3vw;
+    padding: 3vw 4vw;
   }
 }

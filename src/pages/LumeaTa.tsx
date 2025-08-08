@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProjectsPage.css";
 import projectsContent from "./ProjectsPage.json";
 import { useNavigate } from "react-router-dom";
-import client from "../assets/Marcel.png";
+import client from "../assets/lumetalogo.svg"
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useLanguage } from "../components/LanguageContext";
@@ -29,6 +29,7 @@ const LumeaTa: React.FC = () => {
     sectithreenepoint1?: string;
     sectithreenepoint2?: string;
     feedbacktext?: string;
+    link?: string;
   } => {
     return proj && 
            typeof proj.title === 'string' &&
@@ -135,12 +136,34 @@ const LumeaTa: React.FC = () => {
               <p className="project-feedback-text">{project.feedbacktext}</p>
             </div>
           )}
+          
+          {/* Website Link Section */}
+          {project.link && (
+            <div className="project-link-section">
+              <h3>Visit Website</h3>
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-website-link"
+              >
+                {project.link}
+              </a>
+            </div>
+          )}
         </div>
       </div>
       
       {/* Image Popup */}
       <div className={`project-image-popup ${showImagePopup ? 'visible' : ''}`}>
         <div className="project-image-popup-content">
+          <button
+            className="project-video-close-btn"
+            onClick={() => setShowImagePopup(false)}
+            aria-label="Close image"
+          >
+            ×
+          </button>
           <img
             src={lumeata}
             alt="Lumea Ta Project Screenshot"
@@ -149,7 +172,7 @@ const LumeaTa: React.FC = () => {
         </div>
       </div>
       
-      
+      <Footer />
     </div>
   );
 };

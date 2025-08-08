@@ -26,6 +26,7 @@ function App() {
           <LanguageProvider>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/payment-cancel" element={<ServicesPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/aboutus" element={<AboutUsPage />} />
