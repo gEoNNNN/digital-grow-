@@ -144,7 +144,7 @@
 }
 
 .project-client-image {
-  width: 4vw;
+  width: 7vw;
   height: auto;
   object-fit: cover;
 }
@@ -489,7 +489,7 @@ html {
   }
 
   .project-client-image {
-    width: 8vw;
+    width: 25vw;
     height: auto;
   }
 
@@ -588,7 +588,7 @@ html {
   }
 
   .project-client-image {
-    width: 12vw;
+    width: 30vw;
     height: auto;
   }
 
