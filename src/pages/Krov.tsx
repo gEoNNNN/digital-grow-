@@ -31,6 +31,15 @@ const Krov: React.FC = () => {
   const navigate = useNavigate();
   const [showVideoPopup, setShowVideoPopup] = useState(false);
 
+  // Detect mobile device
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Safely get project data with proper typing
   const projectData = projectsContent[language as keyof typeof projectsContent];
   const project = projectData?.projects?.[0] as Project | undefined;
@@ -61,26 +70,19 @@ const Krov: React.FC = () => {
     }
   };
 
-  // Scroll listener to show video popup when near bottom
+  // Scroll listener to show video popup when near bottom (desktop only)
   useEffect(() => {
+    if (isMobile) return;
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
-      // Calculate how close to bottom (80% of the way down)
       const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
-      
-      if (scrollPercentage > 0.8) {
-        setShowVideoPopup(true);
-      } else {
-        setShowVideoPopup(false);
-      }
+      setShowVideoPopup(scrollPercentage > 0.8);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
   if (!hasProjectDetails(project)) {
     return (
@@ -103,7 +105,6 @@ const Krov: React.FC = () => {
   return (
     <div className="project-page">
       <NavBar />
-      
       <div className="project-container">
         <div className="project-content-wrapper">
           {/* Project Name */}
@@ -166,41 +167,52 @@ const Krov: React.FC = () => {
               </a>
             </div>
           )}
+
+          {/* Video Section - mobile: inline, desktop: popup */}
+          {isMobile ? (
+            <div className="project-video-section">
+              <iframe
+                src={getYouTubeVideoUrl(language)}
+                className="project-video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Project Video"
+              />
+            </div>
+          ) : (
+            <div className={`project-video-popup ${showVideoPopup ? 'visible' : ''}`}>
+              <div className="project-video-popup-content">
+                <button
+                  className="project-video-close-btn"
+                  onClick={() => {
+                    setShowVideoPopup(false);
+                    setTimeout(() => {
+                      const iframe = document.querySelector('.project-video-popup-iframe') as HTMLIFrameElement;
+                      if (iframe) {
+                        const src = iframe.src;
+                        iframe.src = '';
+                        iframe.src = src;
+                      }
+                    }, 100);
+                  }}
+                  aria-label="Close video"
+                >
+                  ×
+                </button>
+                <iframe
+                  src={getYouTubeVideoUrl(language)}
+                  className="project-video-popup-iframe"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Project Video"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      
-      {/* Video Popup */}
-      <div className={`project-video-popup ${showVideoPopup ? 'visible' : ''}`}>
-        <div className="project-video-popup-content">
-          <button
-            className="project-video-close-btn"
-            onClick={() => {
-              setShowVideoPopup(false);
-              // Force video to stop by reloading the iframe
-              setTimeout(() => {
-                const iframe = document.querySelector('.project-video-popup-iframe') as HTMLIFrameElement;
-                if (iframe) {
-                  const src = iframe.src;
-                  iframe.src = '';
-                  iframe.src = src;
-                }
-              }, 100);
-            }}
-            aria-label="Close video"
-          >
-            ×
-          </button>
-          <iframe
-            src={getYouTubeVideoUrl(language)}
-            className="project-video-popup-iframe"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Project Video"
-          />
-        </div>
-      </div>
-      
       <Footer />
     </div>
   );

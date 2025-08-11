@@ -15,6 +15,7 @@ import Footer from "../components/Footer"
 import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import otherClient from "../assets/lumetalogo.svg" 
+import otherClient1 from "../assets/photo123.jpg" 
 import { useEffect, useState } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
@@ -51,6 +52,22 @@ const getYouTubeVideoUrl = (lang: string) => {
   }
 };
 
+const getYouTubeVideoUrl1 = (lang: string) => {
+  const videoId = "1vdhAAVwLpQ";
+  const baseUrl = `https://www.youtube.com/embed/${videoId}`;
+  
+  switch (lang) {
+    case "RO":
+      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
+    case "RU":
+      return `${baseUrl}?cc_lang_pref=ru&cc_load_policy=1`;
+    case "EN":
+      return `${baseUrl}?cc_lang_pref=en&cc_load_policy=1`;
+    default:
+      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
+  }
+};
+
   const feedbacks = [
     {
       name: content.hero.marcel,
@@ -66,7 +83,15 @@ const getYouTubeVideoUrl = (lang: string) => {
       feedback: content.hero.lumetafeedback,
       video: getYouTubeVideoUrl(language),
       button: content.hero.feedbackbutton,
-      showVideoButton: false // Lumea Ta doesn't have video button
+      showVideoButton: false // Piccolino doesn't have video button
+    },
+    {
+      name: content.hero.piccolino,
+      photo: otherClient1,
+      feedback: content.hero.piccolinofeedback,
+      video: getYouTubeVideoUrl1(language),
+      button: content.hero.feedbackbutton,
+      showVideoButton: true // Lumea Ta has video button
     }
   ];
 
@@ -77,9 +102,36 @@ const getYouTubeVideoUrl = (lang: string) => {
 
   return (
     <div className="homepage">
-      <video className="background-video" autoPlay muted loop preload="auto" poster="/path/to/poster-image.jpg">
+      {/* Video popup rendered at root level */}
+      {videoOpen && feedbacks[currentFeedback].showVideoButton && (
+        <div
+          className="homepage-video-popup"
+          onClick={() => setVideoOpen(false)}
+          style={{ zIndex: 10000000 }}
+        >
+          <button
+            className="homepage-video-close-btn"
+            onClick={e => {
+              e.stopPropagation();
+              setVideoOpen(false);
+            }}
+            aria-label="Close video"
+          >
+            ×
+          </button>
+          <iframe
+            src={feedbacks[currentFeedback].video}
+            className="homepage-video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
+      
+      <video className="background-video" autoPlay muted loop preload="auto">
         <source src={BG} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
       {/* Background shapes */}
@@ -213,32 +265,6 @@ const getYouTubeVideoUrl = (lang: string) => {
                     {feedbacks[currentFeedback].button}
                   </button>
                 )}
-                {/* Video Popup */}
-                {videoOpen && feedbacks[currentFeedback].showVideoButton && (
-                  <div
-                    className="homepage-video-popup"
-                    onClick={() => setVideoOpen(false)}
-                  >
-                    <button
-                      className="homepage-video-close-btn"
-                      onClick={e => {
-                        e.stopPropagation();
-                        setVideoOpen(false);
-                      }}
-                      aria-label="Close video"
-                    >
-                      ×
-                    </button>
-                    <iframe
-                      src={feedbacks[currentFeedback].video}
-                      className="homepage-video"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      onClick={e => e.stopPropagation()}
-                    />
-                  </div>
-                )}
                 {/* White rectangles for switching */}
                 <div className="homepage-feedback-switcher">
                   <div
@@ -248,6 +274,10 @@ const getYouTubeVideoUrl = (lang: string) => {
                   <div
                     className={`feedback-switch-rect${currentFeedback === 1 ? " active" : ""}`}
                     onClick={() => setCurrentFeedback(1)}
+                  />
+                  <div
+                    className={`feedback-switch-rect${currentFeedback === 2 ? " active" : ""}`}
+                    onClick={() => setCurrentFeedback(2)}
                   />
                 </div>
               </div>

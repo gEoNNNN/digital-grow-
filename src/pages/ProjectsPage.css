@@ -442,7 +442,7 @@ html {
 
   .project-content-wrapper {
     gap: 5vw;
-    margin: 0 auto 30vw auto;
+    margin: 0 auto 10vw auto;
   }
 
   .project-name {
@@ -535,7 +535,7 @@ html {
 
   .project-content-wrapper {
     gap: 6vw;
-    margin: 0 auto 60vw auto;
+    margin: 0 auto 10vw auto;
   }
 
   .project-name {
@@ -704,5 +704,96 @@ html {
   .project-website-link {
     font-size: 3vw;
     padding: 3vw 4vw;
+  }
+}
+
+/* Hide video popup and show inline video/image on mobile */
+@media (max-width: 768px) {
+  .project-video-popup,
+  .project-video-popup.visible,
+  .project-video-popup-content,
+  .project-video-popup-iframe,
+  .project-video-close-btn {
+    display: none !important;
+  }
+
+  .project-video-section {
+    display: block !important;
+    width: 100vw !important;
+    margin: 6vw 0 !important;
+  }
+
+  .project-video {
+    display: block !important;
+    width: 100vw !important;
+    height: 55vw !important;
+    border-radius: 2vw !important;
+    box-shadow: 0 1vw 3vw var(--section-shadow);
+    border: none;
+    background: #000;
+  }
+}
+
+/* For extra small screens */
+@media (max-width: 480px) {
+  .project-video {
+    height: 65vw !important;
+    border-radius: 3vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-video-section {
+    display: block !important;
+    width: 90vw !important;
+    margin: 0vw 0 0 -5vw !important;
+    padding: 0;
+  }
+
+  .project-video {
+    display: block !important;
+    width: 100vw !important;
+    height: 55vw !important;
+    border-radius: 2vw !important;
+    box-shadow: 0 1vw 3vw var(--section-shadow);
+    border: none;
+    background: #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-video {
+    height: 65vw !important;
+    border-radius: 3vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-video-section {
+    display: block !important;
+    width: 100vw !important;
+    margin: 0vw 0 0 0vw !important;
+    padding: 0;
+    text-align: center;
+  }
+
+  .project-video {
+    display: block !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+    height: auto !important;
+    border-radius: 2vw !important;
+    box-shadow: 0 1vw 3vw var(--section-shadow);
+    border: none;
+    background: #000;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-video {
+    border-radius: 3vw !important;
+    width: 98vw !important;
+    max-width: 98vw !important;
   }
 }

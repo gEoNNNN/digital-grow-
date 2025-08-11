@@ -14,6 +14,15 @@ const LumeaTa: React.FC = () => {
   const navigate = useNavigate();
   const [showImagePopup, setShowImagePopup] = useState(false);
 
+  // Detect mobile device
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Type guard to check if project has the required properties
   const hasProjectDetails = (proj: any): proj is {
     title: string;
@@ -36,26 +45,19 @@ const LumeaTa: React.FC = () => {
            typeof proj.description === 'string';
   };
 
-  // Scroll listener to show image popup when near bottom
+  // Scroll listener to show image popup when near bottom (desktop only)
   useEffect(() => {
+    if (isMobile) return;
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
-      // Calculate how close to bottom (80% of the way down)
       const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
-      
-      if (scrollPercentage > 0.8) {
-        setShowImagePopup(true);
-      } else {
-        setShowImagePopup(false);
-      }
+      setShowImagePopup(scrollPercentage > 0.8);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
   if (!hasProjectDetails(project)) {
     return (
@@ -78,7 +80,6 @@ const LumeaTa: React.FC = () => {
   return (
     <div className="project-page">
       <NavBar />
-      
       <div className="project-container">
         <div className="project-content-wrapper">
           {/* Project Name */}
@@ -154,23 +155,34 @@ const LumeaTa: React.FC = () => {
         </div>
       </div>
       
-      {/* Image Popup */}
-      <div className={`project-image-popup ${showImagePopup ? 'visible' : ''}`}>
-        <div className="project-image-popup-content">
-          <button
-            className="project-video-close-btn"
-            onClick={() => setShowImagePopup(false)}
-            aria-label="Close image"
-          >
-            ×
-          </button>
+      {/* Image Section - mobile: inline, desktop: popup */}
+      {isMobile ? (
+        <div className="project-video-section">
           <img
             src={lumeata}
             alt="Lumea Ta Project Screenshot"
-            className="project-image-popup-img"
+            className="project-video"
+            style={{ width: "100%", height: "auto", borderRadius: "2vw", background: "#000" }}
           />
         </div>
-      </div>
+      ) : (
+        <div className={`project-image-popup ${showImagePopup ? 'visible' : ''}`}>
+          <div className="project-image-popup-content">
+            <button
+              className="project-video-close-btn"
+              onClick={() => setShowImagePopup(false)}
+              aria-label="Close image"
+            >
+              ×
+            </button>
+            <img
+              src={lumeata}
+              alt="Lumea Ta Project Screenshot"
+              className="project-image-popup-img"
+            />
+          </div>
+        </div>
+      )}
       
       <Footer />
     </div>
