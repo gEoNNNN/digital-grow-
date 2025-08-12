@@ -17,13 +17,27 @@ import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import otherClient from "../assets/lumetalogo.svg" 
 import LiveChatFeedback from "../components/Livechatfeedback"  // Using feedback chat instead
+import LiveChatWrapper from "../components/LiveChatWrapper";
 import { useLanguage } from "../components/LanguageContext";
 import shape1 from "../assets/Ellipse 1.png"
 import shape2 from "../assets/Ellipse 2.png"
 import shape3 from "../assets/Ellipse 3.png"
 
 const FeedbackPage = () => {
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang');
+    const allowedLangs = ["RO", "RU", "EN"] as const;
+    if (lang) {
+      const upperLang = lang.toUpperCase();
+      if (allowedLangs.includes(upperLang as typeof allowedLangs[number])) {
+        setLanguage(upperLang as typeof allowedLangs[number]);
+      }
+    }
+  }, [setLanguage]);
+
   const content = homepageContent[language] 
   const [chatOpen, setChatOpen] = useState(true) 
   const [isMobile, setIsMobile] = useState(false);
@@ -84,8 +98,8 @@ const FeedbackPage = () => {
       
       <div className="homepage-content">
         <NavBar/>
-        <LiveChatFeedback open={chatOpen} setOpen={setChatOpen} />
-        
+        <LiveChatWrapper open={chatOpen} setOpen={setChatOpen} />
+      
         <div className="homepage-main-section">
           <h1 className="homepage-main-section-title">
             {content.hero.title1}

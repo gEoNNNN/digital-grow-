@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Livechatfeedback.css";
-import livechatopenbg from "../assets/Group 71.png"
-import closebutton from "../assets/closebutton.svg"
-import sendicon from "../assets/sendicon.svg"
-import chatboticon from "../assets/chatlogo.svg"
+import livechatopenbg from "../assets/Group 71.png";
+import closebutton from "../assets/closebutton.svg";
+import sendicon from "../assets/sendicon.svg";
+import chatboticon from "../assets/chatlogo.svg";
 import { useLanguage } from "./LanguageContext";
 
 type ChatMessage = {
@@ -14,17 +14,19 @@ type ChatMessage = {
 };
 
 const initialMessages: ChatMessage[] = [
-  { id: 1, text: "feedback", from: "bot", type: "feedback" } // Special feedback message
+  { id: 1, text: "feedback", from: "bot", type: "feedback" }
 ];
 
 interface LiveChatFeedbackProps {
   open?: boolean;
   setOpen?: (open: boolean) => void;
+  onFeedbackSubmit?: (data: { emoji: string; reason: string; language: string }) => void;
 }
 
-const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({ 
-  open: controlledOpen, 
-  setOpen: setControlledOpen
+const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
+  open: controlledOpen,
+  setOpen: setControlledOpen,
+  onFeedbackSubmit
 }) => {
   const { language } = useLanguage();
   const [internalOpen, setInternalOpen] = useState(false);
@@ -39,28 +41,35 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   const [feedbackReason, setFeedbackReason] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Translations for feedback
+  // Translations
+  // În obiectul feedbackTranslations schimbăm doar thankYou:
   const feedbackTranslations = {
     RO: {
       question: "Cum ți s-a părut chatbot-ul?",
       disappointing: "Dezamăgitor",
-      acceptable: "Acceptabil", 
+      acceptable: "Acceptabil",
       excellent: "Excelent",
       reasonQuestion: "De ce ai ales această reacție?",
       placeholder: "Spune-ne motivul...",
       inputPlaceholder: "Scrie-ți mesajul aici...",
-      thankYou: "Mulțumim pentru feedback! Ne ajută să îmbunătățim serviciile noastre.",
+      thankYou: `
+        <p><strong>🙏 Mulțumim mult pentru feedback!</strong> 😊</p>
+        <p>În câteva secunde vei fi redirecționat către chatbotul nostru normal. 🕒</p>
+      `,
       altText: "Deschide chat"
     },
     EN: {
       question: "How did you find our chatbot?",
       disappointing: "Disappointing",
       acceptable: "Acceptable",
-      excellent: "Excellent", 
+      excellent: "Excellent",
       reasonQuestion: "Why did you choose this reaction?",
       placeholder: "Tell us the reason...",
       inputPlaceholder: "Type your message here...",
-      thankYou: "Thank you for your feedback! It helps us improve our services.",
+      thankYou: `
+        <p><strong>🙏 Thank you so much for your feedback!</strong> 😊</p>
+        <p>In a few seconds, you will be redirected to our normal chatbot. 🕒</p>
+      `,
       altText: "Open chat"
     },
     RU: {
@@ -71,14 +80,22 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
       reasonQuestion: "Почему вы выбрали эту реакцию?",
       placeholder: "Расскажите нам причину...",
       inputPlaceholder: "Напишите ваше сообщение здесь...",
-      thankYou: "Спасибо за отзыв! Это помогает нам улучшать наши услуги.",
+      thankYou: `
+        <p><strong>🙏 Большое спасибо за ваш отзыв!</strong> 😊</p>
+        <p>Через несколько секунд вы будете перенаправлены в наш обычный чат-бот. 🕒</p>
+      `,
       altText: "Открыть чат"
     }
   };
+  
+  
+
+  
+
 
   const currentTranslations = feedbackTranslations[language as keyof typeof feedbackTranslations];
 
-  // Auto-scroll to bottom when messages change
+  // Scroll automat
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -87,7 +104,7 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
     scrollToBottom();
   }, [messages]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (open) setVisible(true);
     else {
       const timeout = setTimeout(() => setVisible(false), 300);
@@ -100,27 +117,61 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
     setFeedbackStep("reason");
   };
 
-  const handleFeedbackSubmit = () => {
+  const handleFeedbackSubmit = async () => {
     if (feedbackReason.trim() !== "" && selectedEmoji) {
-      // Add user's complete feedback response
+      // Adaugă mesaj local (inclusiv Thank you)
       setMessages(prev => [
-        ...prev.filter(msg => msg.type !== "feedback"), // Remove the feedback message
-        { 
-          id: Date.now(), 
-          text: `Emoji: ${selectedEmoji} - ${language === 'RO' ? 'Motiv' : language === 'EN' ? 'Reason' : 'Причина'}: ${feedbackReason}`, 
-          from: "user" 
+        ...prev.filter(msg => msg.type !== "feedback"),
+        {
+          id: Date.now(),
+          text: `Emoji: ${selectedEmoji} - ${
+            language === "RO" ? "Motiv" : language === "EN" ? "Reason" : "Причина"
+          }: ${feedbackReason}`,
+          from: "user"
         },
-        { 
-          id: Date.now() + 1, 
-          text: currentTranslations.thankYou, 
-          from: "bot" 
+        {
+          id: Date.now() + 1,
+          text: currentTranslations.thankYou,
+          from: "bot"
         }
       ]);
+  
+      // Trimite la server
+      try {
+        const response = await fetch("http://127.0.0.1:5000/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            emoji: selectedEmoji,
+            reason: feedbackReason,
+            language
+          })
+        });
+        if (!response.ok) {
+          console.error("Eroare la trimiterea feedback-ului");
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+  
+      // Așteaptă 5 secunde, apoi trimite semnal către părinte
+      if (onFeedbackSubmit) {
+        setTimeout(() => {
+          onFeedbackSubmit({
+            emoji: selectedEmoji,
+            reason: feedbackReason,
+            language
+          });
+        }, 7000);
+      }
+  
+      // Reset state local
       setFeedbackReason("");
       setFeedbackStep("none");
       setSelectedEmoji("");
     }
   };
+  
 
   const handleSend = () => {
     if (feedbackStep === "reason") {
@@ -134,68 +185,63 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
     }
   };
 
-  const renderFeedbackMessage = () => {
-    return (
-      <div className="livechat-feedback-message">
-        <div className="feedback-text">{currentTranslations.question}</div>
-        
-        <div className="feedback-emojis">
-          <div className="feedback-emoji-option">
-            <button 
-              className={`feedback-emoji-btn ${selectedEmoji === "😠" ? "selected" : ""}`}
-              onClick={() => handleEmojiSelect("😠")}
-            >
-              😠
-            </button>
-            <span className="feedback-emoji-label">{currentTranslations.disappointing}</span>
-          </div>
-          
-          <div className="feedback-emoji-option">
-            <button 
-              className={`feedback-emoji-btn ${selectedEmoji === "😊" ? "selected" : ""}`}
-              onClick={() => handleEmojiSelect("😊")}
-            >
-              😊
-            </button>
-            <span className="feedback-emoji-label">{currentTranslations.acceptable}</span>
-          </div>
-          
-          <div className="feedback-emoji-option">
-            <button 
-              className={`feedback-emoji-btn ${selectedEmoji === "😍" ? "selected" : ""}`}
-              onClick={() => handleEmojiSelect("😍")}
-            >
-              😍
-            </button>
-            <span className="feedback-emoji-label">{currentTranslations.excellent}</span>
-          </div>
+  const renderFeedbackMessage = () => (
+    <div className="livechat-feedback-message">
+      <div className="feedback-text">{currentTranslations.question}</div>
+      <div className="feedback-emojis">
+        <div className="feedback-emoji-option">
+          <button
+            className={`feedback-emoji-btn ${selectedEmoji === "😠" ? "selected" : ""}`}
+            onClick={() => handleEmojiSelect("😠")}
+          >
+            😠
+          </button>
+          <span className="feedback-emoji-label">{currentTranslations.disappointing}</span>
         </div>
-
-        {feedbackStep === "reason" && (
-          <>
-            <div className="feedback-text">{currentTranslations.reasonQuestion}</div>
-            <div className="feedback-input-container">
-              <input
-                type="text"
-                className="feedback-input"
-                placeholder={currentTranslations.placeholder}
-                value={feedbackReason}
-                onChange={e => setFeedbackReason(e.target.value)}
-                onKeyDown={e => { if (e.key === "Enter") handleFeedbackSubmit(); }}
-              />
-              <button
-                className="feedback-send-btn"
-                onClick={handleFeedbackSubmit}
-                disabled={!feedbackReason.trim() || !selectedEmoji}
-              >
-                <img src={sendicon} alt="Send" />
-              </button>
-            </div>
-          </>
-        )}
+        <div className="feedback-emoji-option">
+          <button
+            className={`feedback-emoji-btn ${selectedEmoji === "😊" ? "selected" : ""}`}
+            onClick={() => handleEmojiSelect("😊")}
+          >
+            😊
+          </button>
+          <span className="feedback-emoji-label">{currentTranslations.acceptable}</span>
+        </div>
+        <div className="feedback-emoji-option">
+          <button
+            className={`feedback-emoji-btn ${selectedEmoji === "😍" ? "selected" : ""}`}
+            onClick={() => handleEmojiSelect("😍")}
+          >
+            😍
+          </button>
+          <span className="feedback-emoji-label">{currentTranslations.excellent}</span>
+        </div>
       </div>
-    );
-  };
+
+      {feedbackStep === "reason" && (
+        <>
+          <div className="feedback-text">{currentTranslations.reasonQuestion}</div>
+          <div className="feedback-input-container">
+            <input
+              type="text"
+              className="feedback-input"
+              placeholder={currentTranslations.placeholder}
+              value={feedbackReason}
+              onChange={e => setFeedbackReason(e.target.value)}
+              onKeyDown={e => { if (e.key === "Enter") handleFeedbackSubmit(); }}
+            />
+            <button
+              className="feedback-send-btn"
+              onClick={handleFeedbackSubmit}
+              disabled={!feedbackReason.trim() || !selectedEmoji}
+            >
+              <img src={sendicon} alt="Send" />
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 
   return (
     <div>
@@ -217,39 +263,27 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
             alt="Close"
             onClick={() => setOpen(false)}
           />
-          {/* Messages container */}
           <div className="livechat-messages">
-            {messages.map(msg => (
-              <div
-                key={msg.id}
-                className={`livechat-message livechat-message-${msg.from}`}
-              >
-                {msg.type === "feedback" ? renderFeedbackMessage() : msg.text}
+          {messages.map(msg => (
+              <div key={msg.id} className={`livechat-message livechat-message-${msg.from}`}>
+                {msg.type === "feedback" ? (
+                  // Afișezi feedback-ul special (emoji + input)
+                  renderFeedbackMessage()
+                ) : (
+                  // Pentru mesajele normale, dar și pentru "thankYou" care conține HTML, îl afișezi cu innerHTML
+                  <div
+                    dangerouslySetInnerHTML={{ __html: msg.text }}
+                  />
+                )}
               </div>
             ))}
             <div ref={messagesEndRef} />
           </div>
-          <div className="livechat-input-row">
-            <input
-              type="text"
-              className="livechat-input"
-              placeholder={currentTranslations.inputPlaceholder}
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              onKeyDown={e => { if (e.key === "Enter") handleSend(); }}
-            />
-            <button
-              className="livechat-send-btn"
-              onClick={handleSend}
-              type="button"
-              aria-label="Trimite mesaj"
-            >
-              <img src={sendicon} alt="Send" />
-            </button>
-          </div>
+          
         </div>
       )}
     </div>
   );
-}
+};
+
 export default LiveChatFeedback;

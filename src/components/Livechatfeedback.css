@@ -122,6 +122,7 @@
 }
 
 .livechat-input {
+  /* display: none; */
   margin-left: 40px;
   margin-bottom: -10px;
   width: 90%; 
@@ -275,6 +276,7 @@
 }
 
 .livechat-message {
+  /* background-color: red; */
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   padding: 10px 18px;
@@ -294,8 +296,10 @@
 }
 
 .livechat-message-bot {
+  /* width: 200%; */
   background: #fff;
   color: #2C2C2C;
+  /* background-color: red; */
   align-self: flex-start;
 }
 
@@ -423,6 +427,7 @@
 
 /* Feedback message styles */
 .livechat-feedback-message {
+  /* background-color: red; */
   width: 100%;
   padding: 15px;
   background: #fff;
