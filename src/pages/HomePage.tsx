@@ -99,12 +99,29 @@ const getYouTubeVideoUrl1 = (lang: string) => {
   const [currentFeedback, setCurrentFeedback] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
 
+  // Function to handle video button click
+  const handleVideoClick = () => {
+    if (language === 'RO') {
+      setVideoOpen(true);
+    } else {
+      // For non-RO languages, open YouTube in new tab with subtitles
+      const videoId = currentFeedback === 2 ? "1vdhAAVwLpQ" : "EuKHNcY53sA";
+      const langMap: Record<string, string> = {
+        EN: "en",
+        RU: "ru"
+      };
+      const ccLang = langMap[language] || "en";
+      const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}&cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}`;
+      window.open(youtubeUrl, '_blank');
+    }
+  };
+
   // Auto-switch feedback every 5 seconds
 
   return (
     <div className="homepage">
-      {/* Video popup rendered at root level */}
-      {videoOpen && feedbacks[currentFeedback].showVideoButton && (
+      {/* Video popup rendered at root level - only for RO language */}
+      {videoOpen && language === 'RO' && feedbacks[currentFeedback].showVideoButton && (
         <div
           className="homepage-video-popup"
           onClick={() => setVideoOpen(false)}
@@ -261,7 +278,7 @@ const getYouTubeVideoUrl1 = (lang: string) => {
                 {feedbacks[currentFeedback].showVideoButton && (
                   <button
                     className="homepage-section-one-card-button-video"
-                    onClick={() => setVideoOpen(true)}
+                    onClick={handleVideoClick}
                   >
                     {feedbacks[currentFeedback].button}
                   </button>

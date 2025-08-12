@@ -83,11 +83,11 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
             onClick={() => setOpen(false)}
           />
           {/* Messages container */}
-          <div className="livechat-messages">
+          <div className="regular-chat-messages">
             {messages.map(msg => (
               <div
                 key={msg.id}
-                className={`livechat-message livechat-message-${msg.from}`}
+                className={`regular-chat-message regular-chat-message-${msg.from}`}
               >
                 {msg.text}
               </div>

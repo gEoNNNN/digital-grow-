@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Livechatfeedback.css";
-import livechatopenbg from "../assets/Group 71.png"
+import livechatopenbg from "../assets/Group 71feedback.png"
 import closebutton from "../assets/closebutton.svg"
 import sendicon from "../assets/sendicon.svg"
 import chatboticon from "../assets/chatlogo.svg"
@@ -32,7 +32,6 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   const setOpen = setControlledOpen || setInternalOpen;
 
   const [visible, setVisible] = useState(false);
-  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const [feedbackStep, setFeedbackStep] = useState<"none" | "emoji" | "reason">("emoji");
   const [selectedEmoji, setSelectedEmoji] = useState("");
@@ -122,18 +121,6 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
     }
   };
 
-  const handleSend = () => {
-    if (feedbackStep === "reason") {
-      handleFeedbackSubmit();
-    } else if (message.trim() !== "") {
-      setMessages(prev => [
-        ...prev,
-        { id: Date.now(), text: message, from: "user" }
-      ]);
-      setMessage("");
-    }
-  };
-
   const renderFeedbackMessage = () => {
     return (
       <div className="livechat-feedback-message">
@@ -202,50 +189,31 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
       {!open && (
         <img
           src={chatboticon}
-          className="livechat-chatboticon"
+          className="feedback-chat-icon"
           alt={currentTranslations.altText}
           onClick={() => setOpen(true)}
-          style={{ position: "fixed", right: 40, bottom: 40, width: 80, height: 80, zIndex: 1001, cursor: "pointer" }}
         />
       )}
       {visible && (
-        <div className={`livechat-modal${open ? "" : " closed"}`}>
-          <img src={livechatopenbg} className="livechat-modal-bg" alt="Live Chat Modal BG" />
+        <div className={`feedback-chat-modal${open ? "" : " closed"}`}>
+          <img src={livechatopenbg} className="feedback-chat-modal-bg" alt="Live Chat Modal BG" />
           <img
             src={closebutton}
-            className="livechat-close-button"
+            className="feedback-chat-close-button"
             alt="Close"
             onClick={() => setOpen(false)}
           />
           {/* Messages container */}
-          <div className="livechat-messages">
+          <div className="feedback-messages-container">
             {messages.map(msg => (
               <div
                 key={msg.id}
-                className={`livechat-message livechat-message-${msg.from}`}
+                className={`feedback-chat-message feedback-chat-message-${msg.from} ${msg.type === "feedback" ? "feedback-chat-message-special" : ""}`}
               >
                 {msg.type === "feedback" ? renderFeedbackMessage() : msg.text}
               </div>
             ))}
             <div ref={messagesEndRef} />
-          </div>
-          <div className="livechat-input-row">
-            <input
-              type="text"
-              className="livechat-input"
-              placeholder={currentTranslations.inputPlaceholder}
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              onKeyDown={e => { if (e.key === "Enter") handleSend(); }}
-            />
-            <button
-              className="livechat-send-btn"
-              onClick={handleSend}
-              type="button"
-              aria-label="Trimite mesaj"
-            >
-              <img src={sendicon} alt="Send" />
-            </button>
           </div>
         </div>
       )}

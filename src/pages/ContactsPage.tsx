@@ -86,9 +86,6 @@ const ContactsPage: React.FC = () => {
                       <span className="contact-email">{content.contacts.section2email}</span>
                     </div>
                   </div>
-                  <button className="contact-option-button" onClick={() => setChatOpen(true)}>
-                    {content.contacts.section2button}
-                  </button>
                 </div>
               </div>
             </div>
@@ -100,19 +97,19 @@ const ContactsPage: React.FC = () => {
           <h2 className="contacts-section-title" dangerouslySetInnerHTML={{ __html: content.contacts.socilastitle }}></h2>
           
           <div className="social-media-row">
-            <a href="https://www.facebook.com/profile.php?id=61577024783785" className="social-media-link">
+            <a href="https://www.facebook.com/profile.php?id=61577024783785" className="social-media-link" target="_blank" rel="noopener noreferrer">
               <img src={facebook} alt="Facebook" />
               <span>Facebook</span>
             </a>
-            <a href="https://www.instagram.com/digitalgrowmoldova/" className="social-media-link">
+            <a href="https://www.instagram.com/digitalgrowmoldova/" className="social-media-link" target="_blank" rel="noopener noreferrer">
               <img src={instagram} alt="Instagram" />
               <span>Instagram</span>
             </a>
-            <a href="https://www.linkedin.com/in/digital-grow-989768378/" className="social-media-link">
+            <a href="https://www.linkedin.com/in/digital-grow-989768378/" className="social-media-link" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
               <span>LinkedIn</span>
             </a>
-            <a href="https://www.tiktok.com/@digital.grow1" className="social-media-link">
+            <a href="https://www.tiktok.com/@digital.grow1" className="social-media-link" target="_blank" rel="noopener noreferrer">
               <img src={tiktok} alt="TikTok" />
               <span>TikTok</span>
             </a>

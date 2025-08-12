@@ -101,7 +101,7 @@
 .portfolio-bg-line {
   position: absolute;
   z-index: 1;
-  width: 48.5vw;
+  width: 42vw;
   margin-left: 20vw;
   margin-top: 17vw;
 }
@@ -401,6 +401,14 @@
   .portfolio-main-section-title {
     font-size: 10vw;
     margin-bottom: 5vw;
+  }
+  .portfolio-call-section {
+    margin-top: 10vw;
+  }
+
+  .portfolio-call-text {
+    font-size: 6vw;
+    
   }
   
   .portfolio-main-section-description {
