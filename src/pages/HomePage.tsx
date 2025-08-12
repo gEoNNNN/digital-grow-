@@ -35,37 +35,38 @@ const HomePage = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // YouTube video URLs with language-specific subtitles
+  // YouTube video URLs with auto-generated subtitles
+
+// Improved function to load YouTube video with captions
 const getYouTubeVideoUrl = (lang: string) => {
   const videoId = "EuKHNcY53sA";
   const baseUrl = `https://www.youtube.com/embed/${videoId}`;
-  
-  switch (lang) {
-    case "RO":
-      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-    case "RU":
-      return `${baseUrl}?cc_lang_pref=ru&cc_load_policy=1`;
-    case "EN":
-      return `${baseUrl}?cc_lang_pref=en&cc_load_policy=1`;
-    default:
-      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-  }
+
+  // Language mapping if needed (you can extend this)
+  const langMap: Record<string, string> = {
+    RO: "ro",
+    RU: "ru",
+    EN: "en"
+  };
+
+  const ccLang = langMap[lang] || "ro";
+
+  return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
 };
 
 const getYouTubeVideoUrl1 = (lang: string) => {
   const videoId = "1vdhAAVwLpQ";
   const baseUrl = `https://www.youtube.com/embed/${videoId}`;
-  
-  switch (lang) {
-    case "RO":
-      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-    case "RU":
-      return `${baseUrl}?cc_lang_pref=ru&cc_load_policy=1`;
-    case "EN":
-      return `${baseUrl}?cc_lang_pref=en&cc_load_policy=1`;
-    default:
-      return `${baseUrl}?cc_lang_pref=ro&cc_load_policy=1`;
-  }
+
+  const langMap: Record<string, string> = {
+    RO: "ro",
+    RU: "ru",
+    EN: "en"
+  };
+
+  const ccLang = langMap[lang] || "ro";
+
+  return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
 };
 
   const feedbacks = [
