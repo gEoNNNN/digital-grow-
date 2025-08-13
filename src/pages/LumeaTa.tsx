@@ -157,11 +157,11 @@ const LumeaTa: React.FC = () => {
       
       {/* Image Section - mobile: inline, desktop: popup */}
       {isMobile ? (
-        <div className="project-video-section">
+        <div className="project-image-section">
           <img
             src={lumeata}
             alt="Lumea Ta Project Screenshot"
-            className="project-video"
+            className="project-image"
             style={{ width: "100%", height: "auto", borderRadius: "2vw", background: "#000" }}
           />
         </div>

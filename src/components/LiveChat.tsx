@@ -46,6 +46,86 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     }
   }, []);
 
+
+
+  // Într-un loc central, de exemplu la inițializarea aplicației:
+  (window as any).sendWelcomeMessage = (text: string) => {
+    // Adaugă mesajul utilizatorului
+    const newMsg: ChatMessage = { id: Date.now(), text, from: "user" };
+    setMessages(prev => [...prev, newMsg]);
+    
+    // Apelează logica normală de procesare
+    setOnboardingStep(2)
+    sendWelcomeRequest(text, text);
+  };
+
+
+    // Într-un loc central, de exemplu la inițializarea aplicației:
+    (window as any).sendSelecteazaProdusMessage = (text: string) => {
+      // Adaugă mesajul utilizatorului
+      const newMsg: ChatMessage = { id: Date.now(), text, from: "user" };
+      setMessages(prev => [...prev, newMsg]);
+      
+      // Apelează logica normală de procesare
+      setOnboardingStep(10)
+      sendSelecteazaProdusRequest(text, text, text);
+    };
+
+    // Într-un loc central, de exemplu la inițializarea aplicației:
+    (window as any).sendComandaMessage = (text: string) => {
+      // Adaugă mesajul utilizatorului
+      const newMsg: ChatMessage = { id: Date.now(), text, from: "user" };
+      setMessages(prev => [...prev, newMsg]);
+      
+      // Apelează logica normală de procesare
+      setOnboardingStep(15)
+      sendComandaInceputRequest(text, text, text);
+    };
+
+
+  // Într-un loc central, de exemplu la inițializarea aplicației:
+  (window as any).sendLanguageMessage = (text: string) => {
+    // Apelează logica normală de procesare
+    if (text.includes("Română")){
+      window.language = "RO";
+    } else if (text.includes("English")){
+      window.language = "EN";
+    } else if (text.includes("Русский")){
+      window.language = "RU";
+    }
+
+    localStorage.setItem("language", window.language);
+
+    const newMsg: ChatMessage = { id: Date.now(), text, from: "user" };
+    setMessages(prev => [...prev, newMsg]);
+
+    // console.log(window.language)
+    setOnboardingStep(-1)
+    console.log(text)
+    sendStartRequest(text);
+    
+  };
+
+  (window as any).selectService = (text: string) => {
+
+    const newMsg: ChatMessage = { id: Date.now(), text, from: "user" };
+    setMessages(prev => [...prev, newMsg]);
+
+    if (text.includes("Serviciile disponibile") || text.includes("Доступные услуги") || text.includes("Available services")) {
+      setOnboardingStep(2);
+      sendInterestsDetailRequest(text);
+    } else if (text.includes("Preferințe") || text.includes("Предпочтение") || text.includes("Preferences")){
+      setOnboardingStep(5);
+      console.log(text)
+      sendInterestsDetailRequest(text);
+    } else if (text.includes("Achiziție") || text.includes("заказ") || text.includes("Purchase")){
+      setOnboardingStep(15);
+      sendInterestsDetailRequest(text);
+    }
+
+    
+  };
+
   // Auto-scroll to bottom when messages change
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -114,7 +194,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -127,9 +207,16 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     })
       .then((res) => res.json())
       .then((data) => {
-        window.language = data.language;
-        localStorage.setItem("language", data.language);
-  
+        
+        if (data.language){
+          window.language = data.language
+          localStorage.setItem("language", data.language);
+        }
+
+        // data.ask_name = name
+        console.log(name)
+        console.log(data.ask_name)
+
         setMessages((prev) => prev.filter((m) => m.id !== typingId));
   
         typeHtmlMessage(data.ask_name || "Cum te numești?");
@@ -163,7 +250,9 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
-          // Apelează funcția typeHtmlMessage în loc să elimin typingMsg din mesaje
+          // Apelează funcția typeHtmlMessage în loc să elimin typingMsg din mesa
+          // je
+          // data.ask_interests = userName;
 
           setMessages((prev) => prev.filter((m) => m.id !== typingId));
 
@@ -227,7 +316,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -276,7 +365,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -325,7 +414,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -396,7 +485,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -439,7 +528,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -482,7 +571,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -529,7 +618,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -589,7 +678,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -635,7 +724,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -675,7 +764,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -715,7 +804,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -763,7 +852,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -805,7 +894,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -845,7 +934,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -898,7 +987,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -938,7 +1027,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
     const typingId = Date.now();
     const typingMsg: ChatMessage = {
       id: typingId,
-      text: "...",
+      text: " . . . ",
       from: "bot",
     };
   
@@ -965,32 +1054,6 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
         ]);
       });
   };
-
-
-
-  // const sendStartRequest = (name: string) => {
-  //   return fetch("https://lumea-mea.onrender.com/start", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ name }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const botMsg: ChatMessage = {
-  //         id: Date.now(),
-  //         text: data.ask_name || "Cum te numești?",
-  //         from: "bot",
-  //       };
-  //       // const language = data.language;
-  //       // window.language = language;
-  //         // localStorage.setItem("language", language);
-  //       window.language = data.language
-  //       localStorage.setItem("language", data.language);
-  //       setMessages((prev) => [...prev, botMsg]);
-  //       setMess(name);
-  //       setOnboardingStep(1);
-  //     });
-  // };
 
   React.useEffect(() => {
     if (open) setVisible(true);

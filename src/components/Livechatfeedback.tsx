@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Livechatfeedback.css";
-import livechatopenbg from "../assets/Group 71.png";
+import livechatopenbg from "../assets/Group 71feedback.png"
 import closebutton from "../assets/closebutton.svg";
 import sendicon from "../assets/sendicon.svg";
 import chatboticon from "../assets/chatlogo.svg";
@@ -32,6 +32,7 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
   const setOpen = setControlledOpen || setInternalOpen;
+  const [email, setEmail] = useState<string>("");
 
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
@@ -40,6 +41,12 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   const [selectedEmoji, setSelectedEmoji] = useState("");
   const [feedbackReason, setFeedbackReason] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const emailFromUrl = urlParams.get("email") || "";
+    setEmail(emailFromUrl);
+  }, []);
 
   // Translations
   // În obiectul feedbackTranslations schimbăm doar thankYou:
@@ -144,7 +151,8 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
           body: JSON.stringify({
             emoji: selectedEmoji,
             reason: feedbackReason,
-            language
+            language,
+            email
           })
         });
         if (!response.ok) {
@@ -248,24 +256,24 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
       {!open && (
         <img
           src={chatboticon}
-          className="livechat-chatboticon"
+          className="feedback-chat-icon"
           alt={currentTranslations.altText}
           onClick={() => setOpen(true)}
           style={{ position: "fixed", right: 40, bottom: 40, width: 80, height: 80, zIndex: 1001, cursor: "pointer" }}
         />
       )}
       {visible && (
-        <div className={`livechat-modal${open ? "" : " closed"}`}>
-          <img src={livechatopenbg} className="livechat-modal-bg" alt="Live Chat Modal BG" />
+        <div className={`feedback-chat-modal${open ? "" : " closed"}`}>
+          <img src={livechatopenbg} className="feedback-chat-modal-bg" alt="Live Chat Modal BG" />
           <img
             src={closebutton}
-            className="livechat-close-button"
+            className="feedback-chat-close-button"
             alt="Close"
             onClick={() => setOpen(false)}
           />
-          <div className="livechat-messages">
+          <div className="feedback-messages-container">
           {messages.map(msg => (
-              <div key={msg.id} className={`livechat-message livechat-message-${msg.from}`}>
+              <div key={msg.id} className={`feedback-chat-message feedback-chat-message-${msg.from}`}>
                 {msg.type === "feedback" ? (
                   // Afișezi feedback-ul special (emoji + input)
                   renderFeedbackMessage()

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import BG from "../assets/0723.mp4"
 import './HomePage.css'  // Using the same CSS as homepage
 import NavBar from "../components/NavBar"
@@ -25,18 +26,30 @@ import shape3 from "../assets/Ellipse 3.png"
 
 const FeedbackPage = () => {
   const { language, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+
+  
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const lang = params.get('lang');
+    const lang = params.get("lang");
+    const email = params.get("email");
+
     const allowedLangs = ["RO", "RU", "EN"] as const;
-    if (lang) {
-      const upperLang = lang.toUpperCase();
-      if (allowedLangs.includes(upperLang as typeof allowedLangs[number])) {
-        setLanguage(upperLang as typeof allowedLangs[number]);
-      }
+
+    // verifică parametrii
+    if (!lang || !email) {
+      navigate("/"); // redirect dacă lipsesc
+      return;
     }
-  }, [setLanguage]);
+
+    const upperLang = lang.toUpperCase();
+    if (allowedLangs.includes(upperLang as typeof allowedLangs[number])) {
+      setLanguage(upperLang as typeof allowedLangs[number]);
+    } else {
+      navigate("/"); // redirect dacă lang nu e valid
+    }
+  }, [setLanguage, navigate]);
 
   const content = homepageContent[language] 
   const [chatOpen, setChatOpen] = useState(true) 

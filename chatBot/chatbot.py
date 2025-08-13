@@ -505,7 +505,7 @@ def check_interest(interest):
     msg = interest.lower()
 
     general_keywords = ["general", "informatii", "prezentare", "descriere", "detalii generale"]
-    preferinte_keywords = ["preferinte", "personalizat", "nevoi", "ajutor", "alegere", "criterii"]
+    preferinte_keywords = ["preferinte", "personalizat", "nevoi", "ajutor", "alegere", "criterii", "preferințe"]
 
     general_score = max([fuzz.partial_ratio(msg, kw) for kw in general_keywords])
     preferinte_score = max([fuzz.partial_ratio(msg, kw) for kw in preferinte_keywords])
@@ -934,9 +934,13 @@ def language():
     message = (
         "🌍 <strong>Alege limba / Choose your language / Выберите язык:</strong><br>"
         "<div style='text-align:center; font-size:1em; margin: 10px 0;'>"
-        "🇷🇴 <em>Română</em> | 🇬🇧 <em>English</em> | 🇷🇺 <em>Русский</em>"
+        "<a href='#' style='text-decoration:none; color:black;' onclick=\"sendLanguageMessage('🇷🇴 Română')\">🇷🇴 Română</a> | "
+        "<a href='#' style='text-decoration:none; color:black;' onclick=\"sendLanguageMessage('🇬🇧 English')\">🇬🇧 English</a> | "
+        "<a href='#' style='text-decoration:none; color:black;' onclick=\"sendLanguageMessage('🇷🇺 Русский')\">🇷🇺 Русский</a>"
         "</div>"
     )
+
+
     return jsonify({"ask_name": message})
 
 @app.route('/ip', methods=["POST", "GET"])
@@ -954,45 +958,48 @@ def ip():
 def start():
     # print("Start endpoint called", flush=True)
     user_data = request.get_json()
-    interest = user_data.get("message", "prieten")
+    interest = user_data.get("name", "prieten")
     # ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     # print("ip === ", ip)
+    print(interest)
+
     country = get_country_by_ip()
     preferinte["country"] = country
     # preferinte["country"] = country
     # print("country === ", country)
     check_language_rag = check_language(interest)
+    print(check_language_rag)
     if check_language_rag == "RO":
         language_saved = "RO"
         ask_name = (
             '👋 <strong style="font-size: 12;">Bun venit la '
-            '<span style="color: #9333ea; text-shadow: 0 0 5px #d8b4fe, 0 0 10px #9333ea;">DigitalGrow</span>!</strong> 😊<br><br>'
+            '<span style="background: linear-gradient(90deg, #C0DFFF, #7FB3D5, #5B82AB, #2E5984); -webkit-background-clip: text; color: transparent; text-shadow: 0 0 5px rgba(192,223,255,0.5), 0 0 10px rgba(91,130,171,0.5);">DigitalGrow</span>! 😊<br><br>'
             "Te pot ajuta cu:<br>"
-            "📌 <strong>Serviciile disponibile</strong><br>"
-            "🎯 Alegerea unui serviciu <strong>în funcție de preferințele tale</strong><br>"
-            "🛒 Sau poate dorești direct să <strong>achiziționezi unul</strong>. 💼✨<br>"
+            "📌 <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Serviciile disponibile')\"><strong>Serviciile disponibile</strong></a><br>"
+            "🎯 Alegerea unui serviciu <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Preferințe')\"><strong>în funcție de preferințele tale</strong></a><br>"
+            "🛒 Sau poate dorești direct să <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Achiziție')\"><strong>achiziționezi unul</strong></a>. 💼✨<br>"
         )
 
     elif check_language_rag == "RU":
         language_saved = "RU"
         ask_name = (
             '👋 <strong style="font-size: 12;">Добро пожаловать в '
-            '<span style="color: #9333ea; text-shadow: 0 0 5px #d8b4fe, 0 0 10px #9333ea;">DigitalGrow</span>!</strong> 😊<br><br>'
+            '<span style="background: linear-gradient(90deg, #C0DFFF, #7FB3D5, #5B82AB, #2E5984); -webkit-background-clip: text; color: transparent; text-shadow: 0 0 5px rgba(192,223,255,0.5), 0 0 10px rgba(91,130,171,0.5);">DigitalGrow</span>! 😊<br><br>'
             "Я могу помочь вам с:<br>"
-            "📌 <strong>Доступными услугами</strong><br>"
-            "🎯 Выбором услуги <strong>по вашим предпочтениям</strong><br>"
-            "🛒 Или вы хотите сразу <strong>оформить заказ</strong>. 💼✨<br>"
+            "📌 <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Доступные услуги')\"><strong>Доступными услугами</strong></a><br>"
+            "🎯 Выбором услуги <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Предпочтение')\"><strong>по вашим предпочтениям</strong></a><br>"
+            "🛒 Или вы хотите сразу <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Оформить заказ')\"><strong>оформить заказ</strong></a>. 💼✨<br>"
         )
 
     else:
         language_saved = "EN"
         ask_name = (
             '👋 <strong style="font-size: 12;">Welcome to '
-            '<span style="color: #9333ea; text-shadow: 0 0 5px #d8b4fe, 0 0 10px #9333ea;">DigitalGrow</span>!</strong> 😊<br><br>'
+            '<span style="background: linear-gradient(90deg, #C0DFFF, #7FB3D5, #5B82AB, #2E5984); -webkit-background-clip: text; color: transparent; text-shadow: 0 0 5px rgba(192,223,255,0.5), 0 0 10px rgba(91,130,171,0.5);">DigitalGrow</span>! 😊<br><br>'
             "I can help you with:<br>"
-            "📌 <strong>Available services</strong><br>"
-            "🎯 Choosing a service <strong>based on your preferences</strong><br>"
-            "🛒 Or maybe you’re ready to <strong>make a purchase</strong>. 💼✨<br>"
+            "📌 <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Available services')\"><strong>Available services</strong></a><br>"
+            "🎯 Choosing a service <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Preferences')\"><strong>based on your preferences</strong></a><br>"
+            "🛒 Or maybe you’re ready to <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Purchase')\"><strong>make a purchase</strong></a>. 💼✨<br>"
         )
 
     
@@ -1000,11 +1007,13 @@ def start():
 
     return jsonify({"ask_name": ask_name, "language": language_saved})
 
+
 def build_service_prompt(categorii_unice, language_saved):
     emoji_list = [
         "💼", "🧠", "📱", "💻", "🛠️", "🎨", "🚀", "🧰", "📈", "📊", "🔧",
         "🖥️", "📦", "🧾", "🌐", "📣", "🤖", "🧑‍💻", "📇", "🗂️", "🖌️", "💡", "📍", "🆕"
     ]
+    
     if language_saved == "RO":
         intro = (
             "Îți pot oferi o gamă variată de servicii IT specializate. <br><br>"
@@ -1028,17 +1037,20 @@ def build_service_prompt(categorii_unice, language_saved):
     used_emojis = set()
     for categorie in categorii_unice:
         emoji = random.choice(emoji_list)
-        
-        # Evită repetițiile excesive dacă e posibil
         while emoji in used_emojis and len(used_emojis) < len(emoji_list):
             emoji = random.choice(emoji_list)
         used_emojis.add(emoji)
         
-        line = f"{emoji} <strong>{categorie}</strong>"
+        # Fiecare categorie devine link clicabil care apelează sendMessage()
+        line = (
+            f"<a href='#' onclick=\"sendWelcomeMessage('{categorie.replace("'", "\\'")}')\" "
+            f"style='text-decoration:none; color:inherit;'>"
+            f"{emoji} <strong>{categorie}</strong></a>"
+        )
         service_lines.append(line)
     
-    prompt = intro + "<br>".join(service_lines)
-    return prompt
+    return intro + "<br>".join(service_lines)
+
 
 def build_general_or_personal_prompt(language_saved):
     print("language_saved = ", language_saved)
@@ -1064,6 +1076,7 @@ def build_general_or_personal_prompt(language_saved):
             "✍️ Please write: <strong>general</strong> or <strong>preferences</strong> to continue."
         )
     return prompt
+
 
 def build_service_prompt_2(categorii_unice, language_saved):
     emoji_list = [
@@ -1093,11 +1106,16 @@ def build_service_prompt_2(categorii_unice, language_saved):
             emoji = random.choice(emoji_list)
         used_emojis.add(emoji)
         
-        line = f"{emoji} <strong>{categorie}</strong>"
+        # Transformăm linia într-un link clickable
+        line = (
+            f'<a href="#" style="text-decoration:none; color:inherit;" onclick="sendComandaMessage(\'{categorie}\')">'
+            f'{emoji} <strong>{categorie}</strong></a>'
+        )
         service_lines.append(line)
     
     prompt = intro + "<br>".join(service_lines)
     return prompt
+
 
 
 def check_budget(user_response: str) -> str:
@@ -1154,6 +1172,7 @@ def check_budget(user_response: str) -> str:
 def interests():
     user_data = request.get_json()
     name = user_data.get("name", "prieten")
+    print(name)
     language_saved = user_data.get("language", "RO")
     
     if language_saved == "RO":
@@ -1256,9 +1275,9 @@ def interests():
             mesaj = ask_with_ai(messages).strip()
             mesaj += (
                 "<br><br>❓ Te rugăm să ne spui dacă:<br>"
-                "👉 vrei să <strong>afli mai multe informații</strong> despre serviciile disponibile<br>"
-                "🎯 preferi să <strong>alegi un serviciu în funcție de preferințele tale</strong><br>"
-                "🛒 sau vrei să <strong>faci o comandă</strong> direct.<br><br>"
+                "👉 vrei să <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Serviciile disponibile')\"><strong>afli mai multe informații</strong></a> despre serviciile disponibile<br>"
+                "🎯 preferi să <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Preferințe')\"><strong>alegi un serviciu în funcție de preferințele tale</strong></a><br>"
+                "🛒 sau vrei să <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Achiziție')\"><strong>faci o comandă</strong></a> direct.<br><br>"
             )
             reply = mesaj
         elif language_saved == "RU":
@@ -1274,13 +1293,12 @@ def interests():
             mesaj = ask_with_ai(messages).strip()
             mesaj += (
                 "<br><br>❓ Пожалуйста, скажите, хотите ли вы:<br>"
-                "👉 вы хотите <strong>узнать больше информации</strong> о доступных услугах<br>"
-                "🎯 предпочитаете <strong>выбрать услугу по вашим предпочтениям</strong><br>"
-                "🛒 или вы хотите <strong>сделать заказ</strong> напрямую.<br><br>"
+                "👉 вы хотите <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Доступные услуги')\"><strong>узнать больше информации</strong></a> о доступных услугах<br>"
+                "🎯 предпочитаете <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Предпочтение')\"><strong>выбрать услугу по вашим предпочтениям</strong></a><br>"
+                "🛒 или вы хотите <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Оформить заказ')\"><strong>сделать заказ</strong></a> напрямую.<br><br>"
             )
             reply = mesaj
         else:
-
             prompt = (
                 f"The user wrote: '{name}'.\n\n"
                 "Never say greetings like 'Hi' or similar intros, because you're already in a conversation and know the user. "
@@ -1293,9 +1311,9 @@ def interests():
             message = ask_with_ai(messages).strip()
             message += (
                 "<br><br>❓ Please let us know:<br>"
-                "👉 you want to <strong>learn more about the available services</strong><br>"
-                "🎯 you'd prefer to <strong>choose a service based on your preferences</strong><br>"
-                "🛒 or you're ready to <strong>place an order</strong> directly.<br><br>"
+                "👉 you want to <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Available services')\"><strong>learn more about the available services</strong></a><br>"
+                "🎯 you'd prefer to <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Preferences')\"><strong>choose a service based on your preferences</strong></a><br>"
+                "🛒 or you're ready to <a href='#' style='text-decoration:none; color:black;' onclick=\"selectService('Purchase')\"><strong>place an order</strong></a> directly.<br><br>"
             )
             reply = message
 
@@ -3335,7 +3353,6 @@ def comanda():
                 for idx, produs in enumerate(produse, 1):
                     mesaj += f"<br> <strong>{produs}</strong>\n"
             return jsonify({"message": mesaj})
-
         else:
             if language_saved == "RO":
                 mesaj = (
@@ -3360,9 +3377,6 @@ def comanda():
             elif language_saved == "EN":
                 mesaj1 = build_service_prompt_2(categorii_unice_en, language_saved)
             mesaj = mesaj + mesaj1
-
-            # rezultat = function_check_product(interests , categorii_unice, "RO")
-            # print("rezultat = ", rezultat)
                 
         return jsonify({"message": mesaj})
     elif resp == "NU":
@@ -4288,6 +4302,7 @@ def email():
                         "hs_lead_status": "NEW",
                         "preferinte_inregistrare": f"{preferinte.get("Preferintele_Utilizatorului_Cautare", "")}",
                         # "contract": f"{}"
+                        "client_language": language_saved,
                     }
                 }       
 
@@ -4310,6 +4325,7 @@ def email():
                         "reducere": f"{preferinte.get("reducere", "").replace(" ", "") if preferinte.get("reducere") else ""}",
                         "hs_lead_status": "NEW",
                         "preferinte_inregistrare": f"{preferinte.get("Preferintele_Utilizatorului_Cautare", "")}",
+                        "client_language": language_saved,
                     }
                 }
                 update_response = requests.patch(update_url, headers=headers, json=update_body)
@@ -4343,6 +4359,7 @@ def email():
                         "pret_ue": f"{int(preferinte.get("Pret_UE", "0").replace(" ", ""))}",
                         "reducere": f"{preferinte.get("reducere", "").replace(" ", "")}",
                         "hs_lead_status": "NEW",
+                        "client_language": language_saved,
                     }
                 }
 
@@ -4362,6 +4379,7 @@ def email():
                         "pret_ue": f"{int(preferinte.get("Pret_UE", "0").replace(" ", ""))}",
                         "reducere": f"{preferinte.get("reducere", "").replace(" ", "")}",
                         "hs_lead_status": "NEW",
+                        "client_language": language_saved,
                     }
                 }
                 update_response = requests.patch(update_url, headers=headers, json=update_body)
@@ -4519,23 +4537,93 @@ def home():
     return render_template('website.html')
 
 
+def get_hubspot_contact_id_by_email(email: str) -> str | None:
+
+    search_url = "https://api.hubapi.com/crm/v3/objects/contacts/search"
+    headers = {
+        "Authorization": f"Bearer {TOKEN}",
+        "Content-Type": "application/json"
+    }
+    search_body = {
+        "filterGroups": [
+            {
+                "filters": [
+                    {
+                        "propertyName": "email",
+                        "operator": "EQ",
+                        "value": email
+                    }
+                ]
+            }
+        ],
+        "properties": ["email"]
+    }
+
+    response = requests.post(search_url, headers=headers, json=search_body)
+    if response.status_code != 200:
+        print(f"Error contacting HubSpot API: {response.status_code} - {response.text}")
+        return None
+    data = response.json()
+    if data.get("results"):
+        return data["results"][0]["id"]
+        # print(data["results"][0]["id"])
+    else:
+        # print("NONE")
+        return "NONE"
+
+def update_feedback_properties(
+    contact_id: str,
+    client_language: str,
+    emoji_feedback: str,
+    mesaj_feedback: str
+) -> bool:
+    update_url = f"https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}"
+    headers = {
+        "Authorization": f"Bearer {TOKEN}",
+        "Content-Type": "application/json"
+    }
+
+    update_body = {
+        "properties": {
+            "emoji_feedback": emoji_feedback,
+            "mesak_feedback": mesaj_feedback
+        }
+    }
+
+    response = requests.patch(update_url, headers=headers, json=update_body)
+
+    if response.status_code == 200:
+        print("✅ Feedback actualizat cu succes în contact!")
+        return True
+    else:
+        print("❌ Eroare la actualizarea feedback-ului:", response.json())
+        return False
+
 @app.route("/feedback", methods=["POST", "GET"])
 def feedback():
-    if request.method == "POST":
-        data = request.get_json()
-        emoji = data.get("emoji", "")
-        reason = data.get("reason", "")
-        language = data.get("language", "")
 
-        print("emoji =", emoji)
-        print("reason =", reason)
-        print("language =", language)
+    # lang = request.args.get("lang", "")
+    # email = request.args.get("email", "")
 
-        # Returnează confirmare
-        return jsonify({"status": "success"}), 200
-    
-    # Pentru GET, poți returna o simplă confirmare sau instrucțiuni
-    return jsonify({"message": "Succes"}), 200
+    data = request.get_json()
+    emoji = data.get("emoji", "")
+    reason = data.get("reason", "")
+    language = data.get("language", "")
+    email = data.get("email", "")
+    message = data.get("reason", "")
+    # print("language = ", lang)
+    # print("email = ", email)
+    # print("\n")
+
+    # print("emoji =", emoji)
+    # print("reason =", reason)
+    # print("language =", language)
+    contact_id = get_hubspot_contact_id_by_email(email)
+    if contact_id != "NONE":
+        update_feedback_properties(contact_id, language, emoji, message)
+    # Returnează confirmare
+    return jsonify({"status": "success"}), 200
+
 
     
 

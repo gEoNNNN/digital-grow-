@@ -156,6 +156,7 @@
     0 0 2vw var(--button-shadow-medium),
     0 0 3vw var(--button-shadow-light);
   min-width: 8vw;
+  z-index: 1000000;
 }
 
 .services-button:hover {
