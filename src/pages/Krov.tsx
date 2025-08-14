@@ -70,16 +70,37 @@ const Krov: React.FC = () => {
     }
   };
 
+  // Function to handle iframe click for RU/EN languages - redirect to YouTube
+  const handleIframeOverlayClick = () => {
+    if (language === 'RU' || language === 'EN') {
+      const videoId = "EuKHNcY53sA";
+      const langMap: Record<string, string> = {
+        EN: "en",
+        RU: "ru"
+      };
+      const ccLang = langMap[language] || "en";
+      const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}&cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}`;
+      window.open(youtubeUrl, '_blank');
+      setShowVideoPopup(false); // Close popup after redirect
+    }
+  };
+
   // Scroll listener to show video popup when near bottom (desktop only)
   useEffect(() => {
     if (isMobile) return;
+    
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
-      setShowVideoPopup(scrollPercentage > 0.8);
+      
+      // Show popup when user scrolls 80% down the page
+      if (scrollPercentage > 0.8) {
+        setShowVideoPopup(true);
+      }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
@@ -171,16 +192,46 @@ const Krov: React.FC = () => {
           {/* Video Section - mobile: inline, desktop: popup */}
           {isMobile ? (
             <div className="project-video-section">
-              <iframe
-                src={getYouTubeVideoUrl(language)}
-                className="project-video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Project Video"
-              />
+              {language === 'RO' ? (
+                <iframe
+                  src={getYouTubeVideoUrl(language)}
+                  className="project-video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Project Video"
+                />
+              ) : (
+                <div 
+                  className="project-video"
+                  onClick={() => {
+                    const videoId = "EuKHNcY53sA";
+                    const langMap: Record<string, string> = {
+                      EN: "en",
+                      RU: "ru"
+                    };
+                    const ccLang = langMap[language] || "en";
+                    const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}&cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}`;
+                    window.open(youtubeUrl, '_blank');
+                  }}
+                  style={{
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: '#000',
+                    color: '#fff',
+                    fontSize: '2rem',
+                    borderRadius: '2vw',
+                    height: '30vw'
+                  }}
+                >
+                  ▶ Watch on YouTube
+                </div>
+              )}
             </div>
           ) : (
+            // Desktop popup - show for all languages with embedded iframe
             <div className={`project-video-popup ${showVideoPopup ? 'visible' : ''}`}>
               <div className="project-video-popup-content">
                 <button
@@ -200,14 +251,52 @@ const Krov: React.FC = () => {
                 >
                   ×
                 </button>
-                <iframe
-                  src={getYouTubeVideoUrl(language)}
-                  className="project-video-popup-iframe"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  title="Project Video"
-                />
+                
+                {/* Always show iframe, but add click overlay for RU/EN to redirect */}
+                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                  <iframe
+                    src={getYouTubeVideoUrl(language)}
+                    className="project-video-popup-iframe"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Project Video"
+                  />
+                  
+                  {/* Overlay for RU/EN languages to redirect to YouTube */}
+                  {(language === 'RU' || language === 'EN') && (
+                    <div 
+                      onClick={handleIframeOverlayClick}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        borderRadius: '1vw',
+                        zIndex: 10
+                      }}
+                    >
+                      <div style={{
+                        textAlign: 'center',
+                        color: '#fff',
+                        fontSize: '2rem',
+                        fontFamily: '"DM Sans", sans-serif'
+                      }}>
+                        <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>▶</div>
+                        <div>Watch on YouTube</div>
+                        <div style={{ fontSize: '1.2rem', marginTop: '0.5rem' }}>
+                          with {language === 'RU' ? 'Russian' : 'English'} subtitles
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           )}

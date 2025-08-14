@@ -4,68 +4,68 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://digitalgrow.md/</loc>
+    <loc>https://digitalgrowsolutions.com/</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/?lang=ru"/>
   </url>
   
   <!-- Education Page -->
   <url>
-    <loc>https://digitalgrow.md/education</loc>
+    <loc>https://digitalgrowsolutions.com/education</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/education?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/education?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/education?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/education?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/education?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/education?lang=ru"/>
   </url>
   
   <!-- Services Page -->
   <url>
-    <loc>https://digitalgrow.md/services</loc>
+    <loc>https://digitalgrowsolutions.com/services</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/services?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/services?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/services?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/services?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/services?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/services?lang=ru"/>
   </url>
   
   <!-- Portfolio Page -->
   <url>
-    <loc>https://digitalgrow.md/portfolio</loc>
+    <loc>https://digitalgrowsolutions.com/portfolio</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/portfolio?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/portfolio?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/portfolio?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/portfolio?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/portfolio?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/portfolio?lang=ru"/>
   </url>
   
   <!-- About Us Page -->
   <url>
-    <loc>https://digitalgrow.md/aboutus</loc>
+    <loc>https://digitalgrowsolutions.com/aboutus</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/aboutus?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/aboutus?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/aboutus?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/aboutus?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/aboutus?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/aboutus?lang=ru"/>
   </url>
   
   <!-- Contacts Page -->
   <url>
-    <loc>https://digitalgrow.md/contacts</loc>
+    <loc>https://digitalgrowsolutions.com/contacts</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrow.md/contacts?lang=ro"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrow.md/contacts?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrow.md/contacts?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/contacts?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/contacts?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/contacts?lang=ru"/>
   </url>
   
 </urlset>
