@@ -35,7 +35,7 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   const [email, setEmail] = useState<string>("");
 
   const [visible, setVisible] = useState(false);
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const [feedbackStep, setFeedbackStep] = useState<"none" | "emoji" | "reason">("emoji");
   const [selectedEmoji, setSelectedEmoji] = useState("");
@@ -145,7 +145,7 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   
       // Trimite la server
       try {
-        const response = await fetch("http://127.0.0.1:5000/feedback", {
+        const response = await fetch("https://digital-grow.onrender.com/feedback", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -180,18 +180,6 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
     }
   };
   
-
-  const handleSend = () => {
-    if (feedbackStep === "reason") {
-      handleFeedbackSubmit();
-    } else if (message.trim() !== "") {
-      setMessages(prev => [
-        ...prev,
-        { id: Date.now(), text: message, from: "user" }
-      ]);
-      setMessage("");
-    }
-  };
 
   const renderFeedbackMessage = () => (
     <div className="livechat-feedback-message">

@@ -25,12 +25,12 @@ declare global {
 }
 
 const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setControlledOpen }) => {
-  const [mess, setMess] = useState<string | null>(null);
+  const [_mess, setMess] = useState<string | null>(null);
   const [internalOpen, setInternalOpen] = useState(false);
   const open = controlledOpen !== undefined ? controlledOpen : internalOpen;
   const [onboardingStep, setOnboardingStep] = useState<number>(0);
   const setOpen = setControlledOpen || setInternalOpen;
-  const [loading, setLoading] = useState(false);
+  const [_loading, setLoading] = useState(false);
 
   const [visible, setVisible] = useState(false);
   const [message, setMessage] = useState("");
@@ -200,8 +200,9 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/start", {
+    return fetch("https://digital-grow.onrender.com/start", {
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, message }),
     })
@@ -242,7 +243,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/interests", {
+    return fetch("https://digital-grow.onrender.com/interests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, language: window.language }),
@@ -322,7 +323,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/criteria", {
+    return fetch("https://digital-grow.onrender.com/criteria", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, message, language: window.language }),
@@ -371,7 +372,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/welcome", {
+    return fetch("https://digital-grow.onrender.com/welcome", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, language: window.language }),
@@ -420,7 +421,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/chat", {
+    return fetch("https://digital-grow.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -491,7 +492,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/budget", {
+    return fetch("https://digital-grow.onrender.com/budget", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -534,7 +535,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/preference_language", {
+    return fetch("https://digital-grow.onrender.com/preference_language", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -577,7 +578,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/functionalities", {
+    return fetch("https://digital-grow.onrender.com/functionalities", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -624,7 +625,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/comanda", {
+    return fetch("https://digital-grow.onrender.com/comanda", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -684,7 +685,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/check_name_surname", {
+    return fetch("https://digital-grow.onrender.com/check_name_surname", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -730,7 +731,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/numar_de_telefon", {
+    return fetch("https://digital-grow.onrender.com/numar_de_telefon", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -770,7 +771,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/afiseaza_produs", {
+    return fetch("https://digital-grow.onrender.com/afiseaza_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -810,7 +811,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/confirma_produs", {
+    return fetch("https://digital-grow.onrender.com/confirma_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -858,7 +859,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/email", {
+    return fetch("https://digital-grow.onrender.com/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -900,7 +901,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/comanda_inceput", {
+    return fetch("https://digital-grow.onrender.com/comanda_inceput", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -940,7 +941,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/produs_intrebare", {
+    return fetch("https://digital-grow.onrender.com/produs_intrebare", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -993,7 +994,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/selecteaza_produs", {
+    return fetch("https://digital-grow.onrender.com/selecteaza_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -1033,7 +1034,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://127.0.0.1:5000/ip", {
+    return fetch("https://digital-grow.onrender.com/ip", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: userName, interests: userInterests, message, language: window.language }),
@@ -1159,10 +1160,17 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       setVisible(true);
       if (messages.length === 0 && onboardingStep === 0) {
         setLoading(true);
-        fetch("http://127.0.0.1:5000/language")
-          .then((res) => res.json())
+        fetch("https://digital-grow.onrender.com/language", {
+          method: "GET",
+          credentials: "include" // <--- trimite cookie-ul de sesiune
+        })
+          .then((res) => {
+            console.log("Response status:", res.status);
+            return res.json();
+          })
           .then((data) => {
             // window.language = data.language || "RO";
+            
             const botMsg: ChatMessage = {
               id: Date.now(),
               text: data.ask_name || "Bun venit! Care este numele tău?",

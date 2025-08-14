@@ -17,7 +17,7 @@ import Footer from "../components/Footer"
 import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import otherClient from "../assets/lumetalogo.svg" 
-import LiveChatFeedback from "../components/Livechatfeedback"  // Using feedback chat instead
+// import LiveChatFeedback from "../components/Livechatfeedback"  // Using feedback chat instead
 import LiveChatWrapper from "../components/LiveChatWrapper";
 import { useLanguage } from "../components/LanguageContext";
 import shape1 from "../assets/Ellipse 1.png"
