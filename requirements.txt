@@ -12,4 +12,4 @@ chromadb
 openai
 langchain-openai
 langchain-community
-email-validator
+email_validator
