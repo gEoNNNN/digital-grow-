@@ -89,88 +89,88 @@
   },
   "EN": {
     "education": {
-      "title": "Education for grades 1-4",
-      "description": "Interactive animated video resources for learning Romanian and Mathematics, designed specifically for children in primary grades. Learn easily and fun with DigitalGrow!",
-      "button1": "Online Courses",
-      "button2": "Live Workshops",
-      "sectionTitle": "Video Courses",
-      "sectionTitle2": "Romanian Language Section",
-      "episodesTitle": "Select the exercise",
-      "classesTitle": "Select Class",
+      "title": "Educație pentru clasele 1-4",
+      "description": "Resurse video animate interactive pentru învățarea Românei și Matematicii, concepute special pentru copiii din clasele primare. Învață ușor și distractiv cu DigitalGrow!",
+      "button1": "Matematica",
+      "button2": "L.Română",
+      "sectionTitle": "Secțiunea Matematică",
+      "sectionTitle2": "Secțiunea Limba Română",
+      "episodesTitle": "Selectează exercitiul",
+      "classesTitle": "Selectează Clasa",
       "classes": {
-        "1": "Class 1",
-        "2": "Class 2",
-        "3": "Class 3",
-        "4": "Class 4"
+        "1": "Clasa 1",
+        "2": "Clasa 2",
+        "3": "Clasa 3",
+        "4": "Clasa 4"
       },
       "episodes": {
         "1": {
-          "1": "Episode 1: Introduction to Digital Marketing",
-          "2": "Episode 2: SEO Basics",
-          "3": "Episode 3: Content Marketing",
-          "4": "Episode 4: Social Media Strategy",
-          "5": "Episode 5: Facebook Ads",
-          "6": "Episode 6: Instagram Marketing",
-          "7": "Episode 7: Google Analytics",
-          "8": "Episode 8: Conversion Optimization"
+          "1": "Episodul 1: Introducere în Marketing Digital",
+          "2": "Episodul 2: Bazele SEO",
+          "3": "Episodul 3: Content Marketing",
+          "4": "Episodul 4: Social Media Strategy",
+          "5": "Episodul 5: Facebook Ads",
+          "6": "Episodul 6: Instagram Marketing",
+          "7": "Episodul 7: Google Analytics",
+          "8": "Episodul 8: Conversion Optimization"
         },
         "2": {
-          "1": "Episode 1: PPC & Google Ads",
-          "2": "Episode 2: Email Marketing",
-          "3": "Episode 3: Social Media Advertising",
-          "4": "Episode 4: Marketing Automation",
-          "5": "Episode 5: Lead Generation",
-          "6": "Episode 6: CRM Integration",
-          "7": "Episode 7: Customer Journey",
-          "8": "Episode 8: ROI Measurement"
+          "1": "Episodul 1: PPC și Google Ads",
+          "2": "Episodul 2: Email Marketing",
+          "3": "Episodul 3: Social Media Advertising",
+          "4": "Episodul 4: Marketing Automation",
+          "5": "Episodul 5: Lead Generation",
+          "6": "Episodul 6: CRM Integration",
+          "7": "Episodul 7: Customer Journey",
+          "8": "Episodul 8: ROI Measurement"
         },
         "3": {
-          "1": "Episode 1: Advanced Analytics",
-          "2": "Episode 2: A/B Testing",
-          "3": "Episode 3: Conversion Rate Optimization",
-          "4": "Episode 4: Marketing Psychology",
-          "5": "Episode 5: Influencer Marketing",
-          "6": "Episode 6: Video Marketing",
-          "7": "Episode 7: Mobile Marketing",
-          "8": "Episode 8: Cross-platform Campaigns"
+          "1": "Episodul 1: Advanced Analytics",
+          "2": "Episodul 2: A/B Testing",
+          "3": "Episodul 3: Conversion Rate Optimization",
+          "4": "Episodul 4: Marketing Psychology",
+          "5": "Episodul 5: Influencer Marketing",
+          "6": "Episodul 6: Video Marketing",
+          "7": "Episodul 7: Mobile Marketing",
+          "8": "Episodul 8: Cross-platform Campaigns"
         },
         "4": {
-          "1": "Episode 1: AI in Marketing",
-          "2": "Episode 2: Predictive Analytics",
-          "3": "Episode 3: Advanced Marketing Automation",
-          "4": "Episode 4: Growth Hacking",
-          "5": "Episode 5: Personalization Strategies",
-          "6": "Episode 6: Data-Driven Marketing",
-          "7": "Episode 7: International Marketing",
-          "8": "Episode 8: Future of Digital Marketing"
+          "1": "Episodul 1: AI în Marketing",
+          "2": "Episodul 2: Predictive Analytics",
+          "3": "Episodul 3: Marketing Automation Avansat",
+          "4": "Episodul 4: Growth Hacking",
+          "5": "Episodul 5: Personalization Strategies",
+          "6": "Episodul 6: Data-Driven Marketing",
+          "7": "Episodul 7: International Marketing",
+          "8": "Episodul 8: Future of Digital Marketing"
         }
       },
       "episodeDescriptions": {
         "1": {
-          "1": "Understand the fundamentals of modern digital marketing. Discover key channels, strategies, and how to build an effective online presence for your business."
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
         },
         "2": {
-          "1": "Dive deep into PPC strategies and Google Ads to attract qualified traffic. Learn to create profitable campaigns and optimize acquisition costs."
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
         },
         "3": {
-          "1": "Explore advanced analytics to understand user behavior. Use data to make strategic decisions and improve campaign performance."
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
         },
         "4": {
-          "1": "Discover how artificial intelligence is revolutionizing marketing. Learn to use AI for automation, personalization, and predictions in your campaigns."
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
         }
       },
       "episodeDescriptions2": {
         "1": {
-          "1": "Interactive lessons for learning the alphabet and forming first words. Engaging activities for vocabulary development and reading skills for grades 1-4."
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
         },
         "2": {
-          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
         },
         "3": {
-          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
         },
         "4": {
-          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
         }
       }
     }

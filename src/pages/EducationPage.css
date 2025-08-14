@@ -115,7 +115,7 @@
 }
 
 /* Education Classes Section */
-.education-classes-section {
+.education-classes-section,.education-classes-section2 {
   background-color: var(--primary);
   width: 100%;
   padding: 8vw 5vw;
@@ -700,7 +700,7 @@
     width: 70vw;
   }
 
-  .education-classes-section {
+  .education-classes-section,.education-classes-section2 {
     gap: 6vw;
     padding: 12vw 5vw;
   }

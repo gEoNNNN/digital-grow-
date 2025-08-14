@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './EducationPage.css'
 import BG from "../assets/services.mp4"
 import Filter from "../assets/homepagefilter.png"
@@ -58,6 +58,25 @@ const EducationPage: React.FC = () => {
 
   // Check if device is mobile
   const [isMobile] = useState(() => window.innerWidth <= 768);
+
+  // Create refs for each section
+  const section1Ref = useRef<HTMLDivElement>(null);
+  const section2Ref = useRef<HTMLDivElement>(null);
+
+  // Scroll handler functions
+  const scrollToSection1 = () => {
+    section1Ref.current?.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  };
+
+  const scrollToSection2 = () => {
+    section2Ref.current?.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  };
 
   // Fallback descriptions for episodes without specific descriptions
   const getFallbackDescription = (language: string) => {
@@ -218,17 +237,17 @@ const EducationPage: React.FC = () => {
             {content.education.description}
           </p>
           <div className="education-buttons">
-            <button className="education-button">
+            <button className="education-button" onClick={scrollToSection1}>
               {content.education.button1}
             </button>
-            <button className="education-button">
+            <button className="education-button" onClick={scrollToSection2}>
               {content.education.button2}
             </button>
           </div>
         </div>
 
         {/* Section 1 - Mathematics */}
-        <div className="education-classes-section">
+        <div className="education-classes-section" ref={section1Ref}>
           <div className="education-section-header">
             <div className="education-main-class-dropdown">
               <button
@@ -326,7 +345,7 @@ const EducationPage: React.FC = () => {
         </div>
 
         {/* Section 2 - Romanian Language */}
-        <div className="education-classes-section">
+        <div className="education-classes-section2" ref={section2Ref}>
           <div className="education-section-header">
             <div className="education-main-class-dropdown">
               <button
