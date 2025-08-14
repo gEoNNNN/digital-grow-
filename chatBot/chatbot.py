@@ -4660,9 +4660,9 @@ def feedback():
     return jsonify({"status": "success"}), 200
 
 
-@app.route('/')
-def index():
-    return "Hello, Flask is running!"
+# @app.route('/')
+# def index():
+#     return "Hello, Flask is running!"
 
 
 
