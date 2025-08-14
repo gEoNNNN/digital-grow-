@@ -13,6 +13,25 @@ interface PayPalPaymentProps {
 // Define the language type
 type Language = 'RO' | 'EN' | 'RU';
 
+// Define proper types for the content structure
+interface PartialPaymentOptions {
+  [key: string]: string;
+}
+
+interface ServiceContent {
+  title: string;
+  selectService: string;
+  selectPlaceholder: string;
+  enterAmount: string;
+  amountPlaceholder: string;
+  payButton: string;
+  serviceError: string;
+  amountError: string;
+  partialPaymentLabel: string;
+  partialPaymentOptions: PartialPaymentOptions;
+  services: string[];
+}
+
 const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   isOpen,
   onClose,
@@ -139,7 +158,7 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     }
   };
 
-  const services: Record<Language, any> = {
+  const services: Record<Language, ServiceContent> = {
     RO: {
       title: "💼 Plată Servicii",
       selectService: "Alege serviciul:",
@@ -409,7 +428,7 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
               >
                 {Object.entries(content.partialPaymentOptions).map(([percentage, label]) => (
                   <option key={percentage} value={percentage}>
-                    {label}
+                    {String(label)}
                   </option>
                 ))}
               </select>
