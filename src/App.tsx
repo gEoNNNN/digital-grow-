@@ -16,6 +16,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import CookieBanner from './components/CookieBanner';
 import FeedbackPage from './pages/FeedbackPage';
+import EducationPage from './pages/EducationPage'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
               <Route path="/feedback" element={<FeedbackPage />} />
+              <Route path="/education" element={<EducationPage />} />
             </Routes>
             <CookieBanner />
           </LanguageProvider>

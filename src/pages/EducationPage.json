@@ -1,0 +1,266 @@
+{
+  "RO": {
+    "education": {
+      "title": "Educație pentru clasele 1-4",
+      "description": "Resurse video animate interactive pentru învățarea Românei și Matematicii, concepute special pentru copiii din clasele primare. Învață ușor și distractiv cu DigitalGrow!",
+      "button1": "Matematica",
+      "button2": "L.Română",
+      "sectionTitle": "Secțiunea Matematică",
+      "sectionTitle2": "Secțiunea Limba Română",
+      "episodesTitle": "Selectează exercitiul",
+      "classesTitle": "Selectează Clasa",
+      "classes": {
+        "1": "Clasa 1",
+        "2": "Clasa 2",
+        "3": "Clasa 3",
+        "4": "Clasa 4"
+      },
+      "episodes": {
+        "1": {
+          "1": "Episodul 1: Introducere în Marketing Digital",
+          "2": "Episodul 2: Bazele SEO",
+          "3": "Episodul 3: Content Marketing",
+          "4": "Episodul 4: Social Media Strategy",
+          "5": "Episodul 5: Facebook Ads",
+          "6": "Episodul 6: Instagram Marketing",
+          "7": "Episodul 7: Google Analytics",
+          "8": "Episodul 8: Conversion Optimization"
+        },
+        "2": {
+          "1": "Episodul 1: PPC și Google Ads",
+          "2": "Episodul 2: Email Marketing",
+          "3": "Episodul 3: Social Media Advertising",
+          "4": "Episodul 4: Marketing Automation",
+          "5": "Episodul 5: Lead Generation",
+          "6": "Episodul 6: CRM Integration",
+          "7": "Episodul 7: Customer Journey",
+          "8": "Episodul 8: ROI Measurement"
+        },
+        "3": {
+          "1": "Episodul 1: Advanced Analytics",
+          "2": "Episodul 2: A/B Testing",
+          "3": "Episodul 3: Conversion Rate Optimization",
+          "4": "Episodul 4: Marketing Psychology",
+          "5": "Episodul 5: Influencer Marketing",
+          "6": "Episodul 6: Video Marketing",
+          "7": "Episodul 7: Mobile Marketing",
+          "8": "Episodul 8: Cross-platform Campaigns"
+        },
+        "4": {
+          "1": "Episodul 1: AI în Marketing",
+          "2": "Episodul 2: Predictive Analytics",
+          "3": "Episodul 3: Marketing Automation Avansat",
+          "4": "Episodul 4: Growth Hacking",
+          "5": "Episodul 5: Personalization Strategies",
+          "6": "Episodul 6: Data-Driven Marketing",
+          "7": "Episodul 7: International Marketing",
+          "8": "Episodul 8: Future of Digital Marketing"
+        }
+      },
+      "episodeDescriptions": {
+        "1": {
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
+        },
+        "2": {
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
+        },
+        "3": {
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
+        },
+        "4": {
+          "1": "Lecții animate pentru înțelegerea conceptelor matematice de bază: numere, adunare, scădere, forme geometrice și multe altele, special pentru clasele 1-4."
+        }
+      },
+      "episodeDescriptions2": {
+        "1": {
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
+        },
+        "2": {
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
+        },
+        "3": {
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
+        },
+        "4": {
+          "1": "Videoclipuri animate pentru învățarea limbii române, adaptate nivelului clasei 1-4. De la alfabet, litere și sunete, până la propoziții și texte simple."
+        }
+      }
+    }
+  },
+  "EN": {
+    "education": {
+      "title": "Education for grades 1-4",
+      "description": "Interactive animated video resources for learning Romanian and Mathematics, designed specifically for children in primary grades. Learn easily and fun with DigitalGrow!",
+      "button1": "Online Courses",
+      "button2": "Live Workshops",
+      "sectionTitle": "Video Courses",
+      "sectionTitle2": "Romanian Language Section",
+      "episodesTitle": "Select the exercise",
+      "classesTitle": "Select Class",
+      "classes": {
+        "1": "Class 1",
+        "2": "Class 2",
+        "3": "Class 3",
+        "4": "Class 4"
+      },
+      "episodes": {
+        "1": {
+          "1": "Episode 1: Introduction to Digital Marketing",
+          "2": "Episode 2: SEO Basics",
+          "3": "Episode 3: Content Marketing",
+          "4": "Episode 4: Social Media Strategy",
+          "5": "Episode 5: Facebook Ads",
+          "6": "Episode 6: Instagram Marketing",
+          "7": "Episode 7: Google Analytics",
+          "8": "Episode 8: Conversion Optimization"
+        },
+        "2": {
+          "1": "Episode 1: PPC & Google Ads",
+          "2": "Episode 2: Email Marketing",
+          "3": "Episode 3: Social Media Advertising",
+          "4": "Episode 4: Marketing Automation",
+          "5": "Episode 5: Lead Generation",
+          "6": "Episode 6: CRM Integration",
+          "7": "Episode 7: Customer Journey",
+          "8": "Episode 8: ROI Measurement"
+        },
+        "3": {
+          "1": "Episode 1: Advanced Analytics",
+          "2": "Episode 2: A/B Testing",
+          "3": "Episode 3: Conversion Rate Optimization",
+          "4": "Episode 4: Marketing Psychology",
+          "5": "Episode 5: Influencer Marketing",
+          "6": "Episode 6: Video Marketing",
+          "7": "Episode 7: Mobile Marketing",
+          "8": "Episode 8: Cross-platform Campaigns"
+        },
+        "4": {
+          "1": "Episode 1: AI in Marketing",
+          "2": "Episode 2: Predictive Analytics",
+          "3": "Episode 3: Advanced Marketing Automation",
+          "4": "Episode 4: Growth Hacking",
+          "5": "Episode 5: Personalization Strategies",
+          "6": "Episode 6: Data-Driven Marketing",
+          "7": "Episode 7: International Marketing",
+          "8": "Episode 8: Future of Digital Marketing"
+        }
+      },
+      "episodeDescriptions": {
+        "1": {
+          "1": "Understand the fundamentals of modern digital marketing. Discover key channels, strategies, and how to build an effective online presence for your business."
+        },
+        "2": {
+          "1": "Dive deep into PPC strategies and Google Ads to attract qualified traffic. Learn to create profitable campaigns and optimize acquisition costs."
+        },
+        "3": {
+          "1": "Explore advanced analytics to understand user behavior. Use data to make strategic decisions and improve campaign performance."
+        },
+        "4": {
+          "1": "Discover how artificial intelligence is revolutionizing marketing. Learn to use AI for automation, personalization, and predictions in your campaigns."
+        }
+      },
+      "episodeDescriptions2": {
+        "1": {
+          "1": "Interactive lessons for learning the alphabet and forming first words. Engaging activities for vocabulary development and reading skills for grades 1-4."
+        },
+        "2": {
+          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+        },
+        "3": {
+          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+        },
+        "4": {
+          "1": "Animated lessons for understanding basic math concepts: numbers, addition, subtraction, geometric shapes and more, especially for grades 1-4."
+        }
+      }
+    }
+  },
+  "RU": {
+    "education": {
+      "title": "Образование для 1-4 классов",
+      "description": "Интерактивные анимированные видеоресурсы для изучения румынского языка и математики, разработанные специально для учеников начальной школы. Учитесь легко и весело с DigitalGrow!",
+      "button1": "Математика",
+      "button2": "Л. Румынский",
+      "sectionTitle": "Видео Курсы",
+      "sectionTitle2": "Секция румынского языка",
+      "episodesTitle": "Выберите упражнение",
+      "classesTitle": "Выберите класс",
+      "classes": {
+        "1": "Класс 1",
+        "2": "Класс 2",
+        "3": "Класс 3",
+        "4": "Класс 4"
+      },
+      "episodes": {
+        "1": {
+          "1": "Эпизод 1: Введение в цифровой маркетинг",
+          "2": "Эпизод 2: Основы SEO",
+          "3": "Эпизод 3: Контент маркетинг",
+          "4": "Эпизод 4: Стратегия соцсетей",
+          "5": "Эпизод 5: Facebook реклама",
+          "6": "Эпизод 6: Instagram маркетинг",
+          "7": "Эпизод 7: Google Analytics",
+          "8": "Эпизод 8: Оптимизация конверсии"
+        },
+        "2": {
+          "1": "Эпизод 1: PPC и Google Ads",
+          "2": "Эпизод 2: Email маркетинг",
+          "3": "Эпизод 3: Реклама в соцсетях",
+          "4": "Эпизод 4: Автоматизация маркетинга",
+          "5": "Эпизод 5: Генерация лидов",
+          "6": "Эпизод 6: CRM интеграция",
+          "7": "Эпизод 7: Путь клиента",
+          "8": "Эпизод 8: Измерение ROI"
+        },
+        "3": {
+          "1": "Эпизод 1: Продвинутая аналитика",
+          "2": "Эпизод 2: A/B тестирование",
+          "3": "Эпизод 3: Оптимизация конверсии",
+          "4": "Эпизод 4: Психология маркетинга",
+          "5": "Эпизод 5: Инфлюенсер маркетинг",
+          "6": "Эпизод 6: Видео маркетинг",
+          "7": "Эпизод 7: Мобильный маркетинг",
+          "8": "Эпизод 8: Кросс-платформенные кампании"
+        },
+        "4": {
+          "1": "Эпизод 1: ИИ в маркетинге",
+          "2": "Эпизод 2: Предиктивная аналитика",
+          "3": "Эпизод 3: Продвинутая автоматизация",
+          "4": "Эпизод 4: Growth Hacking",
+          "5": "Эпизод 5: Стратегии персонализации",
+          "6": "Эпизод 6: Data-Driven маркетинг",
+          "7": "Эпизод 7: Международный маркетинг",
+          "8": "Эпизод 8: Будущее цифрового маркетинга"
+        }
+      },
+      "episodeDescriptions": {
+        "1": {
+          "1": "Анимированные уроки для понимания основных математических понятий: чисел, сложения, вычитания, геометрических фигур и многого другого, особенно для 1–4 классов."
+        },
+        "2": {
+          "1": "Анимированные уроки для понимания основных математических понятий: чисел, сложения, вычитания, геометрических фигур и многого другого, особенно для 1–4 классов."
+        },
+        "3": {
+          "1": "Анимированные уроки для понимания основных математических понятий: чисел, сложения, вычитания, геометрических фигур и многого другого, особенно для 1–4 классов."
+        },
+        "4": {
+          "1": "Анимированные уроки для понимания основных математических понятий: чисел, сложения, вычитания, геометрических фигур и многого другого, особенно для 1–4 классов."
+        }
+      },
+      "episodeDescriptions2": {
+        "1": {
+          "1": "Анимированные видео для изучения румынского языка, адаптированные для 1–4 классов. От алфавита, букв и звуков до простых предложений и текстов."
+        },
+        "2": {
+          "1": "Анимированные видео для изучения румынского языка, адаптированные для 1–4 классов. От алфавита, букв и звуков до простых предложений и текстов."
+        },
+        "3": {
+          "1": "Анимированные видео для изучения румынского языка, адаптированные для 1–4 классов. От алфавита, букв и звуков до простых предложений и текстов."
+        },
+        "4": {
+          "1": "Анимированные видео для изучения румынского языка, адаптированные для 1–4 классов. От алфавита, букв и звуков до простых предложений и текстов."
+        }
+      }
+    }
+  }
+}

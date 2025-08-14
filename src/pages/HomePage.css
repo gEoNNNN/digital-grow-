@@ -238,7 +238,7 @@
     0 0 2vw var(--button-shadow-medium),
     0 0 3vw var(--button-shadow-light);
   margin-left: 13vw;
-  z-index: 1000000;
+  z-index: 100;
   
 }
 
