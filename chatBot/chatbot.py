@@ -4567,9 +4567,9 @@ def build_messages(name, interests):
     return [{"role": "system", "content": system_prompt}]
 
 
-@app.route("/", methods=["GET"])
-def home():
-    return render_template('website.html')
+# @app.route("/", methods=["GET"])
+# def home():
+#     return render_template('website.html')
 
 
 def get_hubspot_contact_id_by_email(email: str) -> str | None:
