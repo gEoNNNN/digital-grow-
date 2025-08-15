@@ -13,6 +13,25 @@ interface PayPalPaymentProps {
 // Define the language type
 type Language = 'RO' | 'EN' | 'RU';
 
+// Define proper types for the content structure
+interface PartialPaymentOptions {
+  [key: string]: string;
+}
+
+interface ServiceContent {
+  title: string;
+  selectService: string;
+  selectPlaceholder: string;
+  enterAmount: string;
+  amountPlaceholder: string;
+  payButton: string;
+  serviceError: string;
+  amountError: string;
+  partialPaymentLabel: string;
+  partialPaymentOptions: PartialPaymentOptions;
+  services: string[];
+}
+
 const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   isOpen,
   onClose,
@@ -27,6 +46,8 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   const [amountError, setAmountError] = useState(false);
   const [exchangeRate, setExchangeRate] = useState(18); // Default fallback rate
   const [isLoadingRate, setIsLoadingRate] = useState(false);
+  const [partialPayment, setPartialPayment] = useState(100); // Default to full payment (100%)
+  const [originalAmount, setOriginalAmount] = useState('');
 
   // Fetch exchange rate from Moldova National Bank API
   const fetchExchangeRate = async () => {
@@ -137,7 +158,7 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     }
   };
 
-  const services: Record<Language, any> = {
+  const services: Record<Language, ServiceContent> = {
     RO: {
       title: "💼 Plată Servicii",
       selectService: "Alege serviciul:",
@@ -147,6 +168,15 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       payButton: "💳 Plătește cu PayPal",
       serviceError: "Te rugăm să selectezi un serviciu.",
       amountError: "Te rugăm să introduci o sumă validă (mai mare decât 0).",
+      partialPaymentLabel: "Plătește doar o parte:",
+      partialPaymentOptions: {
+        10: "10% - Avans mic",
+        20: "20% - Avans standard", 
+        30: "30% - Avans mare",
+        50: "50% - Jumătate",
+        90: "90% - Aproape totul",
+        100: "100% - Plata completă"
+      },
       services: [
         "Landing Page One-Page",
         "Site Corporate (3-5 pagini)",
@@ -175,6 +205,15 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       payButton: "💳 Pay with PayPal",
       serviceError: "Please select a service.",
       amountError: "Please enter a valid amount (greater than 0).",
+      partialPaymentLabel: "Pay just a part:",
+      partialPaymentOptions: {
+        10: "10% - Small advance",
+        20: "20% - Standard advance",
+        30: "30% - Large advance", 
+        50: "50% - Half payment",
+        90: "90% - Almost everything",
+        100: "100% - Full payment"
+      },
       services: [
         "One-Page Landing Page",
         "Business Website (3-5 pages)",
@@ -203,6 +242,15 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
       payButton: "💳 Оплатить через PayPal",
       serviceError: "Пожалуйста, выберите услугу.",
       amountError: "Пожалуйста, введите действительную сумму (больше 0).",
+      partialPaymentLabel: "Оплатить только часть:",
+      partialPaymentOptions: {
+        10: "10% - Небольшой аванс",
+        20: "20% - Стандартный аванс",
+        30: "30% - Большой аванс",
+        50: "50% - Половина",
+        90: "90% - Почти всё",
+        100: "100% - Полная оплата"
+      },
       services: [
         "Одностраничный Landing",
         "Корпоративный сайт (3-5 страниц)",
@@ -230,9 +278,13 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
   // Update amount when service is selected
   useEffect(() => {
     if (selectedService && servicePrices[currentLanguage]?.[selectedService]) {
-      setAmount(servicePrices[currentLanguage][selectedService]);
+      const baseAmount = servicePrices[currentLanguage][selectedService];
+      setOriginalAmount(baseAmount);
+      // Calculate partial payment
+      const partialAmount = Math.round((Number(baseAmount) * partialPayment) / 100);
+      setAmount(partialAmount.toString());
     }
-  }, [selectedService, language, currentLanguage]);
+  }, [selectedService, language, currentLanguage, partialPayment]);
 
   const handleServiceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const service = e.target.value;
@@ -240,10 +292,26 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     
     // Auto-populate price based on selected service
     if (service && servicePrices[currentLanguage]?.[service]) {
-      setAmount(servicePrices[currentLanguage][service]);
+      const baseAmount = servicePrices[currentLanguage][service];
+      setOriginalAmount(baseAmount);
+      // Calculate partial payment
+      const partialAmount = Math.round((Number(baseAmount) * partialPayment) / 100);
+      setAmount(partialAmount.toString());
       setAmountError(false); // Clear any previous errors
     } else {
       setAmount('');
+      setOriginalAmount('');
+    }
+  };
+
+  const handlePartialPaymentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const percentage = Number(e.target.value);
+    setPartialPayment(percentage);
+    
+    // Recalculate amount based on new percentage
+    if (originalAmount) {
+      const partialAmount = Math.round((Number(originalAmount) * percentage) / 100);
+      setAmount(partialAmount.toString());
     }
   };
 
@@ -284,10 +352,11 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
     form.target = '_blank';
 
     // PayPal form fields
+    const paymentType = partialPayment === 100 ? '' : ` (${partialPayment}% payment)`;
     const fields = {
       'cmd': '_xclick',
       'business': 'digitalgrow.moldova@gmail.com',
-      'item_name': selectedService + (currency === 'MDL' ? ` (${amount} MDL)` : ''),
+      'item_name': selectedService + paymentType + (currency === 'MDL' ? ` (${amount} MDL)` : ''),
       'amount': paypalAmount,
       'currency_code': paypalCurrency,
       'return': `${window.location.origin}/payment-success`,
@@ -346,9 +415,43 @@ const PayPalPayment: React.FC<PayPalPaymentProps> = ({
           </select>
           {serviceError && <div className="paypal-error">{content.serviceError}</div>}
           
+          {/* Partial Payment Section */}
+          {originalAmount && (
+            <div className="paypal-partial-section">
+              <label className="paypal-label paypal-partial-label">
+                {content.partialPaymentLabel}
+              </label>
+              <select
+                value={partialPayment}
+                onChange={handlePartialPaymentChange}
+                className="paypal-select paypal-partial-select"
+              >
+                {Object.entries(content.partialPaymentOptions).map(([percentage, label]) => (
+                  <option key={percentage} value={percentage}>
+                    {String(label)}
+                  </option>
+                ))}
+              </select>
+              
+              {partialPayment !== 100 && (
+                <div className="paypal-partial-info">
+                  <span className="paypal-partial-total">
+                    Total: {originalAmount} {currency}
+                  </span>
+                  <span className="paypal-partial-paying">
+                    Paying: {amount} {currency} ({partialPayment}%)
+                  </span>
+                  <span className="paypal-partial-remaining">
+                    Remaining: {Number(originalAmount) - Number(amount)} {currency}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
+          
           <label className="paypal-label">
             {content.enterAmount} ({currency})
-            {currency === 'MDL' && (
+            {currency === 'MDL' && amount && (
               <span style={{fontSize: '0.8em', color: '#666', display: 'block'}}>
                 {isLoadingRate ? (
                   'Loading exchange rate...'

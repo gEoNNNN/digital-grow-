@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/?lang=ru"/>
+  </url>
+  
+  <!-- Education Page -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/education</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/education?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/education?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/education?lang=ru"/>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/services</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/services?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/services?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/services?lang=ru"/>
+  </url>
+  
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/portfolio</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/portfolio?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/portfolio?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/portfolio?lang=ru"/>
+  </url>
+  
+  <!-- About Us Page -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/aboutus</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/aboutus?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/aboutus?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/aboutus?lang=ru"/>
+  </url>
+  
+  <!-- Contacts Page -->
+  <url>
+    <loc>https://digitalgrowsolutions.com/contacts</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://digitalgrowsolutions.com/contacts?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://digitalgrowsolutions.com/contacts?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://digitalgrowsolutions.com/contacts?lang=ru"/>
+  </url>
+  
+</urlset>

@@ -1,0 +1,870 @@
+.education-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.education-content {
+  position: relative;
+  width: 100%;
+}
+
+.highlight {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+  font-size: 5.2vw; 
+}
+
+.education-main-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw;
+  color: var(--text-color);
+  background-color: transparent;
+  text-align: center;
+}
+
+.education-main-section-title {
+  font-size: 5vw;
+  text-align: center;
+  background: var(--maintitlegradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  max-width: 80vw;
+}
+
+.education-main-section-description {
+  font-size: 2vw;
+  margin-bottom: 4vw;
+  text-align: center;
+  font-weight: 300;
+  color: var(--maindescription);
+  font-family: "DM Sans", sans-serif;
+  max-width: 60vw;
+  line-height: 1.6;
+  text-align: left;
+  margin-top: -4vw;
+}
+
+.education-buttons {
+  display: flex;
+  gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.education-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 2vw;
+  padding: 1vw 2.5vw;
+  font-size: 1.2vw;
+  font-weight: 800;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 1vw var(--button-shadow),
+    0 0 2vw var(--button-shadow-medium),
+    0 0 3vw var(--button-shadow-light);
+  min-width: 8vw;
+  position: relative;
+  z-index: 100;
+}
+
+.education-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-0.2vw) scale(1.05);
+}
+
+/* Education Classes Section */
+.education-classes-section,.education-classes-section2 {
+  background-color: var(--primary);
+  width: 100%;
+  padding: 8vw 5vw;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  align-items: center;
+}
+
+.education-classes-section::before {
+  content: '';
+  position: absolute;
+  top: 5vw;
+  left: 0;
+  width: 100vw;
+  height: 10vw;
+  background: var(--fog);
+  box-shadow: 0 0 16vw 8vw var(--primary), 0 0 32vw 16vw var(--primary);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Section Title with Dropdown */
+.education-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  margin-bottom: 2vw;
+  width: 100%;
+}
+
+.education-section-main-title {
+  font-size: 4vw;
+  text-align: center;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Class Dropdown on the left of main title */
+.education-main-class-dropdown {
+  position: relative;
+}
+
+.education-main-class-dropdown-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 1vw;
+  padding: 0.8vw 1.5vw;
+  font-size: 1vw;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5vw;
+  min-width: 8vw;
+  box-shadow: 0 0 0.5vw var(--button-shadow);
+}
+
+.education-main-class-dropdown-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-0.1vw);
+}
+
+.education-main-class-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--tertiary-bg);
+  border-radius: 0.8vw;
+  box-shadow: 0 0.5vw 2vw var(--section-shadow);
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 0.3vw;
+  min-width: 8vw;
+}
+
+.education-main-class-dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  padding: 0.8vw 1.5vw;
+  font-size: 1vw;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.education-main-class-dropdown-item:hover {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+/* Content Container */
+.education-content-container {
+  display: flex;
+  gap: 6vw;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Episodes Section - Left Side (switched from right) */
+.education-controls-section {
+  flex: 1;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  order: 1; /* Ensure episodes appear first (left) */
+}
+
+.education-section-title {
+  font-size: 2.5vw;
+  color: var(--text-color);
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  margin-bottom: 1.5vw;
+}
+
+/* Episodes Section */
+.education-episodes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+.education-episodes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+  max-height: 25vw;
+  overflow-y: auto;
+  padding-right: 0.5vw;
+}
+
+.education-episode-button {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+  border-radius: 1vw;
+  padding: 1vw 1.5vw;
+  font-size: 1vw;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-weight: 500;
+}
+
+.education-episode-button:hover {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  transform: translateY(-0.1vw);
+  border-color: var(--button-color);
+}
+
+.education-episode-button.active {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-color: var(--button-color);
+  box-shadow: 0 0 1vw var(--button-shadow);
+}
+
+/* Video Section - Right Side (switched from left) */
+.education-video-section {
+  flex: 1;
+  max-width: 60%;
+  order: 2; /* Ensure video appears second (right) */
+}
+
+.education-video-container {
+  width: 100%;
+  height: 30vw;
+  background: #000;
+  border-radius: 1.5vw;
+  overflow: hidden;
+  box-shadow: 0 1vw 3vw var(--section-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 1.5vw;
+}
+
+.education-video-placeholder {
+  color: var(--text-color);
+  font-size: 1.5vw;
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+}
+
+/* Episodes List */
+.education-episodes-list {
+  max-height: 25vw;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.education-episode-item {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  padding: 1vw;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.8vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.education-episode-item:hover {
+  background: var(--section-two-hover-bg);
+  border-color: var(--card-border-hover);
+  transform: translateY(-0.1vw);
+}
+
+.education-episode-item.active {
+  background: var(--button-color);
+  border-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.education-episode-number {
+  flex: 0 0 2vw;
+  height: 2vw;
+  background: var(--tertiary-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9vw;
+  color: var(--text-color);
+}
+
+.education-episode-item.active .education-episode-number {
+  background: var(--button-text-color);
+  color: var(--button-color);
+}
+
+.education-episode-title {
+  flex: 1;
+  font-weight: 500;
+  font-size: 1vw;
+  color: inherit;
+  text-align: left;
+}
+
+/* Episodes Numbers Grid */
+.education-episodes-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8vw;
+  max-height: 25vw;
+  overflow-y: auto;
+  padding-right: 0.5vw;
+}
+
+.education-episode-number-button {
+  width: 3vw;
+  height: 3vw;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  font-size: 1vw;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.education-episode-number-button:hover {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  transform: scale(1.1);
+  border-color: var(--button-color);
+}
+
+.education-episode-number-button.active {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border-color: var(--button-color);
+  box-shadow: 0 0 1vw var(--button-shadow);
+}
+
+/* Scrollbar styling for episodes grid */
+.education-episodes-grid::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.education-episodes-grid::-webkit-scrollbar-track {
+  background: var(--tertiary-bg);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-grid::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-color);
+}
+
+/* Scrollbar styling */
+.education-episodes-list::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.education-episodes-list::-webkit-scrollbar-track {
+  background: var(--tertiary-bg);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-list::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-list::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-color);
+}
+
+/* Scrollbar styling for episodes numbers */
+.education-episodes-numbers::-webkit-scrollbar {
+  width: 0.3vw;
+}
+
+.education-episodes-numbers::-webkit-scrollbar-track {
+  background: var(--tertiary-bg);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-numbers::-webkit-scrollbar-thumb {
+  background: var(--button-color);
+  border-radius: 0.15vw;
+}
+
+.education-episodes-numbers::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-color);
+}
+
+/* Episode Description */
+.education-episode-description {
+  margin-top: 2vw;
+  padding: 1.5vw;
+  background-color: var(--card-bg);
+  border-radius: 1vw;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0.5vw 1vw var(--section-shadow);
+}
+
+.education-episode-description p {
+  font-size: 1.2vw;
+  line-height: 1.6;
+  color: var(--text-description);
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+
+/* Video Preview and Play Overlay for Desktop */
+.education-video-preview {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 50vw;
+  height: 50vw;
+}
+
+.education-video-preview:hover {
+  transform: scale(1.02);
+}
+
+.education-video-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border-radius: 1vw;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.education-video-preview:hover .education-video-play-overlay {
+  opacity: 1;
+}
+
+.education-video-play-button {
+  font-size: 4vw;
+  color: white;
+  margin-bottom: 1vw;
+  text-shadow: 0 0.2vw 0.4vw rgba(0, 0, 0, 0.8);
+}
+
+.education-video-play-text {
+  color: white;
+  font-size: 1.2vw;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  text-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Fullscreen Video Popup */
+.education-video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.education-video-popup-content {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  max-width: 1600px;
+  max-height: 900px;
+}
+
+.education-video-popup-iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vw;
+  background: #000;
+  border: none;
+  box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.5);
+}
+
+.education-video-close-btn {
+  position: absolute;
+  top: -2vw;
+  right: -2vw;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 4vw;
+  height: 4vw;
+  font-size: 2.5vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.education-video-close-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .education-video-preview {
+    display: none; /* Hide preview on mobile, show direct iframe */
+  }
+
+  .education-video-play-overlay {
+    display: none;
+  }
+
+  .education-video-popup {
+    display: none; /* No popup on mobile */
+  }
+
+  .education-video-popup-content {
+    width: 95vw;
+    height: 85vh;
+  }
+
+  .education-video-close-btn {
+    width: 12vw;
+    height: 12vw;
+    font-size: 8vw;
+    top: -6vw;
+    right: -6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-video-popup-content {
+    width: 98vw;
+    height: 80vh;
+  }
+
+  .education-video-close-btn {
+    width: 15vw;
+    height: 15vw;
+    font-size: 10vw;
+    top: -7vw;
+    right: -7vw;
+  }
+}
+
+/* Responsive design updates */
+@media (max-width: 768px) {
+  .education-main-section {
+    padding: 0 8vw;
+    height: 100vh;
+  }
+  
+  .education-main-section-title {
+    font-size: 8vw;
+    margin-bottom: 4vw;
+    max-width: 90vw;
+  }
+  
+  .education-main-section-description {
+    font-size: 3.5vw;
+    margin-bottom: 6vw;
+    max-width: 85vw;
+  }
+  
+  .education-buttons {
+    gap: 3vw;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .education-button {
+    font-size: 3vw;
+    border-radius: 3vw;
+    min-width: 40vw;
+    width: 70vw;
+  }
+
+  .education-classes-section,.education-classes-section2 {
+    gap: 6vw;
+    padding: 12vw 5vw;
+  }
+
+  .education-section-header {
+    flex-direction: column;
+    gap: 3vw;
+  }
+
+  .education-section-main-title {
+    font-size: 6vw;
+    margin-bottom: 0;
+  }
+
+  .education-main-class-dropdown-button,
+  .education-main-class-dropdown-item {
+    font-size: 3vw;
+    padding: 2vw 3vw;
+    border-radius: 2vw;
+    min-width: 20vw;
+  }
+
+  .education-content-container {
+    flex-direction: column;
+    gap: 6vw;
+  }
+
+  .education-video-section,
+  .education-controls-section {
+    max-width: 100%;
+    width: 100vw;
+    order: unset; /* Reset order on mobile for better stacking */
+    margin-left: 0vw;
+  }
+
+  /* On mobile, show episodes first, then video */
+  .education-controls-section {
+    order: 1;
+  }
+  
+  .education-video-section {
+    order: 2;
+  }
+
+  .education-video-container {
+    height: 50vw;
+  }
+
+  .education-section-title {
+    font-size: 5vw;
+  }
+
+  .education-episodes-grid {
+    grid-template-columns: 1fr;
+    gap: 2vw;
+    max-height: 40vw;
+  }
+
+  .education-episode-button {
+    font-size: 3vw;
+    padding: 3vw 4vw;
+    border-radius: 2vw;
+  }
+
+  .education-episodes-numbers {
+    gap: 2vw;
+    max-height: 40vw;
+  }
+
+  .education-episode-number-button {
+    width: 8vw;
+    height: 8vw;
+    font-size: 3vw;
+  }
+
+  .highlight {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    color: transparent;
+    font-size: 7.5vw; 
+  }
+
+  .education-episode-description {
+    margin-top: 4vw;
+    padding: 3vw;
+    border-radius: 2vw;
+  }
+
+  .education-episode-description p {
+    font-size: 3vw;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-main-section-title {
+    font-size: 10vw;
+    margin-bottom: 5vw;
+  }
+  
+  .education-main-section-description {
+    font-size: 4vw;
+    margin-bottom: 8vw;
+    max-width: 90vw;
+  }
+  
+  .education-buttons {
+    gap: 4vw;
+  }
+  
+  .education-button {
+    padding: 4vw 6vw;
+    font-size: 4vw;
+    min-width: 50vw;
+    width: 50vw;
+  }
+
+  .education-section-main-title {
+    font-size: 7vw;
+  }
+
+  .education-main-class-dropdown-button,
+  .education-main-class-dropdown-item {
+    font-size: 3.5vw;
+    padding: 3vw 4vw;
+    min-width: 25vw;
+  }
+
+  .education-video-container {
+    height: 60vw;
+  }
+
+  .education-section-title {
+    font-size: 6vw;
+  }
+
+  .education-episode-button {
+    font-size: 3.5vw;
+    padding: 4vw 5vw;
+  }
+
+  .education-episodes-grid {
+    max-height: 50vw;
+  }
+
+  .education-episode-number {
+    flex: 0 0 3vw;
+    height: 3vw;
+  }
+  
+  .education-episode-item {
+    padding: 2vw;
+  }
+
+  .education-episode-description {
+    margin-top: 5vw;
+    padding: 4vw;
+    border-radius: 3vw;
+  }
+
+  .education-episode-description p {
+    font-size: 4vw;
+    line-height: 1.4;
+  }
+}
