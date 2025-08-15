@@ -4635,30 +4635,36 @@ def update_feedback_properties(
     #     print("❌ Eroare la actualizarea feedback-ului:", response.json())
     #     return False
 
-@app.route("/feedback", methods=["POST", "GET"])
-def feedback():
 
-    # lang = request.args.get("lang", "")
-    # email = request.args.get("email", "")
+@app.route("/feedback")
+def feedback_page():
+    return render_template("index.html") 
 
-    data = request.get_json()
-    emoji = data.get("emoji", "")
-    reason = data.get("reason", "")
-    language = data.get("language", "")
-    email = data.get("email", "")
-    message = data.get("reason", "")
-    # print("language = ", lang)
-    # print("email = ", email)
-    # print("\n")
 
-    # print("emoji =", emoji)
-    # print("reason =", reason)
-    # print("language =", language)
-    contact_id = get_hubspot_contact_id_by_email(email)
-    if contact_id != "NONE":
-        update_feedback_properties(contact_id, language, emoji, message)
-    # Returnează confirmare
-    return jsonify({"status": "success"}), 200
+# @app.route("/feedback", methods=["POST", "GET"])
+# def feedback():
+
+#     # lang = request.args.get("lang", "")
+#     # email = request.args.get("email", "")
+
+#     data = request.get_json()
+#     emoji = data.get("emoji", "")
+#     reason = data.get("reason", "")
+#     language = data.get("language", "")
+#     email = data.get("email", "")
+#     message = data.get("reason", "")
+#     # print("language = ", lang)
+#     # print("email = ", email)
+#     # print("\n")
+
+#     # print("emoji =", emoji)
+#     # print("reason =", reason)
+#     # print("language =", language)
+#     contact_id = get_hubspot_contact_id_by_email(email)
+#     if contact_id != "NONE":
+#         update_feedback_properties(contact_id, language, emoji, message)
+#     # Returnează confirmare
+#     return jsonify({"status": "success"}), 200
 
 
 # @app.route('/')
