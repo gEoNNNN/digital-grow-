@@ -200,7 +200,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://195.178.106.250:10000/start", {
+    return fetch("http://195.178.106.250/interests", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -243,7 +243,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://195.178.106.250:10000/interests", {
+    return fetch("http://195.178.106.250/interests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -1177,7 +1177,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       setVisible(true);
       if (messages.length === 0 && onboardingStep === 0) {
         setLoading(true);
-        fetch("http://195.178.106.250:10000/language", {
+        fetch("http://195.178.106.250/interests", {
           method: "GET",
           credentials: "include" // <--- trimite cookie-ul de sesiune
         })
