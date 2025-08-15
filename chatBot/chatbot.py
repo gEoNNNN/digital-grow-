@@ -1043,8 +1043,10 @@ def build_service_prompt(categorii_unice, language_saved):
         used_emojis.add(emoji)
         
         # Fiecare categorie devine link clicabil care apelează sendMessage()
+        escaped_categorie = categorie.replace("'", "\\'")
+
         line = (
-            f"<a href='#' onclick=\"sendWelcomeMessage('{categorie.replace("'", "\\'")}')\" "
+            f"<a href='#' onclick=\"sendWelcomeMessage('{escaped_categorie}')\" "
             f"style='text-decoration:none; color:inherit;'>"
             f"{emoji} <strong>{categorie}</strong></a>"
         )
