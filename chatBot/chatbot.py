@@ -4636,9 +4636,9 @@ def update_feedback_properties(
     #     return False
 
 
-@app.route("/feedback")
-def feedback_page():
-    return render_template("index.html") 
+# @app.route("/feedback")
+# def feedback_page():
+#     return render_template("index.html") 
 
 
 # @app.route("/feedback", methods=["POST", "GET"])
@@ -4665,14 +4665,6 @@ def feedback_page():
 #         update_feedback_properties(contact_id, language, emoji, message)
 #     # Returnează confirmare
 #     return jsonify({"status": "success"}), 200
-
-
-# @app.route('/')
-# def index():
-#     return "Hello, Flask is running!"
-
-
-
 
 
 @app.route("/", defaults={"path": ""})
