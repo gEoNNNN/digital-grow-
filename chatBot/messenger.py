@@ -2523,16 +2523,16 @@ def email_messenger(message_text, sender_id):
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "buget": f"{preferinte_messenger.get("BUDGET", "")}",
-                        "phone": f"{preferinte_messenger.get("Numar_Telefon", "")}",
-                        "email": f"{valid_emails[0] if valid_emails else ""}",
-                        "produs": f"{preferinte_messenger.get("Serviciul_Ales", "")}",
-                        "limba_serviciu": f"{preferinte_messenger.get("Limba_Serviciului", "")}",
-                        "pret_md": f"{int(preferinte_messenger.get("Pret_MD", "0").replace(" ", "")) if preferinte.get("Pret_MD") else 0}",
-                        "pret_ue": f"{int(preferinte_messenger.get("Pret_UE", "0").replace(" ", "")) if preferinte.get("Pret_UE") else 0}",
-                        "reducere": f"{preferinte_messenger.get("reducere", "").replace(" ", "") if preferinte.get("reducere") else ""}",
+                        "buget": f"{preferinte_messenger.get('BUDGET', "")}",
+                        "phone": f"{preferinte_messenger.get('Numar_Telefon', '')}",
+                        "email": f"{valid_emails[0] if valid_emails else ''}",
+                        "produs": f"{preferinte_messenger.get('Serviciul_Ales', '')}",
+                        "limba_serviciu": f"{preferinte_messenger.get('Limba_Serviciului', '')}",
+                        "pret_md": f"{int(preferinte_messenger.get('Pret_MD', '0').replace(' ', '')) if preferinte.get('Pret_MD') else 0}",
+                        "pret_ue": f"{int(preferinte_messenger.get('Pret_UE', '0').replace(' ', '')) if preferinte.get('Pret_UE') else 0}",
+                        "reducere": f"{preferinte_messenger.get('reducere', '').replace(' ', '') if preferinte.get('reducere') else ''}",
                         "hs_lead_status": "NEW",
-                        "preferinte_inregistrare": f"{preferinte_messenger.get("Preferintele_Utilizatorului_Cautare", "")}",
+                        "preferinte_inregistrare": f"{preferinte_messenger.get('Preferintele_Utilizatorului_Cautare', '')}",
                         # "contract": f"{}"
                     }
                 }       
@@ -2546,16 +2546,16 @@ def email_messenger(message_text, sender_id):
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "buget": f"{preferinte_messenger.get("BUDGET", "")}",
-                        "phone": f"{preferinte_messenger.get("Numar_Telefon", "")}",
-                        "email": f"{valid_emails[0] if valid_emails else ""}",
-                        "produs": f"{preferinte_messenger.get("Serviciul_Ales", "")}",
-                        "limba_serviciu": f"{preferinte_messenger.get("Limba_Serviciului", "")}",
-                        "pret_md": f"{int(preferinte_messenger.get("Pret_MD", "0").replace(" ", "")) if preferinte.get("Pret_MD") else 0}",
-                        "pret_ue": f"{int(preferinte_messenger.get("Pret_UE", "0").replace(" ", "")) if preferinte.get("Pret_UE") else 0}",
-                        "reducere": f"{preferinte_messenger.get("reducere", "").replace(" ", "") if preferinte.get("reducere") else ""}",
+                        "buget": f"{preferinte_messenger.get('BUDGET', '')}",
+                        "phone": f"{preferinte_messenger.get('Numar_Telefon', '')}",
+                        "email": f"{valid_emails[0] if valid_emails else ''}",
+                        "produs": f"{preferinte_messenger.get('Serviciul_Ales', '')}",
+                        "limba_serviciu": f"{preferinte_messenger.get('Limba_Serviciului', '')}",
+                        "pret_md": f"{int(preferinte_messenger.get('Pret_MD', '0').replace(' ', '')) if preferinte.get('Pret_MD') else 0}",
+                        "pret_ue": f"{int(preferinte_messenger.get('Pret_UE', '0').replace(' ', '')) if preferinte.get('Pret_UE') else 0}",
+                        "reducere": f"{preferinte_messenger.get('reducere', '').replace(' ', '') if preferinte.get('reducere') else ''}",
                         "hs_lead_status": "NEW",
-                        "preferinte_inregistrare": f"{preferinte_messenger.get("Preferintele_Utilizatorului_Cautare", "")}",
+                        "preferinte_inregistrare": f"{preferinte_messenger.get('Preferintele_Utilizatorului_Cautare', '')}",
                     }
                 }
                 update_response = requests.patch(update_url, headers=headers, json=update_body)
@@ -2582,12 +2582,12 @@ def email_messenger(message_text, sender_id):
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "phone": f"{preferinte_messenger.get("Numar_Telefon", "")}",
-                        "email": f"{valid_emails[0] if valid_emails else ""}",
-                        "produs": f"{preferinte_messenger.get("Serviciul_Ales", "")}",
-                        "pret_md": f"{int(preferinte_messenger.get("Pret_MD", "0").replace(" ", ""))}",
-                        "pret_ue": f"{int(preferinte_messenger.get("Pret_UE", "0").replace(" ", ""))}",
-                        "reducere": f"{preferinte_messenger.get("reducere", "").replace(" ", "")}",
+                        "phone": f"{preferinte_messenger.get('Numar_Telefon', '')}",
+                        "email": f"{valid_emails[0] if valid_emails else ''}",
+                        "produs": f"{preferinte_messenger.get('Serviciul_Ales', '')}",
+                        "pret_md": f"{int(preferinte_messenger.get('Pret_MD', '0').replace(' ', ''))}",
+                        "pret_ue": f"{int(preferinte_messenger.get('Pret_UE', '0').replace(' ', ''))}",
+                        "reducere": f"{preferinte_messenger.get('reducere', '').replace(' ', '')}",
                         "hs_lead_status": "NEW",
                     }
                 }
@@ -2601,12 +2601,12 @@ def email_messenger(message_text, sender_id):
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "phone": f"{preferinte_messenger.get("Numar_Telefon", "")}",
-                        "email": f"{valid_emails[0] if valid_emails else ""}",
-                        "produs": f"{preferinte_messenger.get("Serviciul_Ales", "")}",
-                        "pret_md": f"{int(preferinte_messenger.get("Pret_MD", "0").replace(" ", ""))}",
-                        "pret_ue": f"{int(preferinte_messenger.get("Pret_UE", "0").replace(" ", ""))}",
-                        "reducere": f"{preferinte_messenger.get("reducere", "").replace(" ", "")}",
+                        "phone": f"{preferinte_messenger.get('Numar_Telefon', '')}",
+                        "email": f"{valid_emails[0] if valid_emails else ''}",
+                        "produs": f"{preferinte_messenger.get('Serviciul_Ales', '')}",
+                        "pret_md": f"{int(preferinte_messenger.get('Pret_MD', '0').replace(' ', ''))}",
+                        "pret_ue": f"{int(preferinte_messenger.get('Pret_UE', '0').replace(' ', ''))}",
+                        "reducere": f"{preferinte_messenger.get('reducere', '').replace(' ', '')}",
                         "hs_lead_status": "NEW",
                     }
                 }
