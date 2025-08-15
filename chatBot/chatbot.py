@@ -48,9 +48,9 @@ HUBSPOT_TOKEN = f"Bearer {TOKEN}"
 client = OpenAI(
     api_key=f"{OPENAI_API_KEY}",  # pune aici cheia ta reală!
 )
-df = pd.read_excel('chatBot/digitalgrow.xlsx')
-df_en = pd.read_excel('chatBot/digitalgrow_en.xlsx')
-df_ru = pd.read_excel('chatBot/digitalgrow_ru.xlsx')
+df = pd.read_excel('digitalgrow.xlsx')
+df_en = pd.read_excel('digitalgrow_en.xlsx')
+df_ru = pd.read_excel('digitalgrow_ru.xlsx')
 categorii = df['SERVICE']
 categorii_ru = df_ru['SERVICE']
 categorii_en = df_en['SERVICE']
