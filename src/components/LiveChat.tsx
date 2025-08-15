@@ -200,7 +200,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://digitalgrowsolutions.com/start", {
+    return fetch("/language", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -1177,7 +1177,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       setVisible(true);
       if (messages.length === 0 && onboardingStep === 0) {
         setLoading(true);
-        fetch("http://digitalgrowsolutions.com/language", {
+        fetch("/language", {
           method: "GET",
           credentials: "include" // <--- trimite cookie-ul de sesiune
         })
