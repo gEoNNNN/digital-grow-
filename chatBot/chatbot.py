@@ -1,4 +1,3 @@
-from sre_constants import POSSESSIVE_REPEAT_ONE
 from openai import OpenAI
 from flask import Flask, request, jsonify , redirect, render_template , send_from_directory
 from flask_cors import CORS, cross_origin
