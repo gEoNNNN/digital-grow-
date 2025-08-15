@@ -1187,11 +1187,14 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
           })
           .then((data) => {
             // window.language = data.language || "RO";
+            const botText = data.ask_name || "Bun venit! Care este numele tău?";
             const botMsg: ChatMessage = {
               id: Date.now(),
-              text: data.ask_name || "Bun venit! Care este numele tău?",
+              text: botText,
               from: "bot",
             };
+            typeHtmlMessage(botText);
+
             setMessages([botMsg]);
             setOnboardingStep(-1);
           })
