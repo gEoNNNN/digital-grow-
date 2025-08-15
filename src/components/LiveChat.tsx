@@ -200,7 +200,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("/language", {
+    return fetch("/start", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -243,7 +243,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("http://digitalgrowsolutions.com/interests", {
+    return fetch("/interests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -324,7 +324,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/criteria", {
+    return fetch("/criteria", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -374,7 +374,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/welcome", {
+    return fetch("/welcome", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -424,7 +424,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/chat", {
+    return fetch("/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -496,7 +496,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/budget", {
+    return fetch("/budget", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -540,7 +540,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/preference_language", {
+    return fetch("/preference_language", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -584,7 +584,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/functionalities", {
+    return fetch("/functionalities", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -632,7 +632,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/comanda", {
+    return fetch("/comanda", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -693,7 +693,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/check_name_surname", {
+    return fetch("/check_name_surname", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -740,7 +740,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/numar_de_telefon", {
+    return fetch("/numar_de_telefon", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -781,7 +781,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/afiseaza_produs", {
+    return fetch("/afiseaza_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -822,7 +822,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/confirma_produs", {
+    return fetch("/confirma_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -871,7 +871,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/email", {
+    return fetch("/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -914,7 +914,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/comanda_inceput", {
+    return fetch("/comanda_inceput", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -955,7 +955,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/produs_intrebare", {
+    return fetch("/produs_intrebare", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -1009,7 +1009,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/selecteaza_produs", {
+    return fetch("/selecteaza_produs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
@@ -1050,7 +1050,7 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
   
     setMessages((prev) => [...prev, typingMsg]);
   
-    return fetch("https://digital-grow.onrender.com/ip", {
+    return fetch("/ip", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

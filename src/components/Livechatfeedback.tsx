@@ -145,7 +145,7 @@ const LiveChatFeedback: React.FC<LiveChatFeedbackProps> = ({
   
       // Trimite la server
       try {
-        const response = await fetch("https://digital-grow.onrender.com/feedback", {
+        const response = await fetch("/feedback", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
