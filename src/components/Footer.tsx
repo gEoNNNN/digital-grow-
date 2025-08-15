@@ -22,7 +22,6 @@ interface FooterTranslations {
   nav3: string
   nav4: string
   nav5: string
-  nav6: string
 }
 
 const Footer: React.FC = () => {
@@ -42,8 +41,7 @@ const Footer: React.FC = () => {
       nav2: "Servicii",
       nav3: "Portofoliu",
       nav4: "Despre noi",
-      nav5: "Contact",
-      nav6: "Educație"
+      nav5: "Contact"
     },
     EN: {
       title: 'Follow us on social media!',
@@ -57,8 +55,7 @@ const Footer: React.FC = () => {
       nav2: "Services",
       nav3: "Portfolio",
       nav4: "About Us",
-      nav5: "Contact",
-      nav6: "Education"
+      nav5: "Contact"
     },
     RU: {
       title: 'Следуйте за нами в социальных сетях!',
@@ -72,8 +69,7 @@ const Footer: React.FC = () => {
       nav2: "Услуги",
       nav3: "Портфолио",
       nav4: "О нас",
-      nav5: "Контакты",
-      nav6: "Образование"
+      nav5: "Контакты"
     }
   }
 
@@ -127,11 +123,6 @@ const Footer: React.FC = () => {
               <li>
                 <button type="button" onClick={() => navigate("/portfolio")}>
                   {currentTranslations.nav3}
-                </button>
-              </li>
-              <li>
-                <button type="button" onClick={() => navigate("/education")}>
-                  {currentTranslations.nav6}
                 </button>
               </li>
               <li>

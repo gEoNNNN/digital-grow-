@@ -9,20 +9,19 @@ import NextLevelSection from '../components/NextLevel'
 import LiveChat from '../components/LiveChat'
 import PayPalPayment from '../components/PayPal'
 import { useLanguage } from "../components/LanguageContext";
+import { useNavigate } from "react-router-dom";
 import shape1 from "../assets/Ellipse 1.png"
 import shape2 from "../assets/Ellipse 2.png"
 import shape3 from "../assets/Ellipse 3.png"
 
-
-
 const ServicesPage: React.FC = () => {
   const { language } = useLanguage();
+  const navigate = useNavigate();
   const content = servicesContent[language];
   const [chatOpen, setChatOpen] = useState(false)
   const [paypalOpen, setPaypalOpen] = useState(false)
   const [selectedService, setSelectedService] = useState('')
   const [selectedPrice, setSelectedPrice] = useState('')
-
 
   // Create refs for each first card title
   const sectionOneCardTitleRef = useRef<HTMLHeadingElement>(null) as React.RefObject<HTMLHeadingElement>
@@ -43,6 +42,20 @@ const ServicesPage: React.FC = () => {
     setSelectedService(serviceName)
     setSelectedPrice(price.replace(/[^\d]/g, '')) // Remove non-numeric characters
     setPaypalOpen(true)
+  }
+
+  // Education button text based on language
+  const getEducationButtonText = () => {
+    switch(language) {
+      case 'RO':
+        return 'Educație';
+      case 'EN':
+        return 'Education';
+      case 'RU':
+        return 'Образование';
+      default:
+        return 'Educație';
+    }
   }
 
   return (
@@ -81,6 +94,9 @@ const ServicesPage: React.FC = () => {
             </button>
             <button className="services-button" onClick={() => handleScrollToCardTitle(sectionFourCardTitleRef)}>
               {content.services.button4}
+            </button>
+            <button className="services-button" onClick={() => navigate('/education')}>
+              {getEducationButtonText()}
             </button>
           </div>
         </div>

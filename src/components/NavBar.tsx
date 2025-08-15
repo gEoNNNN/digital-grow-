@@ -22,7 +22,6 @@ interface Translations {
   portfolio: string
   about: string
   contact: string
-  education: string
 }
 
 const NavBar = () => {
@@ -44,24 +43,21 @@ const NavBar = () => {
       services: 'Servicii',
       portfolio: 'Portofoliu',
       about: 'Despre noi',
-      contact: 'Contacte',
-      education: 'Educație'
+      contact: 'Contacte'
     },
     EN: {
       home: 'Home',
       services: 'Services',
       portfolio: 'Portfolio',
       about: 'About us',
-      contact: 'Contact',
-      education: 'Education'
+      contact: 'Contact'
     },
     RU: {
       home: 'Главная',
       services: 'Услуги',
       portfolio: 'Портфолио',
       about: 'О нас',
-      contact: 'Контакты',
-      education: 'Образование'
+      contact: 'Контакты'
     }
   }
 
@@ -131,11 +127,6 @@ const NavBar = () => {
           <li className="navbar-item">
             <Link to="/portfolio" className="navbar-link">
               {currentTranslations.portfolio}
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/education" className="navbar-link">
-              {currentTranslations.education}
             </Link>
           </li>
           <li className="navbar-item">
