@@ -2523,7 +2523,7 @@ def email_messenger(message_text, sender_id):
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "buget": f"{preferinte_messenger.get('BUDGET', "")}",
+                        "buget": f"{preferinte_messenger.get('BUDGET', '')}",
                         "phone": f"{preferinte_messenger.get('Numar_Telefon', '')}",
                         "email": f"{valid_emails[0] if valid_emails else ''}",
                         "produs": f"{preferinte_messenger.get('Serviciul_Ales', '')}",
