@@ -4310,15 +4310,15 @@ def email():
             mesaj_telegram = (
                 "🔔 <b><u>Nouă solicitare primită!</u></b>\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"👤 <b>Nume:</b> <i>{session["preferinte"].get('Nume_Prenume', 'gol')}</i>\n"
+                f"👤 <b>Nume:</b> <i>{session['preferinte'].get('Nume_Prenume', 'gol')}</i>\n"
                 f"📧 <b>Email:</b> <i>{valid_emails[0] if valid_emails else 'gol'}</i>\n"
-                f"📞 <b>Telefon:</b> <code>{session["preferinte"].get('Numar_Telefon', '0')}</code>\n"
-                f"🛠️ <b>Serviciu dorit:</b> {session["preferinte"].get('Serviciul_Ales', 'nimic')}\n"
-                f"🌐 <b>Limba dorita:</b> <i>{session["preferinte"].get('Limba_Serviciului', 'romana')}</i>\n"
-                f"💲 <b>Pret MD cu reducere:</b> <i>{session["preferinte"].get('reducere', '').replace(' ', '') if session["preferinte"].get('reducere') else '0'}</i>\n"
+                f"📞 <b>Telefon:</b> <code>{session['preferinte'].get('Numar_Telefon', '0')}</code>\n"
+                f"🛠️ <b>Serviciu dorit:</b> {session['preferinte'].get('Serviciul_Ales', 'nimic')}\n"
+                f"🌐 <b>Limba dorita:</b> <i>{session['preferinte'].get('Limba_Serviciului', 'romana')}</i>\n"
+                f"💲 <b>Pret MD cu reducere:</b> <i>{session['preferinte'].get('reducere', '').replace(' ', '') if session['preferinte'].get('reducere') else '0'}</i>\n"
                 f"💲 <b>Pret UE :</b> <i>{pret_ue}</i>\n"
-                f"💲 <b>Buget client:</b> <i>{session["preferinte"].get('BUDGET', '0')}</i>\n"
-                f"💬 <b>Mesaj cu preferintele înregistrare din chat:</b> <i>{session["preferinte"].get('Preferintele_Utilizatorului_Cautare', '')}</i>\n"
+                f"💲 <b>Buget client:</b> <i>{session['preferinte'].get('BUDGET', '0')}</i>\n"
+                f"💬 <b>Mesaj cu preferintele înregistrare din chat:</b> <i>{session['preferinte'].get('Preferintele_Utilizatorului_Cautare', '')}</i>\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
                 "✅ <b>Verifică și confirmă comanda din sistem!</b>\n"
             )
@@ -4328,16 +4328,16 @@ def email():
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "buget": f"{session["preferinte"].get('BUDGET', '')}",
-                        "phone": f"{session["preferinte"].get('Numar_Telefon', '')}",
+                        "buget": f"{session['preferinte'].get('BUDGET', '')}",
+                        "phone": f"{session['preferinte'].get('Numar_Telefon', '')}",
                         "email": f"{valid_emails[0] if valid_emails else ''}",
-                        "produs": f"{session["preferinte"].get('Serviciul_Ales', '')}",
-                        "limba_serviciu": f"{session["preferinte"].get('Limba_Serviciului', '')}",
-                        "pret_md": f"{int(session["preferinte"].get('Pret_MD', '0').replace(' ', '')) if session["preferinte"].get('Pret_MD') else 0}",
-                        "pret_ue": f"{int(session["preferinte"].get('Pret_UE', '0').replace(' ', '')) if session["preferinte"].get('Pret_UE') else 0}",
-                        "reducere": f"{session["preferinte"].get('reducere', '').replace(' ', '') if session["preferinte"].get('reducere') else ''}",
+                        "produs": f"{session['preferinte'].get('Serviciul_Ales', '')}",
+                        "limba_serviciu": f"{session['preferinte'].get('Limba_Serviciului', '')}",
+                        "pret_md": f"{int(session['preferinte'].get('Pret_MD', '0').replace(' ', '')) if session['preferinte'].get('Pret_MD') else 0}",
+                        "pret_ue": f"{int(session['preferinte'].get('Pret_UE', '0').replace(' ', '')) if session['preferinte'].get('Pret_UE') else 0}",
+                        "reducere": f"{session['preferinte'].get('reducere', '').replace(' ', '') if session['preferinte'].get('reducere') else ''}",
                         "hs_lead_status": "NEW",
-                        "preferinte_inregistrare": f"{session["preferinte"].get('Preferintele_Utilizatorului_Cautare', '')}",
+                        "preferinte_inregistrare": f"{session['preferinte'].get('Preferintele_Utilizatorului_Cautare', '')}",
                         # "contract": f"{}"
                         "client_language": session["language_saved"],
                     }
@@ -4352,16 +4352,16 @@ def email():
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "buget": f"{session["preferinte"].get('BUDGET', '')}",
-                        "phone": f"{session["preferinte"].get('Numar_Telefon', '')}",
+                        "buget": f"{session['preferinte'].get('BUDGET', '')}",
+                        "phone": f"{session['preferinte'].get('Numar_Telefon', '')}",
                         "email": f"{valid_emails[0] if valid_emails else ''}",
-                        "produs": f"{session["preferinte"].get('Serviciul_Ales', '')}",
-                        "limba_serviciu": f"{session["preferinte"].get('Limba_Serviciului', '')}",
-                        "pret_md": f"{int(session["preferinte"].get('Pret_MD', '0').replace(' ', '')) if session["preferinte"].get('Pret_MD') else 0}",
-                        "pret_ue": f"{int(session["preferinte"].get('Pret_UE', '0').replace(' ', '')) if session["preferinte"].get('Pret_UE') else 0}",
-                        "reducere": f"{session["preferinte"].get('reducere', '').replace(' ', '') if session["preferinte"].get('reducere') else ''}",
+                        "produs": f"{session['preferinte'].get('Serviciul_Ales', '')}",
+                        "limba_serviciu": f"{session['preferinte'].get('Limba_Serviciului', '')}",
+                        "pret_md": f"{int(session['preferinte'].get('Pret_MD', '0').replace(' ', '')) if session['preferinte'].get('Pret_MD') else 0}",
+                        "pret_ue": f"{int(session['preferinte'].get('Pret_UE', '0').replace(' ', '')) if session['preferinte'].get('Pret_UE') else 0}",
+                        "reducere": f"{session['preferinte'].get('reducere', '').replace(' ', '') if session['preferinte'].get('reducere') else ''}",
                         "hs_lead_status": "NEW",
-                        "preferinte_inregistrare": f"{session["preferinte"].get('Preferintele_Utilizatorului_Cautare', '')}",
+                        "preferinte_inregistrare": f"{session['preferinte'].get('Preferintele_Utilizatorului_Cautare', '')}",
                         "client_language": session["language_saved"],
                     }
                 }
@@ -4374,11 +4374,11 @@ def email():
             mesaj_telegram = (
                 "🔔 <b><u>Nouă solicitare primită!</u></b>\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"👤 <b>Nume:</b> <i>{session["preferinte"].get('Nume_Prenume', '')}</i>\n"
+                f"👤 <b>Nume:</b> <i>{session['preferinte'].get('Nume_Prenume', '')}</i>\n"
                 f"📧 <b>Email:</b> <i>{valid_emails[0] if valid_emails else ''}</i>\n"
-                f"📞 <b>Telefon:</b> <code>{session["preferinte"].get('Numar_Telefon', '')}</code>\n"
-                f"🛠️ <b>Serviciu dorit:</b> {session["preferinte"].get('Serviciul_Ales', '')}\n"
-                f"💲 <b>Pret MD cu reducere:</b> <i>{session["preferinte"].get('reducere', '').replace(' ', '')}</i>\n"
+                f"📞 <b>Telefon:</b> <code>{session['preferinte'].get('Numar_Telefon', '')}</code>\n"
+                f"🛠️ <b>Serviciu dorit:</b> {session['preferinte'].get('Serviciul_Ales', '')}\n"
+                f"💲 <b>Pret MD cu reducere:</b> <i>{session['preferinte'].get('reducere', '').replace(' ', '')}</i>\n"
                 f"💲 <b>Pret UE :</b> <i>{pret_ue}</i>\n"
                 "━━━━━━━━━━━━━━━━━━━━━━\n"
                 "✅ <b>Verifică și confirmă comanda din sistem!</b>\n"
@@ -4389,12 +4389,12 @@ def email():
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "phone": f"{session["preferinte"].get('Numar_Telefon', '')}",
+                        "phone": f"{session['preferinte'].get('Numar_Telefon', '')}",
                         "email": f"{valid_emails[0] if valid_emails else ''}",
-                        "produs": f"{session["preferinte"].get('Serviciul_Ales', '')}",
-                        "pret_md": f"{int(session["preferinte"].get('Pret_MD', '0').replace(' ', ''))}",
-                        "pret_ue": f"{int(session["preferinte"].get('Pret_UE', '0').replace(' ', ''))}",
-                        "reducere": f"{session["preferinte"].get('reducere', '').replace(' ', '')}",
+                        "produs": f"{session['preferinte'].get('Serviciul_Ales', '')}",
+                        "pret_md": f"{int(session['preferinte'].get('Pret_MD', '0').replace(' ', ''))}",
+                        "pret_ue": f"{int(session['preferinte'].get('Pret_UE', '0').replace(' ', ''))}",
+                        "reducere": f"{session['preferinte'].get('reducere', '').replace(' ', '')}",
                         "hs_lead_status": "NEW",
                         "client_language": session["language_saved"],
                     }
@@ -4409,12 +4409,12 @@ def email():
                     "properties": {
                         "firstname": f"{prenume}",
                         "lastname": f"{nume}",
-                        "phone": f"{session["preferinte"].get('Numar_Telefon', '')}",
+                        "phone": f"{session['preferinte'].get('Numar_Telefon', '')}",
                         "email": f"{valid_emails[0] if valid_emails else ''}",
-                        "produs": f"{session["preferinte"].get('Serviciul_Ales', '')}",
-                        "pret_md": f"{int(session["preferinte"].get('Pret_MD', '0').replace(' ', ''))}",
-                        "pret_ue": f"{int(session["preferinte"].get('Pret_UE', '0').replace(' ', ''))}",
-                        "reducere": f"{session["preferinte"].get('reducere', '').replace(' ', '')}",
+                        "produs": f"{session['preferinte'].get('Serviciul_Ales', '')}",
+                        "pret_md": f"{int(session['preferinte'].get('Pret_MD', '0').replace(' ', ''))}",
+                        "pret_ue": f"{int(session['preferinte'].get('Pret_UE', '0').replace(' ', ''))}",
+                        "reducere": f"{session['preferinte'].get('reducere', '').replace(' ', '')}",
                         "hs_lead_status": "NEW",
                         "client_language": session["language_saved"],
                     }
