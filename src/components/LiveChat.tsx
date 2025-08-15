@@ -1177,6 +1177,15 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
       setVisible(true);
       if (messages.length === 0 && onboardingStep === 0) {
         setLoading(true);
+        const typingId = Date.now();
+        const typingMsg: ChatMessage = {
+          id: typingId,
+          text: " . . . ",
+          from: "bot",
+        };
+
+        setMessages((prev) => [...prev, typingMsg]);
+        
         fetch("/language", {
           method: "GET",
           credentials: "include" // <--- trimite cookie-ul de sesiune
@@ -1186,16 +1195,23 @@ const LiveChat: React.FC<LiveChatProps> = ({ open: controlledOpen, setOpen: setC
             return res.json();
           })
           .then((data) => {
-            // window.language = data.language || "RO";
-            const botText = data.ask_name || "Bun venit! Care este numele tău?";
-            const botMsg: ChatMessage = {
-              id: Date.now(),
-              text: botText,
+            const typingId = Date.now();
+            const typingMsg: ChatMessage = {
+              id: typingId,
+              text: " . . . ",
               from: "bot",
             };
-            typeHtmlMessage(botText);
 
-            setMessages([botMsg]);
+            setMessages((prev) => [...prev, typingMsg]);
+            // window.language = data.language || "RO";
+
+            setMessages((prev) => prev.filter((m) => m.id !== typingId));
+  
+            typeHtmlMessage(data.ask_name || "Cum te numești?");
+  
+            setMess(data.ask_name);
+
+            
             setOnboardingStep(-1);
           })
           .catch(() => {
