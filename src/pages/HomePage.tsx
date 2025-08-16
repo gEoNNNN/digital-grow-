@@ -16,17 +16,23 @@ import NextLevelSection from "../components/NextLevel";
 import marcel from "../assets/Marcel.png"
 import otherClient from "../assets/lumetalogo.svg" 
 import otherClient1 from "../assets/photo123.jpg" 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import LiveChat from "../components/LiveChat"
 import { useLanguage } from "../components/LanguageContext";
 import shape1 from "../assets/Ellipse 1.png"
 import shape2 from "../assets/Ellipse 2.png"
 import shape3 from "../assets/Ellipse 3.png"
+
 const HomePage = () => {
   const { language } = useLanguage();
   const content = homepageContent[language]
   const [chatOpen, setChatOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false);
+  
+  // Video loading state
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -35,39 +41,57 @@ const HomePage = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Handle video loading
+  const handleVideoLoaded = () => {
+    setVideoLoaded(true);
+    setVideoError(false);
+    if (videoRef.current) {
+      videoRef.current.setAttribute('data-loaded', 'true');
+    }
+  };
+
+  const handleVideoError = () => {
+    setVideoError(true);
+    console.error('Video failed to load');
+  };
+
+  const handleVideoCanPlay = () => {
+    if (isMobile && videoRef.current) {
+      // Ensure video plays on mobile
+      videoRef.current.play().catch(console.error);
+    }
+  };
+
   // YouTube video URLs with auto-generated subtitles
+  const getYouTubeVideoUrl = (lang: string) => {
+    const videoId = "EuKHNcY53sA";
+    const baseUrl = `https://www.youtube.com/embed/${videoId}`;
 
-// Improved function to load YouTube video with captions
-const getYouTubeVideoUrl = (lang: string) => {
-  const videoId = "EuKHNcY53sA";
-  const baseUrl = `https://www.youtube.com/embed/${videoId}`;
+    const langMap: Record<string, string> = {
+      RO: "ro",
+      RU: "ru",
+      EN: "en"
+    };
 
-  // Language mapping if needed (you can extend this)
-  const langMap: Record<string, string> = {
-    RO: "ro",
-    RU: "ru",
-    EN: "en"
+    const ccLang = langMap[lang] || "ro";
+
+    return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
   };
 
-  const ccLang = langMap[lang] || "ro";
+  const getYouTubeVideoUrl1 = (lang: string) => {
+    const videoId = "1vdhAAVwLpQ";
+    const baseUrl = `https://www.youtube.com/embed/${videoId}`;
 
-  return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
-};
+    const langMap: Record<string, string> = {
+      RO: "ro",
+      RU: "ru",
+      EN: "en"
+    };
 
-const getYouTubeVideoUrl1 = (lang: string) => {
-  const videoId = "1vdhAAVwLpQ";
-  const baseUrl = `https://www.youtube.com/embed/${videoId}`;
+    const ccLang = langMap[lang] || "ro";
 
-  const langMap: Record<string, string> = {
-    RO: "ro",
-    RU: "ru",
-    EN: "en"
+    return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
   };
-
-  const ccLang = langMap[lang] || "ro";
-
-  return `${baseUrl}?cc_load_policy=1&cc_lang_pref=${ccLang}&hl=${ccLang}&autoplay=1&modestbranding=1&rel=0`;
-};
 
   const feedbacks = [
     {
@@ -76,7 +100,7 @@ const getYouTubeVideoUrl1 = (lang: string) => {
       feedback: content.hero.feedback,
       video: getYouTubeVideoUrl(language),
       button: content.hero.feedbackbutton,
-      showVideoButton: true // Marcel has video button
+      showVideoButton: true
     },
     {
       name: content.hero.lumeata,
@@ -84,7 +108,7 @@ const getYouTubeVideoUrl1 = (lang: string) => {
       feedback: content.hero.lumetafeedback,
       video: getYouTubeVideoUrl(language),
       button: content.hero.feedbackbutton,
-      showVideoButton: false // Piccolino doesn't have video button
+      showVideoButton: false
     },
     {
       name: content.hero.piccolino,
@@ -92,7 +116,7 @@ const getYouTubeVideoUrl1 = (lang: string) => {
       feedback: content.hero.piccolinofeedback,
       video: getYouTubeVideoUrl1(language),
       button: content.hero.feedbackbutton,
-      showVideoButton: true // Lumea Ta has video button
+      showVideoButton: true
     }
   ];
 
@@ -104,7 +128,6 @@ const getYouTubeVideoUrl1 = (lang: string) => {
     if (language === 'RO') {
       setVideoOpen(true);
     } else {
-      // For non-RO languages, open YouTube in new tab with subtitles
       const videoId = currentFeedback === 2 ? "1vdhAAVwLpQ" : "EuKHNcY53sA";
       const langMap: Record<string, string> = {
         EN: "en",
@@ -115,8 +138,6 @@ const getYouTubeVideoUrl1 = (lang: string) => {
       window.open(youtubeUrl, '_blank');
     }
   };
-
-  // Auto-switch feedback every 5 seconds
 
   return (
     <div className="homepage">
@@ -148,10 +169,48 @@ const getYouTubeVideoUrl1 = (lang: string) => {
         </div>
       )}
       
-      <video className="background-video" autoPlay muted loop playsInline preload="metadata" poster="../assets/homepagepreload.png">
+      {/* Optimized video with loading states */}
+      <video 
+        ref={videoRef}
+        className="background-video" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        preload={isMobile ? "metadata" : "auto"}
+        onLoadedData={handleVideoLoaded}
+        onError={handleVideoError}
+        onCanPlay={handleVideoCanPlay}
+        style={{
+          opacity: videoLoaded ? 1 : 0,
+          transition: 'opacity 0.5s ease'
+        }}
+      >
         <source src={BG} type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
+      
+      {/* Fallback background while video loads */}
+      {(!videoLoaded || videoError) && (
+        <div 
+          className="video-loading-fallback"
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100vh',
+            backgroundColor: videoError ? '#1a1a1a' : '#2a2a2a',
+            backgroundImage: videoError ? 'none' : 'linear-gradient(45deg, #1a1a1a, #2a2a2a)',
+            backgroundSize: '200% 200%',
+            animation: videoError ? 'none' : 'shimmer 2s infinite',
+            zIndex: -2
+          }}
+        />
+      )}
+      
       <img src={Filter} alt="Filter overlay" className="video-filter" />
+      
       {/* Background shapes */}
       <div className="homepage-content">
         <NavBar/>
@@ -172,11 +231,12 @@ const getYouTubeVideoUrl1 = (lang: string) => {
             <img src={iconoferta}/>
             {content.hero.primaryButton}
           </button>
-          </div>
-          <div className="homepage-section-one">
-            <img src={shape1} className="homepage-section-one-shape" />
-            <div className="homepage-section-one-content">
-            <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
+        </div>
+        
+        <div className="homepage-section-one">
+          <img src={shape1} className="homepage-section-one-shape" />
+          <div className="homepage-section-one-content">
+            <h3 className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiononetitle }} />
             <div className="homepage-section-one-cards">
               <div className={`homepage-section-one-card${language === "RU" ? " homepage-section-one-card-ru" : ""}`}>
                 <h3>{content.hero.sectiononecard1title}</h3>
@@ -224,13 +284,13 @@ const getYouTubeVideoUrl1 = (lang: string) => {
               </div>
             </div>
           </div>
-          </div>
-          
-          <div className="homepage-section-two">
-            <img src={shape2} className="homepage-section-two-shape" />
-            <img src={shape3} className="homepage-section-two-shape2" />
-            <div className="homepage-section-two-content">
-            <h3  className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiontwotitle }} />
+        </div>
+        
+        <div className="homepage-section-two">
+          <img src={shape2} className="homepage-section-two-shape" />
+          <img src={shape3} className="homepage-section-two-shape2" />
+          <div className="homepage-section-two-content">
+            <h3 className="homepage-section-one-title" dangerouslySetInnerHTML={{ __html: content.hero.sectiontwotitle }} />
             <div className="homepage-section-two-cards">
               <div className="homepage-section-two-card">
                 <img src={section2card1} alt="Soluții integrate"/>
@@ -260,60 +320,59 @@ const getYouTubeVideoUrl1 = (lang: string) => {
                 </p>
               </div>
             </div>
-             </div>
-          </div> 
-          <div className="homepage-section-three">
-            <h1 className="homepage-section-three-title">
-              {content.hero.sectionthreetitle}
-            </h1>
-            <div className="homepage-section-three-content">
-              {/* Left: Client photo and name */}
-              <div className="homepage-client-photo">
-                <img src={feedbacks[currentFeedback].photo} alt={feedbacks[currentFeedback].name} />
-                <span className="homepage-client-name">{feedbacks[currentFeedback].name}</span>
-              </div>
-              {/* Right: Feedback and button */}
-              <div className="homepage-feedback-block">
-                <p className="homepage-feedback-text">{feedbacks[currentFeedback].feedback}</p>
-                {feedbacks[currentFeedback].showVideoButton && (
-                  <button
-                    className="homepage-section-one-card-button-video"
-                    onClick={handleVideoClick}
-                  >
-                    {feedbacks[currentFeedback].button}
-                  </button>
-                )}
-                {/* White rectangles for switching */}
-                <div className="homepage-feedback-switcher">
-                  <div
-                    className={`feedback-switch-rect${currentFeedback === 0 ? " active" : ""}`}
-                    onClick={() => setCurrentFeedback(0)}
-                  />
-                  <div
-                    className={`feedback-switch-rect${currentFeedback === 1 ? " active" : ""}`}
-                    onClick={() => setCurrentFeedback(1)}
-                  />
-                  <div
-                    className={`feedback-switch-rect${currentFeedback === 2 ? " active" : ""}`}
-                    onClick={() => setCurrentFeedback(2)}
-                  />
-                </div>
+          </div>
+        </div> 
+        
+        <div className="homepage-section-three">
+          <h1 className="homepage-section-three-title">
+            {content.hero.sectionthreetitle}
+          </h1>
+          <div className="homepage-section-three-content">
+            <div className="homepage-client-photo">
+              <img src={feedbacks[currentFeedback].photo} alt={feedbacks[currentFeedback].name} />
+              <span className="homepage-client-name">{feedbacks[currentFeedback].name}</span>
+            </div>
+            <div className="homepage-feedback-block">
+              <p className="homepage-feedback-text">{feedbacks[currentFeedback].feedback}</p>
+              {feedbacks[currentFeedback].showVideoButton && (
+                <button
+                  className="homepage-section-one-card-button-video"
+                  onClick={handleVideoClick}
+                >
+                  {feedbacks[currentFeedback].button}
+                </button>
+              )}
+              <div className="homepage-feedback-switcher">
+                <div
+                  className={`feedback-switch-rect${currentFeedback === 0 ? " active" : ""}`}
+                  onClick={() => setCurrentFeedback(0)}
+                />
+                <div
+                  className={`feedback-switch-rect${currentFeedback === 1 ? " active" : ""}`}
+                  onClick={() => setCurrentFeedback(1)}
+                />
+                <div
+                  className={`feedback-switch-rect${currentFeedback === 2 ? " active" : ""}`}
+                  onClick={() => setCurrentFeedback(2)}
+                />
               </div>
             </div>
           </div>
-          <div className="homepage-section-five">
-            <NextLevelSection
-              title={
-                language === "EN" && isMobile
-                  ? content.hero.sectionfourtitlemobile
-                  : content.hero.sectionfourtitle
-              }
-              buttonText={content.hero.sectionfourbutton}
-            />
+        </div>
+        
+        <div className="homepage-section-five">
+          <NextLevelSection
+            title={
+              language === "EN" && isMobile
+                ? content.hero.sectionfourtitlemobile
+                : content.hero.sectionfourtitle
+            }
+            buttonText={content.hero.sectionfourbutton}
+          />
           <Footer />
-          </div>
         </div>
       </div>
+    </div>
   )
 }
 

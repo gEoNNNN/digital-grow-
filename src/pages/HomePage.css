@@ -15,6 +15,51 @@
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  /* Force hardware acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Loading state animation */
+@keyframes shimmer {
+  0% { 
+    background-position: -200% 0; 
+  }
+  100% { 
+    background-position: 200% 0; 
+  }
+}
+
+.video-loading-fallback {
+  background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+  background-size: 200% 200%;
+}
+
+/* Mobile video optimizations */
+@media (max-width: 768px) {
+  .background-video {
+    /* Reduce quality on mobile for faster loading */
+    filter: blur(0.5px);
+    transform: scale(1.02) translateZ(0);
+    /* Optimize rendering */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-video {
+    /* Further optimize for very small screens */
+    opacity: 0.9;
+    filter: blur(1px);
+  }
+}
+
+/* Video loading state */
+.background-video:not([data-loaded="true"]) {
+  background-color: #1a1a1a;
 }
 
 .video-filter {
@@ -177,9 +222,6 @@
   margin-top: 10vw;
   z-index: 9999999 !important;
 }
-
-
-
 
 /* Mobile styles */
 @media (max-width: 768px) {
