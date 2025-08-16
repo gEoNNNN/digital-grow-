@@ -148,7 +148,7 @@ const getYouTubeVideoUrl1 = (lang: string) => {
         </div>
       )}
       
-      <video className="background-video" autoPlay muted loop preload="auto">
+      <video className="background-video" autoPlay muted loop playsInline preload="metadata" poster="../assets/homepagepreload.png">
         <source src={BG} type="video/mp4" />
       </video>
       <img src={Filter} alt="Filter overlay" className="video-filter" />
