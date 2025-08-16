@@ -384,7 +384,7 @@
       font-size: 3vw;
       padding: 10px 18px;
       border-radius: 16px;
-      max-width: 70%;
+      max-width: 100%;
       width: 100%; /* Add this for full width */
       word-break: break-word;
       background: #fff;
