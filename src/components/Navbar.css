@@ -40,8 +40,64 @@
   width: auto;
   min-height: 2vw;
   max-height: 4vw;
+  /* Fix iPhone blur issues */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent blur on retina displays */
+  image-rendering: auto;
+  -ms-interpolation-mode: bicubic;
 }
 
+/* Mobile logo fixes */
+@media (max-width: 768px) {
+  .navbar-logo img {
+    height: 8vw;
+    min-height: 2vw;
+    max-height: 12vw;
+    margin-left: -45vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    /* Enhanced iPhone fixes */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    /* Force sharp rendering on iOS */
+    -webkit-filter: none;
+    filter: none;
+    /* Prevent iOS blur */
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+}
+
+/* Specific iPhone fixes */
+@supports (-webkit-touch-callout: none) {
+  .navbar-logo img {
+    -webkit-transform: translateZ(0) scale(1.001);
+    transform: translateZ(0) scale(1.001);
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* For high-DPI displays (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .navbar-logo img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
 
 .navbar-menu {
   display: flex;
@@ -268,6 +324,18 @@
     margin-left: -45vw;
     margin-top: 5vw;
     margin-bottom: 5vw;
+    /* Enhanced iPhone fixes */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    /* Force sharp rendering on iOS */
+    -webkit-filter: none;
+    filter: none;
+    /* Prevent iOS blur */
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
   }
   
   .navbar-link {
