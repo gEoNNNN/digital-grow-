@@ -503,7 +503,7 @@
 .education-episode-description p {
   font-size: 1.2vw;
   line-height: 1.6;
-  color: var(--text-description);
+  color: var(--maindescription);
   margin: 0;
   font-family: "DM Sans", sans-serif;
   font-weight: 400;

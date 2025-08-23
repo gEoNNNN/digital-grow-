@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import './ServicesPage.css'
 import BG from "../assets/services.mp4"
-import Filter from "../assets/homepagefilter.png"
+import Filter from "../assets/homepagefilter.svg"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import servicesContent from "./ServicesPage.json"
@@ -10,9 +10,9 @@ import LiveChat from '../components/LiveChat'
 import PayPalPayment from '../components/PayPal'
 import { useLanguage } from "../components/LanguageContext";
 import { useNavigate } from "react-router-dom";
-import shape1 from "../assets/Ellipse 1.png"
-import shape2 from "../assets/Ellipse 2.png"
-import shape3 from "../assets/Ellipse 3.png"
+import shape1 from "../assets/Ellipse 1.svg"
+import shape2 from "../assets/Ellipse 2.svg"
+import shape3 from "../assets/Ellipse 3.svg"
 
 const ServicesPage: React.FC = () => {
   const { language } = useLanguage();

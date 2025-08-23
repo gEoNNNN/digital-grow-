@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProjectsPage.css";
 import projectsContent from "./ProjectsPage.json";
 import { useNavigate } from "react-router-dom";
-import client from "../assets/Marcel.png";
+import client from "../assets/Marcel.svg";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useLanguage } from "../components/LanguageContext";

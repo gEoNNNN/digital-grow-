@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import './EducationPage.css'
 import BG from "../assets/services.mp4"
-import Filter from "../assets/homepagefilter.png"
+import Filter from "../assets/homepagefilter.svg"
 import NavBar from "../components/NavBar"
 import LiveChat from '../components/LiveChat'
 import Footer from '../components/Footer'

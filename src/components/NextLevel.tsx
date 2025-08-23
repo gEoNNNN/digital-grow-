@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../pages/HomePage.css"
-import shape4 from "../assets/Ellipse 4.png"
+import shape4 from "../assets/Ellipse 4.svg"
 
 
 interface NextLevelSectionProps {

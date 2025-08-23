@@ -35,18 +35,18 @@
   --card-border-hover: rgba(255, 255, 255, 0.2);
   --card-shadow: rgba(255, 255, 255, 0.1);
   --card-shadow-hover: rgba(255, 255, 255, 0.2);
-  --card-overlay: rgba(0, 0, 0, 0.6);
-  --card-overlay-light: rgba(0, 0, 0, 0.3);
-  --card-overlay-hover: rgba(0, 0, 0, 0.4);
-  --card-overlay-hover-light: rgba(0, 0, 0, 0.2);
+  /*--card-overlay: rgba(0, 0, 0, 0.6);
+  /*--card-overlay-light: rgba(0, 0, 0, 0.3);
+  /*--card-overlay-hover: rgba(0, 0, 0, 0.4);
+  /*--card-overlay-hover-light: rgba(0, 0, 0, 0.2);
   
   /* Navbar Colors */
   --navbar-bg: rgba(0, 0, 0, 0.4);
   --navbar-text: rgba(255, 255, 255, 0.95);
   --navbar-hover-bg: rgba(100, 108, 255, 0.2);
   --navbar-accent: #646cff;
-  --navbar-accent-hover: #535bf2;
-  --dropdown-bg: rgba(26, 26, 26, 0.95);
+  /*--navbar-accent-hover: #535bf2;*/
+  /*--dropdown-bg: rgba(26, 26, 26, 0.95);*/
   --dropdown-border: rgba(255, 255, 255, 0.2);
   --dropdown-shadow: rgba(0, 0, 0, 0.3);
   
@@ -93,18 +93,18 @@
   --card-border-hover: rgba(0, 0, 0, 0.2);
   --card-shadow: rgba(0, 0, 0, 0.1);
   --card-shadow-hover: rgba(0, 0, 0, 0.2);
-  --card-overlay: rgba(0, 0, 0, 0.6);
-  --card-overlay-light: rgba(0, 0, 0, 0.3);
-  --card-overlay-hover: rgba(0, 0, 0, 0.4);
-  --card-overlay-hover-light: rgba(0, 0, 0, 0.2);
+  /*--card-overlay: rgba(0, 0, 0, 0.6);
+  /*--card-overlay-light: rgba(0, 0, 0, 0.3);
+  /*--card-overlay-hover: rgba(0, 0, 0, 0.4);
+  /*--card-overlay-hover-light: rgba(0, 0, 0, 0.2);
   
   /* Navbar Colors */
   --navbar-bg: rgba(255, 255, 255, 0.95);
   --navbar-text: #212529;
   --navbar-hover-bg: rgba(100, 108, 255, 0.1);
   --navbar-accent: #646cff;
-  --navbar-accent-hover: #535bf2;
-  --dropdown-bg: rgba(255, 255, 255, 0.95);
+  /*--navbar-accent-hover: #535bf2;*/
+  /*--dropdown-bg: rgba(255, 255, 255, 0.95);*/
   --dropdown-border: rgba(0, 0, 0, 0.2);
   --dropdown-shadow: rgba(0, 0, 0, 0.1);
   

@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUsPage.css'
 import BG from "../assets/aboutus.mp4"
-import Filter from "../assets/homepagefilter.png"
+import Filter from "../assets/homepagefilter.svg"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import aboutUsContent from "./AboutUsPage.json"

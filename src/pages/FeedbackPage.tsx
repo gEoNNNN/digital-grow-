@@ -3,26 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import BG from "../assets/0723.mp4"
 import './HomePage.css'  // Using the same CSS as homepage
 import NavBar from "../components/NavBar"
-import Filter from "../assets/homepagefilter.png"
+import Filter from "../assets/homepagefilter.svg"
 import homepageContent from "./Homepage.json"  // Using the same JSON as homepage
 import iconoferta from "../assets/homepageoferta.svg"
-import section1card1 from "../assets/homepagesection1card1.jpg"
-import section1card2 from "../assets/homepagesection1card2.jpg"
-import section1card3 from "../assets/homepagesection1card3.jpg"
-import section1card4 from "../assets/homepagesection1card4.jpg"
+import section1card1 from "../assets/homepagesection1card1.svg"
+import section1card2 from "../assets/homepagesection1card2.svg"
+import section1card3 from "../assets/homepagesection1card3.svg"
+import section1card4 from "../assets/homepagesection1card4.svg"
 import section2card1 from "../assets/sectiontwocard1.svg"
 import section2card2 from "../assets/sectiontwocard2.svg"
 import section2card3 from "../assets/sectiontwocard3.svg"
 import Footer from "../components/Footer"
 import NextLevelSection from "../components/NextLevel";
-import marcel from "../assets/Marcel.png"
+import marcel from "../assets/Marcel.svg"
 import otherClient from "../assets/lumetalogo.svg" 
 // import LiveChatFeedback from "../components/Livechatfeedback"  // Using feedback chat instead
 import LiveChatWrapper from "../components/LiveChatWrapper";
 import { useLanguage } from "../components/LanguageContext";
-import shape1 from "../assets/Ellipse 1.png"
-import shape2 from "../assets/Ellipse 2.png"
-import shape3 from "../assets/Ellipse 3.png"
+import shape1 from "../assets/Ellipse 1.svg"
+import shape2 from "../assets/Ellipse 2.svg"
+import shape3 from "../assets/Ellipse 3.svg"
 
 const FeedbackPage = () => {
   const { language, setLanguage } = useLanguage();
@@ -114,12 +114,7 @@ const FeedbackPage = () => {
         <LiveChatWrapper open={chatOpen} setOpen={setChatOpen} />
       
         <div className="homepage-main-section">
-          <h1 className="homepage-main-section-title">
-            {content.hero.title1}
-          </h1>
-          <h1 className="homepage-main-section-title">
-            {content.hero.title2}
-          </h1>
+          <h1 className="homepage-main-section-title" dangerouslySetInnerHTML={{ __html: content.hero.title1 }}></h1>
           <h1 className="homepage-main-section-description">
             {content.hero.description}
           </h1>

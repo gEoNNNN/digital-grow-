@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ContactsPage.css'
 import BG from "../assets/contscts.mp4"
-import Filter from "../assets/homepagefilter.png"
+import Filter from "../assets/homepagefilter.svg"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import contactsContent from "./ContactsPage.json"

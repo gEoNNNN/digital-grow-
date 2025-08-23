@@ -1,10 +1,9 @@
-{
+  {
   "RO": {
     "hero": {
-      "title1": "Creștere Digitală Garantată",
-      "title2": "Pentru Afacerea Ta",
-      "description": "Site-uri web, branding și automatizări inteligente – toate într-un singur loc",
-      "primaryButton": "Solicită ofertă",
+      "title1": "Site-uri web, branding și automatizări inteligente",
+      "description": "Creștere Digitală Garantată pentru Afacerea Ta",
+      "primaryButton": "Vorbește cu un specialist",
       "sectiononetitle": "Descoperă pe scurt <br><span class='highlight'>serviciile noastre</span> esențiale",
       "sectiononecard1title" : "Dezvoltare Web",
       "sectiononecard2title" : "Chatbot & Automatizare",
@@ -37,10 +36,9 @@
   },
   "EN": {
     "hero": {
-    "title1": "Guaranteed Digital Growth",
-    "title2": "For Your Business",
-    "description": "Websites, branding, and smart automations – all in one place.",
-    "primaryButton": "Request a Quote",
+    "title1": "Websites, branding,<br> and smart automations",
+    "description": "Guaranteed Digital Growth for Your Business",
+    "primaryButton": "Talk to a specialist",
     "sectiononetitle": "Discover <span class='highlight'>Our Core Services</span>",
     "sectiononecard1title": "Web Development",
     "sectiononecard1description": "Fast, conversion-focused websites.",
@@ -75,10 +73,9 @@
   },
   "RU": {
     "hero": {
-      "title1": "Гарантированный рост",
-      "title2": "Для вашего бизнеса",
-      "description": "Веб‑сайты, брендинг и умные автоматизации — всё в одном месте",
-      "primaryButton": "Запросить предложение",
+      "title1": "Веб‑сайты, брендинг и <br> умные автоматизации",
+      "description": "Гарантированный рост Для вашего бизнеса",
+      "primaryButton": "Свяжитесь со специалистом",
       "sectiononetitle": "Узнайте кратко<br><span class='highlight'>наши основные услуги</span>",
       "sectiononecard1title": "Веб‑разработка",
       "sectiononecard1description": "Быстрые сайты, оптимизированные под конверсии",
